@@ -1,0 +1,9 @@
+@import "../../scss/variables";
+
+.content {
+  padding: $gutterWidth $gutterWidth $gutterWidth $navigationColumnWidth;
+  margin-top: -$gutterMargin;
+  background-color: $tea-green;
+  min-height: 100vh;
+  border-radius: 0 0 15rem 0;
+}

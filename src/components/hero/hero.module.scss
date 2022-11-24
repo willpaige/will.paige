@@ -1,0 +1,14 @@
+@import "../../scss/variables";
+
+.hero {
+  padding-left: $navigationColumnWidth;
+  padding-right: $gutterMargin;
+  position: relative;
+}
+
+.heroImage {
+  width: 40rem;
+  overflow: hidden;
+  border-radius: 10rem 0 0 0;
+  margin-left: 40rem;
+}
