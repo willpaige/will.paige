@@ -95,6 +95,7 @@ scripts/migrate*.sh
 build.zip
 /sessions/*.json
 .vscode
+.cache
 .cache/*
 bin/
 !deploy/bin/
