@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&family=Source+Sans+Pro&display=swap');
-//font-family: 'Source Sans Pro', sans-serif;
+//@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
 @import "../../scss/variables";
 @import "../../scss/reset";
 
@@ -10,7 +11,7 @@
     margin: 0;
     font-size: 1.6rem;
     overflow-x: hidden;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Roboto Mono', monospace;
   }
 }
 
@@ -20,6 +21,26 @@
 }
 
 a {
-  //color: $blue;
-  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p {
+  line-height: 1.8;
+}
+
+.lead {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2.6rem;
+}
+
+li {
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
 }

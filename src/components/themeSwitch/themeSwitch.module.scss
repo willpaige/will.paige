@@ -1,0 +1,30 @@
+@import "../../scss/variables";
+
+.themeSwitch {
+  position: absolute;
+  top: 0;
+}
+
+.button {
+  width: 2rem;
+  height: 2.4rem;
+  position: relative;
+  top: -0.4rem;
+  margin-right: 0.4rem;
+  transition: top 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    top:0;
+  }
+}
+
+.isActive {
+  top:0;
+}
+
+.tea-green { background-color: $tea-green; }
+.laurel-green { background-color: $laurel-green }
+.cambridge-blue { background-color: $cambridge-blue }
+.taupe-gray { background-color: $taupe-gray }
+.old-lavender { background-color: $old-lavender }

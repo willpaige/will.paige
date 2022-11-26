@@ -1,0 +1,88 @@
+@import "../../scss/variables";
+$avatarWidth: 6.6rem;
+
+.timeline {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 0.2rem;
+    background-color: black;
+    width: $avatarWidth;
+  }
+}
+
+.timelineItem {
+  display: flex;
+  align-items: flex-start;
+}
+
+.timelineImage {
+  border-radius: 5rem;
+  overflow: hidden;
+  min-width: $avatarWidth;
+  width: $avatarWidth;
+  height: $avatarWidth;
+  background-color: $greyLight;
+  position: relative;
+  z-index: 1;
+}
+
+.timelineLetter {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  font-family: $sansSerif;
+  color: white;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.timelineContent {
+  padding-left: 4rem;
+  position: relative;
+  padding-bottom: $gridMarginSmall;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -(calc($avatarWidth / 2));
+    top: 0;
+    bottom: 0;
+    border-left: 0.2rem dotted #000;
+  }
+}
+
+.timelineTitle {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.timelineSubTitle {
+  text-transform: initial;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.timelineMeta {
+  font-family: $sansSerif;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  color: $greyLight;
+  line-height: 1;
+}
+
+.tagCode {
+  margin-left: 0;
+}
+
+.tagsContainer {
+  display: block;
+}

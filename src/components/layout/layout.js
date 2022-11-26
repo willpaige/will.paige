@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-export default function Layout({ className, children }) {
+export default function Layout({ children }) {
   return (
-    <div className={className}>
+    <>
       {children}
-    </div>
-  )
-}
+    </>
+  );
+};

@@ -1,0 +1,16 @@
+@import "../../scss/variables";
+
+.title {
+  letter-spacing: 2px;
+  font-family: $sansSerif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.h1 {
+  font-size: 8rem;
+}
+
+.h2 {
+  font-size: 2.6rem;
+}

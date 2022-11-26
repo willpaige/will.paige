@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+
+.footerRow {
+  margin-top: $gridMarginSmall;
+}
+
+.content {
+  border-top: 1px dotted #000;
+}
+
+.roosterLogo {
+  width: 5rem;
+  border-radius: 1rem;
+}
+
+.logoCol {
+  flex: 0;
+}
+
+.company {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.jobTitle {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.jobStart {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.jobDescription {
+  margin-top: 0.4rem;
+}

@@ -14,11 +14,13 @@ $taupe-gray: hsla(253, 4%, 56%, 1);
 $old-lavender: hsla(316, 12%, 45%, 1);
 
 /* SCSS RGB */
-$tea-green: rgba(209, 240, 177, 1);
+//$tea-green: rgb(0, 0, 0);
 $laurel-green: rgba(182, 203, 158, 1);
 $cambridge-blue: rgba(146, 180, 167, 1);
 $taupe-gray: rgba(140, 138, 147, 1);
 $old-lavender: rgba(129, 102, 122, 1);
+
+$greyLight: #000;
 
 /* SCSS Gradient */
 $gradient-top: linear-gradient(0deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
@@ -32,8 +34,22 @@ $gradient-bottom-left: linear-gradient(315deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, 
 $gradient-radial: radial-gradient(#d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
 
 $gutterWidth: 10rem;
-$gutterMargin: $gutterWidth / 2;
+$gutterMargin: calc($gutterWidth / 2);
+
+$gridMarginMedium: $gutterWidth;
+$gridMarginLarge: calc($gridMarginMedium * 2);
+$gridMarginExtraLarge: calc($gridMarginLarge * 2);
+$gridMarginSmall: calc($gridMarginMedium / 2);
+$gridMarginExtraSmall: 0.6rem;
+
 
 $navigationWidth: 20rem;
 $navigationColumnWidth: $navigationWidth + $gutterWidth + $gutterMargin;
 
+$themeAnimationSpeed: 200ms;
+
+$sansSerif: 'Source Sans Pro', sans-serif;
+
+$contentBorderRadius: 15rem;
+
+$heroTitleSize: 10rem;

@@ -1,0 +1,26 @@
+$codeBackground: #2e2e2e;
+$codeColor: #f47f16;
+$codeBorderRadius: 0.3rem;
+
+.codeTag {
+  padding: 0.3rem 0.4rem;
+  margin-left: 1rem;
+  background-color: $codeBackground;
+  color: $codeColor;
+  border: solid 1px #000;
+  border-radius: $codeBorderRadius;
+  line-height: 2.4em;
+  //white-space: nowrap;
+}
+
+.codeNoMarginLeft {
+  margin-left: 0;
+}
+
+.codeBlock {
+  background-color: $codeBackground;
+  border: 1px solid #000;
+  padding: 2rem;
+  color: $codeColor;
+  border-radius: $codeBorderRadius;
+}

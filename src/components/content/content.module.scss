@@ -1,9 +1,19 @@
 @import "../../scss/variables";
 
 .content {
-  padding: $gutterWidth $gutterWidth $gutterWidth $navigationColumnWidth;
-  margin-top: -$gutterMargin;
-  background-color: $tea-green;
-  min-height: 100vh;
-  border-radius: 0 0 15rem 0;
+  padding: ($gutterWidth + $gutterMargin) $gutterWidth $gutterWidth $navigationColumnWidth;
+  margin-top: -$gutterWidth;
+  border-radius: 0 0 $contentBorderRadius 0;
+  transition: background-color ease-in-out $themeAnimationSpeed;
 }
+
+.noMargin {
+  margin-top: 0;
+  padding-top: $gutterWidth;
+}
+
+.tea-green { background-color: $tea-green; }
+.laurel-green { background-color: $laurel-green }
+.cambridge-blue { background-color: $cambridge-blue }
+.taupe-gray { background-color: $taupe-gray }
+.old-lavender { background-color: $old-lavender }

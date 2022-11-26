@@ -1,38 +1,60 @@
-import React from "react"
-import { Link } from "gatsby"
-import { navigation, link } from './navigation.module.scss';
+import React from 'react';
+import { Link } from 'gatsby';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import {
+  navigation, link, linkIsActive,
+} from './navigation.module.scss';
+import { themeMap } from '../../constants/theme';
+import { PAGES } from '../../constants/pages';
 
-const links = [
-  {
-   title: 'About',
-   url: '/about/',
-  }, {
-   title: 'Work',
-   url: '/work/',
-  }, {
-   title: 'Education',
-   url: '/education/',
-  }, {
-   title: 'Services',
-   url: '/services/',
-  }, {
-   title: 'Contact',
-   url: '/contact/',
-  }
-];
+const links = {
+  [PAGES.HOME]: {
+    title: 'Home',
+    url: '/',
+  },
+  [PAGES.ABOUT]: {
+    title: 'About',
+    url: '/about/',
+  },
+  [PAGES.WORK]: {
+    title: 'Work',
+    url: '/work/',
+  },
+  [PAGES.EDUCATION]: {
+    title: 'Education',
+    url: '/education/',
+  },
+  // [PAGES.SERVICES]: {
+  //   title: 'Services',
+  //   url: '/services/',
+  // },
+  [PAGES.CONTACT]: {
+    title: 'Contact',
+    url: '/contact/',
+  },
+};
 
-const Navigation = () => {
-  // const { children } = props;
+function Navigation(props) {
+  const { activePage } = props;
 
   return (
-    <div className={ navigation }>
-      ---- Add Colour blocks to change the website theme
+    <div className={navigation}>
+      {Object.keys(links).map((key) => {
+        const content = links[key];
+        const isActive = activePage === key;
+        const linkClass = classNames(link, isActive ? linkIsActive : '');
 
-      {links.map((item, key) => (
-        <Link className={link} title={item.title} to={`/about/`} key={key}>{item.title}</Link>
-        ))}
+        return (
+          <Link className={linkClass} title={content.title} to={content.url} key={content.url}>{content.title}</Link>
+        );
+      })}
     </div>
-  )
+  );
 }
 
-export default Navigation
+Navigation.propTypes = {
+  activePage: PropTypes.string.isRequired,
+};
+
+export default Navigation;

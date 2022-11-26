@@ -1,14 +1,36 @@
-import React from "react"
-import "./app.scss"
+import React from 'react';
+import './app.scss';
+import PropTypes from 'prop-types';
+import Theme from '../theme/theme';
+import Wrapper from '../wrapper/wrapper';
+import Navigation from '../navigation/navigation';
+import ThemeSwitch from '../themeSwitch/themeSwitch';
+import { themeMap } from '../../constants/theme';
 
-const App = (props) => {
-  const { children } = props;
+function App(props) {
+  const { children, theme, activePage } = props;
 
   return (
-    <>
-      {children}
-    </>
-  )
+    <Theme theme={theme}>
+      <Wrapper>
+        <ThemeSwitch />
+        <Navigation activePage={activePage} />
+        <main>
+          {children}
+        </main>
+      </Wrapper>
+    </Theme>
+  );
 }
 
-export default App
+App.defaultProps = {
+  theme: themeMap.TEA_GREEN,
+};
+
+App.propTypes = {
+  theme: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  activePage: PropTypes.string.isRequired,
+};
+
+export default App;

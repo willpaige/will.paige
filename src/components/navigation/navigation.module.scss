@@ -6,16 +6,24 @@
   flex-direction: column;
   margin: $gutterWidth 0 0 $gutterWidth;
   position: fixed;
+  z-index: 9999;
 }
 
 .link {
   display: block;
-  margin: 2rem 3rem;
+  margin: 1.5rem 0;
   font-size: 1.8rem;
+  letter-spacing: 0.2rem;
   color: black;
   transition: all ease-in-out 200ms;
+  font-weight: normal;
+  text-decoration: none;
 
   &:hover {
-    transform: skew(-8deg);
+    font-weight: bold;
   }
+}
+
+.linkIsActive {
+  font-weight: bold;
 }

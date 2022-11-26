@@ -1,0 +1,45 @@
+@import "../../../scss/variables";
+
+.heroImage {
+  width: 55%;
+  max-width: 48rem;
+  overflow: hidden;
+  border-radius: 3rem 10rem 3rem 3rem;
+  margin-left: auto;
+}
+
+.heroTitle {
+  position: absolute;
+  z-index: 1;
+  margin-top: 11rem;
+  font-size: 2.2rem;
+}
+
+.heroHello {
+  font-weight: bold;
+  font-size: $heroTitleSize;
+  line-height: 0.8;
+}
+
+.heroDot {
+  cursor: pointer;
+}
+
+.heroName {
+  font-size: 8rem;
+  display: block;
+}
+
+.heroSubText {
+  font-weight: 400;
+}
+
+.animate {
+  transition: color ease-in-out $themeAnimationSpeed;
+}
+
+.tea-green { color: $tea-green; }
+.laurel-green { color: $laurel-green }
+.cambridge-blue { color: $cambridge-blue }
+.taupe-gray { color: $taupe-gray }
+.old-lavender { color: $old-lavender }

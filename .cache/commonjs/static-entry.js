@@ -579,13 +579,9 @@ async function renderSlice({
     renderEnvironment: `slices`,
     sliceRoot: slice
   };
-  const sliceElement = /*#__PURE__*/React.createElement(SlicesContext.Provider, {
-    value: slicesContext
-  }, /*#__PURE__*/React.createElement(StaticQueryContext.Provider, {
-    value: staticQueryContext
-  }, /*#__PURE__*/React.createElement(SliceComponent, (0, _extends2.default)({
+  const sliceElement = /*#__PURE__*/React.createElement(SliceComponent, (0, _extends2.default)({
     sliceContext: slice.context
-  }, props))));
+  }, props));
   const sliceWrappedWithWrapRootElement = apiRunner(`wrapRootElement`, {
     element: sliceElement
   }, sliceElement, ({
@@ -595,10 +591,15 @@ async function renderSlice({
       element: result
     };
   }).pop();
+  const sliceWrappedWithWrapRootElementAndContexts = /*#__PURE__*/React.createElement(SlicesContext.Provider, {
+    value: slicesContext
+  }, /*#__PURE__*/React.createElement(StaticQueryContext.Provider, {
+    value: staticQueryContext
+  }, sliceWrappedWithWrapRootElement));
   const writableStream = new WritableAsPromise();
   const {
     pipe
-  } = renderToPipeableStream(sliceWrappedWithWrapRootElement, {
+  } = renderToPipeableStream(sliceWrappedWithWrapRootElementAndContexts, {
     onAllReady() {
       pipe(writableStream);
     },

@@ -1,0 +1,22 @@
+@import "../../../scss/variables";
+
+.heroImage {
+  border-radius: 3rem 10rem 3rem 3rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroText {
+  text-transform: uppercase;
+  position: absolute;
+  top: 6rem;
+  left: 8rem;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: $heroTitleSize;
+}

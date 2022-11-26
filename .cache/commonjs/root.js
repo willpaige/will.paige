@@ -84,7 +84,13 @@ class LocationHandler extends _react.default.Component {
       }));
     }
 
-    return /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
+    return /*#__PURE__*/_react.default.createElement(_ensureResources.default, {
+      location: location
+    }, locationAndPageResources => /*#__PURE__*/_react.default.createElement(_context.SlicesContext.Provider, {
+      value: slicesContext
+    }, /*#__PURE__*/_react.default.createElement(_context.SlicesMapContext.Provider, {
+      value: locationAndPageResources.pageResources.page.slicesMap
+    }, /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
       location: location
     }, /*#__PURE__*/_react.default.createElement(_reachRouter.Router, {
       basepath: __BASE_PATH__,
@@ -95,7 +101,7 @@ class LocationHandler extends _react.default.Component {
       location: location,
       pageResources: dev404PageResources,
       custom404: custom404
-    })));
+    }))))));
   }
 
 }
