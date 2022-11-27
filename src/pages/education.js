@@ -17,7 +17,7 @@ const content = [
   }, {
     key: 'toulouse',
     letter: 'T',
-    title: 'International School Of Toulouse / France',
+    title: 'Toulouse International School / France',
     subTitle: '2001 - 2005',
     copy: <p>29 POINTS | International Baccalaureate</p>,
   }, {

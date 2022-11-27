@@ -8,6 +8,8 @@ import {StaticImage} from "gatsby-plugin-image";
 import { codeTag, codeBlock, codeNoMarginLeft } from '../code/code.module.scss';
 import { company, jobDescription, jobStart, jobTitle, logoCol, footerRow, content, roosterLogo } from './footer.module.scss';
 import Katie from "../katie/katie";
+import Contact from "../contact/contact";
+import FooterSmall from "../footerSmall/footerSmall";
 
 function Footer() {
   return (
@@ -110,7 +112,7 @@ function Footer() {
           </div>
         </Col>
       </Row>
-      <Katie />
+      <FooterSmall />
     </footer>
   );
 }

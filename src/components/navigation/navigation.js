@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {
-  navigation, link, linkIsActive,
+  navigation, link, linkIsActive, navigationContact
 } from './navigation.module.scss';
-import { themeMap } from '../../constants/theme';
 import { PAGES } from '../../constants/pages';
+import Contact from "../contact/contact";
 
 const links = {
   [PAGES.HOME]: {
@@ -25,14 +25,6 @@ const links = {
     title: 'Education',
     url: '/education/',
   },
-  // [PAGES.SERVICES]: {
-  //   title: 'Services',
-  //   url: '/services/',
-  // },
-  [PAGES.CONTACT]: {
-    title: 'Contact',
-    url: '/contact/',
-  },
 };
 
 function Navigation(props) {
@@ -49,6 +41,7 @@ function Navigation(props) {
           <Link className={linkClass} title={content.title} to={content.url} key={content.url}>{content.title}</Link>
         );
       })}
+      <Contact className={navigationContact} small />
     </div>
   );
 }

@@ -4,9 +4,9 @@ import App from '../components/app/app';
 import Content from '../components/content/content';
 import { themeMap } from '../constants/theme';
 import { PAGES } from '../constants/pages';
-import Katie from '../components/katie/katie';
 import Timeline from '../components/timeline/timeline';
 import HeroText from '../components/hero/heroText/heroText';
+import FooterSmall from "../components/footerSmall/footerSmall";
 import { contentContainer } from '../scss/work.module.scss';
 
 const content = [
@@ -176,7 +176,7 @@ function AboutPage() {
         <Content className={contentContainer} noHero>
         <HeroText title="Work" />
         <Timeline content={content} />
-        <Katie />
+        <FooterSmall />
       </Content>
     </App>
   );

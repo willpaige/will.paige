@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+
+.contact {
+  display: flex;
+  align-items: center;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+  font-family: $sansSerif;
+  font-size: 1.4rem;
+  margin-top: 0.1rem;
+}
+
+.contactIcon {
+  margin-right: 0.4rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  position: relative;
+}
+
+.contactLink {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.contactSmall {
+  margin-right: 1rem;
+}
