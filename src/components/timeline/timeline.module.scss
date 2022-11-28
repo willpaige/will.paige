@@ -1,5 +1,6 @@
 @import "../../scss/variables";
 $avatarWidth: 6.6rem;
+$avatarWidthXs: 4.4rem;
 
 .timeline {
   position: relative;
@@ -23,12 +24,18 @@ $avatarWidth: 6.6rem;
 .timelineImage {
   border-radius: 5rem;
   overflow: hidden;
-  min-width: $avatarWidth;
-  width: $avatarWidth;
-  height: $avatarWidth;
+  min-width: $avatarWidthXs;
+  width: $avatarWidthXs;
+  height: $avatarWidthXs;
   background-color: $greyLight;
   position: relative;
   z-index: 1;
+
+  @media (min-width: $screenMd) {
+    width: $avatarWidth;
+    height: $avatarWidth;
+    min-width: $avatarWidth;
+  }
 }
 
 .timelineLetter {
@@ -45,17 +52,25 @@ $avatarWidth: 6.6rem;
 }
 
 .timelineContent {
-  padding-left: 4rem;
+  padding-left: 1.4rem;
   position: relative;
   padding-bottom: $gridMarginSmall;
+
+  @media (min-width: $screenMd) {
+    padding-left: 4rem;
+  }
 
   &:before {
     content: '';
     position: absolute;
-    left: -(calc($avatarWidth / 2));
+    left: -(calc($avatarWidthXs / 2));
     top: 0;
     bottom: 0;
     border-left: 0.2rem dotted #000;
+
+    @media (min-width: $screenMd) {
+      left: -(calc($avatarWidth / 2));
+    }
   }
 }
 

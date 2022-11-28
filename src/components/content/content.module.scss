@@ -15,7 +15,10 @@
 
 .noMargin {
   margin-top: 0;
-  padding-top: $gutterWidth;
+
+  @media (min-width: $screenMd) {
+    padding-top: $gutterWidth;
+  }
 }
 
 .contentHole {

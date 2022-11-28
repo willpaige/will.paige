@@ -14,7 +14,7 @@ function App(props) {
     <Theme theme={theme}>
       <Wrapper>
         <ThemeSwitch />
-        {/*<Navigation activePage={activePage} />*/}
+        <Navigation activePage={activePage} />
         <main>
           {children}
         </main>
