@@ -2,13 +2,16 @@
 
 .col {
   flex: 1;
-} 
+}
 
 .extra-small {
   padding-left: $gridMarginExtraSmall;
   padding-right: $gridMarginExtraSmall;
-}
 
+  @media (max-width: $screenMd) {
+    margin-bottom: $gridMarginExtraSmall * 2;
+  }
+}
 
 .small {
   padding-left: $gridMarginSmall;

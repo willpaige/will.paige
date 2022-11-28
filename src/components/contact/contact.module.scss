@@ -3,15 +3,20 @@
 .contact {
   display: flex;
   align-items: center;
+  margin-bottom: $gridMarginSmall;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
-  margin-right: 2em;
+  margin-right: 1.2em;
   font-family: $sansSerif;
   font-size: 1.4rem;
   margin-top: 0.1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .contactIcon {
@@ -32,4 +37,12 @@
 
 .contactSmall {
   margin-right: 1rem;
+}
+
+.iconCentered {
+  text-align: center;
+
+  @media (min-width: $screenMd) {
+    text-align: left;
+  }
 }

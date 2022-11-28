@@ -1,10 +1,13 @@
 @import "../../scss/variables";
 
 .hero {
-  padding-left: $navigationColumnWidth;
-  padding-right: $gutterWidth;
   position: relative;
-  display: flex;
   z-index: 1;
-  max-height: 54.4rem;
+
+  @media (min-width: $screenMd) {
+    padding-left: $navigationColumnWidth;
+    padding-right: $gutterWidth;
+    max-height: 54.4rem;
+    display: flex;
+  }
 }

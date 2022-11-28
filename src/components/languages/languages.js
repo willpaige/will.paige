@@ -6,8 +6,8 @@ import { GridSize } from '../../constants/grid';
 
 function Languages() {
   return (
-    <Row size={GridSize.EXTRA_SMALL}>
-      <Col size={GridSize.EXTRA_SMALL}>
+    <Row size={GridSize.EXTRA_SMALL} wrapXs>
+      <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
           javaScript = [
           <br/>&nbsp; react,
@@ -21,7 +21,7 @@ function Languages() {
           ];
         </div>
       </Col>
-      <Col size={GridSize.EXTRA_SMALL}>
+      <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
           css:
           <br/>&nbsp; sass,
@@ -30,7 +30,7 @@ function Languages() {
           <br/>
         </div>
       </Col>
-      <Col size={GridSize.EXTRA_SMALL}>
+      <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
           html = [
           <br/>&nbsp; html5,
@@ -40,7 +40,7 @@ function Languages() {
           ];<br/>
         </div>
       </Col>
-      <Col size={GridSize.EXTRA_SMALL}>
+      <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
           php => array(
           <br/>&nbsp; wordPress,

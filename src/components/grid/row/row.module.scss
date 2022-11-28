@@ -4,6 +4,13 @@
   justify-content: space-between;
 }
 
+.wrapMobile {
+  @media (max-width: $screenMdMax) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .extra-small {
   margin-left: -$gridMarginExtraSmall;
   margin-right: -$gridMarginExtraSmall;

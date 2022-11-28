@@ -1,11 +1,16 @@
 @import "../../scss/variables";
 
 .content {
-  padding: ($gutterWidth + $gutterMargin) $gutterWidth $gutterWidth $navigationColumnWidth;
-  margin-top: -$gutterWidth;
-  border-radius: 0 0 $contentBorderRadius 0;
+  padding: $gutterMarginXs;
   transition: background-color ease-in-out $themeAnimationSpeed;
   position: relative;
+  overflow: hidden;
+
+  @media (min-width: $screenMd) {
+    margin-top: -$gutterWidth;
+    padding: ($gutterWidth + $gutterMargin) $gutterWidth $gutterWidth $navigationColumnWidth;
+    border-radius: 0 0 $contentBorderRadius 0;
+  }
 }
 
 .noMargin {
@@ -14,14 +19,20 @@
 }
 
 .contentHole {
-  position: absolute;
-  bottom: 10rem;
-  left: 10rem;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 10rem;
-  background-color: #fff;
-  overflow: hidden;
+  display: none;
+
+  @media (min-width: $screenMd) {
+    display: block;
+    position: absolute;
+    bottom: 10rem;
+    left: 10rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10rem;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+  }
 }
 
 .animateHole {

@@ -8,3 +8,8 @@
   border-top: $contentborder;
 }
 
+.colXs {
+  @media (max-width: $screenSmMax) {
+    margin-top: $gridMarginSmall;
+  }
+}

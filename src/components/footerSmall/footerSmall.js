@@ -12,9 +12,9 @@ function FooterSmall() {
   const footerClass = classnames(footerRow, footerSmall);
 
   return (
-    <Row className={footerClass} size={GridSize.SMALL}>
+    <Row className={footerClass} size={GridSize.SMALL} wrapXs>
       <Col size={GridSize.SMALL}>
-        <Contact />
+        <Contact centered />
       </Col>
       <Col className={katieUx} size={GridSize.SMALL}>
         <Katie />

@@ -22,26 +22,26 @@ $old-lavender: rgba(129, 102, 122, 1);
 
 $greyLight: #000;
 
-/* SCSS Gradient */
-$gradient-top: linear-gradient(0deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-right: linear-gradient(90deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-bottom: linear-gradient(180deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-left: linear-gradient(270deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-top-right: linear-gradient(45deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-bottom-right: linear-gradient(135deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-top-left: linear-gradient(225deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-bottom-left: linear-gradient(315deg, #d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
-$gradient-radial: radial-gradient(#d1f0b1ff, #b6cb9eff, #92b4a7ff, #8c8a93ff, #81667aff);
+$screenXlg: 1201px;
+$screenLg: 1024px;
+$screenMdMax: $screenLg - 1;
+$screenMd: 769px;
+$screenSmMax: $screenMd - 1;
+$screenSm: 481px;
+$screenXs: $screenSm - 1;
+$screenXs: 320px;
 
 $gutterWidth: 10rem;
 $gutterMargin: calc($gutterWidth / 2);
+
+$gutterWidthXs: 5rem;
+$gutterMarginXs: calc($gutterWidthXs / 2);
 
 $gridMarginMedium: $gutterWidth;
 $gridMarginLarge: calc($gridMarginMedium * 2);
 $gridMarginExtraLarge: calc($gridMarginLarge * 2);
 $gridMarginSmall: calc($gridMarginMedium / 2);
 $gridMarginExtraSmall: 0.6rem;
-
 
 $navigationWidth: 20rem;
 $navigationColumnWidth: $navigationWidth + $gutterWidth + $gutterMargin;
@@ -55,3 +55,6 @@ $contentBorderRadius: 15rem;
 $heroTitleSize: 10rem;
 
 $contentborder: 1px dotted #000;
+
+
+

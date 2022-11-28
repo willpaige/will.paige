@@ -3,20 +3,27 @@
 $borderRadius: 10rem;
 
 .heroImage {
-  border-radius: 3rem $borderRadius 3rem 3rem;
-  overflow: hidden;
-  position: relative;
-  max-height: 100%;
+  @media (min-width: $screenMd) {
+    border-radius: 3rem $borderRadius 3rem 3rem;
+    max-height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
 }
 
 .heroText {
   text-transform: uppercase;
-  position: absolute;
-  top: 6rem;
-  left: 8rem;
-  color: #fff;
   font-weight: bold;
-  z-index: 1;
+  padding: 0 $gutterMarginXs;
+
+  @media (min-width: $screenMd) {
+    color: #fff;
+    position: absolute;
+    top: 6rem;
+    left: 8rem;
+    z-index: 1;
+    padding: 0;
+  }
 }
 
 .heroTitle {

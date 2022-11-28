@@ -7,10 +7,10 @@ import Col from '../grid/col/col';
 import Title from '../title/title';
 import { GridSize } from '../../constants/grid';
 import { codeNoMarginLeft, codeTag } from '../code/code.module.scss';
-import { content, footerRow } from './footer.module.scss';
+import { content, footerRow, colXs } from './footer.module.scss';
 import FooterSmall from '../footerSmall/footerSmall';
 import CurrentEmployment from '../currentEmployment/currentEmployment';
-import Languages from "../languages/languages";
+import Languages from '../languages/languages';
 
 function Footer(props) {
   const { showCurrentEmployment, showLanguages, showWebsite } = props;
@@ -28,7 +28,7 @@ function Footer(props) {
           </Col>
         </Row>
       )}
-      <Row className={footerRow} size={GridSize.SMALL}>
+      <Row className={footerRow} size={GridSize.SMALL} wrapXs>
         {showCurrentEmployment && (
           <Col size={GridSize.SMALL}>
             <div className={content}>
@@ -38,7 +38,7 @@ function Footer(props) {
           </Col>
         )}
         {showWebsite && (
-          <Col size={GridSize.SMALL}>
+          <Col className={colXs} size={GridSize.SMALL}>
             <div className={content}>
               <Title type="h2">This Website</Title>
               <p>
