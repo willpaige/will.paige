@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { StaticImage } from 'gatsby-plugin-image';
 import {
-  content, teaGreen, laurelGreen, cambridgeBlue, taupeGray, oldLavender, noMargin
+  cambridgeBlue,
+  content,
+  contentHole,
+  laurelGreen,
+  noMargin,
+  oldLavender,
+  taupeGray,
+  teaGreen,
+  animateHole,
+  isActive,
 } from './content.module.scss';
 import { themeMap } from '../../constants/theme';
 import { getActiveTheme } from '../../state/ui/ui-selectors';
@@ -17,15 +27,27 @@ const contentThemes = {
 };
 
 function Content(props) {
-  const { className, activeTheme, children, noHero } = props;
+  const {
+    className, activeTheme, children, noHero,
+  } = props;
+  const [hiCat, showCat] = useState(0);
 
   const contentClassName = classNames(content, className, contentThemes[activeTheme], {
     [noMargin]: noHero,
   });
 
+  const animateHoleClass = classNames(animateHole, {
+    [isActive]: hiCat || '',
+  });
+
   return (
     <div className={contentClassName}>
       {children}
+      <div className={contentHole} onMouseEnter={() => showCat(true)} onMouseLeave={() => showCat(false)}>
+        <div className={animateHoleClass}>
+          <StaticImage src="../../images/kitty_cat.png" alt="Cat hiding" />
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,10 +2,10 @@ import * as React from 'react';
 import App from '../components/app/app';
 import Content from '../components/content/content';
 import { themeMap } from '../constants/theme';
-import { PAGES } from "../constants/pages";
+import { PAGES } from '../constants/pages';
 import Footer from '../components/footer/footer';
-import Timeline from "../components/timeline/timeline";
-import HeroText from "../components/hero/heroText/heroText";
+import Timeline from '../components/timeline/timeline';
+import HeroText from '../components/hero/heroText/heroText';
 
 const content = [
   {
@@ -35,7 +35,7 @@ function AboutPage() {
       <Content noHero>
         <HeroText title="Education" />
         <Timeline content={content} />
-        <Footer />
+        <Footer showLanguages={false} showCurrentEmployment={false} />
       </Content>
     </App>
   );

@@ -2,6 +2,11 @@
 
 .aboutRow {
   margin-top: $gridMarginSmall;
+  border-top: 1px dotted #000;
+}
+
+.firstRow {
+  border-top: none;
 }
 
 .aboutList {

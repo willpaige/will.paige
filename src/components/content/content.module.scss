@@ -6,22 +6,33 @@
   border-radius: 0 0 $contentBorderRadius 0;
   transition: background-color ease-in-out $themeAnimationSpeed;
   position: relative;
-
-  &:before {
-    position: absolute;
-    content: '';
-    bottom: 10rem;
-    left: 10rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 10rem;
-    background-color: #fff;
-  }
 }
 
 .noMargin {
   margin-top: 0;
   padding-top: $gutterWidth;
+}
+
+.contentHole {
+  position: absolute;
+  bottom: 10rem;
+  left: 10rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.animateHole {
+  position: absolute;
+  top: 100%;
+  transition: top 700ms ease-in-out;
+}
+
+.isActive {
+  top: 0;
+  transition: linear 5000ms top;
 }
 
 .tea-green { background-color: $tea-green; }

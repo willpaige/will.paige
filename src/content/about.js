@@ -25,7 +25,7 @@ export const about = {
       content:
         <span>
           Build{' '}
-          <strong>performant, cross-browser, device-friendly, responsive and accesible</strong> websites
+          <strong>performant, cross-browser, device-friendly, responsive and accessible</strong> websites
         </span>,
     }, {
       icon: AiOutlineTablet,
@@ -38,66 +38,77 @@ export const about = {
       icon: AiOutlineCode,
       content:
         <span>
-          Write lean, clean scalable code in{' '}
+          Write lean, clean, scalable code in{' '}
           <b>JavaScript, PHP, CSS and HTML</b>
         </span>,
     }, {
       icon: AiOutlineBgColors,
-      content: "Create web and device friendly animations in CSS, SVGs and JavaScript",
+      content:
+        <span>Create web and device-friendly <b>animations</b> in CSS, SVGs and JavaScript</span>,
     }, {
       icon: AiOutlineApartment,
-      content: "Design bespoke content architecture to be delivered by either Contenful or WordPress content management systems",
+      content:
+        <span>Design bespoke <b>content architecture</b> to be delivered by either Contenful or WordPress content management systems</span>,
     }, {
       icon: AiOutlineBug,
-      content: "Write efficient unit tests to validate code and prevent potential bugs",
+      content:
+        <span>Write efficient <b>unit tests</b> to validate code and prevent potential bugs</span>,
     }, {
       icon: AiOutlineFile,
-      content: "Write detailed product briefs that clearly identify business impact, risk, success and project scope",
+      content:
+        <span>Write detailed <b>product briefs</b> that identify business impact, risk, success and project scope</span>,
     }, {
       icon: AiOutlineGithub,
-      content: "Write custom build scripts using Webpack and GitHub actions",
+      content:
+        <span>Write custom <b>build scripts</b> using Webpack and GitHub actions</span>,
     }, {
       icon: AiOutlineNodeIndex,
-      content: "Successfully run product releases",
+      content:
+        <span>Successfully <b>run product releases</b></span>,
     }, {
       icon: AiOutlineTeam,
-      content: "Work in agile teams practising SCRUM product management",
+      content:
+        <span>Work in <b>agile</b> teams practising <b>SCRUM</b> product management</span>,
     }, {
       icon: AiOutlineBook,
-      content: "Generate legible project tickets and user journeys"
+      content:
+        <span>Generate legible <b>project tickets</b> and <b>user journeys</b></span>
     }, {
       icon: AiOutlineSortAscending,
-      content: "Conform to company coding standards",
+      content:
+        <span>Conform to <b>coding standards</b></span>,
     }, {
       icon: AiOutlineAmazon,
-      content: "Monitor and configure, applications and services in AWS Cloud Computing",
+      content:
+        <span>Monitor and configure applications and services in <b>AWS Cloud Computing</b></span>,
     }, {
       icon: AiOutlineApi,
-      content: "Access and program alongside bespoke api services"
+      content: <span>Design and build <b>bespoke API services</b> in JavaScript and PHP</span>,
     }, {
       icon: AiOutlineBgColors,
-      content: "Design clean user friendly websites and interfaces",
+      content:
+        <span><b>Design</b> clean user-friendly websites and interfaces</span>,
     }, {
       icon: AiOutlineCheck,
-      content: "Analyse website SEO and create succesful strategies to improve search engine positioning"
+      content: <span>Analyse <b>website SEO</b> and create successful strategies to improve search engine positioning</span>,
     }, {
       icon: AiOutlineEdit,
-      content: "Branding and print design",
+      content: <span><b>Branding</b> and <b>print</b> design</span>,
     },
   ],
   KNOWLEDGE_OF: [
     {
       icon: AiOutlineDashboard,
-      content: "Front End Website Performance including critical CSS and the critical path",
+      content: "Front End Website Performance, including critical CSS and the critical path",
     }, {
       icon: AiOutlineArrowsAlt,
       content: "Responsive Web Design",
     }, {
       icon: AiOutlineGithub,
-      content: "Github Actions",
+      content: "GitHub Actions",
     }, {
       icon: AiOutlineGoogle,
-      content: 'Google tools and metrics including analytics, ads and site performance'
+      content: 'Google tools and metrics, including analytics, ads and site performance'
     }, {
       icon: AiOutlineBranches,
       content: "Git hooks and branching strategies",
@@ -112,16 +123,16 @@ export const about = {
       content: 'Client and serverside A/B (CRO) Testing',
     }, {
       icon: AiOutlineAmazon,
-      content: "AWS Cloud Computing [CDK, S3, Cloudwatch, Cloudfront, X-ray, Elastic Container Service, App Config]",
+      content: "AWS Cloud Computing, including CDK, S3, Cloudwatch, Cloudfront, X-ray, Elastic Container Service and App Config",
     }, {
       icon: AiOutlinePoundCircle,
-      content: "Finance and banking related compliance",
+      content: "Finance and banking-related compliance",
     }, {
       icon: AiOutlineTool,
-      content: "Atlassian products including Jira and Confluence",
+      content: "Atlassian products, including Jira and Confluence",
     }, {
       icon: AiOutlineBgColors,
-      content: "Adobe products including Photoshop, Illustrator and Indesign"
+      content: "Adobe products, including Photoshop, Illustrator and Indesign"
     },
   ],
 };
