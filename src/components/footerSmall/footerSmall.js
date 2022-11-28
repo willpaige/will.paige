@@ -6,7 +6,7 @@ import Col from '../grid/col/col';
 import Contact from '../contact/contact';
 import Katie from '../katie/katie';
 import { footerRow } from '../footer/footer.module.scss';
-import { footerSmall } from './footerSmall.module.scss';
+import { footerSmall, katieUx } from './footerSmall.module.scss';
 
 function FooterSmall() {
   const footerClass = classnames(footerRow, footerSmall);
@@ -16,7 +16,7 @@ function FooterSmall() {
       <Col size={GridSize.SMALL}>
         <Contact />
       </Col>
-      <Col size={GridSize.SMALL}>
+      <Col className={katieUx} size={GridSize.SMALL}>
         <Katie />
       </Col>
     </Row>

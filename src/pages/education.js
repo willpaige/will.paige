@@ -31,7 +31,7 @@ const content = [
 
 function AboutPage() {
   return (
-    <App theme={themeMap.TAUPE_GRAY} activePage={PAGES.EDUCATION}>
+    <App theme={themeMap.OLD_LAVENDER} activePage={PAGES.EDUCATION}>
       <Content noHero>
         <HeroText title="Education" />
         <Timeline content={content} />

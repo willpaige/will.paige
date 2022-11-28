@@ -10,7 +10,7 @@ export const themeMap = {
   TEA_GREEN: 'tea-green',
   LAUREL_GREEN: 'laurel-green',
   CAMBRIDGE_BLUE: 'cambridge-blue',
-  TAUPE_GRAY: 'taupe-gray',
+  // TAUPE_GRAY: 'taupe-gray',
   OLD_LAVENDER: 'old-lavender',
 };
 

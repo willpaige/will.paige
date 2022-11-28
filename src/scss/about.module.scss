@@ -1,0 +1,21 @@
+@import "./variables";
+
+.aboutRow {
+  margin-top: $gridMarginSmall;
+}
+
+.aboutList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.aboutListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.aboutListIcon {
+  font-size: 2.2rem;
+  margin-right: 2rem;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   contact, contactItem, contactIcon, contactLink, contactSmall
 } from './contact.module.scss';
-import { contactLinks } from '../../constants/contact';
+import { contactLinks } from '../../content/contact';
 import classnames from "classnames";
 
 function Contact(props) {

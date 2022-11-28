@@ -97,6 +97,7 @@ build.zip
 .vscode
 .cache
 .cache/*
+.cache/*/*
 bin/
 !deploy/bin/
 public/*

@@ -10,6 +10,7 @@ import { company, jobDescription, jobStart, jobTitle, logoCol, footerRow, conten
 import Katie from "../katie/katie";
 import Contact from "../contact/contact";
 import FooterSmall from "../footerSmall/footerSmall";
+import {Link} from "gatsby";
 
 function Footer() {
   return (
@@ -81,6 +82,9 @@ function Footer() {
               {' '}
               is an open source framework with performance, scalability and security built in.
               You'll notice that when navigating this site, pages will load instantaneously. Just how it should be.
+            </p>
+            <p>
+              Don't believe me? Check out these lighthouse performance reports <Link to={'/performance/'}>here</Link>
             </p>
             <p>
               As well as GatsbyJs this website uses

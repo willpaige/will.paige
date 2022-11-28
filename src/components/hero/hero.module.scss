@@ -5,4 +5,6 @@
   padding-right: $gutterWidth;
   position: relative;
   display: flex;
+  z-index: 1;
+  max-height: 54.4rem;
 }

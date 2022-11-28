@@ -1,9 +1,12 @@
 @import "../../../scss/variables";
 
+$borderRadius: 10rem;
+
 .heroImage {
-  border-radius: 3rem 10rem 3rem 3rem;
+  border-radius: 3rem $borderRadius 3rem 3rem;
   overflow: hidden;
   position: relative;
+  max-height: 100%;
 }
 
 .heroText {
