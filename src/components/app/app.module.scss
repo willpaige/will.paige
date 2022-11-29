@@ -1,0 +1,17 @@
+@import "../../scss/variables";
+
+.trayUnderlay {
+  z-index: $trayUnderlayZindex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0);
+  transition: ease-in-out $trayAnimationSpeed background-color;
+}
+.trayUnderlayIsActive {
+  pointer-events: initial;
+  background-color: rgba(0, 0, 0, 0.9);
+}

@@ -1,3 +1,4 @@
+// Palette: https://coolors.co/d1f0b1-b6cb9e-92b4a7-8c8a93-81667a
 
 /* SCSS HEX */
 $tea-green: #d1f0b1ff;
@@ -47,14 +48,19 @@ $navigationWidth: 20rem;
 $navigationColumnWidth: $navigationWidth + $gutterWidth + $gutterMargin;
 
 $themeAnimationSpeed: 200ms;
+$trayAnimationSpeed: 250ms;
 
 $sansSerif: 'Source Sans Pro', sans-serif;
 
+$borderRadiusImage: 3rem;
 $contentBorderRadius: 15rem;
 
 $heroTitleSize: 10rem;
 
 $contentborder: 1px dotted #000;
 
+$navigationZindex: 9999;
+$trayUnderlayZindex: $navigationZindex - 1;
+$mobileMenuButton: $navigationZindex + 1;
 
-
+$mobileNavigationBackground: #fff;

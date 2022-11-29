@@ -7,6 +7,7 @@
 
 .firstRow {
   border-top: none;
+  margin-top: 0;
 }
 
 .aboutList {
@@ -24,4 +25,19 @@
   font-size: 2.2rem;
   margin-right: 2rem;
   padding-top: 0.6rem;
+}
+
+.aboutImageContainer {
+  margin-top: $gridMarginSmall;
+}
+
+.aboutImage {
+  //border-radius: $borderRadiusImage;
+  //border: 0.2rem solid #000;
+}
+
+.aboutImageCaption {
+  text-align: right;
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
 }

@@ -1,10 +1,12 @@
-import { AiOutlineMail, AiOutlineGithub, AiOutlineLinkedin, AiOutlineCodepenCircle } from 'react-icons/ai';
+import {
+  AiTwotoneMail, AiOutlineGithub, AiFillLinkedin, AiOutlineCodepenCircle, AiFillTwitterCircle
+} from 'react-icons/ai';
 
 export const contactLinks = [
   {
     url: 'mailto:willpaige86@gmail.com',
     title: 'Email',
-    icon: AiOutlineMail,
+    icon: AiTwotoneMail,
   }, {
     url: 'https://github.com/willpaige',
     title: 'GitHub',
@@ -16,6 +18,10 @@ export const contactLinks = [
   }, {
     url: 'https://www.linkedin.com/in/will-paige/',
     title: 'LinkedIn',
-    icon: AiOutlineLinkedin,
+    icon: AiFillLinkedin,
+  }, {
+    url: 'https://twitter.com/_willPaige',
+    title: 'Twitter',
+    icon: AiFillTwitterCircle,
   },
 ];

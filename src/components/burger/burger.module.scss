@@ -1,0 +1,88 @@
+@import "../../scss/variables";
+
+$burgerBorder: 0.2rem;
+$burgerBarPosition: -0.6rem;
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $mobileNavigationBackground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: $mobileMenuButton;
+  padding: $gutterMarginXs;
+
+  @media (min-width: $screenMd) {
+    display: none;
+  }
+}
+.menuIsActive {
+  border-top: $contentborder;
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.burgerIcon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: $burgerBorder;
+  background: #000;
+  transition: all .2s ease-out;
+  vertical-align: middle;
+
+  &:before,
+  &:after {
+    content: '';
+    width: 100%;
+    height: $burgerBorder;
+    background: #000;
+    position: absolute;
+    left: 0;
+    -webkit-transition: all $trayAnimationSpeed ease-out;
+    -o-transition: all $trayAnimationSpeed ease-out;
+    transition: all $trayAnimationSpeed ease-out;
+  }
+
+  &:before {
+    top: $burgerBarPosition;
+  }
+
+  &:after {
+    bottom: $burgerBarPosition;
+  }
+}
+
+.burgerIsActive {
+  i {
+    background: transparent;
+  }
+  i:before {
+    top: 0;
+    transform: rotateZ(45deg);
+  }
+
+  i:after {
+    bottom: 0;
+    transform: rotateZ(-45deg);
+  }
+}
+
+.burgerTitle {
+  color: #000;
+  font-weight: bold;
+  margin-right: 1rem;
+  letter-spacing: 0.4rem;
+}

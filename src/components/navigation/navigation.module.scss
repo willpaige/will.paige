@@ -4,12 +4,33 @@
   width: $navigationWidth;
   display: flex;
   flex-direction: column;
-  margin: $gutterWidth 0 0 $gutterWidth;
   position: fixed;
-  z-index: 9999;
+  z-index: $navigationZindex;
+
+  @media (max-width: $screenSmMax) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $mobileNavigationBackground;
+    padding: $gutterMarginXs $gutterMarginXs (7.1rem + $gutterMarginXs) $gutterMarginXs;
+    transform: translateY(100%);
+    transition: ease-in-out transform $trayAnimationSpeed;
+  }
+
+  @media (min-width: $screenMd) {
+    margin: $gutterWidth 0 0 $gutterWidth;
+  }
+}
+
+.navigationIsActive {
+  @media (max-width: $screenSmMax) {
+    transform: translateY(0%);
+  }
 }
 
 .link {
+  cursor: pointer;
   display: block;
   margin: 1.5rem 0;
   font-size: 1.8rem;
@@ -30,4 +51,25 @@
 
 .navigationContact {
   margin-top: 3rem;
+
+  @media (max-width: $screenSmMax) {
+    order: 0;
+    margin-top: 0;
+    margin-bottom: $gutterMarginXs !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // icon
+  span {
+    @media (max-width: $screenSmMax) {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+.navigationItems {
+  @media (max-width: $screenSmMax) {
+    order: 1;
+  }
 }

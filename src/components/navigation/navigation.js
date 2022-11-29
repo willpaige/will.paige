@@ -1,53 +1,63 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { PAGES_PATHS } from '../../constants/pages';
+import Contact from '../contact/contact';
+import Burger from '../burger/burger';
 import {
-  navigation, link, linkIsActive, navigationContact
+  link, linkIsActive, navigation, navigationContact, navigationItems, navigationIsActive
 } from './navigation.module.scss';
-import { PAGES } from '../../constants/pages';
-import Contact from "../contact/contact";
-
-const links = {
-  [PAGES.HOME]: {
-    title: 'Home',
-    url: '/',
-  },
-  [PAGES.ABOUT]: {
-    title: 'About',
-    url: '/about/',
-  },
-  [PAGES.WORK]: {
-    title: 'Work',
-    url: '/work/',
-  },
-  [PAGES.EDUCATION]: {
-    title: 'Education',
-    url: '/education/',
-  },
-};
+import { isTrayActive } from '../../state/ui/ui-selectors';
+import classnames from "classnames";
+import {toggleTray} from "../../state/ui/ui-action";
 
 function Navigation(props) {
-  const { activePage } = props;
+  const { activePage, trayIsActive, dispatch } = props;
+  const navigationClass = classnames(navigation, {
+    [navigationIsActive]: trayIsActive,
+  });
+  const handleNavigation = (url) => {
+    dispatch(toggleTray(false));
+    navigate(url);
+  };
 
   return (
-    <div className={navigation}>
-      {Object.keys(links).map((key) => {
-        const content = links[key];
-        const isActive = activePage === key;
-        const linkClass = classNames(link, isActive ? linkIsActive : '');
+    <>
+      <div className={navigationClass}>
+        <div className={navigationItems}>
+          {Object.keys(PAGES_PATHS).map((key) => {
+            const content = PAGES_PATHS[key];
+            const isActive = activePage === key;
+            const linkClass = classNames(link, isActive ? linkIsActive : '');
 
-        return (
-          <Link className={linkClass} title={content.title} to={content.url} key={content.url}>{content.title}</Link>
-        );
-      })}
-      <Contact className={navigationContact} small />
-    </div>
+            return (
+              <a
+                role="button"
+                className={linkClass}
+                title={content.title}
+                key={content.url}
+                onClick={() => handleNavigation(content.url)}
+              >
+                {content.title}
+              </a>
+            );
+          })}
+        </div>
+        <Contact className={navigationContact} small />
+      </div>
+      <Burger />
+    </>
   );
 }
 
 Navigation.propTypes = {
   activePage: PropTypes.string.isRequired,
+  trayIsActive: PropTypes.bool.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Navigation;
+export default connect(state => ({
+  trayIsActive: isTrayActive(state),
+}), null)(Navigation);

@@ -1,21 +1,22 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { SET_THEME } from './ui-action';
+import { TOGGLE_TRAY, SET_THEME } from './ui-action';
 import { THEME_DEFAULT } from '../../constants/theme';
 
 export const initialUiState = {
-  // tray: false,
+  tray: false,
   theme: THEME_DEFAULT,
 };
 
-// const toggleTray = (state = initialUiState, action) => {
-//   switch (action.type) {
-//     case TOGGLE_TRAY:
-//       return { ...state, tray: action.isVisible }
-//
-//     default:
-//       return state
-//   }
-// };
+// eslint-disable-next-line default-param-last
+const toggleTray = (state = initialUiState, action) => {
+  switch (action.type) {
+    case TOGGLE_TRAY:
+      return { ...state, tray: action.isVisible };
+
+    default:
+      return state;
+  }
+};
 
 // eslint-disable-next-line default-param-last
 const setTheme = (state = initialUiState, action) => {
@@ -29,6 +30,6 @@ const setTheme = (state = initialUiState, action) => {
 };
 
 export const uiReducer = createReducer(initialUiState, {
-  // [TOGGLE_TRAY]: toggleTray,
+  [TOGGLE_TRAY]: toggleTray,
   [SET_THEME]: setTheme,
 });

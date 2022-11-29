@@ -10,13 +10,15 @@ export const about = {
         South Devon, UK.
       </p>
       <p>
-       I'm primarily focused on front-end web and app development and have progressed my career from a product design and engineering education at Bournemouth University to a senior software engineer at NatWest. My career trajectory has given me a unique skill set that allows me to have a rich UI/UX centered approach to programming and development.
+        I'm primarily focused on front-end web and app development and have progressed my career from a product design and engineering education at Bournemouth University to a senior software engineer at NatWest. My career trajectory has given me a unique skill set that allows me to have a rich UI/UX centered approach to programming and development.
       </p>
-      <p>For a detailed overview on my background please see:</p>
-      <ul>
-        <li><Link to={'/work/'}>Work</Link></li>
-        <li><Link to={'/education/'}>Education</Link></li>
-      </ul>
+      <p>
+        Interested in learning more about my history? please navigate to my{' '}
+        <Link to={'/work/'}>work</Link>{' '}
+        and{' '}
+        <Link to={'/work/'}>education</Link>{' '}
+        pages.
+      </p>
     </>
   ),
   WHAT_CAN_I_DO: [
