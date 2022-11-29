@@ -19,6 +19,10 @@
   @media (min-width: $screenMd) {
     padding-top: $gutterWidth;
   }
+
+  @media (max-width: $screenSmMax) {
+    padding-top: 0;
+  }
 }
 
 .contentHole {

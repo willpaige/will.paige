@@ -3,6 +3,10 @@
 .themeSwitch {
   position: absolute;
   top: 0;
+
+  @media (max-width: $screenSmMax) {
+    display: none;
+  }
 }
 
 .button {

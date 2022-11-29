@@ -6,15 +6,17 @@ import Col from '../grid/col/col';
 import Contact from '../contact/contact';
 import Katie from '../katie/katie';
 import { footerRow } from '../footer/footer.module.scss';
-import { footerSmall, katieUx } from './footerSmall.module.scss';
+import { footerSmall, katieUx, contact } from './footerSmall.module.scss';
+import PropTypes from "prop-types";
 
-function FooterSmall() {
-  const footerClass = classnames(footerRow, footerSmall);
+function FooterSmall(props) {
+  const {className} = props;
+  const footerClass = classnames(className, footerRow, footerSmall);
 
   return (
     <Row className={footerClass} size={GridSize.EXTRA_SMALL} wrapXs>
       <Col size={GridSize.EXTRA_SMALL}>
-        <Contact centered />
+        <Contact className={contact} centered />
       </Col>
       <Col className={katieUx} size={GridSize.EXTRA_SMALL}>
         <Katie />
@@ -22,5 +24,13 @@ function FooterSmall() {
     </Row>
   );
 }
+
+FooterSmall.defaultProps = {
+  className: '',
+};
+
+FooterSmall.propTypes = {
+  className: PropTypes.string
+};
 
 export default FooterSmall;

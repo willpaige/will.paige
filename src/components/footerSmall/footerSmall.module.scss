@@ -2,16 +2,33 @@
 
 .footerSmall {
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-top: $gridMarginSmall;
 
   @media (max-width: $screenSmMax) {
     margin-top: $gutterWidthXs;
-    padding: $gutterWidthXs 0;
+    margin-left: -$gutterMarginXs;
+    margin-right: -$gutterMarginXs;
+    padding: $gutterWidthXs  $gutterMarginXs 7.5rem  $gutterMarginXs;
     background-color: #fff;
   }
 }
 
 .katieUx {
-  margin-top: 0.2rem;
+  min-width: 100%;
+
+  @media (min-width: $screenMd) {
+    min-width: 40rem;
+  }
+
+  @media (max-width: $screenSmMax) {
+    margin-bottom: 0;
+    margin-top: $gutterMarginXs;
+  }
+}
+
+.contact {
+  @media (max-width: $screenMdMax) {
+    flex-wrap: wrap;
+  }
 }

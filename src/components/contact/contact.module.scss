@@ -3,7 +3,8 @@
 .contact {
   display: flex;
   align-items: center;
-  margin-bottom: $gridMarginSmall;
+  flex-wrap: wrap;
+  //margin-bottom: $gridMarginSmall;
 }
 
 .contactItem {
@@ -20,8 +21,8 @@
 }
 
 .contactIcon {
-  margin-right: 0.4rem;
-  top: 0.5rem;
+  margin-right: 0.6rem;
+  top: 0.3rem;
   font-size: 2rem;
   position: relative;
 }
@@ -29,6 +30,8 @@
 .contactLink {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  display: flex;
+  align-items: center;
 
   &:hover {
     text-decoration: none;

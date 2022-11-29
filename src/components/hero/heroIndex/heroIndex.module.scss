@@ -1,19 +1,22 @@
 @import "../../../scss/variables";
 
 .heroImage {
+  overflow: hidden;
+  height: 36rem;
+
   @media (min-width: $screenMd) {
     width: 55%;
+    height: auto;
     max-width: 48rem;
     border-radius: 3rem 10rem 3rem 3rem;
     margin-left: auto;
     max-height: 100%;
-    overflow: hidden;
   }
 }
 
 .heroTitle {
   font-size: 2.2rem;
-  padding: 0 $gutterMarginXs;
+  padding: $gutterWidth $gutterMarginXs;
   margin-top: 0;
 
   @media (min-width: $screenMd) {

@@ -26,5 +26,12 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
-    }],
+    },
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     icon: 'src/assets/images/favicon.png',
+    //   },
+    // },
+  ],
 };

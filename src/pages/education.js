@@ -6,6 +6,7 @@ import { PAGES } from '../constants/pages';
 import Footer from '../components/footer/footer';
 import Timeline from '../components/timeline/timeline';
 import HeroText from '../components/hero/heroText/heroText';
+import { heroTitle } from '../scss/education.module.scss';
 
 const content = [
   {
@@ -33,7 +34,7 @@ function AboutPage() {
   return (
     <App theme={themeMap.OLD_LAVENDER} activePage={PAGES.EDUCATION}>
       <Content noHero>
-        <HeroText title="Education" />
+        <HeroText className={heroTitle} title="Education" />
         <Timeline content={content} />
         <Footer showLanguages={false} showCurrentEmployment={false} />
       </Content>

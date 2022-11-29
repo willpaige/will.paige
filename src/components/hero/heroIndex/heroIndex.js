@@ -18,7 +18,6 @@ import {
   teaGreen,
   laurelGreen,
   cambridgeBlue,
-  taupeGray,
   oldLavender,
   heroSubText,
 } from './heroIndex.module.scss';
@@ -27,7 +26,7 @@ const contentThemes = {
   [themeMap.TEA_GREEN]: teaGreen,
   [themeMap.LAUREL_GREEN]: laurelGreen,
   [themeMap.CAMBRIDGE_BLUE]: cambridgeBlue,
-  [themeMap.TAUPE_GRAY]: taupeGray,
+  // [themeMap.TAUPE_GRAY]: taupeGray,
   [themeMap.OLD_LAVENDER]: oldLavender,
 };
 

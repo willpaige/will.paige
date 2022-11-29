@@ -2,8 +2,15 @@
 
 .heroTitle {
   margin-top: 0rem;
-  line-height: 1;
   font-size: $heroTitleSize;
+
+  @media (min-width: $screenMd) {
+    line-height: 1;
+  }
+
+  @media (max-width: $screenSmMax) {
+    margin-bottom: $gutterMarginXs;
+  }
 }
 
 .heroDot {
