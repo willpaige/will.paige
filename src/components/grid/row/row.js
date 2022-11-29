@@ -37,6 +37,7 @@ Row.defaultProps = {
   size: GridSize.MEDIUM,
   className: '',
   wrapXs: false,
+  mdXs: false,
 };
 
 Row.propTypes = {

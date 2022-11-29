@@ -14,6 +14,7 @@ import FooterSmall from '../components/footerSmall/footerSmall';
 import {
   aboutRow, aboutList, aboutListItem, aboutListIcon, firstRow, aboutImage, aboutImageCaption, aboutImageContainer
 } from '../scss/about.module.scss';
+import Grid from "../components/grid/grid/grid";
 
 const renderImage = (image, caption) => {
   return (
@@ -55,81 +56,85 @@ function AboutPage() {
 
   return (
     <App theme={themeMap.LAUREL_GREEN} activePage={PAGES.ABOUT}>
-      <HeroImage image={image} title="Hi.">
-        <StaticImage src="../images/will_paige_software_engineer_madeira.png" alt={image.alt} placeholder="blurred" />
-      </HeroImage>
+      <Grid>
+        <HeroImage image={image} title="Hi.">
+          <StaticImage src="../images/will_paige_software_engineer_madeira.png" alt={image.alt} placeholder="blurred" />
+        </HeroImage>
+      </Grid>
       <Content>
-        <div className={firstRowClass}>
-          <Title type="h2">
-            Who am I?
-          </Title>
-          {about.ABOUT_ME('36')}
-        </div>
+        <Grid>
+          <div className={firstRowClass}>
+            <Title type="h2">
+              Who am I?
+            </Title>
+            {about.ABOUT_ME('36')}
+          </div>
 
-        {renderImage(
-          <StaticImage
-            width={930}
-            className={aboutImage}
-            src="../images/will_paige_software_engineer_mtb.png"
-            alt="Will Paige software engineer mtb"
-            placeHolder="blurred"
-            loading="lazy"
-          />,
-          "A summer's evening biking somewhere on Dartmoor, Uk circa 2022",
-        )}
+          {renderImage(
+            <StaticImage
+              width={930}
+              className={aboutImage}
+              src="../images/will_paige_software_engineer_mtb.png"
+              alt="Will Paige software engineer mtb"
+              placeHolder="blurred"
+              loading="lazy"
+            />,
+            "A summer's evening biking somewhere on Dartmoor, Uk circa 2022",
+          )}
 
-        <div className={aboutRow}>
-          <Title type="h2">
-            What languages do I work with?
-          </Title>
-          <Languages />
-        </div>
+          <div className={aboutRow}>
+            <Title type="h2">
+              What languages do I work with?
+            </Title>
+            <Languages />
+          </div>
 
-        <div className={aboutRow}>
-          <Title type="h2">
-            What Can I do?
-          </Title>
-          {renderList(about.WHAT_CAN_I_DO)}
-        </div>
+          <div className={aboutRow}>
+            <Title type="h2">
+              What Can I do?
+            </Title>
+            {renderList(about.WHAT_CAN_I_DO)}
+          </div>
 
-        {renderImage(
-          <StaticImage
-            width={930}
-            className={aboutImage}
-            src="../images/will_paige_software_engineer_surfer.png"
-            alt="Will Paige software engineer surfing"
-            placeHolder="blurred"
-            loading="lazy"
-          />,
-          "A moody winters morning surfing on Bantham beach, Uk circa 2019",
-        )}
+          {renderImage(
+            <StaticImage
+              width={930}
+              className={aboutImage}
+              src="../images/will_paige_software_engineer_surfer.png"
+              alt="Will Paige software engineer surfing"
+              placeHolder="blurred"
+              loading="lazy"
+            />,
+            "A moody winters morning surfing on Bantham beach, Uk circa 2019",
+          )}
 
-        <div className={aboutRow}>
-          <Title type="h2">
-            What do I know?
-          </Title>
-          {renderList(about.KNOWLEDGE_OF)}
-        </div>
+          <div className={aboutRow}>
+            <Title type="h2">
+              What do I know?
+            </Title>
+            {renderList(about.KNOWLEDGE_OF)}
+          </div>
 
-        <div className={aboutRow}>
-          <Title type="h2">
-            Where am I working?
-          </Title>
-          <CurrentEmployment />
-        </div>
+          <div className={aboutRow}>
+            <Title type="h2">
+              Where am I working?
+            </Title>
+            <CurrentEmployment />
+          </div>
 
-        {renderImage(
-          <StaticImage
-            width={930}
-            className={aboutImage}
-            src="../images/will_paige_software_engineer_snowboard.png"
-            alt="Will Paige software engineer snowboard"
-            placeHolder="blurred"
-            loading="lazy"
-          />,
-          "A winter in Morzine, France circa 2012",
-        )}
-        <FooterSmall />
+          {renderImage(
+            <StaticImage
+              width={930}
+              className={aboutImage}
+              src="../images/will_paige_software_engineer_snowboard.png"
+              alt="Will Paige software engineer snowboard"
+              placeHolder="blurred"
+              loading="lazy"
+            />,
+            "A winter in Morzine, France circa 2012",
+          )}
+          <FooterSmall />
+        </Grid>
       </Content>
     </App>
   );

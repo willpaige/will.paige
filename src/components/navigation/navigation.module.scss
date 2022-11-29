@@ -1,17 +1,16 @@
 @import "../../scss/variables";
 
 .navigation {
-  width: $navigationWidth;
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: $navigationZindex;
+  width: 100%;
 
   @media (max-width: $screenSmMax) {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
     background-color: $mobileNavigationBackground;
     padding: $gutterMarginXs $gutterMarginXs (7.1rem + $gutterMarginXs) $gutterMarginXs;
     transform: translateY(100%);
@@ -19,10 +18,11 @@
   }
 
   @media (min-width: $screenMd) {
-    margin: $gutterWidthSm 0 0 $gutterWidthSm;
+    width: $navigationWidth;
+    margin: $gutterWidth 0 0 $gutterWidthSm;
   }
 
-  @media (min-width: $screenLg) {
+  @media (min-width: $screenXlg) {
     margin: $gutterWidth 0 0 $gutterWidth;
   }
 }

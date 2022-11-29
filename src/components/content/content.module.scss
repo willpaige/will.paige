@@ -1,19 +1,23 @@
 @import "../../scss/variables";
 
 .content {
-  padding: $gutterMarginXs;
+  padding-top: $gutterMarginXs;
   transition: background-color ease-in-out $themeAnimationSpeed;
   position: relative;
-  overflow: hidden;
 
   @media (min-width: $screenMd) {
-    padding: ($gutterWidthSm + $gutterMarginSm) $gutterWidthSm $gutterWidthSm $navigationColumnWidthSm;
+    padding-top: ($gutterWidthSm + $gutterMarginSm);
+    padding-bottom: $gutterWidthSm;
   }
 
   @media (min-width: $screenLg) {
     margin-top: -$gutterWidth;
-    padding: ($gutterWidth + $gutterMargin) $gutterWidth $gutterWidth $navigationColumnWidth;
+    padding-top: ($gutterWidth + $gutterMargin);
+  }
+
+  @media (min-width: $screenXlg) {
     border-radius: 0 0 $contentBorderRadius 0;
+    padding-bottom: $gutterWidth;
   }
 }
 
@@ -35,14 +39,22 @@
   @media (min-width: $screenMd) {
     display: block;
     position: absolute;
+    bottom: $gutterWidthSm;
+    left: $gutterWidthSm;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  @media (min-width: $screenXlg) {
     bottom: 10rem;
     left: 10rem;
     width: 10rem;
     height: 10rem;
     border-radius: 10rem;
-    background-color: #fff;
-    overflow: hidden;
-    cursor: pointer;
   }
 }
 

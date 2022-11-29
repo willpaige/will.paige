@@ -1,7 +1,7 @@
 @import "./variables";
 
 .contentContainer {
-  @media (min-width: $screenMd) {
+  @media (min-width: $screenXlg) {
    border-top-right-radius: $contentBorderRadius;
   }
 }

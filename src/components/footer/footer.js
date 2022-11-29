@@ -7,10 +7,11 @@ import Col from '../grid/col/col';
 import Title from '../title/title';
 import { GridSize } from '../../constants/grid';
 import { codeNoMarginLeft, codeTag } from '../code/code.module.scss';
-import { content, footerRow, colXs } from './footer.module.scss';
+import { content, footerRow, colXs, rowMdXs, colMdXs } from './footer.module.scss';
 import FooterSmall from '../footerSmall/footerSmall';
 import CurrentEmployment from '../currentEmployment/currentEmployment';
 import Languages from '../languages/languages';
+import classnames from "classnames";
 
 function Footer(props) {
   const { showCurrentEmployment, showLanguages, showWebsite } = props;
@@ -28,9 +29,9 @@ function Footer(props) {
           </Col>
         </Row>
       )}
-      <Row className={footerRow} size={GridSize.SMALL} wrapXs>
+      <Row className={classnames(footerRow, rowMdXs)} size={GridSize.SMALL}>
         {showCurrentEmployment && (
-          <Col size={GridSize.SMALL}>
+          <Col className={colMdXs} size={GridSize.SMALL}>
             <div className={content}>
               <Title type="h2">Current Employment</Title>
               <CurrentEmployment />
@@ -38,7 +39,7 @@ function Footer(props) {
           </Col>
         )}
         {showWebsite && (
-          <Col className={colXs} size={GridSize.SMALL}>
+          <Col className={classNames(colXs, colMdXs)} size={GridSize.SMALL}>
             <div className={content}>
               <Title type="h2">This Website</Title>
               <p>

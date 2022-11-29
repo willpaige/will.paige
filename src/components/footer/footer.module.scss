@@ -13,3 +13,17 @@
     margin-top: $gridMarginSmall;
   }
 }
+
+.rowMdXs {
+  @media (min-width: $screenMd) and (max-width: $screenLgMax) {
+    margin-left: -$gutterMarginSm;
+    margin-right: -$gutterMarginSm;
+  }
+}
+
+.colMdXs {
+  @media (min-width: $screenMd) and (max-width: $screenLgMax) {
+    padding-left: $gutterMarginSm;
+    padding-right: $gutterMarginSm;
+  }
+}

@@ -1,5 +1,10 @@
 @import "./variables";
 .heroTitle {
+  @media (max-width: $screenMdMax) {
+    font-size: 8rem;
+    line-height: 2.1;
+  }
+
   @media (max-width: $screenSmMax) {
     font-size: 6rem;
     line-height: 2.1;

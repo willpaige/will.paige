@@ -5,9 +5,14 @@
   z-index: 1;
 
   @media (min-width: $screenMd) {
-    padding-left: $navigationColumnWidth;
-    padding-right: $gutterWidth;
-    max-height: 54.4rem;
     display: flex;
+  }
+
+  @media (min-width: $screenMd) and (max-width: $screenLgMax) {
+    padding-top: $gutterWidthSm;
+  }
+
+  @media (min-width: $screenLg) {
+    max-height: 54.4rem;
   }
 }

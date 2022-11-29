@@ -24,6 +24,7 @@ $old-lavender: rgba(129, 102, 122, 1);
 $greyLight: #000;
 
 $screenXlg: 1201px;
+$screenLgMax: $screenXlg - 1;
 $screenLg: 1024px;
 $screenMdMax: $screenLg - 1;
 $screenMd: 769px;
@@ -38,7 +39,7 @@ $gutterMargin: calc($gutterWidth / 2);
 $gutterWidthXs: 5rem;
 $gutterMarginXs: calc($gutterWidthXs / 2);
 
-$gutterWidthSm: 7rem;
+$gutterWidthSm: 2.5rem;
 $gutterMarginSm: calc($gutterWidthSm / 2);
 
 $gridMarginMedium: $gutterWidth;

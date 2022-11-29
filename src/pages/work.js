@@ -7,21 +7,24 @@ import Timeline from '../components/timeline/timeline';
 import HeroText from '../components/hero/heroText/heroText';
 import { contentContainer } from '../scss/work.module.scss';
 import { WORK } from '../content/work';
-import Footer from "../components/footer/footer";
+import Footer from '../components/footer/footer';
+import Grid from '../components/grid/grid/grid';
 
-function AboutPage() {
+function WorkPage() {
   return (
     <App theme={themeMap.CAMBRIDGE_BLUE} activePage={PAGES.WORK}>
       <Content className={contentContainer} noHero>
-        <HeroText title="Work" />
-        <Timeline content={WORK} />
-        <Footer showLanguages={false} showCurrentEmployment={false} />
+        <Grid>
+          <HeroText title="Work" />
+          <Timeline content={WORK} />
+          <Footer showLanguages={false} showCurrentEmployment={false} />
+        </Grid>
       </Content>
     </App>
   );
 }
 
-export default AboutPage;
+export default WorkPage;
 
 export function Head() {
   return <title>Will Paige employment history</title>;

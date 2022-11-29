@@ -1,0 +1,19 @@
+@import "../../../scss/variables";
+
+.grid {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: $gutterMarginXs;
+  padding-right: $gutterMarginXs;
+
+  @media (min-width: $screenMd) {
+    padding-left: $navigationColumnWidthSm;
+    padding-right: $gutterWidthSm;
+  }
+
+  @media (min-width: $screenXlg) {
+    padding-left: $navigationColumnWidth;
+    padding-right: $gutterWidth;
+  }
+}

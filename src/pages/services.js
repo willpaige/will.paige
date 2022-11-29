@@ -5,7 +5,7 @@ import { themeMap } from '../constants/theme';
 import Footer from '../components/footer/footer';
 import {PAGES} from "../constants/pages";
 
-function AboutPage() {
+function ServicesPage() {
   return (
     <App theme={themeMap.OLD_LAVENDER} activePage={PAGES.SERVICES}>
       <Content>
@@ -16,7 +16,7 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default ServicesPage;
 
 export function Head() {
   return <title>Home Page</title>;

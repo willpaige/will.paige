@@ -16,8 +16,11 @@
 .small {
   padding-left: $gridMarginSmall;
   padding-right: $gridMarginSmall;
-}
 
+  @media (max-width: $screenMd) {
+    margin-bottom: $gridMarginExtraSmall * 2;
+  }
+}
 
 .medium {
   padding-left: $gridMarginMedium;

@@ -3,9 +3,14 @@
 .themeSwitch {
   position: absolute;
   top: 0;
+  z-index: 10;
 
   @media (max-width: $screenSmMax) {
     display: none;
+  }
+
+  @media (max-width: $screenLgMax) {
+    left: $gutterWidthSm;
   }
 }
 
