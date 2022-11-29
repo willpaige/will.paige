@@ -13,6 +13,10 @@ $avatarWidthXs: 4.4rem;
     height: 0.2rem;
     background-color: black;
     width: $avatarWidth;
+
+    @media (min-width: $screenMd) {
+      width: $avatarWidthXs;
+    }
   }
 }
 

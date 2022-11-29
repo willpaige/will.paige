@@ -10,9 +10,17 @@
 
   @media (max-width: $screenSmMax) {
     margin-bottom: $gutterMarginXs;
+    margin-right: -$gutterMarginXs;
+    margin-left: -$gutterMarginXs;
+    padding: 0 $gutterMarginXs;
+    background-color: white;
   }
 }
 
 .heroDot {
   color: #fff;
+
+  @media (max-width: $screenSmMax) {
+    color: black;
+  }
 }

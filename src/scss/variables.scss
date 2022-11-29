@@ -38,6 +38,9 @@ $gutterMargin: calc($gutterWidth / 2);
 $gutterWidthXs: 5rem;
 $gutterMarginXs: calc($gutterWidthXs / 2);
 
+$gutterWidthSm: 7rem;
+$gutterMarginSm: calc($gutterWidthSm / 2);
+
 $gridMarginMedium: $gutterWidth;
 $gridMarginLarge: calc($gridMarginMedium * 2);
 $gridMarginExtraLarge: calc($gridMarginLarge * 2);
@@ -45,7 +48,9 @@ $gridMarginSmall: calc($gridMarginMedium / 2);
 $gridMarginExtraSmall: 0.6rem;
 
 $navigationWidth: 20rem;
+$navigationWidthSm: 18rem;
 $navigationColumnWidth: $navigationWidth + $gutterWidth + $gutterMargin;
+$navigationColumnWidthSm: $navigationWidthSm + $gutterWidthSm + $gutterMarginSm;
 
 $themeAnimationSpeed: 200ms;
 $trayAnimationSpeed: 250ms;

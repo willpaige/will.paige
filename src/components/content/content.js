@@ -43,7 +43,7 @@ function Content(props) {
   return (
     <div className={contentClassName}>
       {children}
-      <div className={contentHole} onMouseEnter={() => showCat(true)} onMouseLeave={() => showCat(false)}>
+      <div className={contentHole} onClick={() => showCat(!hiCat)}>
         <div className={animateHoleClass}>
           <StaticImage src="../../images/kitty_cat.png" alt="Cat hiding" />
         </div>

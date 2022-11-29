@@ -7,6 +7,10 @@
   overflow: hidden;
 
   @media (min-width: $screenMd) {
+    padding: ($gutterWidthSm + $gutterMarginSm) $gutterWidthSm $gutterWidthSm $navigationColumnWidthSm;
+  }
+
+  @media (min-width: $screenLg) {
     margin-top: -$gutterWidth;
     padding: ($gutterWidth + $gutterMargin) $gutterWidth $gutterWidth $navigationColumnWidth;
     border-radius: 0 0 $contentBorderRadius 0;
