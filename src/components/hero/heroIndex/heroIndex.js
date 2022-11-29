@@ -31,7 +31,7 @@ const contentThemes = {
 };
 
 function HeroIndex({ activeTheme, dispatch }) {
-  const [disco, setDisco] = useState();
+  const [disco, setDisco] = useState(0);
   const activeThemeClass = contentThemes[activeTheme];
   const dotClass = classNames(heroHello, heroDot, animate, activeThemeClass);
 
@@ -50,6 +50,15 @@ function HeroIndex({ activeTheme, dispatch }) {
 
   const endParty = () => {
     clearInterval(disco);
+    setDisco(null);
+  };
+
+  const toggleParty = () => {
+    if (disco) {
+      endParty();
+    } else {
+      party();
+    }
   };
 
   return (
@@ -60,8 +69,7 @@ function HeroIndex({ activeTheme, dispatch }) {
         </span>
         <span
           className={dotClass}
-          onMouseEnter={() => party()}
-          onMouseLeave={() => endParty()}
+          onClick={() => toggleParty()}
         >
           .
         </span>
