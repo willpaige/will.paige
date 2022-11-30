@@ -12,10 +12,10 @@ $avatarWidthXs: 4.4rem;
     left: 0;
     height: 0.2rem;
     background-color: black;
-    width: $avatarWidth;
+    width: $avatarWidthXs;
 
     @media (min-width: $screenMd) {
-      width: $avatarWidthXs;
+      width: $avatarWidth;
     }
   }
 }
