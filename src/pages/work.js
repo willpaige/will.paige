@@ -9,7 +9,6 @@ import { contentContainer } from '../scss/work.module.scss';
 import { WORK } from '../content/work';
 import Footer from '../components/footer/footer';
 import Grid from '../components/grid/grid/grid';
-import Hero from "../components/hero/hero";
 
 function WorkPage() {
   return (

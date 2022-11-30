@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Title from '../title/title';
 import { avatar, katieTitle, katieUx } from './katie.module.scss';
+import Avatar from '../avatar/avatar';
 
 function Katie() {
   return (
@@ -12,9 +13,9 @@ function Katie() {
         Checkout&nbsp;
         <a href="https://katie.paige.me.uk">Katie Paige</a>
       </Title>
-      <a href="https://katie.paige.me.uk">
-        <StaticImage className={avatar} src="../../images/katie_paige_ux_designer.png" alt="Katie Paige UX" placeholder="blurred" />
-      </a>
+      <Avatar small className={avatar} url="https://katie.paige.me.uk">
+        <StaticImage src="../../images/katie_paige_ux_designer.png" alt="Katie Paige UX" placeholder="blurred" />
+      </Avatar>
     </div>
   );
 }
