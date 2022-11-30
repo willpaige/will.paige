@@ -3,23 +3,23 @@ import * as React from 'react';
 export const home = {
   CONTENT:
     <>
-      <p className="lead">
+      <p>
         My name is{' '}
-        <b>Will Paige</b>{' '}
-        and I am a{' '}
-        <b>Senior Software Engineer</b>{' '}
-        with over{' '}
-        <b>ten years experience</b>{' '}
-        in both startup and corporate organisations, in-house and remotely.
-        I am a highly skilled and experienced developer with a specialist interest in frontend
+        <b>Will Paige</b>
+        , and I'm a highly skilled and experienced{' '}
+        <b>Senior Software Engineer.</b>{' '}
+        I have over{' '}
+        <b>ten years of experience</b>{' '}
+        in startup and corporate organisations, both in-house and remotely.
+        My specialist interest are frontend
         technologies, mobile-first design, content-architecture, web performance, usability and functionality.
       </p>
       <p>A couple of personal things about me:</p>
       <ul>
         <li>
           I&apos;m
-          <b> UK based </b>
-          and fortunate enough to live and work from the picturesque
+          <b> based in the Uk </b>
+          and live in rural, coastal
           {' '}
           <b>South Devon</b>
         </li>
@@ -30,9 +30,7 @@ export const home = {
           {' '}
           👑, Son Seb 👦, Dog Woody 🐕 and Cat Mia 🐈
         </li>
-        <li>I&apos;m an avid downhill mountain biker</li>
-        <li>I&apos;m a surfer, and I love the sea</li>
-        <li>I&apos;m a snowboarder</li>
+        <li>I enjoy downhill mountain biking, surfing, and snowboarding</li>
       </ul>
     </>,
 };

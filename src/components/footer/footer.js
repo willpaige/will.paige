@@ -50,7 +50,8 @@ function Footer(props) {
                 <code className={classNames(codeTag, codeNoMarginLeft)}>GatsbyJs</code>
                 {' '}
                 is an open source framework with performance, scalability and security built in.
-                You'll notice that when navigating this site, pages will load instantaneously. Just how it should be.
+                You&apos;ll notice that when navigating this site, pages will load instantly.
+                Just how it should be.
               </p>
               <p>
                 Don't believe me? Check out these lighthouse performance reports

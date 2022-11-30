@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
+const AVATAR_WIDTH = 72;
+const PLACEHOLDER = 'blurred';
+
 export const WORK = [
   {
     key: 'nwrm',
     image:
   <StaticImage
-    width={66}
-    height={66}
+    width={AVATAR_WIDTH}
+    height={AVATAR_WIDTH}
     src="../images/natwest_rooster_money.png"
     alt="NatWest Rooster Money"
-    placeholder="blurred"
+    placeholder={PLACEHOLDER}
   />,
     title: 'NatWest Rooster Money',
     subTitle: 'Senior Software Engineer',
@@ -77,11 +80,11 @@ export const WORK = [
     key: 'msw',
     image:
   <StaticImage
-    width={66}
-    height={66}
+    width={AVATAR_WIDTH}
+    height={AVATAR_WIDTH}
     src="../images/magicseaweed.png"
     alt="MagicSeaweed"
-    placeholder="blurred"
+    placeholder={PLACEHOLDER}
     loading="lazy"
   />,
     title: 'MagicSeaweed / Surfline',
@@ -120,11 +123,11 @@ export const WORK = [
     key: 'tc',
     image:
   <StaticImage
-    width={66}
-    height={66}
+    width={AVATAR_WIDTH}
+    height={AVATAR_WIDTH}
     src="../images/toucan_graphic_design.png"
     alt="Toucan Design Ltd"
-    placeholder="blurred"
+    placeholder={PLACEHOLDER}
   />,
     title: 'Toucan Graphic Design Ltd',
     subTitle: 'Digital Developer',
@@ -170,11 +173,11 @@ export const WORK = [
     subTitle: 'Student/Placement Furniture Designer',
     image:
   <StaticImage
-    width={66}
-    height={66}
+    width={AVATAR_WIDTH}
+    height={AVATAR_WIDTH}
     src="../images/atlas_contract_furniture.png"
     alt="MagicSeaweed"
-    placeholder="blurred"
+    placeholder={PLACEHOLDER}
   />,
     meta: {
       date: 'Sep 2007 - Aug 2008 | 12 Months',

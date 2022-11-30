@@ -15,6 +15,7 @@ import {
   timelineSubTitle,
   timelineMeta,
 } from './timeline.module.scss';
+import Avatar from "../avatar/avatar";
 
 const renderMeta = (meta) => {
   if (meta) {
@@ -39,7 +40,11 @@ function Timeline(props) {
         return (
           <div className={timelineItem} key={key}>
             <div className={timelineImage}>
-              {image || <div className={timelineLetter}>{letter}</div>}
+              {image ? (
+                <Avatar>
+                  {image}
+                </Avatar>
+              ) : <div className={timelineLetter}>{letter}</div>}
             </div>
             <div className={timelineContent}>
               <Title type="h2" className={timelineTitle}>{title}</Title>

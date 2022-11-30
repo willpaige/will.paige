@@ -3,8 +3,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Row from '../grid/row/row';
 import Col from '../grid/col/col';
 import Title from '../title/title';
+import Avatar from '../avatar/avatar';
 import {
-  company, description, logoCol, roosterLogo, start, title,
+  company, description, logoCol, start, title,
 } from './currentEmployment.module.scss';
 import { GridSize } from '../../constants/grid';
 
@@ -13,12 +14,13 @@ function CurrentEmployment() {
     <>
       <Row size={GridSize.EXTRA_SMALL}>
         <Col className={logoCol} size={GridSize.EXTRA_SMALL}>
-          <StaticImage
-            className={roosterLogo}
-            src="../../images/natwest_rooster_money.png"
-            alt="NatWest Rooster Money"
-            placeholder="blurred"
-          />
+          <Avatar>
+            <StaticImage
+              src="../../images/natwest_rooster_money.png"
+              alt="NatWest Rooster Money"
+              placeholder="blurred"
+            />
+          </Avatar>
         </Col>
         <Col size={GridSize.EXTRA_SMALL}>
           <Title className={company} type="h3">NatWest Rooster Money</Title>

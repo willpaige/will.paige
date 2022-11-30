@@ -29,28 +29,25 @@ import { Link } from 'gatsby';
 export const about = {
   ABOUT_ME: (age) => (
     <>
-      <p className="lead">
+      <p>
         My name is
         {' '}
-        <b>Will Paige</b>
-        , I'm a
-        {' '}
-        {age}
-        -year-old
+        <b>Will Paige</b>, and I'm a {age}-year-old
         {' '}
         <b>software engineer</b>
         {' '}
-        living and working in
-        South Devon, UK.
+        living and working in South Devon, UK.
       </p>
       <p>
-        I'm primarily focused on front-end web and app development and have progressed my career from a product design
-        and engineering education at Bournemouth University to a senior software engineer at NatWest. My career
-        trajectory has given me a unique skill set that allows me to have a rich UI/UX centered approach to programming
-        and development.
+        I primarily focus on front-end web and app development and have progressed my career from
+        studying product design and engineering to becoming a senior software engineer at NatWest.
       </p>
       <p>
-        Interested in learning more about my history? please navigate to my
+        My career trajectory has given me a unique skill set that allows me to have a rich
+        UI/UX-centered approach to website and mobile app development and computer programming.
+      </p>
+      <p>
+        Interested in learning more about my history? Please navigate to my
         {' '}
         <Link to="/work/">work</Link>
         {' '}
