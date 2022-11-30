@@ -1,6 +1,4 @@
 @import "../../scss/variables";
-$avatarWidth: 6.6rem;
-$avatarWidthXs: 4.4rem;
 
 .timeline {
   position: relative;
@@ -28,17 +26,35 @@ $avatarWidthXs: 4.4rem;
 .timelineImage {
   border-radius: 5rem;
   overflow: hidden;
-  min-width: $avatarWidthXs;
-  width: $avatarWidthXs;
-  height: $avatarWidthXs;
   background-color: $greyLight;
   position: relative;
   z-index: 1;
+  min-width: $avatarWidthXs;
+  width: $avatarWidthXs;
+  height: $avatarWidthXs;
 
   @media (min-width: $screenMd) {
+    min-width: $avatarWidth;
     width: $avatarWidth;
     height: $avatarWidth;
-    min-width: $avatarWidth;
+  }
+}
+
+.avatar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  [data-gatsby-image-wrapper] {
+    width: $avatarWidthXs !important;
+    height: $avatarWidthXs !important;
+
+    @media (min-width: $screenMd) {
+      width: $avatarWidth !important;
+      height: $avatarWidth !important;
+    }
   }
 }
 
