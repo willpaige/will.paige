@@ -45,7 +45,7 @@ $gutterMarginSm: calc($gutterWidthSm / 2);
 $gridMarginMedium: $gutterWidth;
 $gridMarginLarge: calc($gridMarginMedium * 2);
 $gridMarginExtraLarge: calc($gridMarginLarge * 2);
-$gridMarginSmall: calc($gridMarginMedium / 2);
+$gridMarginSmall: $gutterWidthSm;
 $gridMarginExtraSmall: 0.6rem;
 
 $navigationWidth: 20rem;
@@ -70,3 +70,4 @@ $trayUnderlayZindex: $navigationZindex - 1;
 $mobileMenuButton: $navigationZindex + 1;
 
 $mobileNavigationBackground: #fff;
+$mobileNavigationHeight: 7.1rem;

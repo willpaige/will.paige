@@ -1,42 +1,9 @@
 @import "../../../scss/variables";
 
-.heroImage {
-  overflow: hidden;
-  height: 36rem;
-
-  @media (min-width: $screenMd) {
-    width: 55%;
-    height: auto;
-    max-width: 48rem;
-    border-radius: 3rem 10rem 3rem 3rem;
-    margin-left: auto;
-    max-height: 100%;
-    min-height: 48rem;
-  }
-}
-
-.heroTitle {
-  font-size: 2.2rem;
-  padding: $gutterWidth $gutterMarginXs;
-  margin-top: 0;
-
-  @media (min-width: $screenMd) {
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    margin-top: 6rem;
-  }
-
-  @media (min-width: $screenLg) {
-    padding: 0;
-    margin-top: 11rem;
-  }
-}
+$lineHeight: 1;
 
 .heroHello {
-  font-weight: bold;
-  font-size: $heroTitleSize;
-  line-height: 0.8;
+  //line-height: 0.8;
 }
 
 .heroDot {
@@ -44,16 +11,57 @@
 }
 
 .heroName {
-  font-size: 8rem;
+  font-size: 6rem;
   display: block;
+  line-height: $lineHeight;
+  margin-bottom: 1.2rem;
 }
 
 .heroSubText {
   font-weight: 400;
+  font-size: 2.2rem;
+  line-height: $lineHeight;
+  display: block;
 }
 
 .animate {
   transition: color ease-in-out $themeAnimationSpeed;
+}
+
+.heroImageWrapper {
+  @media (min-width: $screenMd) {
+    margin-left: $gutterWidthSm;
+  }
+
+  [data-gatsby-image-wrapper] {
+    @media (min-width: $screenMd) {
+      height: auto !important;
+    }
+  }
+}
+
+.heroImageContainer {
+  @media (min-width: $screenMd) {
+    height: 100%;
+  }
+}
+
+.heroText {
+  @media (min-width: $screenMd) {
+    width: 64%;
+  }
+
+  @media (max-width: $screenSmMax) {
+    padding-top: $gutterMargin;
+  }
+
+  @media (min-width: $screenXlg) {
+    padding-bottom: $gutterMargin;
+  }
+}
+
+.heroImage {
+
 }
 
 .tea-green { color: $tea-green; }

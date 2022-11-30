@@ -14,8 +14,12 @@ function EducationPage() {
   return (
     <App theme={themeMap.OLD_LAVENDER} activePage={PAGES.EDUCATION}>
       <Content noHero>
+        <Grid fullWidthSm>
+          <HeroText className={heroTitle} smallTitle justText showDot>
+            Education
+          </HeroText>
+        </Grid>
         <Grid>
-          <HeroText className={heroTitle} title="Education" />
           <Timeline content={EDUCATION.TIME_LINE} />
           <Footer showLanguages={false} showCurrentEmployment={false} />
         </Grid>

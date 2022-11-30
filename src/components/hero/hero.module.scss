@@ -3,16 +3,39 @@
 .hero {
   position: relative;
   z-index: 1;
+  display: flex;
 
-  @media (min-width: $screenMd) {
-    display: flex;
+  @media (max-width: $screenSmMax) {
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  @media (min-width: $screenMd) and (max-width: $screenLgMax) {
-    padding-top: $gutterWidthSm;
+  @media (min-width: $screenMd) {
+    align-items: center;
+    justify-content: space-between;
+    min-height: auto;
+    height: 44rem;
   }
 
   @media (min-width: $screenLg) {
-    max-height: 54.4rem;
+    min-height: auto;
+    height: 50rem;
+  }
+
+  @media (min-width: $screenXlg) {
+    min-height: auto;
+    height: 54rem;
+  }
+}
+
+.isPrimaryHero {
+  @media (max-width: $screenSmMax) {
+    min-height: calc(100vh - $mobileNavigationHeight);
+  }
+}
+
+.isTextTopSm {
+  @media (max-width: $screenSmMax) {
+    flex-direction: column-reverse;
   }
 }

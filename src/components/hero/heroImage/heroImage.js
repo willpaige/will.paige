@@ -1,31 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Title from "../../title/title";
-import { heroImage, heroTitle, heroText } from './heroImage.module.scss';
-import { hero } from '../hero.module.scss';
+import { heroImage, isSquareSm, overlayText } from './heroImage.module.scss';
+import classnames from "classnames";
 
 function HeroImage(props) {
-  const { children, title } = props;
+  const { children, hasOverlayText, squareSm, className } = props;
+
+  const heroImageClass = classnames(heroImage, className, {
+    [isSquareSm]: squareSm,
+    [overlayText]: hasOverlayText,
+  });
 
   return (
-    <div className={hero}>
-      <div className={heroImage}>
-        <div className={heroText}>
-          <Title type={'h1'} className={heroTitle}>{title}</Title>
-        </div>
+    <div className={heroImageClass}>
         {children}
-      </div>
     </div>
   );
 }
 
 HeroImage.defaultProps = {
-  title: '',
+  squareSm: false,
+  hasOverlayText: false,
+  className: '',
 };
 
 HeroImage.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string,
+  squareSm: PropTypes.bool,
+  className: PropTypes.string,
+  hasOverlayText: PropTypes.bool,
 };
 
 export default HeroImage;

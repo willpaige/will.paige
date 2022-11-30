@@ -12,9 +12,11 @@ import CurrentEmployment from '../components/currentEmployment/currentEmployment
 import Languages from '../components/languages/languages';
 import FooterSmall from '../components/footerSmall/footerSmall';
 import {
-  aboutRow, aboutList, aboutListItem, aboutListIcon, firstRow, aboutImage, aboutImageCaption, aboutImageContainer
+  aboutRow, aboutList, aboutListItem, aboutListIcon, firstRow, aboutImageCaption, aboutImageContainer, heroImage, noMarginBottom
 } from '../scss/about.module.scss';
 import Grid from "../components/grid/grid/grid";
+import Hero from "../components/hero/hero";
+import HeroText from "../components/hero/heroText/heroText";
 
 const renderImage = (image, caption) => {
   return (
@@ -56,10 +58,15 @@ function AboutPage() {
 
   return (
     <App theme={themeMap.LAUREL_GREEN} activePage={PAGES.ABOUT}>
-      <Grid>
-        <HeroImage image={image} title="Hi.">
-          <StaticImage src="../images/will_paige_software_engineer_madeira.png" alt={image.alt} placeholder="blurred" />
-        </HeroImage>
+      <Grid removeRightPadding fullWidthSm>
+        <Hero textTopSm>
+          <HeroImage hasOverlayText className={heroImage} image={image} title="Hi.">
+            <StaticImage src="../images/will_paige_software_engineer_madeira.png" alt={image.alt} placeholder="blurred" />
+            <HeroText className={noMarginBottom} justText gutterSm overlayImage showDot>
+              Hi
+            </HeroText>
+          </HeroImage>
+        </Hero>
       </Grid>
       <Content>
         <Grid>
@@ -73,7 +80,6 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              className={aboutImage}
               src="../images/will_paige_software_engineer_mtb.png"
               alt="Will Paige software engineer mtb"
               placeHolder="blurred"
@@ -99,7 +105,6 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              className={aboutImage}
               src="../images/will_paige_software_engineer_surfer.png"
               alt="Will Paige software engineer surfing"
               placeHolder="blurred"
@@ -125,7 +130,6 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              className={aboutImage}
               src="../images/will_paige_software_engineer_snowboard.png"
               alt="Will Paige software engineer snowboard"
               placeHolder="blurred"

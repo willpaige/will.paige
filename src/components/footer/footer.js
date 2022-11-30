@@ -29,7 +29,7 @@ function Footer(props) {
           </Col>
         </Row>
       )}
-      <Row className={classnames(footerRow, rowMdXs)} size={GridSize.SMALL}>
+      <Row className={classnames(footerRow, rowMdXs)} isColumnSm size={GridSize.SMALL}>
         {showCurrentEmployment && (
           <Col className={colMdXs} size={GridSize.SMALL}>
             <div className={content}>

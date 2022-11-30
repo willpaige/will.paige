@@ -11,6 +11,12 @@
   }
 }
 
+.flexColumnSm {
+  @media (max-width: $screenMdMax) {
+    flex-direction: column;
+  }
+}
+
 .extra-small {
   margin-left: -$gridMarginExtraSmall;
   margin-right: -$gridMarginExtraSmall;

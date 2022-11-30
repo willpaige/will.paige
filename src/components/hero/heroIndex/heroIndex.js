@@ -3,23 +3,24 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Title from '../../title/title';
 import { getActiveTheme } from '../../../state/ui/ui-selectors';
 import { themeMap } from '../../../constants/theme';
 import { setTheme } from '../../../state/ui/ui-action';
-import { hero } from '../hero.module.scss';
+import Hero from '../hero';
+import HeroText from '../heroText/heroText';
+import HeroImage from '../heroImage/heroImage';
 import {
   animate,
   heroDot,
-  heroImage,
-  heroTitle,
-  heroHello,
   heroName,
   teaGreen,
   laurelGreen,
   cambridgeBlue,
   oldLavender,
   heroSubText,
+  heroText,
+  heroImageContainer,
+  heroImageWrapper,
 } from './heroIndex.module.scss';
 
 const contentThemes = {
@@ -33,7 +34,7 @@ const contentThemes = {
 function HeroIndex({ activeTheme, dispatch }) {
   const [disco, setDisco] = useState(0);
   const activeThemeClass = contentThemes[activeTheme];
-  const dotClass = classNames(heroHello, heroDot, animate, activeThemeClass);
+  const dotClass = classNames(heroDot, animate, activeThemeClass);
 
   const party = () => {
     let count = 0;
@@ -62,9 +63,9 @@ function HeroIndex({ activeTheme, dispatch }) {
   };
 
   return (
-    <div className={hero}>
-      <Title className={heroTitle} type="h1">
-        <span className={heroHello}>
+    <Hero primaryHero>
+      <HeroText className={heroText} gutterSm>
+        <span>
           Hello
         </span>
         <span
@@ -76,11 +77,20 @@ function HeroIndex({ activeTheme, dispatch }) {
         <span className={heroName}>I&apos;m Will</span>
         <span className={heroSubText}>
           A senior
+          {' '}
           <b className={activeThemeClass}> software engineer.</b>
         </span>
-      </Title>
-      <StaticImage className={heroImage} src="../../../images/will_paige_software_engineer.png" alt="Will Paige Software Engineer" placeholder="blurred" />
-    </div>
+      </HeroText>
+      <HeroImage className={heroImageWrapper} squareSm>
+        <StaticImage
+          className={heroImageContainer}
+          src="../../../images/will_paige_software_engineer.png"
+          alt="Will Paige Software Engineer"
+          placeholder="blurred"
+          loading="eager"
+        />
+      </HeroImage>
+    </Hero>
   );
 }
 

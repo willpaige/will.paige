@@ -1,20 +1,13 @@
 @import "../../../scss/variables";
 
+.heroTitleContainer {
+  position: relative;
+  margin: 0;
+}
+
 .heroTitle {
-  margin-top: 0rem;
-  font-size: $heroTitleSize;
-
-  @media (min-width: $screenMd) {
-    line-height: 1;
-  }
-
-  @media (max-width: $screenSmMax) {
-    margin-bottom: $gutterMarginXs;
-    margin-right: -$gutterMarginXs;
-    margin-left: -$gutterMarginXs;
-    padding: 0 $gutterMarginXs;
-    background-color: white;
-  }
+  margin: 0;
+  left: -0.5rem;
 }
 
 .heroDot {
@@ -22,5 +15,46 @@
 
   @media (max-width: $screenSmMax) {
     color: black;
+  }
+}
+
+.hasGutterSm {
+  @media (max-width: $screenSmMax) {
+    padding-left: $gutterMarginXs;
+    padding-right: $gutterMarginXs;
+  }
+}
+
+.isOverImage {
+  @media (min-width: $screenMd) {
+    position: absolute;
+    top: 0;
+    left: $gutterWidthSm;
+  }
+}
+
+.isJustText {
+  @media (max-width: $screenSmMax) {
+    background-color: #fff;
+    padding: $gutterMargin $gutterMarginXs;
+    margin-bottom: $gutterWidthSm;
+  }
+
+  @media (min-width: $screenMd) {
+    margin-bottom: $gutterWidthSm;
+  }
+
+  @media (min-width: $screenLg) {
+    margin-bottom: $gutterWidth;
+  }
+}
+
+.isSmallTitle {
+  @media (max-width: $screenMdMax) {
+    font-size: 8rem;
+  }
+
+  @media (max-width: $screenSmMax) {
+    font-size: 6rem;
   }
 }

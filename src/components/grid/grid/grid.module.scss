@@ -17,3 +17,14 @@
     padding-right: $gutterWidth;
   }
 }
+
+.isFullWidthSm {
+  @media (max-width: $screenSmMax) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.noPaddingRight {
+  padding-right: 0;
+}

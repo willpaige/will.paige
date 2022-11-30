@@ -12,18 +12,24 @@
     left: 0;
     right: 0;
     background-color: $mobileNavigationBackground;
-    padding: $gutterMarginXs $gutterMarginXs (7.1rem + $gutterMarginXs) $gutterMarginXs;
+    padding: $gutterMarginXs $gutterMarginXs ($mobileNavigationHeight + $gutterMarginXs) $gutterMarginXs;
     transform: translateY(100%);
     transition: ease-in-out transform $trayAnimationSpeed;
   }
 
   @media (min-width: $screenMd) {
-    width: $navigationWidth;
-    margin: $gutterWidth 0 0 $gutterWidthSm;
+    width: $navigationWidthSm;
+    margin: 11rem 0 0 $gutterWidthSm;
+  }
+
+  @media (min-width: $screenLg) {
+    margin-top: 14rem;
   }
 
   @media (min-width: $screenXlg) {
-    margin: $gutterWidth 0 0 $gutterWidth;
+    width: $navigationWidth;
+    //margin-top: 10rem + $gutterMargin;
+    margin-left: $gutterWidth;
   }
 }
 

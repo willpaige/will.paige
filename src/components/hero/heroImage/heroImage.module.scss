@@ -3,30 +3,59 @@
 $borderRadius: 10rem;
 
 .heroImage {
+  position: relative;
+
+  @media (max-width: $screenSmMax) {
+    margin-bottom: $gutterMarginSm;
+  }
+
   @media (min-width: $screenMd) {
-    border-radius: $borderRadiusImage $borderRadius $borderRadiusImage $borderRadiusImage;
-    max-height: 100%;
-    overflow: hidden;
+    height: 100%;
+  }
+
+  @media (min-width: $screenXlg) {
+    padding-right: $gutterWidth;
+  }
+
+  [data-gatsby-image-wrapper] {
+    @media (min-width: $screenMd) {
+      height: 100%;
+    }
+  }
+
+  img {
+    @media (min-width: $screenXlg) {
+      border-radius: $borderRadiusImage $borderRadiusImage;
+    }
+  }
+}
+
+.isSquareSm {
+  @media (max-width: $screenSmMax) {
     position: relative;
+    width: 100%;
+  }
+
+  &:after {
+    @media (max-width: $screenSmMax) {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  [data-gatsby-image-wrapper] {
+    @media (max-width: $screenSmMax) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
-.heroText {
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 0 $gutterMarginXs;
-
-  @media (min-width: $screenMd) {
-    color: #fff;
-    position: absolute;
-    top: 6rem;
-    left: 8rem;
-    z-index: 1;
-    padding: 0;
+.overlayText {
+  @media (max-width: $screenSmMax) {
+    display: flex;
+    flex-direction: column-reverse;
   }
-}
-
-.heroTitle {
-  margin: 0;
-  font-size: $heroTitleSize;
 }

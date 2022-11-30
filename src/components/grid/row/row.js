@@ -10,6 +10,7 @@ import {
   row,
   small,
   wrapMobile,
+  flexColumnSm
 } from './row.module.scss';
 
 const gridMap = {
@@ -22,10 +23,11 @@ const gridMap = {
 
 function Row(props) {
   const {
-    className, children, size, wrapXs,
+    className, children, size, wrapXs, isColumnSm
   } = props;
   const rowClass = classnames(className, row, gridMap[size], {
     [wrapMobile]: wrapXs,
+    [flexColumnSm]: isColumnSm,
   });
 
   return <div className={rowClass}>{children}</div>;
@@ -37,7 +39,6 @@ Row.defaultProps = {
   size: GridSize.MEDIUM,
   className: '',
   wrapXs: false,
-  mdXs: false,
 };
 
 Row.propTypes = {
@@ -45,4 +46,5 @@ Row.propTypes = {
   size: PropTypes.string,
   children: PropTypes.node.isRequired,
   wrapXs: PropTypes.bool,
+  isColumnSm: PropTypes.bool,
 };

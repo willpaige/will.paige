@@ -9,4 +9,9 @@
   @media (min-width: $screenXlg) {
     padding: $gutterMargin;
   }
+
+  @media (max-width: $screenSmMax) {
+    overflow-x: hidden;
+    width: 100vw;
+  }
 }

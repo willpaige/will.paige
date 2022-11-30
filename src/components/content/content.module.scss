@@ -6,16 +6,16 @@
   position: relative;
 
   @media (min-width: $screenMd) {
-    padding-top: ($gutterWidthSm + $gutterMarginSm);
     padding-bottom: $gutterWidthSm;
   }
 
   @media (min-width: $screenLg) {
-    margin-top: -$gutterWidth;
-    padding-top: ($gutterWidth + $gutterMargin);
+    padding-top: $gutterMargin;
   }
 
   @media (min-width: $screenXlg) {
+    margin-top: -$gutterWidth;
+    padding-top: ($gutterWidth + $gutterMargin);
     border-radius: 0 0 $contentBorderRadius 0;
     padding-bottom: $gutterWidth;
   }
