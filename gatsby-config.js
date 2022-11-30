@@ -4,7 +4,10 @@
 module.exports = {
   siteMetadata: {
     title: 'Will Paige - Engineer',
-    siteUrl: 'https://www.yourdomain.tld',
+    description: 'Will Paige is a Uk based senior software engineer, currently working for NatWest Rooster Money',
+    twitterUsername: '@_willPaige',
+    siteUrl: 'https://will.paige.me.uk/',
+    image: 'src/images/icon.png',
   },
   plugins: [
     'gatsby-plugin-sass', 'gatsby-plugin-image', 'gatsby-plugin-sitemap', {
@@ -27,11 +30,5 @@ module.exports = {
       },
       __key: 'pages',
     },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     icon: 'src/assets/images/favicon.png',
-    //   },
-    // },
   ],
 };
