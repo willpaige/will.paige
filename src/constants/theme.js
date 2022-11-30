@@ -12,6 +12,7 @@ export const themeMap = {
   CAMBRIDGE_BLUE: 'cambridge-blue',
   // TAUPE_GRAY: 'taupe-gray',
   OLD_LAVENDER: 'old-lavender',
+  NO_THEME: 'no-theme',
 };
 
 export const THEME_DEFAULT = themeMap.TEA_GREEN;
