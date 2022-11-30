@@ -1,6 +1,8 @@
+@import "../../scss/variables";
+
 .avatar {
-  width: 6.6rem;
-  height: 6.6rem;
+  width: $avatarWidth;
+  height: $avatarWidth;
 
   [data-gatsby-image-wrapper] {
     width: 100%;
@@ -13,6 +15,6 @@
 }
 
 .avatarSmall {
-  width: 4.6rem;
-  height: 4.6rem;
+  width: $avatarWidthXs;
+  height: $avatarWidthXs;
 }
