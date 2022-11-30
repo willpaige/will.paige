@@ -6,7 +6,7 @@ import Col from '../grid/col/col';
 import Contact from '../contact/contact';
 import Katie from '../katie/katie';
 import { footerRow } from '../footer/footer.module.scss';
-import { footerSmall, katieUx, contact } from './footerSmall.module.scss';
+import { footerSmall, katieUx, contact, noPaddingSm } from './footerSmall.module.scss';
 import PropTypes from "prop-types";
 
 function FooterSmall(props) {
@@ -15,10 +15,10 @@ function FooterSmall(props) {
 
   return (
     <Row className={footerClass} size={GridSize.EXTRA_SMALL} wrapXs>
-      <Col size={GridSize.EXTRA_SMALL}>
+      <Col className={noPaddingSm} size={GridSize.EXTRA_SMALL}>
         <Contact className={contact} centered />
       </Col>
-      <Col className={katieUx} size={GridSize.EXTRA_SMALL}>
+      <Col className={classnames(noPaddingSm, katieUx)} size={GridSize.EXTRA_SMALL}>
         <Katie />
       </Col>
     </Row>

@@ -5,10 +5,6 @@ $borderRadius: 10rem;
 .heroImage {
   position: relative;
 
-  @media (max-width: $screenSmMax) {
-    margin-bottom: $gutterMarginSm;
-  }
-
   @media (min-width: $screenMd) {
     height: 100%;
   }

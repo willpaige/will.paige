@@ -30,7 +30,7 @@
 
 .isPrimaryHero {
   @media (max-width: $screenSmMax) {
-    min-height: calc(100vh - $mobileNavigationHeight);
+    min-height: calc(100vh - $mobileNavigationHeight - env(safe-area-inset-bottom));
   }
 }
 

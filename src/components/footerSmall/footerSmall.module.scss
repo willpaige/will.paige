@@ -9,8 +9,15 @@
     margin-top: $gutterWidthXs;
     margin-left: -$gutterMarginXs;
     margin-right: -$gutterMarginXs;
-    padding: $gutterWidthXs  $gutterMarginXs 7.5rem  $gutterMarginXs;
+    padding: $gutterWidthXs  $gutterMarginXs (7.5rem + $gutterMarginXs) $gutterMarginXs;
     background-color: #fff;
+  }
+}
+
+.noPaddingSm {
+  @media (max-width: $screenSmMax) {
+    padding-left: 0 !important;
+    padding-right: 0 !important
   }
 }
 
