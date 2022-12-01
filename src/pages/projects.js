@@ -1,11 +1,13 @@
 import * as React from 'react';
-import {PAGES} from "../constants/pages";
+import { PAGES } from '../constants/pages';
 import { themeMap } from '../constants/theme';
-import App from "../components/app/app";
-import Content from "../components/content/content";
-import Grid from "../components/grid/grid/grid";
-import FooterSmall from "../components/footerSmall/footerSmall";
-import HeroText from "../components/hero/heroText/heroText";
+import App from '../components/app/app';
+import Content from '../components/content/content';
+import { PROJECTS } from '../content/projects';
+import Grid from '../components/grid/grid/grid';
+import FooterSmall from '../components/footerSmall/footerSmall';
+import HeroText from '../components/hero/heroText/heroText';
+import ContentList from '../components/contentList/contentList';
 
 function ProjectsPage() {
   return (
@@ -17,13 +19,13 @@ function ProjectsPage() {
           </HeroText>
         </Grid>
         <Grid>
-          {/*{home.CONTENT}*/}
+          <ContentList data={PROJECTS} />
           <FooterSmall />
         </Grid>
       </Content>
     </App>
   );
-};
+}
 
 export default ProjectsPage;
 
