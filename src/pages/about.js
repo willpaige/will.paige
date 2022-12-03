@@ -70,7 +70,7 @@ function AboutPage({ dispatch }) {
   const firstRowClass = classnames(aboutRow, firstRow);
 
   return (
-    <App theme={themeMap.LAUREL_GREEN} activePage={PAGES.ABOUT}>
+    <App theme={themeMap.THEME_2} activePage={PAGES.ABOUT}>
       <Grid removeRightPadding fullWidthSm>
         <Hero textTopSm>
           <HeroImage hasOverlayText className={heroImage} image={image} title="Hi.">
