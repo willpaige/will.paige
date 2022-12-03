@@ -15,7 +15,7 @@ function IndexPage({ dispatch }) {
   dispatch(setActivePage(PAGES.HOME));
 
   return (
-    <App theme={themeMap.TEA_GREEN}>
+    <App theme={themeMap.THEME_1}>
       <Grid removeRightPadding fullWidthSm>
         <HeroIndex />
       </Grid>

@@ -3,12 +3,12 @@ import {
   theme4,
   theme2,
   oldLavender,
-  teaGreen,
+  theme1,
   theme3Color,
   theme4Color,
   theme2Color,
   oldLavenderColor,
-  teaGreenColor,
+  theme1Color,
 } from '../scss/theme.module.scss';
 
 export const colours = {
@@ -20,7 +20,7 @@ export const colours = {
 };
 
 export const themeMap = {
-  TEA_GREEN: 'tea-green',
+  THEME_1: 'theme-1',
   THEME_2: 'theme-2',
   THEME_3: 'theme-3',
   THEME_4: 'theme-4',
@@ -29,7 +29,7 @@ export const themeMap = {
 };
 
 export const themeBackgroundStyles = {
-  [themeMap.TEA_GREEN]: teaGreen,
+  [themeMap.THEME_1]: theme1,
   [themeMap.THEME_2]: theme2,
   [themeMap.THEME_3]: theme3,
   [themeMap.THEME_4]: theme4,
@@ -37,11 +37,11 @@ export const themeBackgroundStyles = {
 };
 
 export const themeColorStyles = {
-  [themeMap.TEA_GREEN]: teaGreenColor,
+  [themeMap.THEME_1]: theme1Color,
   [themeMap.THEME_2]: theme2Color,
   [themeMap.THEME_3]: theme3Color,
   [themeMap.THEME_4]: theme4Color,
   [themeMap.OLD_LAVENDER]: oldLavenderColor,
 };
 
-export const THEME_DEFAULT = themeMap.TEA_GREEN;
+export const THEME_DEFAULT = themeMap.THEME_1;

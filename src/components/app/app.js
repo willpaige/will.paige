@@ -42,7 +42,7 @@ function App(props) {
 }
 
 App.defaultProps = {
-  theme: themeMap.TEA_GREEN,
+  theme: themeMap.THEME_1,
 };
 
 App.propTypes = {

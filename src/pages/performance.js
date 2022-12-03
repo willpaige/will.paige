@@ -5,7 +5,7 @@ import { PAGES } from '../constants/pages';
 
 function PerformancePage() {
   return (
-    <App theme={themeMap.TEA_GREEN} activePage={PAGES.HOME} />
+    <App theme={themeMap.THEME_1} activePage={PAGES.HOME} />
   );
 }
 
