@@ -12,6 +12,7 @@ import {
 import { isTrayActive } from '../../state/ui/ui-selectors';
 import classnames from "classnames";
 import {toggleTray} from "../../state/ui/ui-action";
+import {getActivePage} from "../../state/navigation/navigation-selectors";
 
 function Navigation(props) {
   const { activePage, trayIsActive, dispatch } = props;
@@ -60,4 +61,5 @@ Navigation.propTypes = {
 
 export default connect(state => ({
   trayIsActive: isTrayActive(state),
+  activePage: getActivePage(state),
 }), null)(Navigation);

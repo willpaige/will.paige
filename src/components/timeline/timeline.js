@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { codeTag } from '../code/code.module.scss';
 import Title from '../title/title';
 import {
-  tagCode,
-  tagsContainer,
   timeline,
   timelineLetter,
   timelineItem,
@@ -17,6 +13,7 @@ import {
   avatar
 } from './timeline.module.scss';
 import Avatar from "../avatar/avatar";
+import Tags from "../tags/tags";
 
 const renderMeta = (meta) => {
   if (meta) {
@@ -53,17 +50,7 @@ function Timeline(props) {
               {renderMeta(meta)}
               {copy}
               {tags && (
-                <div className={tagsContainer}>
-                  {tags.map((tag) => {
-                    const tagClassNames = classNames(codeTag, tagCode);
-                    return (
-                      <>
-                        <span className={tagClassNames} key={tag}>{tag}</span>
-                        {' '}
-                      </>
-                    );
-                  })}
-                </div>
+                <Tags data={tags} />
               )}
             </div>
           </div>

@@ -3,10 +3,12 @@ import _ from 'lodash';
 import { Provider } from 'react-redux';
 import { createStore as reduxCreateStore } from 'redux';
 import { initialUiState } from './ui/ui-reducer';
+import { initialNavigationState } from './navigation/navigation-reducer';
 import { rootReducer } from './index';
 
 export const mockInitialState = {
   ui: initialUiState,
+  navigation: initialNavigationState,
 };
 
 const initialState = _.cloneDeep(mockInitialState);

@@ -11,7 +11,7 @@ export const WORK = [
   <StaticImage
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/natwest_rooster_money.png"
+    src="../images/work/natwest_rooster_money.png"
     alt="NatWest Rooster Money"
     placeholder={PLACEHOLDER}
   />,
@@ -82,7 +82,7 @@ export const WORK = [
   <StaticImage
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/magicseaweed.png"
+    src="../images/work/magicseaweed.png"
     alt="MagicSeaweed"
     placeholder={PLACEHOLDER}
     loading="lazy"
@@ -125,7 +125,7 @@ export const WORK = [
   <StaticImage
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/toucan_graphic_design.png"
+    src="../images/work/toucan_graphic_design.png"
     alt="Toucan Design Ltd"
     placeholder={PLACEHOLDER}
   />,
@@ -175,7 +175,7 @@ export const WORK = [
   <StaticImage
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/atlas_contract_furniture.png"
+    src="../images/work/atlas_contract_furniture.png"
     alt="MagicSeaweed"
     placeholder={PLACEHOLDER}
   />,

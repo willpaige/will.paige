@@ -1,14 +1,29 @@
-import React from "react"
-import { wrapper } from './wrapper.module.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import { connect } from 'react-redux';
+import { wrapper, noPaddingRight } from './wrapper.module.scss';
+import { getActivePage } from '../../state/navigation/navigation-selectors';
+import { PAGES } from '../../constants/pages';
 
-const Wrapper = (props) => {
-  const { children } = props;
+function Wrapper(props) {
+  const { children, activePage } = props;
+  const wrapperClass = classnames(wrapper, {
+    [noPaddingRight]: activePage === PAGES.PROJECTS,
+  });
 
   return (
-    <div className={ wrapper }>
+    <div className={wrapperClass}>
       {children}
     </div>
-  )
+  );
 }
 
-export default Wrapper
+Wrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  activePage: PropTypes.string.isRequired,
+};
+
+export default connect(state => ({
+  activePage: getActivePage(state),
+}), null)(Wrapper);

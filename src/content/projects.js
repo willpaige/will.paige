@@ -1,8 +1,9 @@
-// import * as React from 'react';
-
-import {PAGES, PAGES_PATHS} from "../constants/pages";
+import * as React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import { PAGES, PAGES_PATHS } from '../constants/pages';
 
 const buildUrl = (slug) => `${PAGES_PATHS[PAGES.PROJECTS].url}${slug}/`;
+const PLACEHOLDER = 'blurred';
 
 export const PROJECT_KEYS = {
   BOTANYBLEND: 'BOTANYBLEND',
@@ -20,8 +21,15 @@ export const PROJECTS = {
     logo: '',
     url: buildUrl('sama'),
     tags: ['React', 'Reduct', 'CSS', 'GatsbyJs', 'JavaScript', 'NodeJs', 'GraphQl'],
-    blurb: '',
-    thumbnail: '',
+    blurb:
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
+    thumbnail:
+  <StaticImage
+    src="../images/projects/sama_wellbeing_hero.png"
+    alt="Sama Health & Well being"
+    placeholder={PLACEHOLDER}
+    loading={'eager'}
+  />,
     hero: '',
   },
   [PROJECT_KEYS.BOTANYBLEND]: {
@@ -29,9 +37,16 @@ export const PROJECTS = {
     subtitle: 'Organic Face & Body Oils',
     logo: '',
     url: buildUrl('botanyblend'),
-    tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL', 'Ecommerce', 'WooCommerce'],
-    blurb: '',
-    thumbnail: '',
+    tags: ['UI/UX','WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL', 'Ecommerce', 'WooCommerce'],
+    blurb:
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
+    thumbnail:
+    <StaticImage
+      src="../images/projects/botanyblend.png"
+      alt="Sama Health & Well being"
+      placeholder={PLACEHOLDER}
+      loading={'eager'}
+    />,
     hero: '',
   },
   [PROJECT_KEYS.WILLPOWER_FITNESS]: {

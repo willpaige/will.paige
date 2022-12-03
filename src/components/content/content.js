@@ -4,36 +4,25 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
-  cambridgeBlue,
   content,
   contentHole,
-  laurelGreen,
   noMargin,
-  oldLavender,
-  taupeGray,
-  teaGreen,
   animateHole,
   isActive,
+  noBackgroundColor,
 } from './content.module.scss';
-import { themeMap } from '../../constants/theme';
 import { getActiveTheme } from '../../state/ui/ui-selectors';
-
-const contentThemes = {
-  [themeMap.TEA_GREEN]: teaGreen,
-  [themeMap.LAUREL_GREEN]: laurelGreen,
-  [themeMap.CAMBRIDGE_BLUE]: cambridgeBlue,
-  [themeMap.TAUPE_GRAY]: taupeGray,
-  [themeMap.OLD_LAVENDER]: oldLavender,
-};
+import { themeBackgroundStyles } from '../../constants/theme';
 
 function Content(props) {
   const {
-    className, activeTheme, children, noHero,
+    className, activeTheme, children, noHero, noBackground,
   } = props;
   const [hiCat, showCat] = useState(0);
 
-  const contentClassName = classNames(content, className, contentThemes[activeTheme], {
+  const contentClassName = classNames(content, className, themeBackgroundStyles[activeTheme], {
     [noMargin]: noHero,
+    [noBackgroundColor]: noBackground,
   });
 
   const animateHoleClass = classNames(animateHole, {
@@ -55,6 +44,7 @@ function Content(props) {
 Content.defaultProps = {
   noHero: false,
   className: '',
+  noBackground: false,
 };
 
 Content.propTypes = {
@@ -62,6 +52,7 @@ Content.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   noHero: PropTypes.bool,
+  noBackground: PropTypes.bool,
 };
 
 export default connect(

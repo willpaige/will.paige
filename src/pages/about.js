@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import App from '../components/app/app';
 import Content from '../components/content/content';
 import { themeMap } from '../constants/theme';
@@ -12,11 +14,20 @@ import CurrentEmployment from '../components/currentEmployment/currentEmployment
 import Languages from '../components/languages/languages';
 import FooterSmall from '../components/footerSmall/footerSmall';
 import {
-  aboutRow, aboutList, aboutListItem, aboutListIcon, firstRow, aboutImageCaption, aboutImageContainer, heroImage, noMarginBottom
+  aboutImageCaption,
+  aboutImageContainer,
+  aboutList,
+  aboutListIcon,
+  aboutListItem,
+  aboutRow,
+  firstRow,
+  heroImage,
+  noMarginBottom,
 } from '../scss/about.module.scss';
-import Grid from "../components/grid/grid/grid";
-import Hero from "../components/hero/hero";
-import HeroText from "../components/hero/heroText/heroText";
+import Grid from '../components/grid/grid/grid';
+import Hero from '../components/hero/hero';
+import HeroText from '../components/hero/heroText/heroText';
+import { setActivePage } from '../state/navigation/navigation-action';
 
 const renderImage = (image, caption) => {
   return (
@@ -50,7 +61,9 @@ const renderList = (list) => {
   );
 };
 
-function AboutPage() {
+function AboutPage({ dispatch }) {
+  dispatch(setActivePage(PAGES.ABOUT));
+
   const image = {
     alt: 'Will Paige Software Engineer',
   };
@@ -61,7 +74,11 @@ function AboutPage() {
       <Grid removeRightPadding fullWidthSm>
         <Hero textTopSm>
           <HeroImage hasOverlayText className={heroImage} image={image} title="Hi.">
-            <StaticImage src="../images/will_paige_software_engineer_madeira.png" alt={image.alt} placeholder="blurred" />
+            <StaticImage
+              src="../images/about/will_paige_software_engineer_madeira.png"
+              alt={image.alt}
+              placeholder="blurred"
+            />
             <HeroText className={noMarginBottom} justText gutterSm overlayImage showDot>
               Hi
             </HeroText>
@@ -80,9 +97,9 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              src="../images/will_paige_software_engineer_mtb.png"
+              src="../images/about/will_paige_software_engineer_mtb.png"
               alt="Will Paige software engineer mtb"
-              placeHolder="blurred"
+              placeholder="blurred"
               loading="lazy"
             />,
             "A summer's evening biking somewhere on Dartmoor, Uk circa 2022",
@@ -105,12 +122,12 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              src="../images/will_paige_software_engineer_surfer.png"
+              src="../images/about/will_paige_software_engineer_surfer.png"
               alt="Will Paige software engineer surfing"
-              placeHolder="blurred"
+              placeholder="blurred"
               loading="lazy"
             />,
-            "A moody winters morning surfing on Bantham beach, Uk circa 2019",
+            'A moody winters morning surfing on Bantham beach, Uk circa 2019',
           )}
 
           <div className={aboutRow}>
@@ -130,12 +147,12 @@ function AboutPage() {
           {renderImage(
             <StaticImage
               width={930}
-              src="../images/will_paige_software_engineer_snowboard.png"
+              src="../images/about/will_paige_software_engineer_snowboard.png"
               alt="Will Paige software engineer snowboard"
-              placeHolder="blurred"
+              placeholder="blurred"
               loading="lazy"
             />,
-            "A winter in Morzine, France circa 2012",
+            'A winter in Morzine, France circa 2012',
           )}
           <FooterSmall />
         </Grid>
@@ -144,7 +161,11 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+AboutPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(AboutPage);
 
 export function Head() {
   return <title>About Will Paige</title>;

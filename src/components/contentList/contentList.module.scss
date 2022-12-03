@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+
+.contentListItem {
+  display: flex;
+  margin-bottom: $gutterMargin;
+  align-items: center;
+}
+
+.contentListContent {
+  padding: $gutterMargin;
+  margin-top: $gutterMargin;
+}
+
+.contentListImage {
+  min-width: 55%;
+  position: relative;
+}
+
+.isHeroItem {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  [data-background] {
+    display: none;
+  }
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.contentListImageBackground {
+  right: -$gutterMargin;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.contentListImageBackgroundIsLeft {
+  right: $gutterMargin;
+}
+
+.contentListImageRight {
+  order: 2;
+}
+
+.contentListTitle {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contentListSubTitle {
+  margin-top: 0;
+}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { getActiveTheme } from '../../../state/ui/ui-selectors';
-import { themeMap } from '../../../constants/theme';
+import {themeColorStyles, themeMap} from '../../../constants/theme';
 import { setTheme } from '../../../state/ui/ui-action';
 import Hero from '../hero';
 import HeroText from '../heroText/heroText';
@@ -13,27 +13,15 @@ import {
   animate,
   heroDot,
   heroName,
-  teaGreen,
-  laurelGreen,
-  cambridgeBlue,
-  oldLavender,
   heroSubText,
   heroText,
   heroImageContainer,
   heroImageWrapper,
 } from './heroIndex.module.scss';
 
-const contentThemes = {
-  [themeMap.TEA_GREEN]: teaGreen,
-  [themeMap.LAUREL_GREEN]: laurelGreen,
-  [themeMap.CAMBRIDGE_BLUE]: cambridgeBlue,
-  // [themeMap.TAUPE_GRAY]: taupeGray,
-  [themeMap.OLD_LAVENDER]: oldLavender,
-};
-
 function HeroIndex({ activeTheme, dispatch }) {
   const [disco, setDisco] = useState(0);
-  const activeThemeClass = contentThemes[activeTheme];
+  const activeThemeClass = themeColorStyles[activeTheme];
   const dotClass = classNames(heroDot, animate, activeThemeClass);
 
   const party = () => {
@@ -84,7 +72,7 @@ function HeroIndex({ activeTheme, dispatch }) {
       <HeroImage className={heroImageWrapper} squareSm>
         <StaticImage
           className={heroImageContainer}
-          src="../../../images/will_paige_software_engineer.png"
+          src="../../../images/home/will_paige_software_engineer.png"
           alt="Will Paige Software Engineer"
           placeholder="blurred"
           loading="eager"

@@ -14,18 +14,19 @@ import { trayUnderlay, trayUnderlayIsActive } from './app.module.scss';
 
 function App(props) {
   const {
-    children, theme, activePage, dispatch, trayIsActive,
+    children, theme, dispatch, trayIsActive,
   } = props;
   const trayUnderlayClass = classnames(trayUnderlay, {
     [trayUnderlayIsActive]: trayIsActive,
   });
+
   return (
     <Theme theme={theme}>
       <Wrapper>
         {theme !== themeMap.NO_THEME && (
           <ThemeSwitch />
         )}
-        <Navigation activePage={activePage} />
+        <Navigation />
         <main>
           {children}
         </main>
@@ -47,7 +48,6 @@ App.defaultProps = {
 App.propTypes = {
   theme: PropTypes.string,
   children: PropTypes.node.isRequired,
-  activePage: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
   trayIsActive: PropTypes.bool.isRequired,
 };

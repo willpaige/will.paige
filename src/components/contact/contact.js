@@ -20,7 +20,7 @@ function Contact(props) {
         });
 
         return (
-          <div className={contactClass}>
+          <div className={contactClass} key={url}>
             <a className={contactLink} href={url} target="_blank" rel="noreferrer">
               <span className={contactIcon}>{icon()}</span>
               {!small && (

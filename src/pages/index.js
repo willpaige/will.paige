@@ -1,4 +1,6 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import App from '../components/app/app';
 import Content from '../components/content/content';
 import Footer from '../components/footer/footer';
@@ -7,10 +9,13 @@ import { PAGES } from '../constants/pages';
 import { home } from '../content/home';
 import Grid from '../components/grid/grid/grid';
 import HeroIndex from '../components/hero/heroIndex/heroIndex';
+import { setActivePage } from '../state/navigation/navigation-action';
 
-function IndexPage() {
+function IndexPage({ dispatch }) {
+  dispatch(setActivePage(PAGES.HOME));
+
   return (
-    <App theme={themeMap.TEA_GREEN} activePage={PAGES.HOME}>
+    <App theme={themeMap.TEA_GREEN}>
       <Grid removeRightPadding fullWidthSm>
         <HeroIndex />
       </Grid>
@@ -24,7 +29,11 @@ function IndexPage() {
   );
 }
 
-export default IndexPage;
+IndexPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(IndexPage);
 
 export function Head() {
   return <title>Will Paige | Software Engineer</title>;

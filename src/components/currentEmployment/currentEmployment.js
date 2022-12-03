@@ -16,7 +16,7 @@ function CurrentEmployment() {
         <Col className={logoCol} size={GridSize.EXTRA_SMALL}>
           <Avatar>
             <StaticImage
-              src="../../images/natwest_rooster_money.png"
+              src="../../images/work/natwest_rooster_money.png"
               alt="NatWest Rooster Money"
               placeholder="blurred"
             />
