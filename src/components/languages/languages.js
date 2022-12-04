@@ -49,6 +49,14 @@ function Languages() {
           );<br/>
         </div>
       </Col>
+      {/*<Col size={GridSize.EXTRA_SMALL} xs={50}>*/}
+      {/*  <div className={codeBlock}>*/}
+      {/*    Data Management*/}
+      {/*    <br/>&nbsp; SQL*/}
+      {/*    <br/>&nbsp; GraphQL*/}
+      {/*    <br/>*/}
+      {/*  </div>*/}
+      {/*</Col>*/}
     </Row>
   );
 }

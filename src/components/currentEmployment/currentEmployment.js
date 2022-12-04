@@ -30,14 +30,16 @@ function CurrentEmployment() {
       </Row>
       <div className={description}>
         <p>
-          Roostermoney is a fast-paced, fast-growing
+          I&apos;m currently working in
           {' '}
           <b>fintech</b>
           {' '}
-          that aims to teach kids the value of money.
-          Aimed at 4 to 14-year-olds, Roostermoney helps graduate children through all the key milestones in
-          learning about money. From using a star in the younger years teaching reward systems to introducing a
-          payment card when they're older to teach responsible spending.
+          for Natwest Rooster Money, a children&apos;s pocket money management app.
+        </p>
+        <p>
+          I began work at Rooster Money in 2018; at that time, it was a small startup
+          with ten employees. Over the past four years, Rooster has grown in strength
+          and size, now employing over 70 people as part of the NatWest group.
         </p>
       </div>
     </>
