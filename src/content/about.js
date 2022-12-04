@@ -79,6 +79,7 @@ export const about = {
     <b>iOS and Android apps</b>
     {' '}
     in either
+    {' '}
     <b>Cordova or React Native</b>
   </span>,
     }, {
@@ -94,6 +95,7 @@ export const about = {
       content:
   <span>
     Create web and device-friendly
+    {' '}
     <b>animations</b>
     {' '}
     in CSS, SVGs and JavaScript
@@ -103,6 +105,7 @@ export const about = {
       content:
   <span>
     Design bespoke
+    {' '}
     <b>content architecture</b>
     {' '}
     to be delivered by either Contenful or WordPress content management systems
@@ -112,6 +115,7 @@ export const about = {
       content:
   <span>
     Write efficient
+    {' '}
     <b>unit tests</b>
     {' '}
     to validate code and prevent potential bugs
@@ -121,6 +125,7 @@ export const about = {
       content:
   <span>
     Write detailed
+    {' '}
     <b>product briefs</b>
     {' '}
     that identify business impact, risk, success and project scope
@@ -130,6 +135,7 @@ export const about = {
       content:
   <span>
     Write custom
+    {' '}
     <b>build scripts</b>
     {' '}
     using Webpack and GitHub actions
@@ -139,6 +145,7 @@ export const about = {
       content:
   <span>
     Successfully
+    {' '}
     <b>run product releases</b>
   </span>,
     }, {
@@ -146,9 +153,11 @@ export const about = {
       content:
   <span>
     Work in
+    {' '}
     <b>agile</b>
     {' '}
     teams practising
+    {' '}
     <b>SCRUM</b>
     {' '}
     product management
@@ -158,9 +167,11 @@ export const about = {
       content:
   <span>
     Generate legible
+    {' '}
     <b>project tickets</b>
     {' '}
     and
+    {' '}
     <b>user journeys</b>
   </span>,
     }, {
@@ -168,6 +179,7 @@ export const about = {
       content:
   <span>
     Conform to
+    {' '}
     <b>coding standards</b>
   </span>,
     }, {
@@ -175,15 +187,18 @@ export const about = {
       content:
   <span>
     Monitor and configure applications and services in
+    {' '}
     <b>AWS Cloud Computing</b>
   </span>,
     }, {
       icon: AiOutlineApi,
-      content: <span>
-        Design and build
-        <b>bespoke API services</b>
-        {' '}
-        in JavaScript and PHP
+      content:
+        <span>
+          Design and build
+          {' '}
+          <b>bespoke API services</b>
+          {' '}
+          in JavaScript and PHP
       </span>,
     }, {
       icon: AiOutlineBgColors,
@@ -198,6 +213,7 @@ export const about = {
       content:
   <span>
     Analyse
+    {' '}
     <b>website SEO</b>
     {' '}
     and create successful strategies to improve search engine positioning
