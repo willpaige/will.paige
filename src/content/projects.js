@@ -43,7 +43,7 @@ export const PROJECTS = {
     thumbnail:
     <StaticImage
       src="../images/projects/botanyblend.png"
-      alt="Sama Health & Well being"
+      alt="Botanyblend organic face & body oils"
       placeholder={PLACEHOLDER}
       loading={'eager'}
     />,
@@ -55,8 +55,14 @@ export const PROJECTS = {
     logo: '',
     url: buildUrl('willpower-fitness'),
     tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
-    blurb: '',
-    thumbnail: '',
+    blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
+    thumbnail:
+     <StaticImage
+      src="../images/projects/willpower_fitness.png"
+      alt="Willpower fitness - Devon"
+      placeholder={PLACEHOLDER}
+      loading={'eager'}
+    />,
     hero: '',
   },
   [PROJECT_KEYS.SUPER_YACHT_TENDERS]: {
@@ -65,8 +71,14 @@ export const PROJECTS = {
     logo: '',
     url: buildUrl('super-yacht-tenders'),
     tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
-    blurb: '',
-    thumbnail: '',
+    blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
+    thumbnail:
+     <StaticImage
+      src="../images/projects/super_yacht_tenders.png"
+      alt="Super yacht tenders"
+      placeholder={PLACEHOLDER}
+      loading={'eager'}
+    />,
     hero: '',
   },
   [PROJECT_KEYS.KFT_RENEWABLES]: {
@@ -75,8 +87,14 @@ export const PROJECTS = {
     logo: '',
     url: buildUrl('kft-renewables'),
     tags: [],
-    blurb: '',
-    thumbnail: '',
+     blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
+    thumbnail:
+     <StaticImage
+      src="../images/projects/kftrenewables.png"
+      alt="KFT Renewables"
+      placeholder={PLACEHOLDER}
+      loading={'eager'}
+    />,
     hero: '',
   },
 };

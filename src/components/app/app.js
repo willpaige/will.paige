@@ -23,9 +23,7 @@ function App(props) {
   return (
     <Theme theme={theme}>
       <Wrapper>
-        {theme !== themeMap.NO_THEME && (
-          <ThemeSwitch />
-        )}
+        <ThemeSwitch />
         <Navigation />
         <main>
           {children}

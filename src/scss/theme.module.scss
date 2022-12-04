@@ -4,10 +4,14 @@
 .theme-2 { background-color: $theme-2 }
 .theme-3 { background-color: $theme-3 }
 .theme-4 { background-color: $theme-4 }
-.old-lavender { background-color: $old-lavender }
+.theme-5 { background-color: $theme-5 }
 
 .theme-1-color { color: $theme-1 }
 .theme-2-color { color: $theme-2 }
 .theme-3-color { color: $theme-3 }
 .theme-4-color { color: $theme-4 }
-.old-lavender-color { color: $old-lavender }
+.theme-5-color { color: $theme-5 }
+
+.backgroundGreyLightest {
+  background-color: $greyLightest;
+}

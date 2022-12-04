@@ -12,15 +12,13 @@ import {
   contentListTitle,
   contentListSubTitle,
   contentListImageRight,
-  contentListImageBackground,
-  contentListImageBackgroundIsLeft
 } from './contentList.module.scss';
 import Title from '../title/title';
 import { getActiveTheme } from '../../state/ui/ui-selectors';
 import {themeBackgroundStyles} from "../../constants/theme";
 
 const imageIsRight = (key) => {
-  const isRight = [1, 4];
+  const isRight = [1, 3, 5];
   return isRight.includes(key);
 };
 
@@ -42,9 +40,6 @@ function ContentList(props) {
         });
         const themeClass = themeBackgroundStyles[activeTheme];
         const contentClass = classnames(themeClass, contentListContent);
-        const imageBackgroundClass = classnames(themeClass, contentListImageBackground, {
-          [contentListImageBackgroundIsLeft]: positionRight
-        });
         const contentListItemClass = classnames(contentListItem, {
           [isHeroItem]: isHero(index),
         });
@@ -52,7 +47,6 @@ function ContentList(props) {
         return (
           <div className={contentListItemClass} key={title}>
             <div className={imageClass}>
-              <div data-background className={imageBackgroundClass} />
               <Link to={url}>{thumbnail}</Link>
             </div>
             <div className={contentClass}>

@@ -8,7 +8,6 @@
 
 .contentListContent {
   padding: $gutterMargin;
-  margin-top: $gutterMargin;
 }
 
 .contentListImage {
@@ -28,18 +27,6 @@
   & > div {
     width: 100%;
   }
-}
-
-.contentListImageBackground {
-  right: -$gutterMargin;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
-.contentListImageBackgroundIsLeft {
-  right: $gutterMargin;
 }
 
 .contentListImageRight {

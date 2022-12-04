@@ -7,7 +7,7 @@ import {PAGES} from "../constants/pages";
 
 function ServicesPage() {
   return (
-    <App theme={themeMap.OLD_LAVENDER} activePage={PAGES.SERVICES}>
+    <App theme={themeMap.THEME_5} activePage={PAGES.SERVICES}>
       <Content>
         <p className="lead">About</p>
         <Footer />

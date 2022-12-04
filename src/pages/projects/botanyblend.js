@@ -5,7 +5,7 @@ import Content from '../../components/content/content';
 
 function Botanyblend() {
   return (
-    <App theme={themeMap.NO_THEME}>
+    <App>
       <Content noHero>
         xxxx
         {/*<Grid fullWidthSm>*/}

@@ -17,7 +17,7 @@ function EducationPage({ dispatch }) {
   dispatch(setActivePage(PAGES.EDUCATION));
 
   return (
-    <App theme={themeMap.OLD_LAVENDER}>
+    <App theme={themeMap.THEME_5}>
       <Content noHero>
         <Grid fullWidthSm>
           <HeroText className={heroTitle} smallTitle justText showDot>
