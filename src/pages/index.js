@@ -7,8 +7,8 @@ import Footer from '../components/footer/footer';
 import { themeMap } from '../constants/theme';
 import { PAGES } from '../constants/pages';
 import { home } from '../content/home';
-import Grid from '../components/grid/grid/grid';
 import HeroIndex from '../components/hero/heroIndex/heroIndex';
+import Grid from '../components/grid/grid/grid';
 import { setActivePage } from '../state/navigation/navigation-action';
 
 function IndexPage({ dispatch }) {

@@ -4,7 +4,9 @@ import classnames from 'classnames';
 import { grid, isFullWidthSm, noPaddingRight } from './grid.module.scss';
 
 function Grid(props) {
-  const { children, className, fullWidthSm, removeRightPadding } = props;
+  const {
+    children, className, fullWidthSm, removeRightPadding,
+  } = props;
   const gridClassName = classnames(grid, className, {
     [isFullWidthSm]: fullWidthSm,
     [noPaddingRight]: removeRightPadding,

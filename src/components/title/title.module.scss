@@ -1,7 +1,7 @@
 @import "../../scss/variables";
 
 .title {
-  letter-spacing: 2px;
+  letter-spacing: $letterSpacing;
   font-family: $sansSerif;
   font-weight: bold;
   text-transform: uppercase;

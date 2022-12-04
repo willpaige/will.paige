@@ -4,6 +4,14 @@
   display: flex;
   margin-bottom: $gutterMargin;
   align-items: center;
+
+  @media (max-width: $screenMdMax) {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .contentListContent {
@@ -30,7 +38,9 @@
 }
 
 .contentListImageRight {
-  order: 2;
+  @media (min-width: $screenSm) {
+    order: 2;
+  }
 }
 
 .contentListTitle {

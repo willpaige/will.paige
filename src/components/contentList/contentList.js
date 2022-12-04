@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import {
   isHeroItem,
-  contentList,
   contentListContent,
   contentListImage,
   contentListItem,
@@ -15,7 +14,8 @@ import {
 } from './contentList.module.scss';
 import Title from '../title/title';
 import { getActiveTheme } from '../../state/ui/ui-selectors';
-import {themeBackgroundStyles} from "../../constants/theme";
+import { themeBackgroundStyles } from '../../constants/theme';
+import Video from '../video/video';
 
 const imageIsRight = (key) => {
   const isRight = [1, 3, 5];
@@ -28,11 +28,11 @@ function ContentList(props) {
   const { data, activeTheme } = props;
 
   return (
-    <div className={contentList}>
+    <div>
       {Object.keys(data).map((key, index) => {
         const positionRight = imageIsRight(index);
         const {
-          title, blurb, thumbnail, url, subtitle,
+          title, blurb, thumbnail, url, subtitle, video,
         } = data[key];
         const imageClass = classnames(contentListImage, {
           [contentListImageRight]: positionRight,
@@ -47,7 +47,11 @@ function ContentList(props) {
         return (
           <div className={contentListItemClass} key={title}>
             <div className={imageClass}>
-              <Link to={url}>{thumbnail}</Link>
+              <Link to={url}>
+                {video ? (
+                  <Video src={video.src} placeholder={video.placeholder} />
+                ) : thumbnail}
+              </Link>
             </div>
             <div className={contentClass}>
               <Title className={contentListTitle} type="h2">{title}</Title>

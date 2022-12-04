@@ -24,10 +24,10 @@ export const PAGES_PATHS = {
     title: 'Work',
     url: '/work/',
   },
-  [PAGES.PROJECTS]: {
-    title: 'Projects',
-    url: '/projects/',
-  },
+  // [PAGES.PROJECTS]: {
+  //   title: 'Projects',
+  //   url: '/projects/',
+  // },
   [PAGES.EDUCATION]: {
     title: 'Education',
     url: '/education/',

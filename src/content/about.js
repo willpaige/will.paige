@@ -32,7 +32,13 @@ export const about = {
       <p>
         My name is
         {' '}
-        <b>Will Paige</b>, and I'm a {age}-year-old
+        <b>Will Paige</b>
+        {' '}
+        , and I&apos;m a
+        {' '}
+        {age}
+        {' '}
+        -year-old
         {' '}
         <b>software engineer</b>
         {' '}
@@ -193,13 +199,13 @@ export const about = {
     }, {
       icon: AiOutlineApi,
       content:
-        <span>
-          Design and build
-          {' '}
-          <b>bespoke API services</b>
-          {' '}
-          in JavaScript and PHP
-      </span>,
+  <span>
+    Design and build
+    {' '}
+    <b>bespoke API services</b>
+    {' '}
+    in JavaScript and PHP
+  </span>,
     }, {
       icon: AiOutlineBgColors,
       content:
@@ -220,15 +226,16 @@ export const about = {
   </span>,
     }, {
       icon: AiOutlineEdit,
-      content: <span>
-        <b>Branding</b>
-        {' '}
-        and
-        {' '}
-        <b>print</b>
-        {' '}
-        design
-               </span>,
+      content:
+  <span>
+    <b>Branding</b>
+    {' '}
+    and
+    {' '}
+    <b>print</b>
+    {' '}
+    design
+  </span>,
     },
   ],
   KNOWLEDGE_OF: [

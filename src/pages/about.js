@@ -8,11 +8,15 @@ import Content from '../components/content/content';
 import { themeMap } from '../constants/theme';
 import { PAGES } from '../constants/pages';
 import { about } from '../content/about';
-import HeroImage from '../components/hero/heroImage/heroImage';
+import { setActivePage } from '../state/navigation/navigation-action';
 import Title from '../components/title/title';
 import CurrentEmployment from '../components/currentEmployment/currentEmployment';
 import Languages from '../components/languages/languages';
+import Hero from '../components/hero/hero';
+import HeroText from '../components/hero/heroText/heroText';
 import FooterSmall from '../components/footerSmall/footerSmall';
+import HeroImage from '../components/hero/heroImage/heroImage';
+import Grid from '../components/grid/grid/grid';
 import {
   aboutImageCaption,
   aboutImageContainer,
@@ -24,10 +28,6 @@ import {
   heroImage,
   noMarginBottom,
 } from '../scss/about.module.scss';
-import Grid from '../components/grid/grid/grid';
-import Hero from '../components/hero/hero';
-import HeroText from '../components/hero/heroText/heroText';
-import { setActivePage } from '../state/navigation/navigation-action';
 
 const renderImage = (image, caption) => {
   return (

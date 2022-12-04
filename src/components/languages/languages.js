@@ -42,7 +42,7 @@ function Languages() {
       </Col>
       <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
-          php => array(
+          php =&gt; array(
           <br/>&nbsp; wordPress,
           <br/>&nbsp; smarty
           <br/>

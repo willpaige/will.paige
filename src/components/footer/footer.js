@@ -1,17 +1,18 @@
 import React from 'react';
-import classNames from 'classnames';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Row from '../grid/row/row';
 import Col from '../grid/col/col';
 import Title from '../title/title';
 import { GridSize } from '../../constants/grid';
 import { codeNoMarginLeft, codeTag } from '../code/code.module.scss';
-import { content, footerRow, colXs, rowMdXs, colMdXs } from './footer.module.scss';
-import FooterSmall from '../footerSmall/footerSmall';
+import {
+  content, footerRow, colXs, rowMdXs, colMdXs,
+} from './footer.module.scss';
 import CurrentEmployment from '../currentEmployment/currentEmployment';
 import Languages from '../languages/languages';
-import classnames from "classnames";
+import FooterSmall from '../footerSmall/footerSmall';
 
 function Footer(props) {
   const { showCurrentEmployment, showLanguages, showWebsite } = props;
@@ -39,7 +40,7 @@ function Footer(props) {
           </Col>
         )}
         {showWebsite && (
-          <Col className={classNames(colXs, colMdXs)} size={GridSize.SMALL}>
+          <Col className={classnames(colXs, colMdXs)} size={GridSize.SMALL}>
             <div className={content}>
               <Title type="h2">This Website</Title>
               <p>
@@ -47,7 +48,7 @@ function Footer(props) {
                 <code className={codeTag}>GatsbyJs</code>
               </p>
               <p>
-                <code className={classNames(codeTag, codeNoMarginLeft)}>GatsbyJs</code>
+                <code className={classnames(codeTag, codeNoMarginLeft)}>GatsbyJs</code>
                 {' '}
                 is an open source framework with performance, scalability and security built in.
                 You&apos;ll notice that when navigating this site, pages will load instantly.

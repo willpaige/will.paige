@@ -1,16 +1,18 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import { GridSize } from '../../constants/grid';
 import Row from '../grid/row/row';
 import Col from '../grid/col/col';
 import Contact from '../contact/contact';
 import Katie from '../katie/katie';
 import { footerRow } from '../footer/footer.module.scss';
-import { footerSmall, katieUx, contact, noPaddingSm } from './footerSmall.module.scss';
-import PropTypes from "prop-types";
+import {
+  footerSmall, katieUx, contact, noPaddingSm,
+} from './footerSmall.module.scss';
 
 function FooterSmall(props) {
-  const {className} = props;
+  const { className } = props;
   const footerClass = classnames(className, footerRow, footerSmall);
 
   return (
@@ -30,7 +32,7 @@ FooterSmall.defaultProps = {
 };
 
 FooterSmall.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default FooterSmall;

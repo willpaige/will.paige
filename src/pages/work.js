@@ -5,19 +5,19 @@ import App from '../components/app/app';
 import Content from '../components/content/content';
 import { themeMap } from '../constants/theme';
 import { PAGES } from '../constants/pages';
-import Timeline from '../components/timeline/timeline';
-import HeroText from '../components/hero/heroText/heroText';
-import { contentContainer } from '../scss/work.module.scss';
 import { WORK } from '../content/work';
+import { setActivePage } from '../state/navigation/navigation-action';
+import Timeline from '../components/timeline/timeline';
 import Footer from '../components/footer/footer';
 import Grid from '../components/grid/grid/grid';
-import { setActivePage } from '../state/navigation/navigation-action';
+import HeroText from '../components/hero/heroText/heroText';
+import { contentContainer } from '../scss/work.module.scss';
 
 function WorkPage({ dispatch }) {
   dispatch(setActivePage(PAGES.WORK));
 
   return (
-    <App theme={themeMap.THEME_3}>
+    <App theme={themeMap.THEME_5}>
       <Content className={contentContainer} noHero>
         <Grid fullWidthSm>
           <HeroText justText showDot>

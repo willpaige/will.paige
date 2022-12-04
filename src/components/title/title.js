@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import {
-  title, h1, h2, h3, h4, h5, h6,
+  title, h1, h2
 } from './title.module.scss';
 
 const titleStyles = {
-  h1, h2, h3, h4, h5, h6,
+  h1, h2
 };
 
 const getTitle = (type, titleClasses, children) => {

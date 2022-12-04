@@ -10,17 +10,16 @@ import Footer from '../components/footer/footer';
 import Timeline from '../components/timeline/timeline';
 import HeroText from '../components/hero/heroText/heroText';
 import Grid from '../components/grid/grid/grid';
-import { heroTitle } from '../scss/education.module.scss';
 import { setActivePage } from '../state/navigation/navigation-action';
 
 function EducationPage({ dispatch }) {
   dispatch(setActivePage(PAGES.EDUCATION));
 
   return (
-    <App theme={themeMap.THEME_5}>
+    <App theme={themeMap.THEME_3}>
       <Content noHero>
         <Grid fullWidthSm>
-          <HeroText className={heroTitle} smallTitle justText showDot>
+          <HeroText smallTitle justText showDot>
             Education
           </HeroText>
         </Grid>
