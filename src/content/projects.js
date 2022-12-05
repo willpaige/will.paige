@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { PAGES, PAGES_PATHS } from '../constants/pages';
 import samaVideo from '../video/sama-hero.mp4';
 
-const buildUrl = (slug) => `${PAGES_PATHS[PAGES.PROJECTS].url}${slug}/`;
+// const buildUrl = (slug) => `${PAGES_PATHS[PAGES.PROJECTS].url}${slug}/`;
 const PLACEHOLDER = 'blurred';
 
 export const PROJECT_KEYS = {
@@ -20,7 +20,7 @@ export const PROJECTS = {
     title: 'SAMA',
     subtitle: 'Health & Wellbeing',
     logo: '',
-    url: buildUrl('sama'),
+    // url: buildUrl('sama'),
     tags: ['React', 'Reduct', 'CSS', 'GatsbyJs', 'JavaScript', 'NodeJs', 'GraphQl', 'UX/UI'],
     blurb:
       <p>
@@ -41,7 +41,7 @@ export const PROJECTS = {
     title: 'Botanyblend',
     subtitle: 'Organic Face & Body Oils',
     logo: '',
-    url: buildUrl('botanyblend'),
+    // url: buildUrl('botanyblend'),
     tags:
       [
         'UI/UX','WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL', 'Ecommerce', 'WooCommerce', 'Branding', 'Packaging', 'Print'
@@ -63,7 +63,7 @@ export const PROJECTS = {
     title: 'Willpower Fitness',
     subtitle: 'Health & Fitness',
     logo: '',
-    url: buildUrl('willpower-fitness'),
+    // url: buildUrl('willpower-fitness'),
     tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
     blurb:
       <p>Lifestyle and fitness website for a large crossfit gym</p>,
@@ -80,7 +80,7 @@ export const PROJECTS = {
     title: 'Super Yacht Tenders',
     subtitle: 'Suppliers and agents for super yacht tenders',
     logo: '',
-    url: buildUrl('super-yacht-tenders'),
+    // url: buildUrl('super-yacht-tenders'),
     tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
     blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
     thumbnail:
@@ -96,7 +96,7 @@ export const PROJECTS = {
     title: 'KFT Renewables',
     subtitle: 'Renewable and sustainable plumbing solutions',
     logo: '',
-    url: buildUrl('kft-renewables'),
+    // url: buildUrl('kft-renewables'),
     tags: [],
      blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
     thumbnail:
