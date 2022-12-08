@@ -6,6 +6,7 @@ export const PAGES = {
   WORK: 'work',
   PROJECTS: 'projects',
   PROJECT: 'project',
+  PERFORMANCE: 'performance',
   EDUCATION: 'education',
   SERVICES: 'services',
   CONTACT: 'contact',
