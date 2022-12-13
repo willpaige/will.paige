@@ -7,4 +7,13 @@
   align-items: center;
   letter-spacing: $letterSpacing;
   cursor: pointer;
+  margin: $gridMarginSmall 0;
+}
+
+.titleClass {
+  line-height: 1;
+
+  @media (min-width: $screenMd) {
+    font-size: 3.8rem;
+  }
 }

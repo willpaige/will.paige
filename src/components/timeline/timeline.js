@@ -10,10 +10,12 @@ import {
   timelineTitle,
   timelineSubTitle,
   timelineMeta,
+  timelineImageNoBackground,
   avatar
 } from './timeline.module.scss';
 import Avatar from "../avatar/avatar";
 import Tags from "../tags/tags";
+import classnames from "classnames";
 
 const renderMeta = (meta) => {
   if (meta) {
@@ -37,7 +39,9 @@ function Timeline(props) {
         } = item;
         return (
           <div className={timelineItem} key={key}>
-            <div className={timelineImage}>
+            <div className={classnames(timelineImage, {
+              [timelineImageNoBackground]: image
+            })}>
               {image ? (
                 <Avatar className={avatar}>
                   {image}

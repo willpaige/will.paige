@@ -1,18 +1,17 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { PAGES_PATHS } from '../../constants/pages';
 import Contact from '../contact/contact';
 import Burger from '../burger/burger';
 import {
-  link, linkIsActive, navigation, navigationContact, navigationItems, navigationIsActive
+  link, linkIsActive, navigation, navigationContact, navigationItems, navigationIsActive,
 } from './navigation.module.scss';
 import { isTrayActive } from '../../state/ui/ui-selectors';
-import classnames from "classnames";
-import {toggleTray} from "../../state/ui/ui-action";
-import {getActivePage} from "../../state/navigation/navigation-selectors";
+import { toggleTray } from '../../state/ui/ui-action';
+import { getActivePage } from '../../state/navigation/navigation-selectors';
 
 function Navigation(props) {
   const { activePage, trayIsActive, dispatch } = props;
@@ -31,7 +30,7 @@ function Navigation(props) {
           {Object.keys(PAGES_PATHS).map((key) => {
             const content = PAGES_PATHS[key];
             const isActive = activePage === key;
-            const linkClass = classNames(link, isActive ? linkIsActive : '');
+            const linkClass = classnames(link, isActive ? linkIsActive : '');
 
             return (
               <a

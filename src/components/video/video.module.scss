@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .video-container,
 .video {
   width: 100%;
@@ -6,4 +8,9 @@
 .video {
   height: 100%;
   display: block;
+}
+
+.hasVerticalMargin {
+  margin-top: $gridMarginSmall;
+  margin-bottom: $gridMarginSmall;
 }

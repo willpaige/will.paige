@@ -2,11 +2,21 @@
 
 .contentListItem {
   display: flex;
-  margin-bottom: $gutterMargin;
+  margin-bottom: $gutterWidthSm;
   align-items: center;
 
   @media (max-width: $screenMdMax) {
     flex-direction: column;
+  }
+
+  @media (min-width: $screenMd) {
+    margin-bottom: $gutterMargin;
+  }
+
+  &:last-child {
+    @media (max-width: $screenSmMax) {
+      margin: 0;
+    }
   }
 
   img {
@@ -15,7 +25,11 @@
 }
 
 .contentListContent {
-  padding: $gutterMargin;
+  padding: $gutterWidthSm;
+
+  @media (min-width: $screenMd) {
+    padding: $gutterMargin;
+  }
 }
 
 .contentListImage {

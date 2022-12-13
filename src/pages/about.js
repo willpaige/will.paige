@@ -18,8 +18,6 @@ import FooterSmall from '../components/footerSmall/footerSmall';
 import HeroImage from '../components/hero/heroImage/heroImage';
 import Grid from '../components/grid/grid/grid';
 import {
-  aboutImageCaption,
-  aboutImageContainer,
   aboutList,
   aboutListIcon,
   aboutListItem,
@@ -28,17 +26,7 @@ import {
   heroImage,
   noMarginBottom,
 } from '../scss/about.module.scss';
-
-const renderImage = (image, caption) => {
-  return (
-    <div className={aboutImageContainer}>
-      {image}
-      <p className={aboutImageCaption}>
-        {caption}
-      </p>
-    </div>
-  );
-};
+import Image from "../components/image/image";
 
 const renderList = (list) => {
   return (
@@ -94,16 +82,15 @@ function AboutPage({ dispatch }) {
             {about.ABOUT_ME('36')}
           </div>
 
-          {renderImage(
+          <Image caption="A summer's evening biking somewhere on Dartmoor, Uk circa 2022">
             <StaticImage
               width={930}
               src="../images/about/will_paige_software_engineer_mtb.png"
               alt="Will Paige software engineer mtb"
               placeholder="blurred"
               loading="lazy"
-            />,
-            "A summer's evening biking somewhere on Dartmoor, Uk circa 2022",
-          )}
+            />
+          </Image>
 
           <div className={aboutRow}>
             <Title type="h2">
@@ -119,16 +106,15 @@ function AboutPage({ dispatch }) {
             {renderList(about.WHAT_CAN_I_DO)}
           </div>
 
-          {renderImage(
+          <Image caption="A moody winters morning surfing on Bantham beach, Uk circa 2019">
             <StaticImage
               width={930}
               src="../images/about/will_paige_software_engineer_surfer.png"
               alt="Will Paige software engineer surfing"
               placeholder="blurred"
               loading="lazy"
-            />,
-            'A moody winters morning surfing on Bantham beach, Uk circa 2019',
-          )}
+            />
+          </Image>
 
           <div className={aboutRow}>
             <Title type="h2">
@@ -144,16 +130,15 @@ function AboutPage({ dispatch }) {
             <CurrentEmployment />
           </div>
 
-          {renderImage(
+          <Image caption="A winter in Morzine, France circa 2012">
             <StaticImage
               width={930}
               src="../images/about/will_paige_software_engineer_snowboard.png"
               alt="Will Paige software engineer snowboard"
               placeholder="blurred"
               loading="lazy"
-            />,
-            'A winter in Morzine, France circa 2012',
-          )}
+            />
+          </Image>
           <FooterSmall />
         </Grid>
       </Content>

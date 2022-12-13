@@ -36,7 +36,8 @@
     "react-icons": "^4.6.0",
     "react-redux": "^8.0.5",
     "redux": "^4.2.0",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

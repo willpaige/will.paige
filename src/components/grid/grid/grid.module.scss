@@ -26,5 +26,7 @@
 }
 
 .noPaddingRight {
-  padding-right: 0;
+  @media (min-width: $screenMd) {
+    padding-right: 0;
+  }
 }

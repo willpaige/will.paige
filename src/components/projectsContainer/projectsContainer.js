@@ -6,19 +6,34 @@ import Content from '../content/content';
 import Grid from '../grid/grid/grid';
 import HeroText from '../hero/heroText/heroText';
 import FooterSmall from '../footerSmall/footerSmall';
+import Tags from "../tags/tags";
+
+const renderHero = (tags, title, subtitle) => {
+  if (tags) {
+    return (
+      <HeroText smallTitle justText showDot subtitle={subtitle} content={<Tags data={tags} />}>
+        {title}
+      </HeroText>
+    );
+  };
+
+  return (
+    <HeroText smallTitle justText showDot subtitle={subtitle}>
+      {title}
+    </HeroText>
+  );
+};
 
 function ProjectsContainer(props) {
-  const { children, title, subtitle } = props;
+  const { children, title, subtitle, tags, removeRightPadding } = props;
 
   return (
     <App theme={themeMap.THEME_4}>
       <Content noHero noBackground>
-        <Grid fullWidthSm removeRightPadding>
-          <HeroText justText showDot subtitle={subtitle}>
-            {title}
-          </HeroText>
+        <Grid fullWidthSm removeRightPadding={removeRightPadding}>
+          {renderHero(tags, title, subtitle)}
         </Grid>
-        <Grid removeRightPadding>
+        <Grid removeRightPadding={removeRightPadding}>
           {children}
           <FooterSmall />
         </Grid>
@@ -30,12 +45,17 @@ function ProjectsContainer(props) {
 ProjectsContainer.defaultProps = {
   title: 'Projects',
   subtitle: undefined,
+  tags: undefined,
+  removeRightPadding: true,
 };
 
 ProjectsContainer.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.node,
   subtitle: PropTypes.string,
+  removeRightPadding: PropTypes.bool,
+  // eslint-disable-next-line react/forbid-prop-types
+  tags: PropTypes.array,
 };
 
 export default ProjectsContainer;

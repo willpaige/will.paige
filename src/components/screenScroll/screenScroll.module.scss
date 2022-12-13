@@ -1,0 +1,261 @@
+@import "../../scss/variables";
+
+$screenbackground: #28272B;
+$lensBackground: #b3b3b3;
+$chromeBackground: #d6d6d6;
+$chromeBackgroundShadow: #c0c0c0;
+$screenBorderRadius: 1em;
+$baseTriangleWidth: 1.5em;
+$baseTriangleHeight: 5em;
+$baseWidth: 12em;
+$baseShadowHeight: 1.2em;
+$baseShadowTriangleWidth: 0.35em;
+$baseMarginBottom: 0.6em;
+$baseBottomTriangleWidth: 2.5em;
+$footTopTriangleHeight: 0.7em;
+$footTopHeight: 1em;
+$footTopBackground: #dfdfdf;
+$mobileBorderWidth: 1em;
+
+@mixin beforeAfter {
+  content: "";
+  position: absolute;
+}
+
+.buttons {
+  display: flex;
+  margin: 1.2rem 0;
+  justify-content: flex-end;
+}
+
+.desktopButton {
+  margin-right: 1.2rem;
+}
+
+.screenScroll {
+  margin: $gridMarginSmall 0;
+}
+
+.desktopScreenScroll {
+  position: relative;
+  padding-bottom: 0.1rem;
+  font-size: 0.5rem;
+
+  @media (min-width: $screenMd) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: $screenLg) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: $screenXlg) {
+    font-size: 1.2rem;
+  }
+
+
+  &:before {
+    @include beforeAfter();
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    top: 1em;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: $lensBackground;
+  }
+}
+
+.desktopScreenBottom {
+  height: 5em;
+  background-color: $chromeBackground;
+  border-radius: 0 0 $screenBorderRadius $screenBorderRadius;
+  position: relative;
+}
+
+.appleIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8em;
+}
+
+.scroll {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: all-scroll;
+  height: 100%;
+}
+
+.desktopScreenScrollInner {
+  padding: 2em;
+  background-color: $screenbackground;
+  border-radius: $screenBorderRadius $screenBorderRadius 0 0;
+  aspect-ratio: 21 / 12;
+  overflow: hidden;
+
+  //&:before {
+  //  @include beforeAfter();
+  //  right: 7em;
+  //  width: 51%;
+  //  height: 200%;
+  //  transform: rotate(45deg);
+  //  background: linear-gradient(to bottom, #b0b0b01a 0%, #fff0 100%);
+  //  z-index: 5;
+  //}
+}
+
+.base {
+  width: $baseWidth;
+  height: 5em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: $chromeBackground;
+  position: relative;
+  margin-bottom: 1.23em;
+
+  & > div {
+    position: absolute;
+  }
+
+  &:before,
+  &:after {
+    @include beforeAfter();
+    top: 0;
+  }
+
+  &:before {
+    border-left: $baseTriangleWidth solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: $baseTriangleHeight solid $chromeBackground;
+    left: -$baseTriangleWidth;
+  }
+
+  &:after {
+    border-right: $baseTriangleWidth solid transparent;
+    border-left: 0 solid transparent;
+    border-bottom: $baseTriangleHeight solid $chromeBackground;
+    right: -$baseTriangleWidth;
+  }
+}
+
+.grey-shadow {
+  width: $baseWidth;
+  height: $baseShadowHeight;
+  background: $chromeBackgroundShadow;
+  top: 0;
+
+  &:before,
+  &:after {
+    @include beforeAfter();
+    top: 0;
+  }
+
+  &:before {
+    border-left: $baseShadowTriangleWidth solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: $baseShadowHeight solid $chromeBackgroundShadow;
+    left: -$baseShadowTriangleWidth;
+    z-index: 2
+  }
+
+  &:after {
+    border-right: $baseShadowTriangleWidth solid transparent;
+    border-left: 0 solid transparent;
+    border-bottom: $baseShadowHeight solid $chromeBackgroundShadow;
+    right: -$baseShadowTriangleWidth;
+    z-index: 2
+  }
+}
+
+.foot {
+  background: $chromeBackground;
+  z-index: 1;
+}
+
+.footTop {
+  width: 15em;
+  height: $footTopHeight;
+  bottom: -$footTopHeight;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: $footTopBackground;
+
+  &:before,
+  &:after {
+    @include beforeAfter();
+    top: 0;
+  }
+
+  &:before {
+    border-left: $baseBottomTriangleWidth solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: $footTopTriangleHeight solid $footTopBackground;
+    left: -$baseBottomTriangleWidth;
+  }
+
+  &:after {
+    border-right: $baseBottomTriangleWidth solid transparent;
+    border-left: 0 solid transparent;
+    border-bottom: $footTopTriangleHeight solid $footTopBackground;
+    right: -$baseBottomTriangleWidth;
+  }
+}
+
+.footBottom {
+  width: 20em;
+  height: $baseMarginBottom;
+  bottom: -($baseMarginBottom * 2);
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
+}
+
+.mobileScreen {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mobileScreenOuter {
+  border: $mobileBorderWidth solid $screenbackground;
+  overflow: hidden;
+  border-radius: 4.5em;
+  padding-top: 2em;
+  background-color: #fff;
+  position: relative;
+}
+
+.mobileScreenNotch {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 0;
+  width: 8em;
+  height: 1.4em;
+  background-color: $screenbackground;
+  border-radius: 0 0 1em 1em;
+
+  &:before {
+    @include beforeAfter();
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.6em;
+    bottom: 0.6em;
+    left: 0.6em;
+    background-color: #b3b3b3;
+  }
+}
+
+.mobileScreenInner {
+  aspect-ratio: 9 / 18;
+  max-width: 34rem;
+  //border-radius: 4.5em;
+  overflow: hidden;
+}

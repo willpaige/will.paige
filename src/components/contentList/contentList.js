@@ -44,6 +44,8 @@ function ContentList(props) {
           [isHeroItem]: isHero(index),
         });
 
+        console.log(thumbnail);
+
         return (
           <div className={contentListItemClass} key={title}>
             <div className={imageClass}>
@@ -56,7 +58,7 @@ function ContentList(props) {
             <div className={contentClass}>
               <Title className={contentListTitle} type="h2">{title}</Title>
               <Title className={contentListSubTitle} type="h5">{subtitle}</Title>
-              {blurb}
+              <p>{blurb}</p>
               <Link to={url}>View More</Link>
             </div>
           </div>

@@ -5,7 +5,7 @@ import Title from '../../title/title';
 import { isJustText, heroTitleContainer, heroTitle, heroSubTitle, heroDot, hasGutterSm, isOverImage, isSmallTitle, } from './heroText.module.scss';
 
 function HeroText(props) {
-  const { className, justText, children, showDot, gutterSm, overlayImage, smallTitle, subtitle } = props;
+  const { className, justText, children, showDot, gutterSm, overlayImage, smallTitle, subtitle, content } = props;
   const heroTitleContainerClass = classnames(className, heroTitleContainer, {
     [hasGutterSm]: gutterSm,
     [isOverImage]: overlayImage,
@@ -24,6 +24,7 @@ function HeroText(props) {
       {subtitle && (
         <Title className={heroSubTitle} type="h2">{subtitle}</Title>
       )}
+      {content}
     </div>
   );
 }
@@ -36,6 +37,7 @@ HeroText.defaultProps = {
   justText: false,
   smallTitle: false,
   subtitle: undefined,
+  content: undefined,
 };
 
 HeroText.propTypes = {
@@ -47,6 +49,7 @@ HeroText.propTypes = {
   justText: PropTypes.bool,
   smallTitle: PropTypes.bool,
   subtitle: PropTypes.string,
+  content: PropTypes.node,
 };
 
 export default HeroText;

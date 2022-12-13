@@ -9,6 +9,7 @@ export const WORK = [
     key: 'nwrm',
     image:
   <StaticImage
+    quality={100}
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
     src="../images/work/natwest_rooster_money.png"
@@ -80,6 +81,7 @@ export const WORK = [
     key: 'msw',
     image:
   <StaticImage
+    quality={100}
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
     src="../images/work/magicseaweed.png"
@@ -123,6 +125,7 @@ export const WORK = [
     key: 'tc',
     image:
   <StaticImage
+    quality={100}
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
     src="../images/work/toucan_graphic_design.png"
@@ -168,14 +171,15 @@ export const WORK = [
     copy:
   <p>Graphic and web design</p>,
   }, {
-    key: 'atlas',
-    title: 'Atlas Contract Furniture',
+    key: 'craftwood',
+    title: 'Craftwood Interiors',
     subTitle: 'Student/Placement Furniture Designer',
     image:
   <StaticImage
+    quality={100}
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/work/atlas_contract_furniture.png"
+    src="../images/work/craftwood_interiors.png"
     alt="MagicSeaweed"
     placeholder={PLACEHOLDER}
   />,

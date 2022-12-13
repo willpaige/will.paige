@@ -1,0 +1,20 @@
+@import "../../scss/variables";
+
+.button {
+  background-color: #fff;
+  cursor: pointer;
+  color: #2e2e2e;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 1rem 2.4rem;
+  border-radius: 0.3rem;
+
+  &:hover {
+    //background-color: $grey;
+  }
+}
+
+.isActive {
+  background-color: $theme-1;
+}
+
