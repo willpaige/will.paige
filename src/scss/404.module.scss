@@ -1,22 +1,23 @@
 @import "./variables";
 
 .background {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: url(../images/delete-computer.gif);
-  background-size: cover;
-  z-index: 0;
+  @media (min-width: $screenMd) {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(../images/delete-computer.gif);
+    background-size: cover;
+    z-index: 0;
+  }
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  margin: $gutterMargin;
   background-color: white;
   padding: $gutterMargin;
+  position: relative;
+  z-index: 1;
+  max-width: 62rem;
 }
