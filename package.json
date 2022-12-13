@@ -15,12 +15,12 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.3",
     "@mdx-js/react": "^2.1.5",
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^1.9.0",
     "classnames": "^2.3.2",
     "gatsby": "^5.0.0",
-    "gatsby-plugin-google-gtag": "^5.2.0",
     "gatsby-plugin-image": "^3.1.0",
     "gatsby-plugin-manifest": "^5.2.0",
     "gatsby-plugin-mdx": "^5.1.0",

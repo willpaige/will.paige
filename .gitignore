@@ -103,3 +103,6 @@ bin/
 public
 public/*
 public/*/
+
+# Partytown
+static/~partytown

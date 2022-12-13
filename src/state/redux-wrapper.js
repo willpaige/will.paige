@@ -19,6 +19,6 @@ const createStore = () => reduxCreateStore(
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-export default function ({ element }) {
+export const ReduxWrapper = ({ element }) => {
   return <Provider store={createStore()}>{element}</Provider>;
-}
+};

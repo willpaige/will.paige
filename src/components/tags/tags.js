@@ -31,8 +31,11 @@ Tags.defaultProps = {
 };
 
 Tags.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types,react/require-default-props
+  data: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   className: PropTypes.string,
 };
 

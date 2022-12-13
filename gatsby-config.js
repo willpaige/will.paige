@@ -36,23 +36,24 @@ module.exports = {
       },
       __key: 'pages',
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-B48DL324HB", // Google Analytics / GA
-        ],
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Delays processing pageview events on route update (in milliseconds)
-          delayOnRouteUpdate: 0,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
+    //     trackingIds: [
+    //       "G-B48DL324HB", // Google Analytics / GA
+    //     ],
+    //     // This object is used for configuration specific to this plugin
+    //     pluginConfig: {
+    //       // Puts tracking script in the head instead of the body
+    //       head: false,
+    //       // Setting this parameter is also optional
+    //       respectDNT: true,
+    //       // Delays processing pageview events on route update (in milliseconds)
+    //       delayOnRouteUpdate: 0,
+    //     },
+    //   },
+    // },
   ],
+  // partytownProxiedURLs: [`https://www.googletagmanager.com/gtag/js?id=G-B48DL324HB`]
 };
