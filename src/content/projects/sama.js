@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import samaVideo from '../../video/sama-hero.mp4';
+import videoPlaceHolder from "../../images/projects/sama/sama-placeholder.png";
 import { buildProjectsUrl } from '../../helpers/buildUrl';
 
 const imagePath = '../../images/projects/sama/';
@@ -14,7 +15,7 @@ export const SAMA = {
   blurb: 'Branding, website design, and development of a health and wellbeing startup, Sama.',
   video: {
     src: samaVideo,
-    placeholder: `${imagePath}sama_wellbeing_hero.png`,
+    placeholder: videoPlaceHolder,
   },
   role: 'Designer & Developer',
   hero:

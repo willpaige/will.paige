@@ -12,7 +12,7 @@ function Video(props) {
   return (
     <div className={videoClassName}>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video className={video} preload="auto" placeholder={placeholder} playsInline autoPlay muted loop >
+      <video className={video} preload="auto" poster={placeholder} playsInline autoPlay muted loop >
         <source src={src} type="video/mp4" />
       </video>
     </div>

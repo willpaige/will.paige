@@ -8,6 +8,7 @@ import botanyVideo from '../../video/botanyblend-parallax.mp4';
 import Video from '../../components/video/video';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
 import {ScreenTypes} from "../../constants/screenTypes";
+import videoPlaceHolder from "../../images/projects/botanyblend/botanyblend-placeholder.png";
 
 const imageUrl = '../../images/projects/botanyblend/';
 
@@ -48,7 +49,7 @@ function Botanyblend() {
         <p>The bottles were eye-catching and unique and were sourced from Italy.</p>
       </ContentBlock>
 
-      <Video verticalMargin src={botanyVideo} placeholder={`${imageUrl}sama_wellbeing_hero.png`} />
+      <Video verticalMargin src={botanyVideo} placeholder={videoPlaceHolder} />
 
       <ContentBlock title="Website">
         <p>We wanted to stand out in the crowd and didn't want to create another e-commerce platform. We needed to make more of an experience to increase engagement.</p>
