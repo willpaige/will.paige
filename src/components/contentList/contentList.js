@@ -44,8 +44,6 @@ function ContentList(props) {
           [isHeroItem]: isHero(index),
         });
 
-        console.log(thumbnail);
-
         return (
           <div className={contentListItemClass} key={title}>
             <div className={imageClass}>
