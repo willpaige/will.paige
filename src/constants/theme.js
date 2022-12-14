@@ -44,3 +44,22 @@ export const themeColorStyles = {
 };
 
 export const THEME_DEFAULT = themeMap.THEME_1;
+
+export const siteFonts = [
+  {
+    title: 'Roboto_Mono',
+    fonts: [
+      'RobotoMono-Bold.woff',
+      'RobotoMono-Medium.woff',
+      'RobotoMono-Regular.woff',
+    ],
+  },
+  {
+    title: 'Source_Sans_Pro',
+    fonts: [
+      'SourceSansPro-Bold.woff',
+      'SourceSansPro-Medium.woff',
+      'SourceSansPro-Regular.woff',
+    ],
+  },
+];
