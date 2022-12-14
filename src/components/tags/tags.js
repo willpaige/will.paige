@@ -16,10 +16,7 @@ function Tags(props) {
       {data.map((tag) => {
         const tagClassNames = classnames(codeTag, tagCode);
         return (
-          <>
-            <span className={tagClassNames} key={tag}>{tag}</span>
-            {' '}
-          </>
+          <div className={tagClassNames} key={tag}>{tag}</div>
         );
       })}
     </div>

@@ -238,12 +238,12 @@ $mobileBorderWidth: 1em;
 }
 
 .mobileScreenOuter {
-  border: $mobileBorderWidth solid $screenbackground;
   overflow: hidden;
   border-radius: 4.5em;
   padding-top: 2em;
   background-color: #fff;
   position: relative;
+  box-shadow: 0 0 0 $mobileBorderWidth $screenbackground;
 }
 
 .mobileScreenNotch {

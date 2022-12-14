@@ -81,5 +81,3 @@ export const PROJECTS = {
   //   hero: '',
   // },
 };
-
-console.log(PROJECTS);

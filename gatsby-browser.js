@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './src/components/layout/layout';
-import {ReduxWrapper} from "./src/state/redux-wrapper";
-import RootElement from "./src/components/rootElement/rootElement";
+import { ReduxWrapper } from './src/state/redux-wrapper';
+import RootElement from './src/components/rootElement/rootElement';
 
 export const onRouteUpdate = ({ location }) => {
   if (process.env.NODE_ENV !== 'production') {
