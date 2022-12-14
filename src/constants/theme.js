@@ -49,16 +49,16 @@ export const siteFonts = [
   {
     title: 'Roboto_Mono',
     fonts: [
-      'RobotoMono-Bold.woff',
-      'RobotoMono-Medium.woff',
-      'RobotoMono-Regular.woff',
+      'robotomono-bold.woff',
+      'robotomono-medium.woff',
+      'robotomono-regular.woff',
     ],
   },
   {
     title: 'Source_Sans_Pro',
     fonts: [
       'SourceSansPro-Bold.woff',
-      'SourceSansPro-Medium.woff',
+      'SourceSansPro-Light.woff',
       'SourceSansPro-Regular.woff',
     ],
   },
