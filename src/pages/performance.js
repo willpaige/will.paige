@@ -8,6 +8,7 @@ import Content from '../components/content/content';
 import FooterSmall from '../components/footerSmall/footerSmall';
 import {StaticImage} from "gatsby-plugin-image";
 import Title from "../components/title/title";
+import Image from "../components/image/image";
 
 function PerformancePage() {
   return (
@@ -26,20 +27,27 @@ function PerformancePage() {
           <Title type={'h4'}>
             Mobile:
           </Title>
-          <StaticImage
-            src="../images/website-performance-mobile.png"
-            alt="will.paige.me.uk website performance"
-            loading="eager"
-          />
+          <Image>
+            <StaticImage
+              src="../images/performance/website-performance-mobile-14_12_22.png"
+              alt="will.paige.me.uk website performance"
+              loading="eager"
+              quality={100}
+            />
+          </Image>
 
           <Title type="h4">
             Desktop:
           </Title>
-          <StaticImage
-            src="../images/website-performance-desktop.png"
-            alt="will.paige.me.uk website performance"
-          />
-          <p>Date: Thursday 8th December 2022</p>
+          <Image>
+            <StaticImage
+              src="../images/performance/website-performance-desktop-14_12_22.png"
+              alt="will.paige.me.uk website performance"
+              width={800}
+              quality={100}
+            />
+          </Image>
+          <p>Date: Wednesday 14th December 2022</p>
           <FooterSmall />
         </Grid>
       </Content>

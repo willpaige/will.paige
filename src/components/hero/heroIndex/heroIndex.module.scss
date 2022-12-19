@@ -33,11 +33,11 @@ $lineHeight: 1;
     margin-left: $gutterWidthSm;
   }
 
-  [data-gatsby-image-wrapper] {
-    @media (min-width: $screenMd) {
-      height: auto !important;
-    }
-  }
+  //[data-gatsby-image-wrapper] {
+  //  @media (min-width: $screenMd) {
+  //    height: auto !important;
+  //  }
+  //}
 }
 
 .heroImageContainer {
