@@ -10,13 +10,14 @@ function Languages() {
       <Col size={GridSize.EXTRA_SMALL} xs={50}>
         <div className={codeBlock}>
           javaScript = [
+          <br/>&nbsp; TypeScript,
           <br/>&nbsp; react,
           <br/>&nbsp; redux,
           <br/>&nbsp; gatsbyJs,
           <br/>&nbsp; webpack,
           <br/>&nbsp; expressJs,
           <br/>&nbsp; nodeJs,
-          <br/>&nbsp; backbone,
+          <br/>&nbsp; backBoneJs,
           <br/>
           ];
         </div>

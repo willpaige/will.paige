@@ -57,7 +57,7 @@ function ContentList(props) {
               <Title className={contentListTitle} type="h2">{title}</Title>
               <Title className={contentListSubTitle} type="h5">{subtitle}</Title>
               <p>{blurb}</p>
-              <Link to={url}>View More</Link>
+              <Link to={url} title={`View ${title} project`} aria-label={`View ${title} project`}>View More</Link>
             </div>
           </div>
         );

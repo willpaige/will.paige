@@ -64,7 +64,7 @@ function HeroIndex({ activeTheme, dispatch }) {
         </span>
         <span className={heroName}>I&apos;m Will</span>{' '}
         <span className={heroSubText}>
-          A senior
+          a senior
           {' '}
           <b className={activeThemeClass}> software engineer.</b>
         </span>
