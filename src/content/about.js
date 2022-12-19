@@ -33,11 +33,9 @@ export const about = {
         My name is
         {' '}
         <b>Will Paige</b>
-        {' '}
         , and I&apos;m a
         {' '}
         {age}
-        {' '}
         -year-old
         {' '}
         <b>software engineer</b>

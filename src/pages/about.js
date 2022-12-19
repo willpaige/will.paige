@@ -49,6 +49,17 @@ const renderList = (list) => {
   );
 };
 
+const getAge = () => {
+  const today = new Date();
+  const birthDate = new Date('1986/09/11');
+  const age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
+
 function AboutPage({ dispatch }) {
   dispatch(setActivePage(PAGES.ABOUT));
 
@@ -79,7 +90,7 @@ function AboutPage({ dispatch }) {
             <Title type="h2">
               Who am I?
             </Title>
-            {about.ABOUT_ME('36')}
+            {about.ABOUT_ME(getAge())}
           </div>
 
           <Image caption="A summer's evening biking somewhere on Dartmoor, Uk circa 2022">
