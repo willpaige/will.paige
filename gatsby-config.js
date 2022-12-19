@@ -41,7 +41,26 @@ module.exports = {
       options: {
         lang: 'en-GB',
       },
+    }, {
+      resolve: 'gatsby-plugin-gatsby-cloud',
+      options: {
+        headers: {
+          '/fonts/*': [
+            'Cache-Control: public,max-age=31536000,s-maxage=31536000,immutable',
+          ],
+          '**/*.woff': [
+            'Cache-Control: public,max-age=31536000,s-maxage=31536000,immutable',
+          ],
+          '**/*.woff2': [
+            'Cache-Control: public,max-age=31536000,s-maxage=31536000,immutable',
+          ],
+        },
+        allPageHeaders: [
+          'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
+        ],
+      },
     },
+
     // {
     //   resolve: `gatsby-plugin-google-gtag`,
     //   options: {
