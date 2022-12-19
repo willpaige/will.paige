@@ -92,7 +92,7 @@ export const about = {
   <span>
     Write lean, clean, scalable code in
     {' '}
-    <b>JavaScript, PHP, CSS and HTML</b>
+    <b>JavaScript, TypeScript, PHP, CSS and HTML</b>
   </span>,
     }, {
       icon: AiOutlineBgColors,
