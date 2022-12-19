@@ -32,7 +32,7 @@ function ProjectPage(props) {
   dispatch(setActivePage(PAGES.PROJECTS));
 
   return (
-    <ProjectsContainer title={title} subtitle={subtitle} tags={tags} removeRightPadding={false}>
+    <ProjectsContainer title={title} subtitle={subtitle} tags={tags} removeRightPadding={false} smallFooter>
       {showHero && hero}
       <Title className={titleClass} type="h2">{blurb}</Title>
       <ContentBlock title="Role">

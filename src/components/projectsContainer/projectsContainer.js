@@ -7,6 +7,7 @@ import Grid from '../grid/grid/grid';
 import HeroText from '../hero/heroText/heroText';
 import FooterSmall from '../footerSmall/footerSmall';
 import Tags from "../tags/tags";
+import Footer from "../footer/footer";
 
 const renderHero = (tags, title, subtitle) => {
   if (tags) {
@@ -25,7 +26,7 @@ const renderHero = (tags, title, subtitle) => {
 };
 
 function ProjectsContainer(props) {
-  const { children, title, subtitle, tags, removeRightPadding } = props;
+  const { children, title, subtitle, tags, removeRightPadding, smallFooter } = props;
 
   return (
     <App theme={themeMap.THEME_4}>
@@ -35,7 +36,7 @@ function ProjectsContainer(props) {
         </Grid>
         <Grid removeRightPadding={removeRightPadding}>
           {children}
-          <FooterSmall />
+          {smallFooter ? <FooterSmall /> : <Footer showCurrentEmployment={false} showLanguages={false} />}
         </Grid>
       </Content>
     </App>
@@ -47,6 +48,7 @@ ProjectsContainer.defaultProps = {
   subtitle: undefined,
   tags: undefined,
   removeRightPadding: true,
+  smallFooter: true,
 };
 
 ProjectsContainer.propTypes = {
@@ -56,6 +58,7 @@ ProjectsContainer.propTypes = {
   removeRightPadding: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
   tags: PropTypes.array,
+  smallFooter: PropTypes.bool,
 };
 
 export default ProjectsContainer;

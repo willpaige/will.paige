@@ -11,7 +11,7 @@ function ProjectsPage({ dispatch }) {
   dispatch(setActivePage(PAGES.PROJECTS));
 
   return (
-    <ProjectsContainer>
+    <ProjectsContainer smallFooter={false}>
       <ContentList data={PROJECTS} />
     </ProjectsContainer>
   );
