@@ -48,5 +48,10 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "overrides": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0",
+    "webpack": "^5.24.2"
   }
 }

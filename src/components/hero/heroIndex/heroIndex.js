@@ -62,7 +62,7 @@ function HeroIndex({ activeTheme, dispatch }) {
         >
           .
         </span>
-        <span className={heroName}>I&apos;m Will</span>
+        <span className={heroName}>I&apos;m Will</span>{' '}
         <span className={heroSubText}>
           A senior
           {' '}
