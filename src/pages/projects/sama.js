@@ -5,7 +5,8 @@ import { PROJECT_KEYS, PROJECTS } from '../../content/projects';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
 import ContentBlock from '../../components/contentBlock/contentBlock';
 import Image from '../../components/image/image';
-import HeaderImage from '../../images/projects/sama/sama-header.gif'
+import HeaderImage from '../../images/projects/sama/sama-header.gif';
+import { SEO } from '../../components/seo/seo';
 
 const imageUrl = '../../images/projects/sama/';
 
@@ -41,28 +42,29 @@ function Sama() {
         {solution}
       </ContentBlock>
 
-      <ScreenScroll mobile={
+      <ScreenScroll
+        mobile={(
           <StaticImage
             src={`${imageUrl}sama-mobile-full.png`}
             alt="Sama Health & Well being - website"
           />
-        }
-        desktop={
+        )}
+        desktop={(
           <StaticImage
             src={`${imageUrl}sama-full-screen.png`}
             alt="Sama Health & Well being - website"
           />
-        }
+        )}
       />
 
-      <Image caption={"A quick-links image block on the homepage allowed for key sections of the site to be surfaced to encourage users to navigate,"}>
+      <Image caption="A quick-links image block on the homepage allowed for key sections of the site to be surfaced to encourage users to navigate,">
         <StaticImage
           src={`${imageUrl}sama-module.png`}
           alt="Sama Health & Well being - quick links"
         />
       </Image>
 
-      <Image caption={"A simple blog/posts page which uses the less is more approach allows for content to be readable an engageable."}>
+      <Image caption="A simple blog/posts page which uses the less is more approach allows for content to be readable an engageable.">
         <StaticImage
           src={`${imageUrl}sama-content.png`}
           alt="Sama Health & Well being - Blog post"
@@ -75,5 +77,5 @@ function Sama() {
 export default Sama;
 
 export function Head() {
-  return <title>Will Paige - Projects - Botanyblend</title>;
+  return <SEO title="Projects - Botanyblend" />;
 }

@@ -57,7 +57,7 @@ function Footer(props) {
               <p>
                 Don't believe me? Check out these lighthouse performance reports
                 {' '}
-                <Link to="/performance/">here</Link>
+                <Link to="/performance/" title="View will.paige.me.uk's website performance">here</Link>
               </p>
               <p>
                 As well as GatsbyJs this website uses

@@ -33,6 +33,7 @@ function ThemeSwitch({ activeTheme, dispatch }) {
             className={themeClass}
             onClick={() => { return setActiveTheme(theme); }}
             key={key}
+            aria-label={`Switch to ${theme}`}
           />
         );
       })}

@@ -9,6 +9,7 @@ import Video from '../../components/video/video';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
 import {ScreenTypes} from "../../constants/screenTypes";
 import videoPlaceHolder from "../../images/projects/botanyblend/botanyblend-placeholder.png";
+import {SEO} from "../../components/seo/seo";
 
 const imageUrl = '../../images/projects/botanyblend/';
 
@@ -91,5 +92,5 @@ function Botanyblend() {
 export default Botanyblend;
 
 export function Head() {
-  return <title>Will Paige - Projects - Botanyblend</title>;
+  return <SEO title="Projects - Botanyblend" />;
 }

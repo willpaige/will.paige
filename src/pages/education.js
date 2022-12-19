@@ -11,6 +11,7 @@ import Timeline from '../components/timeline/timeline';
 import HeroText from '../components/hero/heroText/heroText';
 import Grid from '../components/grid/grid/grid';
 import { setActivePage } from '../state/navigation/navigation-action';
+import { SEO } from '../components/seo/seo';
 
 function EducationPage({ dispatch }) {
   dispatch(setActivePage(PAGES.EDUCATION));
@@ -39,5 +40,5 @@ EducationPage.propTypes = {
 export default connect()(EducationPage);
 
 export function Head() {
-  return <title>Will Paige education history</title>;
+  return <SEO title="Education History" />;
 }

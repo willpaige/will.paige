@@ -26,7 +26,8 @@ import {
   heroImage,
   noMarginBottom,
 } from '../scss/about.module.scss';
-import Image from "../components/image/image";
+import Image from '../components/image/image';
+import { SEO } from '../components/seo/seo';
 
 const renderList = (list) => {
   return (
@@ -164,5 +165,5 @@ AboutPage.propTypes = {
 export default connect()(AboutPage);
 
 export function Head() {
-  return <title>About Will Paige</title>;
+  return <SEO title="About" />;
 }

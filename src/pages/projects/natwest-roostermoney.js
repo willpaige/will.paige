@@ -5,6 +5,7 @@ import { PROJECT_KEYS, PROJECTS } from '../../content/projects';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
 import ContentBlock from '../../components/contentBlock/contentBlock';
 import Image from '../../components/image/image';
+import {SEO} from "../../components/seo/seo";
 
 const imageUrl = '../../images/projects/roostermoney/roostermoney_';
 function RoosterMoney() {
@@ -55,5 +56,5 @@ function RoosterMoney() {
 export default RoosterMoney;
 
 export function Head() {
-  return <title>Will Paige - Projects - Botanyblend</title>;
+  return <SEO title="Projects - Botanyblend" />;
 }

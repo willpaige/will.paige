@@ -12,6 +12,7 @@ import Footer from '../components/footer/footer';
 import Grid from '../components/grid/grid/grid';
 import HeroText from '../components/hero/heroText/heroText';
 import { contentContainer } from '../scss/work.module.scss';
+import { SEO } from '../components/seo/seo';
 
 function WorkPage({ dispatch }) {
   dispatch(setActivePage(PAGES.WORK));
@@ -40,5 +41,5 @@ WorkPage.propTypes = {
 export default connect()(WorkPage);
 
 export function Head() {
-  return <title>Will Paige employment history</title>;
+  return <SEO title="Employment History" />;
 }

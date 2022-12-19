@@ -10,6 +10,7 @@ import { home } from '../content/home';
 import HeroIndex from '../components/hero/heroIndex/heroIndex';
 import Grid from '../components/grid/grid/grid';
 import { setActivePage } from '../state/navigation/navigation-action';
+import {SEO} from "../components/seo/seo";
 
 function IndexPage({ dispatch }) {
   dispatch(setActivePage(PAGES.HOME));
@@ -17,7 +18,7 @@ function IndexPage({ dispatch }) {
   return (
     <App theme={themeMap.THEME_1}>
       <Grid removeRightPadding fullWidthSm>
-        <HeroIndex />
+      <HeroIndex />
       </Grid>
       <Content>
         <Grid>
@@ -36,5 +37,5 @@ IndexPage.propTypes = {
 export default connect()(IndexPage);
 
 export function Head() {
-  return <title>Will Paige | Software Engineer</title>;
+  return <SEO />;
 }

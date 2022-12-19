@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {StaticImage} from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import ProjectPage from '../../components/projectPage/projectPage';
-import {PROJECT_KEYS, PROJECTS} from '../../content/projects';
-import Image from "../../components/image/image";
-import Chart from "../../images/projects/magicseaweed/magicseaweed_chart.gif";
-import ContentBlock from "../../components/contentBlock/contentBlock";
+import { PROJECT_KEYS, PROJECTS } from '../../content/projects';
+import Image from '../../components/image/image';
+import Chart from '../../images/projects/magicseaweed/magicseaweed_chart.gif';
+import ContentBlock from '../../components/contentBlock/contentBlock';
+import { SEO } from '../../components/seo/seo';
 
 function MagicSeaweed() {
   const content = PROJECTS[PROJECT_KEYS.MAGICSEAWEED];
@@ -42,7 +43,7 @@ function MagicSeaweed() {
         <StaticImage
           src="../../images/projects/magicseaweed/magicseaweed_performance.png"
           alt="MagicSeaweed performance"
-          objectFit={"contain"}
+          objectFit="contain"
         />
       </Image>
     </ProjectPage>
@@ -52,5 +53,5 @@ function MagicSeaweed() {
 export default MagicSeaweed;
 
 export function Head() {
-  return <title>Will Paige - Projects - MagicSeaweed</title>;
+  return <SEO title="Projects - MagicSeaweed" />;
 }
