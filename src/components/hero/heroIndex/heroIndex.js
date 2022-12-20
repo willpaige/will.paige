@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { getActiveTheme } from '../../../state/ui/ui-selectors';
-import {themeColorStyles, themeMap} from '../../../constants/theme';
+import { themeColorStyles, themeMap } from '../../../constants/theme';
 import { setTheme } from '../../../state/ui/ui-action';
 import Hero from '../hero';
 import HeroText from '../heroText/heroText';
