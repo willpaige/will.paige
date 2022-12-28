@@ -5,6 +5,7 @@ import {buildProjectsUrl} from "../helpers/buildUrl";
 import {SAMA} from "./projects/sama";
 import {ROOSTERMONEY} from "./projects/roostermoney";
 import {BOTANYBLEND} from "./projects/botanyblend";
+import {WILLPOWERFITNESS} from "./projects/willpowerfitness";
 
 const PLACEHOLDER = 'blurred';
 
@@ -31,23 +32,9 @@ export const PROJECTS = {
   [PROJECT_KEYS.BOTANYBLEND]: {
     ...BOTANYBLEND,
   },
-  // [PROJECT_KEYS.WILLPOWER_FITNESS]: {
-  //   title: 'Willpower Fitness',
-  //   subtitle: 'Health & Fitness',
-  //   logo: '',
-  //   url: buildProjectsUrl('willpower-fitness'),
-  //   tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
-  //   blurb:
-  //     <p>Lifestyle and fitness website for a large crossfit gym</p>,
-  //   thumbnail:
-  //    <StaticImage
-  //     src="../images/projects/willpower_fitness.png"
-  //     alt="Willpower fitness - Devon"
-  //     placeholder={PLACEHOLDER}
-  //     loading={'eager'}
-  //   />,
-  //   hero: '',
-  // },
+  [PROJECT_KEYS.WILLPOWER_FITNESS]: {
+    ...WILLPOWERFITNESS,
+  },
   // [PROJECT_KEYS.SUPER_YACHT_TENDERS]: {
   //   title: 'Super Yacht Tenders',
   //   subtitle: 'Suppliers and agents for super yacht tenders',
