@@ -34,9 +34,9 @@ export const PROJECTS = {
   [PROJECT_KEYS.WILLPOWER_FITNESS]: {
     ...WILLPOWERFITNESS,
   },
-  // [PROJECT_KEYS.SUPER_YACHT_TENDERS]: {
-  //   ...SUPERYACHTTENDERS,
-  // },
+  [PROJECT_KEYS.SUPER_YACHT_TENDERS]: {
+    ...SUPERYACHTTENDERS,
+  },
   // [PROJECT_KEYS.KFT_RENEWABLES]: {
   //   title: 'KFT Renewables',
   //   subtitle: 'Renewable and sustainable plumbing solutions',
