@@ -53,9 +53,10 @@ const renderList = (list) => {
 const getAge = () => {
   const today = new Date();
   const birthDate = new Date('1986/09/11');
-  const age = today.getFullYear() - birthDate.getFullYear();
+  let age = today.getFullYear() - birthDate.getFullYear();
   const m = today.getMonth() - birthDate.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    // eslint-disable-next-line no-plusplus
     age--;
   }
   return age;
