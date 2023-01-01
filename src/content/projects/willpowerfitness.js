@@ -1,19 +1,3 @@
-// [PROJECT_KEYS.WILLPOWER_FITNESS]: {
-  //   logo: '',
-  //   url: buildProjectsUrl('willpower-fitness'),
-  //   tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
-  //   blurb:
-  //     <p>Lifestyle and fitness website for a large crossfit gym</p>,
-  //   thumbnail:
-  //    <StaticImage
-  //     src="../images/projects/willpower_fitness.png"
-  //     alt="Willpower fitness - Devon"
-  //     placeholder={PLACEHOLDER}
-  //     loading={'eager'}
-  //   />,
-  //   hero: '',
-  // },
-
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
@@ -25,7 +9,7 @@ export const WILLPOWERFITNESS = {
   subtitle: 'Health & Fitness',
   logo: '',
   url: buildProjectsUrl('willpower-fitness'),
-  tags: ['WordPress', 'PHP', 'LESS', 'Html', 'JavaScript', 'jQuery', 'UX/UI', 'SEO'],
+  tags: ['WordPress', 'PHP', 'LESS', 'Html', 'JavaScript', 'jQuery', 'UX/UI', 'SEO', 'SQL'],
   blurb: 'Website design, and development for a devon based gym and fitness center',
   role: 'Designer & Developer',
   hero:

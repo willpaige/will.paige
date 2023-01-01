@@ -22,9 +22,9 @@ function WillpowerFitness() {
 
       <Image caption={"WillpowerFitness's old website"}>
         <StaticImage
-        src={`${imageUrl}willpower_fitness-old.png`}
-        alt="The old website version of willpower fitness"
-        quality={100}
+          src={`${imageUrl}willpower_fitness-old.png`}
+          alt="The old website version of willpower fitness"
+          quality={100}
         />
       </Image>
 
@@ -33,7 +33,7 @@ function WillpowerFitness() {
       </ContentBlock>
 
       <ScreenScroll
-        defaultScreen={ScreenTypes.MOBILE}
+        defaultScreen={ScreenTypes.DESKTOP}
         mobile={(
           <StaticImage
             src={`${imageUrl}willpowerfitness_website-mobile.png`}

@@ -2,46 +2,39 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
 
-const imagePath = '../../images/projects/willpowerfitness/';
+const imagePath = '../../images/projects/superyachttenders/';
 
-export const WILLPOWERFITNESS = {
-  title: 'Willpower Fitness',
-  subtitle: 'Health & Fitness',
+export const SUPERYACHTTENDERS = {
+  title: 'Super Yacht Tenders',
+  subtitle: 'Suppliers and agents for super yacht tenders',
   logo: '',
-  url: buildProjectsUrl('willpower-fitness'),
-  tags: ['WordPress', 'PHP', 'LESS', 'Html', 'JavaScript', 'jQuery', 'UX/UI', 'SEO', 'SQL'],
-  blurb: 'Website design, and development for a devon based gym and fitness center',
+  url: buildProjectsUrl('superyachttenders'),
+  tags: ['Branding', 'WordPress', 'PHP', 'LESS', 'Html', 'JavaScript', 'jQuery', 'UX/UI', 'SEO', 'SQL'],
+  blurb: 'Branding and website development for a super yacht tenders brokerage',
   role: 'Designer & Developer',
-  hero:
-  <StaticImage
-    src={`${imagePath}willpower_fitness.png`}
-    alt="Sama Health & Well being - branding"
-  />,
+  hero: '',
   thumbnail:
   <StaticImage
-    src={`${imagePath}willpower_fitness-thumbnail.png`}
+    src={`${imagePath}super_yacht_tenders.png`}
     alt="Sama Health & Well being - branding"
   />,
   brief: {
-    title: 'Re-design and re-build of willpowerfitness.co.uk',
+    title: 'To create a brand logo, and to design and develop a brochure website',
     content:
     <>
       <p>
-        The original website for willpowerfitness.co.uk was dated, had complicated navigation and didn't allow for any form of fitness session booking or management. It lacked originality, didn't follow brand guidelines and didn't showcase the gym.
-      </p>
-      <p>
-        A new website would allow active users to book and manage gym sessions and reflect the brand image.
+        SYT were a relatively new startup that didn't have a brand or a website. This project was a blank canvas, that allowed for the exploration of new styles and technology.
       </p>
     </>,
   },
   process:
   <>
-    <p>I had several meetings with Will from Willpower Fitness, where we discussed his business needs and wants. We also explored existing solutions and websites that appealed to him.</p>
-    <p>From there, I designed the website in PhotoShop and sent him the designs for approval. After approval, I set about building the website in WordPress.</p>
+    <p>I had several meetings with John from SYT, where we discussed his business needs and wants. We also explored existing solutions and websites that appealed to him.</p>
+    <p>It was clear from the get go that that client wanted something contempory and clean.</p>
   </>,
   solution:
   <>
-    <p>A completely redesigned website, with the use of bold colours to match branding, the use of clear, inspiring photography and a simplified navigation</p>
-    <p>For the booking system, I extended and customised an existing WordPress booking plugin and user management plugin.</p>
+    <p>The logo, was designed in illustrator as an abstract representation of the hull of a boat.</p>
+    <p>The website, is clean, and uses white space to make the imagery pop. Professionally shot images really help add to the quality of the website.</p>
   </>,
 };

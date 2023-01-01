@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import {MAGICSEAWEED_HOMEPAGE} from "./projects/magicseaweed_homepage";
-import {buildProjectsUrl} from "../helpers/buildUrl";
-import {SAMA} from "./projects/sama";
-import {ROOSTERMONEY} from "./projects/roostermoney";
-import {BOTANYBLEND} from "./projects/botanyblend";
-import {WILLPOWERFITNESS} from "./projects/willpowerfitness";
+import { MAGICSEAWEED_HOMEPAGE } from './projects/magicseaweed_homepage';
+import { SAMA } from './projects/sama';
+import { ROOSTERMONEY } from './projects/roostermoney';
+import { BOTANYBLEND } from './projects/botanyblend';
+import { WILLPOWERFITNESS } from './projects/willpowerfitness';
+import { SUPERYACHTTENDERS } from './projects/superyachttenders';
 
 const PLACEHOLDER = 'blurred';
 
@@ -36,20 +35,7 @@ export const PROJECTS = {
     ...WILLPOWERFITNESS,
   },
   // [PROJECT_KEYS.SUPER_YACHT_TENDERS]: {
-  //   title: 'Super Yacht Tenders',
-  //   subtitle: 'Suppliers and agents for super yacht tenders',
-  //   logo: '',
-  //   url: buildProjectsUrl('super-yacht-tenders'),
-  //   tags: ['WordPress', 'PHP', 'CSS', 'JavaScript', 'jQuery', 'SQL'],
-  //   blurb: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet elementum nisl.</p>,
-  //   thumbnail:
-  //    <StaticImage
-  //     src="../images/projects/super_yacht_tenders.png"
-  //     alt="Super yacht tenders"
-  //     placeholder={PLACEHOLDER}
-  //     loading={'eager'}
-  //   />,
-  //   hero: '',
+  //   ...SUPERYACHTTENDERS,
   // },
   // [PROJECT_KEYS.KFT_RENEWABLES]: {
   //   title: 'KFT Renewables',
