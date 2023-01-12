@@ -4,7 +4,7 @@ import {
 
 export const contactLinks = [
   {
-    url: 'mailto:willpaige86@gmail.com',
+    url: 'mailto:will@paige.me.uk',
     title: 'Email',
     icon: AiTwotoneMail,
   }, {
