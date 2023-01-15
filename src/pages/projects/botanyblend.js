@@ -92,5 +92,5 @@ function Botanyblend() {
 export default Botanyblend;
 
 export function Head() {
-  return <SEO title="Projects - Botanyblend" />;
+  return <SEO title="Projects - Botanyblend website design and development" />;
 }

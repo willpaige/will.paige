@@ -53,5 +53,5 @@ function MagicSeaweed() {
 export default MagicSeaweed;
 
 export function Head() {
-  return <SEO title="Projects - MagicSeaweed" />;
+  return <SEO title="Projects - MagicSeaweed website design and development" />;
 }

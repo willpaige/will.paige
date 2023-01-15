@@ -77,5 +77,5 @@ function Sama() {
 export default Sama;
 
 export function Head() {
-  return <SEO title="Projects - Botanyblend" />;
+  return <SEO title="Projects - Sama website design and branding" />;
 }

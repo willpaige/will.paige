@@ -1,16 +1,15 @@
-import * as React from 'react';
 import { MAGICSEAWEED_HOMEPAGE } from './projects/magicseaweed_homepage';
 import { SAMA } from './projects/sama';
 import { ROOSTERMONEY } from './projects/roostermoney';
 import { BOTANYBLEND } from './projects/botanyblend';
 import { WILLPOWERFITNESS } from './projects/willpowerfitness';
 import { SUPERYACHTTENDERS } from './projects/superyachttenders';
-
-const PLACEHOLDER = 'blurred';
+import { ROOSTERMONEY_PERFORMANCE } from './projects/roostermoneyPerformance';
 
 export const PROJECT_KEYS = {
   BOTANYBLEND: 'BOTANYBLEND',
   MAGICSEAWEED: 'MAGICSEAWEED',
+  ROOSTERMONEY_PERFORMANCE: 'ROOSTERMONEY_PERFORMANCE',
   ROOSTERMONEY: 'ROOSTERMONEY',
   SAMA: 'SAMA',
   WILLPOWER_FITNESS: 'WILLPOWER_FITNESS',
@@ -27,6 +26,9 @@ export const PROJECTS = {
   },
   [PROJECT_KEYS.MAGICSEAWEED]: {
     ...MAGICSEAWEED_HOMEPAGE,
+  },
+  [PROJECT_KEYS.ROOSTERMONEY_PERFORMANCE]: {
+    ...ROOSTERMONEY_PERFORMANCE,
   },
   [PROJECT_KEYS.BOTANYBLEND]: {
     ...BOTANYBLEND,

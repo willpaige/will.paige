@@ -26,6 +26,7 @@
 
 .contentListContent {
   padding: $gutterWidthSm;
+  min-width: 40%;
 
   @media (min-width: $screenMd) {
     padding: $gutterMargin;
