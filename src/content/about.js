@@ -3,7 +3,7 @@ import {
   AiOutlineAmazon,
   AiOutlineApartment,
   AiOutlineApi,
-  AiOutlineArrowsAlt,
+  AiOutlineArrowsAlt, AiOutlineAudit,
   AiOutlineBgColors,
   AiOutlineBook,
   AiOutlineBranches,
@@ -12,17 +12,17 @@ import {
   AiOutlineCode,
   AiOutlineDashboard,
   AiOutlineDesktop,
-  AiOutlineEdit,
-  AiOutlineFile,
+  AiOutlineEdit, AiOutlineExperiment,
+  AiOutlineFile, AiOutlineFontSize,
   AiOutlineGithub,
-  AiOutlineGoogle,
-  AiOutlineLaptop,
+  AiOutlineGoogle, AiOutlineHeart,
+  AiOutlineLaptop, AiOutlineLock, AiOutlineMonitor,
   AiOutlineNodeIndex,
   AiOutlinePoundCircle,
   AiOutlineSortAscending,
   AiOutlineTablet,
   AiOutlineTeam,
-  AiOutlineTool,
+  AiOutlineTool, AiOutlineTranslation,
 } from 'react-icons/ai';
 import { Link } from 'gatsby';
 
@@ -69,7 +69,7 @@ export const about = {
       icon: AiOutlineDesktop,
       content:
   <span>
-    Build
+    Develop
     {' '}
     <strong>performant, cross-browser, device-friendly, responsive and accessible</strong>
     {' '}
@@ -79,11 +79,11 @@ export const about = {
       icon: AiOutlineTablet,
       content:
   <span>
-    Build
+    Create
     {' '}
-    <b>iOS and Android apps</b>
+    <b>iOS and Android applications</b>
     {' '}
-    in either
+    using
     {' '}
     <b>Cordova or React Native</b>
   </span>,
@@ -91,7 +91,7 @@ export const about = {
       icon: AiOutlineCode,
       content:
   <span>
-    Write lean, clean, scalable code in
+    Write efficient, scalable, and well-structured code in a variety of programming languages, including
     {' '}
     <b>JavaScript, TypeScript, PHP, CSS and HTML</b>
   </span>,
@@ -109,59 +109,99 @@ export const about = {
       icon: AiOutlineApartment,
       content:
   <span>
-    Design bespoke
+    Plan and implement a
     {' '}
     <b>content architecture</b>
     {' '}
-    to be delivered by either Contenful or WordPress content management systems
+    that leverages either Contenful or WordPress content management systems.
   </span>,
     }, {
       icon: AiOutlineBug,
       content:
   <span>
-    Write efficient
+    Validate code and prevent potential bugs by writing effective
     {' '}
     <b>unit tests</b>
-    {' '}
-    to validate code and prevent potential bugs
   </span>,
     }, {
       icon: AiOutlineFile,
       content:
   <span>
-    Write detailed
+    Draft comprehensive
     {' '}
     <b>product briefs</b>
     {' '}
-    that identify business impact, risk, success and project scope
+    that consider the business impact, risk, potential for success, and project scope.
   </span>,
     }, {
       icon: AiOutlineGithub,
       content:
   <span>
-    Write custom
+    Automate
     {' '}
-    <b>build scripts</b>
+    <b>build processes</b>
     {' '}
-    using Webpack and GitHub actions
+    using custom scripts built with Webpack and GitHub Actions.
+  </span>,
+    }, {
+      icon: AiOutlineDashboard,
+      content:
+  <span>
+    <b>Optimize website speed and performance</b>
+    {' '}
+    to improve user experience and reduce bounce rates.
+  </span>,
+    }, {
+      icon: AiOutlineMonitor,
+      content:
+  <span>
+    Provide ongoing
+    {' '}
+    <b>maintenance and support</b>
+    {' '}
+    for websites and applications.
+  </span>,
+    },{
+      icon: AiOutlineHeart,
+      content:
+  <span>
+    <b>Troubleshoot and debug</b>
+    {' '}
+    issues
   </span>,
     }, {
       icon: AiOutlineNodeIndex,
       content:
   <span>
-    Successfully
+    Manage
     {' '}
-    <b>run product releases</b>
+    <b>product releases effectively.</b>
+  </span>,
+    }, {
+      icon: AiOutlineAudit,
+      content:
+  <span>
+    <b>Participate in code reviews</b>
+    {' '}
+    to ensure high-quality, maintainable code.
+  </span>,
+    }, {
+      icon: AiOutlineFontSize,
+      content:
+  <span>
+    <b>Document code, processes</b>
+    {' '}
+    and decision-making for future reference and collaboration.
   </span>,
     }, {
       icon: AiOutlineTeam,
       content:
   <span>
-    Work in
+    Work within an
     {' '}
-    <b>agile</b>
+    <b>Agile development environment</b>
     {' '}
-    teams practising
+    following the principles of
     {' '}
     <b>SCRUM</b>
     {' '}
@@ -171,19 +211,17 @@ export const about = {
       icon: AiOutlineBook,
       content:
   <span>
-    Generate legible
+    Document
     {' '}
-    <b>project tickets</b>
+    <b>projects and user journeys</b>
     {' '}
-    and
-    {' '}
-    <b>user journeys</b>
+    in a clear and concise manner.
   </span>,
     }, {
       icon: AiOutlineSortAscending,
       content:
   <span>
-    Conform to
+    Adhere to established
     {' '}
     <b>coding standards</b>
   </span>,
@@ -191,9 +229,21 @@ export const about = {
       icon: AiOutlineAmazon,
       content:
   <span>
-    Monitor and configure applications and services in
+    Manage and configure applications and services in the
     {' '}
-    <b>AWS Cloud Computing</b>
+    <b>AWS Cloud Computing environment.</b>
+  </span>,
+    }, {
+      icon: AiOutlineLock,
+      content:
+  <span>
+    Implement security measures to
+    {' '}
+    <b>protect sensitive data</b>
+    {' '}
+    and
+    {' '}
+    <b>prevent potential security breaches</b>
   </span>,
     }, {
       icon: AiOutlineApi,
@@ -201,39 +251,49 @@ export const about = {
   <span>
     Design and build
     {' '}
-    <b>bespoke API services</b>
+    <b>custom API services</b>
     {' '}
-    in JavaScript and PHP
+    using JavaScript and PHP.
+  </span>,
+    }, {
+      icon: AiOutlineTeam,
+      content:
+  <span>
+    <b>Collaborate with other teams</b>
+    {' '}
+    such as UX designers, to ensure a cohesive and user-centered design.
   </span>,
     }, {
       icon: AiOutlineBgColors,
       content:
   <span>
-    <b>Design</b>
+    Create
+    <b>user-friendly websites and interfaces</b>
     {' '}
-    clean user-friendly websites and interfaces
+    with a clean design.
   </span>,
     }, {
       icon: AiOutlineCheck,
       content:
   <span>
-    Analyse
+    Analyze website
     {' '}
-    <b>website SEO</b>
+    <b>SEO</b>
     {' '}
-    and create successful strategies to improve search engine positioning
+    and implement strategies to improve search engine rankings.
   </span>,
     }, {
       icon: AiOutlineEdit,
       content:
   <span>
+    Provide
     <b>Branding</b>
     {' '}
     and
     {' '}
     <b>print</b>
     {' '}
-    design
+    design services
   </span>,
     },
   ],
@@ -244,6 +304,21 @@ export const about = {
     }, {
       icon: AiOutlineArrowsAlt,
       content: 'Responsive Web Design',
+    }, {
+      icon: AiOutlineCheck,
+      content: 'Cross-browser compatibility testing and debugging.',
+    }, {
+      icon: AiOutlineBug,
+      content: 'CSS preprocessors such as Sass or Less',
+    }, {
+      icon: AiOutlineTranslation,
+      content: 'Accessibility guidelines',
+    }, {
+      icon: AiOutlineTool,
+      content: 'Front-end frameworks and libraries such as React and BackBone.js',
+    }, {
+      icon: AiOutlineApi,
+      content: 'HTTP protocols &amp; RESTful APIs',
     }, {
       icon: AiOutlineGithub,
       content: 'GitHub Actions',
