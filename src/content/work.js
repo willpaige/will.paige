@@ -45,37 +45,30 @@ export const WORK = [
       Senior Software developer for the worlds leading kids pocket money app NatWest Rooster Money.
     </p>
     <p>
-      Roostermoney is a fast-paced, fast-growing
-      {' '}
-      <b>fintech</b>
-      {' '}
-      that aims to teach kids the value of money.
-      Aimed at 4 to 14-year-olds Roostermoney helps graduate children through all the key milestones in
-      learning about money. From using us as a star chart in the younger years teaching reward systems, to
-      introducing a payment card when they&apos;re older to teach responsible spending.
+      As a Senior Software Developer for NatWest Rooster Money, the world's leading kids' pocket money app, I bring a wealth of technical expertise and experience to this fast-paced, fast-growing fintech. Our goal is to empower the next generation with financial literacy and independence, and our app is specifically designed to help children learn the value of money through a range of key milestones. From using us as a star chart to teach reward systems, to introducing a payment card for responsible spending, we're dedicated to guiding children through every step of their financial journey.
     </p>
-    <p>Key Responsibilities</p>
+    <p>As the Technical Lead for all web-facing services, including the Rooster Money product marketing website and the iOS and Android apps, I'm responsible for a range of key tasks, including:</p>
     <ul>
-      <li>
-        Technical lead on all web facing services including RoosterMoneys
-        product marketing WordPress site
-        {' '}
-        <a href="https://roostermoney.com/">roostermoney.com/</a>
-      </li>
-      <li>iOs and Android development for the Roostermoney App</li>
-      <li>Website Performance benchmarking and improvements</li>
-      <li>Integration and E2E testing</li>
-      <li>CRO testing through google optimise</li>
-      <li>Manage app, backend services, and website releases</li>
-      <li>Aid and assist other team members with issues and ideas</li>
-      <li>Review and signoff on example maps and new product development</li>
-      <li>Example map ticket breakdown and generation</li>
-      <li>Story point estimating through sprint poker</li>
-      <li>Jira sprint planning and ticket prioritising</li>
-      <li>Research and discuss new frontend technological trends</li>
-      <li>Compliance &amp; fraud training</li>
-      <li>Standup captain</li>
+      <li>Collaborating with cross-functional teams to ensure seamless integration of software with other systems and technologies</li>
+      <li>Actively seeking out new technologies and methodologies to improve the performance, scalability, and security of our products</li>
+      <li>Integration and end-to-end testing</li>
+      <li>Troubleshooting and fixing technical issues in a timely and effective manner</li>
+      <li>Staying up-to-date with industry trends and advancements to maintain our competitive edge</li>
+      <li>Participating in code reviews to ensure quality and maintain standards</li>
+      <li>Contributing to the creation of technical documentation, such as user guides and system manuals</li>
+      <li>Conversion rate optimization testing through Google Optimize</li>
+      <li>Ensuring that all development activities are in compliance with security and data privacy regulations.</li>
+      <li>Managing app, backend services, and website releases</li>
+      <li>Assisting other team members with issues and ideas</li>
+      <li>Reviewing and signing off on wireframes and new product development</li>
+      <li>Generating wireframe ticket breakdowns</li>
+      <li>Estimating story points through sprint poker</li>
+      <li>Planning Jira sprints and prioritizing tickets</li>
+      <li>Researching and discussing new front-end technological trends</li>
+      <li>Receiving compliance and fraud training</li>
+      <li>Acting as the Standup Captain</li>
     </ul>
+    <p>I'm committed to driving innovation and excellence in every aspect of my work, and I'm always looking for new opportunities to grow and contribute to the success of NatWest Rooster Money.</p>
   </>,
   }, {
     key: 'msw',
@@ -100,25 +93,19 @@ export const WORK = [
     ],
     copy:
   <>
-    <p>
-      Senior frontend developer for one of the world’s leading surf forecasting sites. Working
-      within a small fast paced AGILE development team thats continually iterating and deploying new
-      forecasting tools to over a million users daily.
-    </p>
+    <p>As a Senior Front-end Developer for one of the world's leading surf forecasting sites, I play a crucial role in ensuring that our platform continues to deliver an exceptional user experience. Working within a small and agile development team, I am responsible for managing and leading a team of front-end developers and designers to bring new forecasting tools to over a million users daily.</p>
     <p>Key Responsibilities</p>
     <ul>
-      <li>Manage frontend developers and team designer on product development</li>
-      <li>Lead developer and designer of new products</li>
-      <li>Lead designer for App (iOs & Android) products</li>
-      <li>Primary timescale Estimator</li>
-      <li>Product Management</li>
-      <li>Liaise with product owners and lead product discussions</li>
-      <li>Research and implement new front-end technologies</li>
-      <li>Analyse Front end performance and benchmarking</li>
-      <li>Mobile first development</li>
-      <li>Sign off on final QA’s</li>
-      <li>Write efficient, lean, performant code with supporting tests and documentation.</li>
-      <li>Participate in SCRUM & stand up discussions</li>
+      <li>Managing and leading the front-end development team to deliver high-quality products</li>
+      <li>Being the lead developer and designer for new products and updates to our platform</li>
+      <li>Overseeing the design and development of our iOS and Android mobile apps</li>
+      <li>Estimating project timelines and managing product development schedules</li>
+      <li>Collaborating with product owners to shape product discussions and decisions</li>
+      <li>Researching and implementing cutting-edge front-end technologies to enhance the user experience</li>
+      <li>Analyzing and benchmarking front-end performance to continuously improve our platform</li>
+      <li>Focusing on mobile-first development to ensure seamless experiences across devices</li>
+      <li>Signing off on final quality assurance tests and ensuring that code is efficient, lean, and performant</li>
+      <li>Participating in daily scrum and stand-up discussions to stay up-to-date with team progress and provide input and guidance.</li>
     </ul>
   </>,
   }, {

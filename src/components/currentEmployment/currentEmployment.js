@@ -30,16 +30,14 @@ function CurrentEmployment() {
       </Row>
       <div className={description}>
         <p>
-          I&apos;m currently working in
+          I&apos;m currently working in the exciting field of
           {' '}
           <b>fintech</b>
           {' '}
-          for Natwest Rooster Money, a children&apos;s pocket money management app.
+          specifically for Natwest Rooster Money, a children&apos;s pocket money management app. Which aims to empower the next generation with financial literacy and independence.
         </p>
         <p>
-          I began work at Rooster Money in 2018; at that time, it was a small startup
-          with ten employees. Over the past four years, Rooster has grown in strength
-          and size, now employing over 70 people as part of the NatWest group.
+          I started my journey with Rooster Money back in 2018, when it was just a small startup with ten employees. Over the past four years, I've been privileged to witness Rooster grow into a much larger and more established company, now employing over 70 people as part of the NatWest group. It's been an exciting and rewarding experience to be a part of Rooster's growth and success.
         </p>
       </div>
     </>

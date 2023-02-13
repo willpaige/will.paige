@@ -40,15 +40,16 @@ export const about = {
         {' '}
         <b>software engineer</b>
         {' '}
-        living and working in South Devon, UK.
+        based in South Devon, UK.
       </p>
       <p>
-        I primarily focus on front-end web and app development and have progressed my career from
-        studying product design and engineering to becoming a senior software engineer at NatWest.
+        My expertise lies in front-end web and app development, and I've been fortunate enough to grow my career from product design and engineering to become a Senior Software Engineer at NatWest.
       </p>
       <p>
-        My career trajectory has given me a unique skill set that allows me to have a rich
-        UI/UX-centered approach to website and mobile app development and computer programming.
+        Throughout my career, I've developed a unique skill set that allows me to approach website and mobile app development with a rich, user-centered perspective. I believe that the key to creating successful and impactful technology lies in understanding the needs and goals of the end-user.
+      </p>
+      <p>
+        I'm proud of my career journey so far, and I can't wait to see what the future holds.
       </p>
       <p>
         Interested in learning more about my history? Please navigate to my

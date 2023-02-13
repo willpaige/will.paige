@@ -32,5 +32,6 @@ export const home = {
         </li>
         <li>I enjoy downhill mountain biking, surfing, and snowboarding</li>
       </ul>
+      <p>With my passion for software engineering, background in design and outdoor adventures, I bring a unique perspective and drive to my work.</p>
     </>,
 };
