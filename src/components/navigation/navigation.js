@@ -26,7 +26,7 @@ function Navigation(props) {
   return (
     <>
       <div className={navigationClass}>
-        <div className={navigationItems}>
+        <nav className={navigationItems}>
           {Object.keys(PAGES_PATHS).map((key) => {
             const content = PAGES_PATHS[key];
             const isActive = activePage === key;
@@ -44,7 +44,7 @@ function Navigation(props) {
               </a>
             );
           })}
-        </div>
+        </nav>
         <Contact className={navigationContact} small />
       </div>
       <Burger />
