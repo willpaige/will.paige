@@ -23,25 +23,15 @@ export const WILLPOWERFITNESS = {
     alt="Sama Health & Well being - branding"
   />,
   brief: {
-    title: 'Re-design and re-build of willpowerfitness.co.uk',
+    title: 'Re-design and Re-build of willpowerfitness.co.uk',
     content:
     <>
-      <p>
-        The original website for willpowerfitness.co.uk was dated, had complicated navigation and didn't allow for any form of fitness session booking or management. It lacked originality, didn't follow brand guidelines and didn't showcase the gym.
-      </p>
-      <p>
-        A new website would allow active users to book and manage gym sessions and reflect the brand image.
-      </p>
+      <p>The original website of willpowerfitness.co.uk was outdated with complicated navigation, lacking the ability to book and manage gym sessions, not reflective of the brand image and not showcasing the gym facilities.</p>
+      <p>The goal was to create a new website that would enable users to book and manage gym sessions, align with the brand image, and showcase the gym facilities effectively.</p>
     </>,
   },
   process:
-  <>
-    <p>I had several meetings with Will from Willpower Fitness, where we discussed his business needs and wants. We also explored existing solutions and websites that appealed to him.</p>
-    <p>From there, I designed the website in PhotoShop and sent him the designs for approval. After approval, I set about building the website in WordPress.</p>
-  </>,
+    <p>I conducted several meetings with Will from Willpower Fitness to understand his business needs and preferences. I presented him with design ideas and websites that he liked, and I created a design in Photoshop that was approved by Will. After approval, I built the website using WordPress.</p>,
   solution:
-  <>
-    <p>A completely redesigned website, with the use of bold colours to match branding, the use of clear, inspiring photography and a simplified navigation</p>
-    <p>For the booking system, I extended and customised an existing WordPress booking plugin and user management plugin.</p>
-  </>,
+    <p>A custom-designed website with a bold color scheme aligned with the brand guidelines, clear and inspiring photography, and a simplified navigation structure. A booking system was integrated into the website using a customised WordPress booking plugin and user management plugin to allow for seamless booking and management of gym sessions.</p>,
 };

@@ -33,8 +33,7 @@ function Botanyblend() {
       </Image>
 
       <ContentBlock title="Branding">
-        <p>Our branding was clean and minimal in keeping with our competitors Rodin and Herbivore Botanicals. We wanted to create a Chanel- Esq approach to clean beauty, which was often labelled as 'hippy.'</p>
-        <p>We also added some subtle iconography in the form of the 'T', the botanical symbol for shrub.</p>
+        <p>Our branding, inspired by the sophistication of Chanel and the elegance of Rodin and Herbivore Botanicals, features a clean and minimal aesthetic. A subtle icon in the form of a 'T', the botanical symbol for shrub, adds a touch of botanical flair.</p>
       </ContentBlock>
 
       <Image>
@@ -46,16 +45,13 @@ function Botanyblend() {
         />
       </Image>
       <ContentBlock title="Packaging">
-        <p>Clean, clinical packaging that was tactile with a soft touch laminate and embossed foil printed icon.</p>
-        <p>The bottles were eye-catching and unique and were sourced from Italy.</p>
+        <p>The packaging, designed for maximum impact and tactility, showcases eye-catching, unique bottles sourced from Italy. The clean and clinical design features a soft touch laminate and an embossed foil printed icon.</p>
       </ContentBlock>
 
       <Video verticalMargin src={botanyVideo} placeholder={videoPlaceHolder} />
 
       <ContentBlock title="Website">
-        <p>We wanted to stand out in the crowd and didn't want to create another e-commerce platform. We needed to make more of an experience to increase engagement.</p>
-        <p>To do this, we leveraged parallax scrolling to display content. We used crisp imagery and added scenic drone videos.</p>
-        <p>We kept the site clean and white with bright imagery to emphasise the clinical branding.</p>
+        <p>Our website, created to elevate the customer experience, leverages the use of parallax scrolling and scenic drone videos to showcase the products in their natural glory. The white, clean design emphasizes the clinical branding with bright, professionally shot imagery that highlights the products' natural essence.</p>
         <Image caption="The use of non-uniform content gridding helped to encourage the user to scroll.">
           <StaticImage
             src={`${imageUrl}botanyblend-product-shot.png`}
@@ -64,8 +60,7 @@ function Botanyblend() {
             quality={100}
           />
         </Image>
-        <p>Clear, bright, professionally shot imaging was used throughout the website. We ensured the images were not over-edited, giving a more accurate view of our products.</p>
-        <p>We also ensured that any contrasting imagery used similar colours to the products to help evoke a sense of calm and to highlight their natural essence.</p>
+        <p>The non-uniform content gridding encourages users to explore while ensuring functionality and ease of use on mobile, catering to the majority of our customers who access the site through social channels. </p>
         <ScreenScroll
           defaultScreen={ScreenTypes.MOBILE}
           mobile={(
@@ -83,7 +78,7 @@ function Botanyblend() {
             />
           )}
         />
-        <p>As most of our customers arrived from various social channels and on mobile, we ensured that the site was highly functional and easy to use on mobile.</p>
+        <p>The website also avoids over-editing the images, giving customers an accurate view of our products.</p>
       </ContentBlock>
     </ProjectPage>
   );

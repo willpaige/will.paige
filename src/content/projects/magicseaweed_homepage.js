@@ -16,42 +16,19 @@ export const MAGICSEAWEED_HOMEPAGE = {
   ],
   role: 'Lead Designer & Developer',
   brief: {
-    title: 'To re-design and develop the homepage with an emphasis on performance, engagement and business needs.',
+    title: 'TO IMPROVE THE PERFORMANCE, ENGAGEMENT, AND BUSINESS NEEDS OF THE HOMEPAGE',
     content:
   <>
-    <p>
-      MagicSeaweed is a large site with many complex features and products, from forecast charts to featured content
-      and images. Content, including paid-for features, photography, videos, and forecasting products, was
-      challenging to find and often missed out on hitting page view targets.
-    </p>
-    <p>
-      Time to first paint was slow, and the entire homepage was rendered serverside via smarty before being sent to
-      the browser.
-    </p>
+    <p>MagicSeaweed is a large online platform that provides a range of complex features and products, including forecast charts, featured content, and images. However, it was challenging for users to find the content they were looking for, resulting in a lack of engagement and missed opportunities for the business</p>
+    <p>Time to first paint was slow, and the entire homepage was rendered serverside via smarty before being sent to the browser.</p>
   </>,
   },
   process:
-  <>
-    <p>
-      At the time, the design and development team at MagicSeaweed was small with two backend developers, one app
-      developer and myself as the front-end developer and the designer. This allowed for a progressive approach
-      to the overhaul. I worked closely with the CEO and designed the website in the browser. Effectively, rapid
-      prototyping layouts and components.
-    </p>
-    <p>
-      This allowed me to experiment with layouts quickly it also allowed me to play with potential layouts on devices
-      to ensure they were easy to use and fully functioning.
-    </p>
-  </>,
+    <p>As a small design and development team, we took a progressive approach to the re-design of the MagicSeaweed homepage. I, as the front-end developer and designer, worked closely with the CEO to rapidly prototype layouts and components directly in the browser. This allowed for quick experimentation with layouts and ensured their functionality and ease of use on various devices.</p>,
   solution:
   <>
-    <p>
-      A clean layout which uses whitespace to break up key sections. Page sections were designed to fill the view height, allowing the user to focus on one section at a time.
-    </p>
-    <p>
-      Imagery is used to break up text and also drive engagement. Shop advertising was also re-design to appear more
-      on brand.
-    </p>
+    <p>The final design of the homepage features a clean layout that utilizes white space to break up key sections. Page sections were designed to fill the entire view height, allowing users to focus on one section at a time.</p>
+    <p>Engagement was further enhanced through the use of well-placed imagery. Additionally, the advertising section was re-designed to align more closely with the brand.</p>
     <ScreenScroll
       desktop={(
         <StaticImage
@@ -66,13 +43,8 @@ export const MAGICSEAWEED_HOMEPAGE = {
         />
         )}
     />
-    <p>
-      We implemented &apos;Critical CSS&apos; where content above the fold has its CSS styles inlined in the head.
-      Which drastically improves the time to first paint and time to interactive metrics. It also is a significant perceived performance improvement.
-    </p>
-    <p>
-      We only rendered markup, content and images above the fold as the user scrolls the page, the rest loads depending on where the user has scrolled to. This also helped improve the TTFP time and reduced page bloat.
-    </p>
+    <p>To improve the performance of the homepage, we implemented 'Critical CSS' that inlined the styles for content above the fold in the head, significantly reducing the time to first paint and time to interactive metrics.</p>
+    <p>Furthermore, only the markup, content, and images above the fold were rendered, with the rest loading as the user scrolls. This improved the time to first paint and reduced page bloat, resulting in a better overall user experience.</p>
   </>,
   blurb: "Re-design and development of MagicSeaweed's home page",
   thumbnail:

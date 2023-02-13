@@ -21,20 +21,13 @@ export const SUPERYACHTTENDERS = {
   brief: {
     title: 'To create a brand logo, and to design and develop a brochure website',
     content:
-    <>
-      <p>
-        SYT were a relatively new startup that didn't have a brand or a website. This project was a blank canvas, that allowed for the exploration of new styles and technology.
-      </p>
-    </>,
+      <p>SYT, a startup in need of a brand identity and website, approached us for a comprehensive branding and web design solution. This project presented a unique opportunity to experiment with new styles and technologies.</p>,
   },
   process:
-  <>
-    <p>I had several meetings with John from SYT, where we discussed his business needs and wants. We also explored existing solutions and websites that appealed to him.</p>
-    <p>It was clear from the get go that that client wanted something contempory and clean.</p>
-  </>,
+    <p>I held several meetings with John from SYT, where I delved into his business needs and preferences. I also conducted a thorough analysis of existing solutions and websites that he found appealing. It was evident from the outset that the client desired a contemporary and clean design.</p>,
   solution:
   <>
-    <p>The logo, was designed in illustrator as an abstract representation of the hull of a boat.</p>
-    <p>The website, is clean, and uses white space to make the imagery pop. Professionally shot images really help add to the quality of the website.</p>
+    <p>The brand logo, designed in Adobe Illustrator, embodies a modern and abstract interpretation of the hull of a boat. The website, characterized by its clean design and ample use of white space, showcases professionally shot images that effectively accentuate the overall quality of the site. </p>
+    <p>The design emphasizes the beauty and simplicity of the brand, creating a polished and professional online presence for SYT.</p>
   </>,
 };

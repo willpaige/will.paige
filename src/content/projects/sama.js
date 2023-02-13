@@ -24,25 +24,15 @@ export const SAMA = {
     alt="Sama Health & Well being - branding"
   />,
   brief: {
-    title: 'To create a health & wellbeing lifestyle brand and website',
+    title: 'to create a visually appealing and user-friendly platform that reflects the essence of the health and well-being market',
     content:
-  <>
-    <p>
-      SAMA, Sensory Awakening through Mindful Activities, was a potential business pivot from BotanyBlend. After researching and developing a business plan, Katie and Botanyblend realised that to fulfil their business needs, they needed to focus solely on the well being market.
-    </p>
-    <p>
-      To achieve this, we decided that the only real solution was to create a new brand, SAMA, which embodied and reflected the spiritual essence of health and well-being.
-    </p>
-  </>,
+    <p>The goal of the branding, website design, and development project for SAMA, a health and wellness startup, was to create a visually appealing and user-friendly platform that reflects the essence of the health and well-being market. As the Designer & Developer, my role was to collaborate with Katie, the co-founder of BotanyBlend, to bring this vision to life.</p>,
   },
   process:
-  <>
-    <p>Katie and I worked closely on the branding, colour selection and website design. We explored website layouts and innovative features via rapid prototyping in the browser.</p>
-    <p>Since this was a greenfield project, it allowed me to explore new technologies such as GatsbyJs.</p>
-  </>,
+    <p>The branding and website design process for SAMA was a collaborative effort between Katie and myself. We spent time carefully considering the colour palette, logo design, and website layout that would best embody the spiritual essence of health and well-being. We utilized rapid prototyping in the browser to explore different layouts and innovative features that would enhance the user experience. As a greenfield project, this also allowed me to experiment with cutting-edge technologies, such as GatsbyJS, to deliver a high-performance website.</p>,
   solution:
   <>
-    <p>The final logo was clean and clinical, with a muted brush stroke behind it to reduce the rigidity. The website was engaging with lots of white space, muted colours and sharp imagery.</p>
-    <p>Sadly this project never commercially launched. That said, its performance and design are still innovative and current today.</p>
+    <p>The final result was a clean, clinical logo that was softened by a muted brush stroke, creating a visually appealing and memorable brand identity. The website was designed with engaging white space, muted colours, and sharp imagery that effectively conveyed the core values and offerings of SAMA.</p>
+    <p>Although this project was never commercially launched, its design and performance remain innovative and relevant to this day.</p>
   </>,
 };

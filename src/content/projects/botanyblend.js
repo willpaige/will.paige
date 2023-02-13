@@ -42,9 +42,7 @@ export const BOTANYBLEND = {
   brief: {
     content:
       <>
-        <p>Botanyblend was my wife Katie's award-winning business that she founded. All products were made in-house by my wife and were sold both wholesale and retail.</p>
-        <p>Katie has trained in aromatherapy and is also considered a specialist in sensory integration. She started a business selling bespoke, handmade face and body oils.</p>
-        <p>The brand, its photography, its packaging and its website were the result of many lengthy evenings by both myself and my wife.</p>
+        <p>Botanyblend, founded by my wife Katie, is an award-winning business that specializes in bespoke, handmade face and body oils. With a background in aromatherapy and expertise in sensory integration, Katie meticulously crafted each product in-house for both wholesale and retail distribution.</p>
       </>,
   },
 };
