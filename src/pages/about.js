@@ -166,5 +166,10 @@ AboutPage.propTypes = {
 export default connect()(AboutPage);
 
 export function Head() {
-  return <SEO title="About" />;
+  return (
+    <SEO
+      title="NatWest | Front-end Development"
+      description="Will Paige is a 36-year-old software engineer based in South Devon, UK. With over a decade of experience, he specializes in front-end web and app development. His skillset encompasses a range of programming languages, technologies, and methodologies, all centered around creating user-friendly and impactful technology."
+    />
+  );
 }

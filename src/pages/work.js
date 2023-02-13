@@ -41,5 +41,10 @@ WorkPage.propTypes = {
 export default connect()(WorkPage);
 
 export function Head() {
-  return <SEO title="Employment History" />;
+  return (
+    <SEO
+      title="Employment History"
+      description="Explore Will Paige's extensive career as a Senior Software Engineer and Front-end Developer, delivering exceptional results in industries such as banking, e-commerce, and graphic design. View portfolio and skills."
+    />
+  );
 }

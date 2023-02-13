@@ -37,5 +37,10 @@ IndexPage.propTypes = {
 export default connect()(IndexPage);
 
 export function Head() {
-  return <SEO />;
+  return (
+    <SEO
+      title={'Expert in Frontend, Mobile-First & More'}
+      description={'Will Paige, a Senior Software Engineer with over 10 years of experience in software development. Specializing in frontend technologies, mobile-first design, and web performance. Based in the UK, with a passion for the outdoors.'}
+    />
+  );
 }

@@ -25,5 +25,10 @@ ProjectsPage.propTypes = {
 };
 
 export function Head() {
-  return <SEO title="Working Projects" />;
+  return (
+    <SEO
+      title="Showcasing Career Projects"
+      description="Discover the impactful projects from Senior Software Engineer, Will Paige's career, including front-end website performance, mobile app development and user-centered design."
+    />
+  );
 }
