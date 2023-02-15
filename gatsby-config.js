@@ -59,6 +59,11 @@ module.exports = {
           'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
         ],
       },
+    }, {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://will.paige.me.uk',
+      },
     },
 
     // {
