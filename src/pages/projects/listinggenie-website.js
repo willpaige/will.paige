@@ -4,12 +4,11 @@ import ProjectPage from '../../components/projectPage/projectPage';
 import { PROJECT_KEYS, PROJECTS } from '../../content/projects';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
 import ContentBlock from '../../components/contentBlock/contentBlock';
-import Image from '../../components/image/image';
-import HeaderImage from '../../images/projects/sama/sama-header.gif';
 import { SEO } from '../../components/seo/seo';
 import listingGenieVideo from '../../video/listinggenie-website.mp4';
 import videoPlaceHolder from '../../images/projects/listinggenie/listinggenie-video-placeholder.png';
-import Video from "../../components/video/video";
+import Video from '../../components/video/video';
+
 const imageUrl = '../../images/projects/listinggenie/';
 
 function ListingGenieWebsite() {

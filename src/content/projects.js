@@ -6,6 +6,7 @@ import { WILLPOWERFITNESS } from './projects/willpowerfitness';
 import { SUPERYACHTTENDERS } from './projects/superyachttenders';
 import { ROOSTERMONEY_PERFORMANCE } from './projects/roostermoneyPerformance';
 import { LISTINGGENIE_WEBSITE } from './projects/listinggenie-website';
+import { LISTINGGENIE_APP } from './projects/listinggenie-app';
 
 export const PROJECT_KEYS = {
   BOTANYBLEND: 'BOTANYBLEND',
@@ -23,6 +24,9 @@ export const PROJECT_KEYS = {
 export const PROJECTS = {
   [PROJECT_KEYS.LISTINGGENIE_WEBSITE]: {
     ...LISTINGGENIE_WEBSITE,
+  },
+  [PROJECT_KEYS.LISTINGGENIE_APP]: {
+    ...LISTINGGENIE_APP,
   },
   [PROJECT_KEYS.SAMA]: {
     ...SAMA,
