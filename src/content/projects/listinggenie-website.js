@@ -5,7 +5,7 @@ import { buildProjectsUrl } from '../../helpers/buildUrl';
 const imagePath = '../../images/projects/listinggenie/';
 
 export const LISTINGGENIE_WEBSITE = {
-  title: 'ListingGenie',
+  title: 'Personal Project: ListingGenie',
   subtitle: 'Ai Generated Product Descriptions',
   logo: '',
   url: buildProjectsUrl('listinggenie-website'),
