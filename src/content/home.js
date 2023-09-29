@@ -28,7 +28,7 @@ export const home = {
           {' '}
           <a href="https://katie.paige.me.uk/">Katie</a>
           {' '}
-          👑, Son Seb 👦, Dog Woody 🐕 and Cat Mia 🐈
+          👑, Son Seb 👦 and Cat Mia 🐈
         </li>
         <li>I enjoy downhill mountain biking, surfing, and snowboarding</li>
       </ul>
