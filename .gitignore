@@ -103,9 +103,6 @@ build.zip
 .cache/*/*
 bin/
 !deploy/bin/
-public
-public/*
-public/*/
 
 # Partytown
 static/~partytown

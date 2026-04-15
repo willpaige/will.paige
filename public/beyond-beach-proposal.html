@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>Beyond Beach — Digital Platform Proposal</title>
+  <style>
+    @font-face {
+      font-family: 'Roboto Mono';
+      font-style: normal;
+      font-weight: bold;
+      font-display: swap;
+      src: url(/fonts/Roboto_Mono/robotomono-bold.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Roboto Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(/fonts/Roboto_Mono/robotomono-medium.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Roboto Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/Roboto_Mono/robotomono-regular.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: bold;
+      font-display: swap;
+      src: url(/fonts/Source_Sans_Pro/SourceSansPro-Bold.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
+      src: url(/fonts/Source_Sans_Pro/SourceSansPro-Regular.woff) format('woff');
+    }
+
+    :root {
+      font-size: 62.5%;
+    }
+
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-size: 1.6rem;
+      font-family: 'Roboto Mono', monospace;
+      color: #000;
+      background-color: #fff;
+      line-height: 1.8;
+    }
+
+    /* ── Password Gate ── */
+    #gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #d1f0b1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity 300ms ease, visibility 300ms ease;
+    }
+
+    #gate.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #gate .gate-inner {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #gate .gate-title {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+    }
+
+    #gate .gate-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+
+    #gate input {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.6rem;
+      padding: 1.2rem 2rem;
+      border: 1px dotted #000;
+      background: #fff;
+      text-align: center;
+      outline: none;
+      width: 26rem;
+      max-width: 80vw;
+      letter-spacing: 0.3rem;
+      transition: border-color 200ms ease;
+    }
+
+    #gate input:focus {
+      border: 1px solid #000;
+    }
+
+    #gate input.error {
+      border-color: #e06060;
+      animation: shake 400ms ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+
+    #gate .gate-hint {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      opacity: 0.5;
+      font-weight: 400;
+    }
+
+    /* ── Content (hidden until auth) ── */
+    #proposal {
+      display: none;
+    }
+
+    #proposal.visible {
+      display: block;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 0 5rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 2.5rem;
+      }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background-color: #d1f0b1;
+      padding: 8rem 0 6rem;
+    }
+
+    .hero-label {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-size: 6rem;
+      font-weight: bold;
+      line-height: 1;
+      margin: 0 0 2rem;
+    }
+
+    .hero-sub {
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      max-width: 60rem;
+    }
+
+    .hero-meta {
+      margin-top: 4rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 5rem 0 4rem;
+      }
+      .hero-title {
+        font-size: 4rem;
+      }
+      .hero-sub {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 2.6rem;
+      margin: 0 0 1rem;
+    }
+
+    .section-subtitle {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 1.8rem;
+      margin: 0 0 0.8rem;
+    }
+
+    /* ── Sections ── */
+    .section {
+      padding: 5rem 0;
+      border-bottom: 1px dotted #000;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section p {
+      margin: 0 0 1.6rem;
+      max-width: 65rem;
+    }
+
+    .section ul {
+      margin: 0 0 2rem;
+      padding-left: 2rem;
+    }
+
+    .section li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── Tags / badges ── */
+    .tag {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      padding: 0.3rem 1rem;
+      border: 1px dotted #000;
+      margin-left: 1rem;
+      vertical-align: middle;
+    }
+
+    .tag--green { background-color: #d1f0b1; border-color: #a3e265; }
+    .tag--purple { background-color: #E0D6EB; border-color: #C1ADD7; }
+    .tag--coral { background-color: #FCBFB7; border-color: #e8a49c; }
+
+    /* ── Intro block ── */
+    .intro-section {
+      background-color: #F5F4F5;
+    }
+
+    .intro-diagram {
+      margin: 3rem 0 1rem;
+      padding: 3rem;
+      border: 1px dotted #000;
+      text-align: center;
+      font-size: 1.4rem;
+      line-height: 2.4;
+      background: #fff;
+    }
+
+    .intro-diagram .source {
+      font-weight: bold;
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-diagram .arrow {
+      display: block;
+      opacity: 0.4;
+      margin: 0.5rem 0;
+    }
+
+    .intro-diagram .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .intro-diagram .service-item {
+      padding: 0.8rem 1.6rem;
+      border: 1px dotted #000;
+      font-size: 1.3rem;
+    }
+
+    /* ── Pricing table ── */
+    .pricing-section {
+      background-color: #E0D6EB;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 1.4rem;
+    }
+
+    .pricing-table th {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      font-size: 1.2rem;
+      text-align: left;
+      padding: 1rem 0;
+      border-bottom: 1px solid #000;
+    }
+
+    .pricing-table td {
+      padding: 1rem 0;
+      border-bottom: 1px dotted #c1add7;
+      vertical-align: top;
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table .price {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .pricing-table .category {
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+
+    .pricing-total {
+      margin-top: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pricing-total .total-label {
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .pricing-total .total-price {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .pricing-note {
+      font-size: 1.3rem;
+      opacity: 0.7;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-table {
+        font-size: 1.3rem;
+      }
+      .pricing-table .category {
+        display: none;
+      }
+    }
+
+    /* ── Service detail sections ── */
+    .service-header {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-price {
+      font-weight: bold;
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+
+    .subsection {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px dotted #c8c8c8;
+    }
+
+    .subsection:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    /* ── Coloured sections ── */
+    .bg-green { background-color: #d1f0b1; }
+    .bg-purple { background-color: #E0D6EB; }
+    .bg-teal { background-color: #92b4a7; }
+    .bg-grey { background-color: #F5F4F5; }
+    .bg-coral { background-color: #FCBFB7; }
+    .bg-cream { background-color: #E0DFE2; }
+
+    /* ── Architecture diagram ── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .arch-grid .arch-item {
+      padding: 1.5rem;
+      border: 1px dotted #000;
+      font-size: 1.4rem;
+      background: #fff;
+    }
+
+    .arch-item strong {
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Retainer / Next steps ── */
+    .retainer-price {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .retainer-breakdown {
+      font-size: 1.3rem;
+      opacity: 0.6;
+      margin-bottom: 2rem;
+    }
+
+    .next-steps ol {
+      padding-left: 2rem;
+    }
+
+    .next-steps li {
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── Footer ── */
+    .proposal-footer {
+      padding: 4rem 0;
+      text-align: center;
+      font-size: 1.3rem;
+      opacity: 0.5;
+    }
+
+    /* ── Note blocks ── */
+    .note {
+      font-size: 1.3rem;
+      font-style: italic;
+      opacity: 0.7;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Password Gate -->
+<div id="gate">
+  <div class="gate-inner">
+    <div class="gate-title">Beyond Beach</div>
+    <div class="gate-subtitle">This proposal is password protected.</div>
+    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="off" autofocus>
+    <div class="gate-hint">Press enter to continue</div>
+  </div>
+</div>
+
+<!-- Proposal Content -->
+<div id="proposal">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-label">Digital Platform Proposal</div>
+      <h1 class="hero-title">Beyond Beach</h1>
+      <div class="hero-sub">A platform, not just a website.</div>
+      <div class="hero-meta">Prepared by Evolve AI &middot; evolve-ai.co &middot; April 2026<br>Valid for 30 days. All prices exclusive of VAT.</div>
+    </div>
+  </section>
+
+  <!-- What We're Building -->
+  <section class="section intro-section">
+    <div class="container">
+      <h2 class="section-title">What We're Building</h2>
+      <p>Beyond Beach has outgrown a collection of tools. Checkfront handles bookings, Google Folders tracks sales progress, Intercom fields enquiries, and the team manually bridges the gaps between all of them. As volume grows, that overhead grows with it.</p>
+      <p>This proposal sets out a modular digital platform with Checkfront as the single source of truth &mdash; feeding a public-facing website, a bespoke checkout experience, a customer portal for guests, and an admin portal for staff. Every service is independently deliverable. Pick what makes sense now and build on it over time.</p>
+      <div class="intro-diagram">
+        <span class="source">Checkfront = Single Source of Truth</span>
+        <span class="arrow">&darr;</span>
+        <div class="services">
+          <span class="service-item">Public Website</span>
+          <span class="service-item">Bespoke Checkout</span>
+          <span class="service-item">Kyte Flight Booking</span>
+          <span class="service-item">Customer Portal</span>
+          <span class="service-item">Admin Portal</span>
+        </div>
+      </div>
+      <p style="font-size:1.3rem; opacity:0.7; margin-top:1rem;">All reading and writing to Checkfront in real time. No duplicate data entry. No bridging gaps manually.</p>
+    </div>
+  </section>
+
+  <!-- At a Glance / Pricing -->
+  <section class="section pricing-section">
+    <div class="container">
+      <h2 class="section-title">At a Glance</h2>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th class="category">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Secure API Layer</td>
+            <td class="price">Included</td>
+            <td class="category">Architecture</td>
+          </tr>
+          <tr>
+            <td>Redesign, Rebuild, CMS &amp; My BB MVP</td>
+            <td class="price">&pound;1,400</td>
+            <td class="category">Website</td>
+          </tr>
+          <tr>
+            <td>SEO Foundation</td>
+            <td class="price">&pound;800</td>
+            <td class="category">SEO &amp; Content</td>
+          </tr>
+          <tr>
+            <td>Content Intelligence</td>
+            <td class="price">&pound;600</td>
+            <td class="category">SEO &amp; Content</td>
+          </tr>
+          <tr>
+            <td>Booking &amp; Checkout Optimisation</td>
+            <td class="price">&pound;1,500</td>
+            <td class="category">Booking</td>
+          </tr>
+          <tr>
+            <td>Kyte Flight Integration</td>
+            <td class="price">&pound;800</td>
+            <td class="category">Booking</td>
+          </tr>
+          <tr>
+            <td>AI Chat Widget (Intercom replacement)</td>
+            <td class="price">&pound;450</td>
+            <td class="category">Enquiries</td>
+          </tr>
+          <tr>
+            <td>Customer Portal MVP</td>
+            <td class="price">&pound;1,200</td>
+            <td class="category">Portals</td>
+          </tr>
+          <tr>
+            <td>Customer Portal Full (incl. BB AI)</td>
+            <td class="price">&pound;1,800</td>
+            <td class="category">Portals</td>
+          </tr>
+          <tr>
+            <td>Admin Portal MVP</td>
+            <td class="price">&pound;1,400</td>
+            <td class="category">Portals</td>
+          </tr>
+          <tr>
+            <td>Admin Portal Full</td>
+            <td class="price">&pound;1,000</td>
+            <td class="category">Portals</td>
+          </tr>
+          <tr>
+            <td>Marketing Automation</td>
+            <td class="price">&pound;1,000</td>
+            <td class="category">Automation</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pricing-total">
+        <span class="total-label">Full Platform (all services)</span>
+        <span class="total-price">~&pound;12,950</span>
+      </div>
+      <p class="pricing-note">Mix and match. Each service is independently deliverable.<br>Customer Portal and Admin Portal are sequenced &mdash; MVP first, Full builds on top.</p>
+    </div>
+  </section>
+
+  <!-- Website -->
+  <section class="section">
+    <div class="container">
+      <div class="service-header">
+        <h2 class="section-title">Website</h2>
+        <span class="tag tag--green">Start Here</span>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Redesign, Rebuild, Bespoke CMS &amp; My BB MVP</h3>
+        <span class="service-price">&pound;1,400</span>
+        <p style="margin-top:1.5rem;">The website and admin portal are built together in this phase &mdash; staff log into one place to manage both content and operations, rather than a separate CMS login.</p>
+        <p>The existing My BB page is a static dump of generic links. The My BB MVP replaces it with a proper authenticated experience tied to Checkfront, so guests only see what's relevant to their booking.</p>
+
+        <h4 class="section-subtitle" style="margin-top:3rem;">Website &amp; CMS</h4>
+        <ul>
+          <li>Full redesign and rebuild with like-for-like functionality</li>
+          <li>Bespoke CMS built into the admin portal &mdash; one login for staff</li>
+          <li>Full content migration from existing site</li>
+          <li>301 redirect mapping to protect existing SEO equity</li>
+          <li>GA4 and Google Search Console setup</li>
+          <li>Cookie consent and GDPR compliance</li>
+          <li>Core Web Vitals baseline measurement</li>
+          <li>First-year hosting and AI tooling included (renews at &pound;100/year)</li>
+        </ul>
+
+        <h4 class="section-subtitle" style="margin-top:3rem;">My BB MVP (basic customer portal)</h4>
+        <ul>
+          <li>Proper authenticated login replacing the current booking reference/postcode lookup</li>
+          <li>Personalised dashboard &mdash; guest sees their specific booking, destination and dates</li>
+          <li>Live booking status and payment schedule from Checkfront</li>
+          <li>Pay outstanding balance online</li>
+          <li>Trip notes served dynamically for their destination only</li>
+          <li>Flights, transfers and extras in one place</li>
+          <li>Download invoices and booking documents</li>
+          <li>PCI compliant throughout</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO & Content -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title">SEO &amp; Content</h2>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">SEO Foundation</h3>
+        <span class="service-price">&pound;800</span>
+        <ul style="margin-top:1.5rem;">
+          <li>On-page SEO optimisations across all key pages</li>
+          <li>Schema markup (LocalBusiness, Activity, Review, FAQ)</li>
+          <li>Local SEO</li>
+          <li>Internal linking architecture</li>
+          <li>Dynamic long-tail keyword content pages</li>
+          <li>Core Web Vitals and page speed improvements</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Content Intelligence</h3>
+        <span class="service-price">&pound;600</span>
+        <ul style="margin-top:1.5rem;">
+          <li>Automated blog content pipeline</li>
+          <li>Competitor keyword gap analysis and pillar content improvements</li>
+          <li>Dynamic seasonal content (conditions, weather hooks, best time to visit)</li>
+          <li>Activity guide content targeting long-tail search</li>
+          <li>Quarterly content calendar aligned to Beyond Beach seasons</li>
+        </ul>
+        <p class="note">Works best after SEO Foundation is in place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Architecture -->
+  <section class="section bg-teal" style="color: #000;">
+    <div class="container">
+      <h2 class="section-title">Platform Architecture</h2>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Secure API Layer <span style="font-weight:400; font-size:1.4rem;">&mdash; included</span></h3>
+        <p>A dedicated secure API layer sits between all three systems (website, customer portal, admin portal) and the third-party services they depend on (Checkfront, Kyte). All requests route through a single controlled layer.</p>
+        <div class="arch-grid">
+          <div class="arch-item"><strong>Whitelisted</strong>beyondbeach.com requests only &mdash; no external access</div>
+          <div class="arch-item"><strong>Centralised Credentials</strong>Checkfront &amp; Kyte keys never exposed to the client</div>
+          <div class="arch-item"><strong>Rate Limiting</strong>Request validation and error handling at one point</div>
+          <div class="arch-item"><strong>PCI Compliance</strong>Data security enforced at the API layer across all portals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking & Checkout -->
+  <section class="section">
+    <div class="container">
+      <div class="service-header">
+        <h2 class="section-title">Booking &amp; Checkout</h2>
+        <span class="tag tag--coral">Highest ROI</span>
+      </div>
+
+      <p>The current checkout has identifiable drop-off at every step. This fixes all of it, powered by the Checkfront API throughout.</p>
+
+      <div class="subsection" style="margin-top:3rem;">
+        <h3 class="section-subtitle">Booking &amp; Checkout Optimisation</h3>
+        <span class="service-price">&pound;1,500</span>
+        <ul style="margin-top:1.5rem;">
+          <li>Availability-aware date picker with live availability from Checkfront</li>
+          <li>Real-time validation before the user hits Continue</li>
+          <li>Smart no-availability state: surface next available date automatically</li>
+          <li>Early email capture for abandoned checkout recovery</li>
+          <li>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
+          <li>Contextual pricing: per-person and per-night breakdown alongside total</li>
+          <li>Returning customer saved details via Checkfront &mdash; one-click populate</li>
+          <li>Streamlined checkout form with address autocomplete</li>
+          <li>Visual extras cards with live running total</li>
+          <li>Prominent deposit CTA with Hold as secondary</li>
+          <li>Apple Pay and Google Pay via Stripe</li>
+          <li>GA4 event tracking wired to every checkout step &mdash; full funnel visualisation</li>
+        </ul>
+        <p class="note">Requires Checkfront plan tier confirmation before build.</p>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Kyte Flight Integration</h3>
+        <span class="service-price">&pound;800</span>
+        <p style="margin-top:1.5rem;">Kyte is an airline distribution API connecting to EasyJet, Ryanair, British Airways, and other major carriers &mdash; meaning customers can search, compare and book flights directly within the Beyond Beach checkout and customer portal.</p>
+        <ul>
+          <li>Flight search embedded in checkout, pre-filtered by destination and date</li>
+          <li>Live fares from low-cost and full-service carriers via Kyte API</li>
+          <li>Flight booking tied to the Checkfront record &mdash; one reference</li>
+          <li>ATOL protection handled end-to-end</li>
+          <li>Customer portal: guests add or manage flights post-booking</li>
+          <li>Admin portal: staff see flight status alongside the booking</li>
+          <li>Removes the need to send customers away &mdash; keeps revenue in-house</li>
+        </ul>
+        <p class="note">Kyte integration requires a Kyte API account. We can assist with onboarding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiries & Chat -->
+  <section class="section bg-grey">
+    <div class="container">
+      <div class="service-header">
+        <h2 class="section-title">Enquiries &amp; Chat</h2>
+        <span class="tag tag--green">Saves &pound;300/year vs Intercom</span>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">AI Chat Widget (Intercom replacement)</h3>
+        <span class="service-price">&pound;450</span>
+        <p style="margin-top:1.5rem;">A bespoke AI chat widget powered by a RAG system trained on Beyond Beach's own content &mdash; destination guides, activity info, FAQs, booking conditions, T&amp;Cs, and local knowledge. When a guest asks "do I need to bring a wetsuit?" it answers accurately from your own content.</p>
+        <p>The knowledge base is maintainable without retraining &mdash; update a doc, add a destination, and the widget picks it up automatically.</p>
+        <ul>
+          <li>Bespoke chat widget on Beyond Beach infrastructure</li>
+          <li>RAG-powered responses grounded in your content</li>
+          <li>Checkfront-aware for returning visitors</li>
+          <li>Escalation to human or email capture when out of scope</li>
+          <li>No ongoing subscription fee</li>
+          <li>Knowledge base updated by editing documents, no retraining</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Portal -->
+  <section class="section bg-coral">
+    <div class="container">
+      <h2 class="section-title">Customer Portal</h2>
+      <p>Checkfront as the operational backbone. Connected portal for guests, reading from and writing to Checkfront in real time.</p>
+
+      <div class="subsection" style="margin-top:3rem;">
+        <div class="service-header">
+          <h3 class="section-subtitle">Customer Portal MVP</h3>
+          <span class="tag tag--green">Start Here</span>
+        </div>
+        <span class="service-price">&pound;1,200</span>
+        <ul style="margin-top:1.5rem;">
+          <li>Secure login with return client recognition</li>
+          <li>Live booking status and payment schedule from Checkfront</li>
+          <li>Pay outstanding balance online</li>
+          <li>Download invoices and booking documents</li>
+          <li>Trip notes and pre-arrival information</li>
+          <li>View and manage flights via Kyte integration</li>
+          <li>Return booking flow with loyalty discount auto-applied</li>
+          <li>PCI compliant payment handling</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Customer Portal Full</h3>
+        <span class="service-price">&pound;1,800</span>
+        <p style="margin-top:1rem;">Everything in MVP, plus:</p>
+        <ul>
+          <li>BB AI: assistant aware of the guest's specific booking</li>
+          <li>Document upload for travel docs, waivers, and paperwork</li>
+          <li>Post-booking upsell: add flights, experiences, extras from within the portal</li>
+          <li>Automated post-stay loyalty flow and rebooking prompts</li>
+          <li>Full GDPR and data compliance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Portal -->
+  <section class="section bg-purple">
+    <div class="container">
+      <h2 class="section-title">Admin Portal</h2>
+      <p>Replaces the Google Folders CRM workflow. Staff portal reading from and writing to Checkfront in real time.</p>
+
+      <div class="subsection" style="margin-top:3rem;">
+        <div class="service-header">
+          <h3 class="section-subtitle">Admin Portal MVP</h3>
+          <span class="tag tag--green">Start Here</span>
+        </div>
+        <span class="service-price">&pound;1,400</span>
+        <ul style="margin-top:1.5rem;">
+          <li>Visual booking pipeline &mdash; every booking and its stage at a glance</li>
+          <li>Guest details, payment status, flight status, documents per booking</li>
+          <li>Staff can manage bookings without needing Checkfront directly</li>
+          <li>Document management: upload and attach files per booking</li>
+          <li>Basic automated nudges as bookings progress</li>
+          <li>Role-based access control</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="section-subtitle">Admin Portal Full</h3>
+        <span class="service-price">&pound;1,000</span>
+        <p style="margin-top:1rem;">Everything in MVP, plus:</p>
+        <ul>
+          <li>Automated guest comms triggered by pipeline stage changes</li>
+          <li>Revenue and occupancy reporting dashboard</li>
+          <li>Full staff permissions and access level management</li>
+          <li>Integration hooks for future third-party tools</li>
+          <li>Audit log of all actions and changes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Automation -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Marketing Automation</h2>
+      <span class="service-price">&pound;1,000</span>
+      <ul style="margin-top:1.5rem;">
+        <li>Abandoned checkout sequence triggered by early email capture</li>
+        <li>Weather-triggered email campaigns via Mailchimp</li>
+        <li>Seasonal remarketing to past customers using Checkfront booking history</li>
+        <li>Post-booking confirmation with waiver link, directions and what to bring</li>
+        <li>Automated post-stay review request sequence</li>
+        <li>OTA and Google Calendar sync via Checkfront native integrations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Monthly Retainer -->
+  <section class="section bg-green">
+    <div class="container">
+      <h2 class="section-title">Monthly Retainer</h2>
+      <span style="font-size:1.4rem; opacity:0.7;">Optional</span>
+      <div class="retainer-price">&pound;300<span style="font-size:1.6rem; font-weight:400;">/month</span></div>
+      <div class="retainer-breakdown">&pound;3,600/year &middot; Rolling monthly</div>
+      <ul>
+        <li>Rank tracking and monthly SEO performance report</li>
+        <li>Seasonal content publishing and scheduling</li>
+        <li>Weather-triggered campaign scheduling</li>
+        <li>Checkfront and Kyte integration health monitoring</li>
+        <li>Annual hosting renewal management</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="section bg-cream">
+    <div class="container next-steps">
+      <h2 class="section-title">Next Steps</h2>
+      <ol style="margin-top:2rem;">
+        <li>Confirm Checkfront plan tier &mdash; some API endpoints are tier-locked and affect portal and checkout scope</li>
+        <li>Kyte API account: confirm whether Beyond Beach has one or needs onboarding</li>
+        <li>Share current site access for content audit and redirect mapping</li>
+        <li>Agree which services to start with and in what order</li>
+        <li>Checkout optimisation discovery call to walk through the full funnel together</li>
+        <li>Portal scoping call to map the guest and staff journey in detail</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="proposal-footer">
+    <div class="container">
+      Evolve AI &middot; evolve-ai.co<br>
+      Valid for 30 days from date of issue. All prices exclusive of VAT.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // SHA-256 hash of "bb2026"
+  const HASH = 'cb05b7b8288d7cf865b23dd0b0ad484859b3dc72a53b5396086df29493459ddf';
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  const input = document.getElementById('gate-input');
+  const gate = document.getElementById('gate');
+  const proposal = document.getElementById('proposal');
+
+  // Check if already authenticated this session
+  if (sessionStorage.getItem('bb-auth') === 'true') {
+    gate.classList.add('hidden');
+    proposal.classList.add('visible');
+  }
+
+  input.addEventListener('keydown', async function(e) {
+    if (e.key === 'Enter') {
+      const hash = await sha256(input.value);
+      if (hash === HASH) {
+        sessionStorage.setItem('bb-auth', 'true');
+        gate.classList.add('hidden');
+        proposal.classList.add('visible');
+      } else {
+        input.classList.add('error');
+        input.value = '';
+        setTimeout(() => input.classList.remove('error'), 400);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
