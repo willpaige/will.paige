@@ -1,18 +1,17 @@
+'use client';
+
 import React from 'react';
 import classnames from 'classnames';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   burger, burgerIsActive, menu, burgerTitle, burgerIcon, menuIsActive
 } from './burger.module.scss';
 import { isTrayActive } from '../../state/ui/ui-selectors';
 import { toggleTray } from '../../state/ui/ui-action';
 
-function Burger(props) {
-  const {
-    trayIsActive,
-    dispatch,
-  } = props;
+function Burger() {
+  const trayIsActive = useSelector(isTrayActive);
+  const dispatch = useDispatch();
 
   const burgerClass = classnames(burger, {
     [burgerIsActive]: trayIsActive,
@@ -37,14 +36,4 @@ function Burger(props) {
   );
 }
 
-Burger.propTypes = {
-  trayIsActive: PropTypes.bool.isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
-
-Burger.defaultProps = {
-};
-
-export default connect(state => ({
-  trayIsActive: isTrayActive(state),
-}), null)(Burger);
+export default Burger;

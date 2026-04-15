@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
+import Link from 'next/link';
 import classnames from 'classnames';
 import Row from '../grid/row/row';
 import Col from '../grid/col/col';
@@ -14,9 +13,7 @@ import CurrentEmployment from '../currentEmployment/currentEmployment';
 import Languages from '../languages/languages';
 import FooterSmall from '../footerSmall/footerSmall';
 
-function Footer(props) {
-  const { showCurrentEmployment, showLanguages, showWebsite } = props;
-
+function Footer({ showCurrentEmployment = true, showLanguages = true, showWebsite = true }) {
   return (
     <footer className={footerRow}>
       {showLanguages && (
@@ -44,23 +41,23 @@ function Footer(props) {
             <div className={content}>
               <Title type="h2">This Website</Title>
               <p>
-                This website is built using the blazing fast
-                <code className={codeTag}>GatsbyJs</code>
+                This website is built using
+                <code className={codeTag}>Next.js</code>
               </p>
               <p>
-                <code className={classnames(codeTag, codeNoMarginLeft)}>GatsbyJs</code>
+                <code className={classnames(codeTag, codeNoMarginLeft)}>Next.js</code>
                 {' '}
-                is an open source framework with performance, scalability and security built in.
+                is a React framework with performance, scalability and security built in.
                 You&apos;ll notice that when navigating this site, pages will load instantly.
                 Just how it should be.
               </p>
               <p>
                 Don't believe me?
                 {' '}
-                <Link to="/performance/" title="View will.paige.me.uk's website performance">Check out these lighthouse performance reports</Link>
+                <Link href="/performance/" title="View will.paige.me.uk's website performance">Check out these lighthouse performance reports</Link>
               </p>
               <p>
-                As well as GatsbyJs this website uses
+                As well as Next.js this website uses
                 <code className={codeTag}>React</code>
                 {' '}
                 for building its interface and
@@ -76,17 +73,5 @@ function Footer(props) {
     </footer>
   );
 }
-
-Footer.defaultProps = {
-  showCurrentEmployment: true,
-  showLanguages: true,
-  showWebsite: true,
-};
-
-Footer.propTypes = {
-  showCurrentEmployment: PropTypes.bool,
-  showLanguages: PropTypes.bool,
-  showWebsite: PropTypes.bool,
-};
 
 export default Footer;

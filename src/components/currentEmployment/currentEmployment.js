@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import Row from '../grid/row/row';
 import Col from '../grid/col/col';
 import Title from '../title/title';
@@ -15,10 +15,11 @@ function CurrentEmployment() {
       <Row size={GridSize.EXTRA_SMALL}>
         <Col className={logoCol} size={GridSize.EXTRA_SMALL}>
           <Avatar>
-            <StaticImage
-              src="../../images/work/natwest_rooster_money.png"
+            <Image
+              src="/images/work/natwest_rooster_money.png"
               alt="NatWest Rooster Money"
-              placeholder="blurred"
+              width={72}
+              height={72}
             />
           </Avatar>
         </Col>

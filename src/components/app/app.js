@@ -1,8 +1,8 @@
+'use client';
+
 import React from 'react';
-import './app.scss';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Theme from '../theme/theme';
 import Wrapper from '../wrapper/wrapper';
 import Navigation from '../navigation/navigation';
@@ -12,10 +12,9 @@ import { isTrayActive } from '../../state/ui/ui-selectors';
 import { toggleTray } from '../../state/ui/ui-action';
 import { trayUnderlay, trayUnderlayIsActive } from './app.module.scss';
 
-function App(props) {
-  const {
-    children, theme, dispatch, trayIsActive,
-  } = props;
+function App({ children, theme = themeMap.THEME_1 }) {
+  const trayIsActive = useSelector(isTrayActive);
+  const dispatch = useDispatch();
   const trayUnderlayClass = classnames(trayUnderlay, {
     [trayUnderlayIsActive]: trayIsActive,
   });
@@ -39,17 +38,4 @@ function App(props) {
   );
 }
 
-App.defaultProps = {
-  theme: themeMap.THEME_1,
-};
-
-App.propTypes = {
-  theme: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  dispatch: PropTypes.func.isRequired,
-  trayIsActive: PropTypes.bool.isRequired,
-};
-
-export default connect(state => ({
-  trayIsActive: isTrayActive(state),
-}), null)(App);
+export default App;

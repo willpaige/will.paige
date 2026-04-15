@@ -1,6 +1,7 @@
+'use client';
+
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
 import {
   themeBackgroundStyles,
@@ -14,7 +15,10 @@ import {
 import { setTheme } from '../../state/ui/ui-action';
 import { getActiveTheme } from '../../state/ui/ui-selectors';
 
-function ThemeSwitch({ activeTheme, dispatch }) {
+function ThemeSwitch() {
+  const activeTheme = useSelector(getActiveTheme);
+  const dispatch = useDispatch();
+
   const setActiveTheme = (theme) => {
     dispatch(setTheme(theme));
   };
@@ -27,7 +31,6 @@ function ThemeSwitch({ activeTheme, dispatch }) {
         const themeClass = classNames(button, themeBackgroundStyles[theme], isActiveTheme ? isActive : null);
 
         return (
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
           <button
             type="button"
             className={themeClass}
@@ -41,16 +44,4 @@ function ThemeSwitch({ activeTheme, dispatch }) {
   );
 }
 
-ThemeSwitch.propTypes = {
-  activeTheme: PropTypes.string.isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
-
-export default connect(
-  (state) => {
-    return {
-      activeTheme: getActiveTheme(state),
-    };
-  },
-  null,
-)(ThemeSwitch);
+export default ThemeSwitch;

@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import samaVideo from '../../video/sama-hero.mp4';
-import videoPlaceHolder from "../../images/projects/sama/sama-placeholder.png";
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
-
-const imagePath = '../../images/projects/sama/';
 
 export const SAMA = {
   title: 'SAMA',
@@ -14,14 +10,17 @@ export const SAMA = {
   tags: ['React', 'Reduct', 'CSS', 'GatsbyJs', 'JavaScript', 'NodeJs', 'GraphQl', 'UX/UI', 'Branding'],
   blurb: 'Branding, website design, and development of a health and wellbeing startup, Sama.',
   video: {
-    src: samaVideo,
-    placeholder: videoPlaceHolder,
+    src: '/video/sama-hero.mp4',
+    placeholder: '/images/projects/sama/sama-placeholder.png',
   },
   role: 'Designer & Developer',
   hero:
-  <StaticImage
-    src={`${imagePath}sama-logo.png`}
+  <Image
+    src="/images/projects/sama/sama-logo.png"
     alt="Sama Health & Well being - branding"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'to create a visually appealing and user-friendly platform that reflects the essence of the health and well-being market',

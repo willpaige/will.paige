@@ -1,8 +1,9 @@
+'use client';
+
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import Image from 'next/image';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { StaticImage } from 'gatsby-plugin-image';
+import { useSelector } from 'react-redux';
 import {
   content,
   contentHole,
@@ -14,10 +15,10 @@ import {
 import { getActiveTheme } from '../../state/ui/ui-selectors';
 import { themeBackgroundStyles } from '../../constants/theme';
 
-function Content(props) {
-  const {
-    className, activeTheme, children, noHero, noBackground,
-  } = props;
+function Content({
+  className, children, noHero = false, noBackground = false,
+}) {
+  const activeTheme = useSelector(getActiveTheme);
   const [hiCat, showCat] = useState(0);
 
   const contentClassName = classNames(content, className, themeBackgroundStyles[activeTheme], {
@@ -34,32 +35,11 @@ function Content(props) {
       {children}
       <div className={contentHole} onClick={() => showCat(!hiCat)}>
         <div className={animateHoleClass}>
-          <StaticImage src="../../images/kitty_cat.png" alt="Cat hiding" />
+          <Image src="/images/kitty_cat.png" alt="Cat hiding" width={100} height={100} style={{ width: '100%', height: 'auto' }} />
         </div>
       </div>
     </div>
   );
 }
 
-Content.defaultProps = {
-  noHero: false,
-  className: '',
-  noBackground: false,
-};
-
-Content.propTypes = {
-  activeTheme: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  noHero: PropTypes.bool,
-  noBackground: PropTypes.bool,
-};
-
-export default connect(
-  (state) => {
-    return {
-      activeTheme: getActiveTheme(state),
-    };
-  },
-  null,
-)(Content);
+export default Content;

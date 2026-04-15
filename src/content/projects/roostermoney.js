@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
 import { codeTag } from '../../components/code/code.module.scss'
-import Image from "../../components/image/image";
-
-const imagePath = '../../images/projects/roostermoney/';
+import ImageWrapper from "../../components/image/image";
 
 export const ROOSTERMONEY = {
   title: 'NatWest Rooster Money',
@@ -22,15 +20,20 @@ export const ROOSTERMONEY = {
   ],
   blurb: 'Modularising marketing components and homepage re-build',
   thumbnail:
-  <StaticImage
-    src={`${imagePath}natwest_rooster_money-logo.png`}
+  <Image
+    src="/images/projects/roostermoney/natwest_rooster_money-logo.png"
     alt="NatWest Rooster Money"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   hero:
-  <StaticImage
-    src={`${imagePath}roostermoney_homepage.png`}
+  <Image
+    src="/images/projects/roostermoney/roostermoney_homepage.png"
     alt="Kids Pocket Money App"
-    loading="eager"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'REDESIGN THE WEBSITE TO IMPROVE MARKETING AND EDITORIAL CAPABILITIES',
@@ -46,34 +49,46 @@ export const ROOSTERMONEY = {
     <>
       <p>We leveraged the power of Advanced Custom Fields (ACF) to extend the capabilities of WordPress. ACF provided an easy way to customize content and make it highly manageable.</p>
       <p>To further extend ACF's functionality, we used the plugin <a href={"https://acf-component-field.gummi.io/"} className={codeTag}>acf-component-field</a>  This allowed us to build PHP-based components, categorize them, and add them to page templates, features, or blog posts using a drag-and-drop interface.</p>
-      <Image caption="CTAs and banners, complete with dynamic tracking can easily be placed any where in a document" fullWidth>
-        <StaticImage
-          src={`${imagePath}roostermoney_cta.png`}
+      <ImageWrapper caption="CTAs and banners, complete with dynamic tracking can easily be placed any where in a document" fullWidth>
+        <Image
+          src="/images/projects/roostermoney/roostermoney_cta.png"
           alt="NatWest Rooster Money"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
-      </Image>
+      </ImageWrapper>
       <p>
         By modularizing components, we were able to design and build re-usable components only once, reducing the need for repetitive development work. Moreover, by categorizing components, we could identify content that only needed to be updated once and not on a page-by-page basis.
       </p>
-      <Image caption="A list of components that can be placed in any template or page" fullWidth>
-        <StaticImage
-          src={`${imagePath}roostermoney_acf.png`}
+      <ImageWrapper caption="A list of components that can be placed in any template or page" fullWidth>
+        <Image
+          src="/images/projects/roostermoney/roostermoney_acf.png"
           alt="NatWest Rooster Money and advanced custom fields"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
-      </Image>
+      </ImageWrapper>
 
-      <Image caption="A component can have any number of fields relating to a design" fullWidth>
-        <StaticImage
-          src={`${imagePath}roostermoney_acf_2.png`}
+      <ImageWrapper caption="A component can have any number of fields relating to a design" fullWidth>
+        <Image
+          src="/images/projects/roostermoney/roostermoney_acf_2.png"
           alt="NatWest Rooster Money Global Re-usable Components"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
-      </Image>
+      </ImageWrapper>
       <p>This effectively created a single source of truth for re-usable components, freeing up time for the marketing team and streamlining the development process.</p>
-      <Image caption="A global re-usuable component, update it here and automatically update all instances" fullWidth>
-        <StaticImage
-          src={`${imagePath}roostermoney_grc.png`}
+      <ImageWrapper caption="A global re-usuable component, update it here and automatically update all instances" fullWidth>
+        <Image
+          src="/images/projects/roostermoney/roostermoney_grc.png"
           alt="NatWest Rooster Money Global Re-usable Components"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
-      </Image>
+      </ImageWrapper>
     </>,
 };

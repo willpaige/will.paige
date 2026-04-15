@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import Title from '../title/title';
 import { avatar, katieTitle, katieUx } from './katie.module.scss';
 import Avatar from '../avatar/avatar';
@@ -14,7 +14,7 @@ function Katie() {
         <a href="https://katie.paige.me.uk">Katie Paige</a>
       </Title>
       <Avatar small className={avatar} url="https://katie.paige.me.uk">
-        <StaticImage src="../../images/katie_paige_ux_designer.png" alt="Katie Paige UX" placeholder="blurred" />
+        <Image src="/images/katie_paige_ux_designer.png" alt="Katie Paige UX" width={50} height={50} />
       </Avatar>
     </div>
   );

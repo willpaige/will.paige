@@ -1,16 +1,16 @@
 @import "./variables";
 
-.theme-1 { background-color: $theme-1 }
-.theme-2 { background-color: $theme-2 }
-.theme-3 { background-color: $theme-3 }
-.theme-4 { background-color: $theme-4 }
-.theme-5 { background-color: $theme-5 }
+.theme1 { background-color: $theme-1 }
+.theme2 { background-color: $theme-2 }
+.theme3 { background-color: $theme-3 }
+.theme4 { background-color: $theme-4 }
+.theme5 { background-color: $theme-5 }
 
-.theme-1-color { color: $theme-1-darker }
-.theme-2-color { color: $theme-2-darker }
-.theme-3-color { color: $theme-3 }
-.theme-4-color { color: $theme-4-darker }
-.theme-5-color { color: $theme-5 }
+.theme1Color { color: $theme-1-darker }
+.theme2Color { color: $theme-2-darker }
+.theme3Color { color: $theme-3 }
+.theme4Color { color: $theme-4-darker }
+.theme5Color { color: $theme-5 }
 
 .backgroundGreyLightest {
   background-color: $greyLightest;

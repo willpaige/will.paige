@@ -1,7 +1,8 @@
+'use client';
+
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { connect } from 'react-redux';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
 import classnames from 'classnames';
 import {
   isHeroItem,
@@ -24,8 +25,8 @@ const imageIsRight = (key) => {
 
 const isHero = (key) => key === 0;
 
-function ContentList(props) {
-  const { data, activeTheme } = props;
+function ContentList({ data }) {
+  const activeTheme = useSelector(getActiveTheme);
 
   return (
     <div>
@@ -47,7 +48,7 @@ function ContentList(props) {
         return (
           <div className={contentListItemClass} key={title}>
             <div className={imageClass}>
-              <Link to={url}>
+              <Link href={url}>
                 {video ? (
                   <Video src={video.src} placeholder={video.placeholder} />
                 ) : thumbnail}
@@ -57,7 +58,7 @@ function ContentList(props) {
               <Title className={contentListTitle} type="h2">{title}</Title>
               <Title className={contentListSubTitle} type="h5">{subtitle}</Title>
               <p>{blurb}</p>
-              <Link to={url} title={`View ${title} project`} aria-label={`View ${title} project`}>View More</Link>
+              <Link href={url} title={`View ${title} project`} aria-label={`View ${title} project`}>View More</Link>
             </div>
           </div>
         );
@@ -66,12 +67,4 @@ function ContentList(props) {
   );
 }
 
-ContentList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
-  activeTheme: PropTypes.string.isRequired,
-};
-
-export default connect(state => ({
-  activeTheme: getActiveTheme(state),
-}), null)(ContentList);
+export default ContentList;

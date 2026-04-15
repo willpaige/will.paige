@@ -1,7 +1,8 @@
+'use client';
+
 import React from 'react';
-import { navigate } from 'gatsby';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useRouter } from 'next/navigation';
+import { useSelector, useDispatch } from 'react-redux';
 import classnames from 'classnames';
 import { PAGES_PATHS } from '../../constants/pages';
 import Contact from '../contact/contact';
@@ -13,15 +14,20 @@ import { isTrayActive } from '../../state/ui/ui-selectors';
 import { toggleTray } from '../../state/ui/ui-action';
 import { getActivePage } from '../../state/navigation/navigation-selectors';
 
-function Navigation(props) {
-  const { activePage, trayIsActive, dispatch } = props;
+function Navigation() {
+  const activePage = useSelector(getActivePage);
+  const trayIsActive = useSelector(isTrayActive);
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleNavigation = (url) => {
+    dispatch(toggleTray(false));
+    router.push(url);
+  };
+
   const navigationClass = classnames(navigation, {
     [navigationIsActive]: trayIsActive,
   });
-  const handleNavigation = (url) => {
-    dispatch(toggleTray(false));
-    navigate(url);
-  };
 
   return (
     <>
@@ -52,13 +58,4 @@ function Navigation(props) {
   );
 }
 
-Navigation.propTypes = {
-  activePage: PropTypes.string.isRequired,
-  trayIsActive: PropTypes.bool.isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
-
-export default connect(state => ({
-  trayIsActive: isTrayActive(state),
-  activePage: getActivePage(state),
-}), null)(Navigation);
+export default Navigation;

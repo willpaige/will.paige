@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
-
-const imagePath = '../../images/projects/superyachttenders/';
 
 export const SUPERYACHTTENDERS = {
   title: 'Super Yacht Tenders',
@@ -14,9 +12,12 @@ export const SUPERYACHTTENDERS = {
   role: 'Designer & Developer',
   hero: '',
   thumbnail:
-  <StaticImage
-    src={`${imagePath}super_yacht_tenders.png`}
+  <Image
+    src="/images/projects/superyachttenders/super_yacht_tenders.png"
     alt="Sama Health & Well being - branding"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'To create a brand logo, and to design and develop a brochure website',

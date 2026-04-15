@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
 import ScreenScroll from '../../components/screenScroll/screenScroll';
-import Image from '../../components/image/image';
-
-const imageUrl = '../../images/projects/magicseaweed/';
+import ImageWrapper from '../../components/image/image';
 
 export const MAGICSEAWEED_HOMEPAGE = {
   title: 'MagicSeaweed',
@@ -31,15 +29,21 @@ export const MAGICSEAWEED_HOMEPAGE = {
     <p>Engagement was further enhanced through the use of well-placed imagery. Additionally, the advertising section was re-designed to align more closely with the brand.</p>
     <ScreenScroll
       desktop={(
-        <StaticImage
-          src={`${imageUrl}magicseaweed_full_screen.png`}
+        <Image
+          src="/images/projects/magicseaweed/magicseaweed_full_screen.png"
           alt="MagicSeaweed homepage"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
         )}
       mobile={(
-        <StaticImage
-          src={`${imageUrl}magicseaweed_mobile.png`}
+        <Image
+          src="/images/projects/magicseaweed/magicseaweed_mobile.png"
           alt="MagicSeaweed homepage"
+          width={800}
+          height={600}
+          style={{width: '100%', height: 'auto'}}
         />
         )}
     />
@@ -48,16 +52,21 @@ export const MAGICSEAWEED_HOMEPAGE = {
   </>,
   blurb: "Re-design and development of MagicSeaweed's home page",
   thumbnail:
-  <StaticImage
-    src={`${imageUrl}magicseaweed.png`}
+  <Image
+    src="/images/projects/magicseaweed/magicseaweed.png"
     alt="Magicseaweed global surf forecasters"
-    loading="eager"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   hero:
-  <Image>
-    <StaticImage
-      src={`${imageUrl}magicseaweed_logo.png`}
+  <ImageWrapper>
+    <Image
+      src="/images/projects/magicseaweed/magicseaweed_logo.png"
       alt="MagicSeaweed Logo"
+      width={400}
+      height={300}
+      style={{width: '100%', height: 'auto'}}
     />
-  </Image>,
+  </ImageWrapper>,
 };

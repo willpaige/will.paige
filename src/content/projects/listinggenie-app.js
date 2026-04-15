@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
-
-const imagePath = '../../images/projects/listinggenie/';
 
 export const LISTINGGENIE_APP = {
   title: 'ListingGenie',
@@ -12,15 +10,21 @@ export const LISTINGGENIE_APP = {
   tags: ['ChatGpt', 'Ai', 'React-Native', 'NextJs', 'Redux', 'CSS', 'JavaScript', 'NodeJs', 'UX/UI',],
   blurb: 'Personal Project - React-Native iOs and Android apps for ListinGenie',
   thumbnail:
-  <StaticImage
-    src={`${imagePath}listinggenie-app-store.png`}
+  <Image
+    src="/images/projects/listinggenie/listinggenie-app-store.png"
     alt="ListingGenie - ios app"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   role: 'Designer & Developer',
   hero:
-  <StaticImage
-    src={`${imagePath}listinggenie-logo.png`}
+  <Image
+    src="/images/projects/listinggenie/listinggenie-logo.png"
     alt="ListingGenie - iOs and Android Apps"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'To create user-friendly iOs and Android apps to support the web application on listinggenie.co',

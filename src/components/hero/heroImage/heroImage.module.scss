@@ -13,13 +13,12 @@ $borderRadius: 10rem;
     padding-right: $gutterWidth;
   }
 
-  [data-gatsby-image-wrapper] {
+  img {
     @media (min-width: $screenMd) {
       height: 100%;
+      object-fit: cover;
     }
-  }
 
-  img {
     @media (min-width: $screenXlg) {
       border-radius: $borderRadiusImage $borderRadiusImage;
     }
@@ -40,11 +39,12 @@ $borderRadius: 10rem;
     }
   }
 
-  [data-gatsby-image-wrapper] {
+  img {
     @media (max-width: $screenSmMax) {
       position: absolute;
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 }

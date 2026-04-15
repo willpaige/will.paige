@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
-
-const imagePath = '../../images/projects/listinggenie/';
 
 export const LISTINGGENIE_WEBSITE = {
   title: 'Personal Project: ListingGenie',
@@ -12,15 +10,21 @@ export const LISTINGGENIE_WEBSITE = {
   tags: ['ChatGpt', 'Ai', 'NextJs', 'React', 'Redux', 'CSS', 'JavaScript', 'NodeJs', 'UX/UI', 'Branding'],
   blurb: 'Branding, website design, and development of the website application ListingGenie.',
   thumbnail:
-  <StaticImage
-    src={`${imagePath}listinggenie-logo.png`}
+  <Image
+    src="/images/projects/listinggenie/listinggenie-logo.png"
     alt="NatWest Rooster Money"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   role: 'Designer & Developer',
   hero:
-  <StaticImage
-    src={`${imagePath}listinggenie-logo.png`}
+  <Image
+    src="/images/projects/listinggenie/listinggenie-logo.png"
     alt="ListingGenie - branding"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'To create a user-friendly platform that allows online sellers to generate optimised product titles and descriptions',
@@ -30,7 +34,7 @@ export const LISTINGGENIE_WEBSITE = {
   process:
   <>
     <p>I started by conducting market research to understand the pain points of e-commerce sellers. I then identified the most popular platforms and began working on a solution to generate optimised listings for them.</p>
-    <p>I chose Next.js and React as the primary technologies for building the web application due to their efficiency and flexibility. I integrated OpenAI’s GPT-3 API to leverage AI capabilities for generating the listing content.</p>
+    <p>I chose Next.js and React as the primary technologies for building the web application due to their efficiency and flexibility. I integrated OpenAI's GPT-3 API to leverage AI capabilities for generating the listing content.</p>
     <p>The development process involved creating a simple user interface with a form where users could input basic information about their product, which was then fed into the GPT-3 API to generate an optimized listing title and description. The application was also optimized for SEO to increase its visibility and reach.</p>
   </>,
   solution:

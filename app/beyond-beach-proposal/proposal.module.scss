@@ -1,0 +1,403 @@
+/* ── Password Gate ── */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #d1f0b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.gateHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gateInner {
+  text-align: center;
+  padding: 2rem;
+}
+
+.gateTitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.gateSubtitle {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.gateInput {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.6rem;
+  padding: 1.2rem 2rem;
+  border: 1px dotted #000;
+  background: #fff;
+  text-align: center;
+  outline: none;
+  width: 26rem;
+  max-width: 80vw;
+  letter-spacing: 0.3rem;
+  transition: border-color 200ms ease;
+
+  &:focus {
+    border: 1px solid #000;
+  }
+}
+
+.gateInputError {
+  border-color: #e06060;
+  animation: shake 400ms ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.gateHint {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+/* ── Proposal content ── */
+.proposalHidden {
+  display: none;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2.5rem;
+  }
+}
+
+/* ── Hero ── */
+.hero {
+  background-color: #d1f0b1;
+  padding: 8rem 0 6rem;
+
+  @media (max-width: 768px) {
+    padding: 5rem 0 4rem;
+  }
+}
+
+.heroLabel {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.heroTitle {
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+}
+
+.heroSub {
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  max-width: 60rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.heroMeta {
+  margin-top: 4rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+/* ── Section titles ── */
+.sectionTitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 2.6rem;
+  margin: 0 0 1rem;
+}
+
+.sectionSubtitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px dotted #000;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  p {
+    margin: 0 0 1.6rem;
+    max-width: 65rem;
+  }
+
+  ul {
+    margin: 0 0 2rem;
+    padding-left: 2rem;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* ── Tags / badges ── */
+.tag {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  padding: 0.3rem 1rem;
+  border: 1px dotted #000;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.tagGreen { background-color: #d1f0b1; border-color: #a3e265; }
+.tagPurple { background-color: #E0D6EB; border-color: #C1ADD7; }
+.tagCoral { background-color: #FCBFB7; border-color: #e8a49c; }
+
+/* ── Intro block ── */
+.introSection {
+  background-color: #F5F4F5;
+}
+
+.introDiagram {
+  margin: 3rem 0 1rem;
+  padding: 3rem;
+  border: 1px dotted #000;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 2.4;
+  background: #fff;
+}
+
+.diagramSource {
+  font-weight: bold;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.diagramArrow {
+  display: block;
+  opacity: 0.4;
+  margin: 0.5rem 0;
+}
+
+.diagramServices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.serviceItem {
+  padding: 0.8rem 1.6rem;
+  border: 1px dotted #000;
+  font-size: 1.3rem;
+}
+
+/* ── Pricing table ── */
+.pricingSection { background-color: #E0D6EB; }
+
+.pricingTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1.4rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  th {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 1rem 0;
+    border-bottom: 1px solid #000;
+  }
+
+  td {
+    padding: 1rem 0;
+    border-bottom: 1px dotted #c1add7;
+    vertical-align: top;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.price { font-weight: bold; white-space: nowrap; }
+.category {
+  font-size: 1.2rem;
+  opacity: 0.6;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.pricingTotal {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.totalLabel {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.totalPrice { font-size: 3rem; font-weight: bold; }
+
+.pricingNote { font-size: 1.3rem; opacity: 0.7; margin-top: 1.5rem; }
+
+/* ── Service detail sections ── */
+.serviceHeader {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.servicePrice { font-weight: bold; font-size: 2rem; white-space: nowrap; }
+
+.subsection {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px dotted #c8c8c8;
+
+  &:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+/* ── Coloured sections ── */
+.bgGreen { background-color: #d1f0b1; }
+.bgPurple { background-color: #E0D6EB; }
+.bgTeal { background-color: #92b4a7; }
+.bgGrey { background-color: #F5F4F5; }
+.bgCoral { background-color: #FCBFB7; }
+.bgCream { background-color: #E0DFE2; }
+
+/* ── Architecture diagram ── */
+.archGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.archItem {
+  padding: 1.5rem;
+  border: 1px dotted #000;
+  font-size: 1.4rem;
+  background: #fff;
+
+  strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* ── Retainer / Next steps ── */
+.retainerPrice {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 2rem 0 0.5rem;
+}
+
+.retainerBreakdown {
+  font-size: 1.3rem;
+  opacity: 0.6;
+  margin-bottom: 2rem;
+}
+
+.nextSteps {
+  ol {
+    padding-left: 2rem;
+  }
+
+  li {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* ── Footer ── */
+.proposalFooter {
+  padding: 4rem 0;
+  text-align: center;
+  font-size: 1.3rem;
+  opacity: 0.5;
+}
+
+/* ── Note blocks ── */
+.note {
+  font-size: 1.3rem;
+  font-style: italic;
+  opacity: 0.7;
+  margin-top: 2rem;
+}

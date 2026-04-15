@@ -24,7 +24,7 @@ import {
   AiOutlineTeam,
   AiOutlineTool, AiOutlineTranslation,
 } from 'react-icons/ai';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 
 export const about = {
   ABOUT_ME: (age) => (
@@ -54,11 +54,11 @@ export const about = {
       <p>
         Interested in learning more about my history? Please navigate to my
         {' '}
-        <Link to="/work/">work</Link>
+        <Link href="/work/">work</Link>
         {' '}
         and
         {' '}
-        <Link to="/work/">education</Link>
+        <Link href="/work/">education</Link>
         {' '}
         pages.
       </p>

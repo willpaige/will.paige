@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
 // import { codeTag } from '../../components/code/code.module.scss'
 // import Image from "../../components/image/image";
-
-const imagePath = '../../images/projects/botanyblend/';
 
 export const BOTANYBLEND = {
   title: 'Botanyblend',
@@ -29,15 +27,20 @@ export const BOTANYBLEND = {
   ],
   blurb: 'Branding, print, packaging, and website design for Botanyblend an organic face and body oils company based in Devon.',
   thumbnail:
-  <StaticImage
-    src={`${imagePath}botanyblend-vega.png`}
+  <Image
+    src="/images/projects/botanyblend/botanyblend-vega.png"
     alt="Botanyblend organic face & body oils"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   hero:
-  <StaticImage
-    src={`${imagePath}botanyblend_logo.png`}
+  <Image
+    src="/images/projects/botanyblend/botanyblend_logo.png"
     alt="Kids Pocket Money App"
-    loading="eager"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     content:

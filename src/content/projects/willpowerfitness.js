@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { buildProjectsUrl } from '../../helpers/buildUrl';
-
-const imagePath = '../../images/projects/willpowerfitness/';
 
 export const WILLPOWERFITNESS = {
   title: 'Willpower Fitness',
@@ -13,14 +11,20 @@ export const WILLPOWERFITNESS = {
   blurb: 'Website design, and development for a devon based gym and fitness center',
   role: 'Designer & Developer',
   hero:
-  <StaticImage
-    src={`${imagePath}willpower_fitness.png`}
+  <Image
+    src="/images/projects/willpowerfitness/willpower_fitness.png"
     alt="Sama Health & Well being - branding"
+    width={1200}
+    height={800}
+    style={{width: '100%', height: 'auto'}}
   />,
   thumbnail:
-  <StaticImage
-    src={`${imagePath}willpower_fitness-thumbnail.png`}
+  <Image
+    src="/images/projects/willpowerfitness/willpower_fitness-thumbnail.png"
     alt="Sama Health & Well being - branding"
+    width={600}
+    height={400}
+    style={{width: '100%', height: 'auto'}}
   />,
   brief: {
     title: 'Re-design and Re-build of willpowerfitness.co.uk',

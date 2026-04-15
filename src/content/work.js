@@ -1,20 +1,17 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 
 const AVATAR_WIDTH = 72;
-const PLACEHOLDER = 'blurred';
 
 export const WORK = [
   {
     key: 'nwrm',
     image:
-  <StaticImage
-    quality={100}
+  <Image
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/work/natwest_rooster_money.png"
+    src="/images/work/natwest_rooster_money.png"
     alt="NatWest Rooster Money"
-    placeholder={PLACEHOLDER}
   />,
     title: 'NatWest Rooster Money',
     subTitle: 'Senior Software Engineer',
@@ -73,14 +70,11 @@ export const WORK = [
   }, {
     key: 'msw',
     image:
-  <StaticImage
-    quality={100}
+  <Image
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/work/magicseaweed.png"
+    src="/images/work/magicseaweed.png"
     alt="MagicSeaweed"
-    placeholder={PLACEHOLDER}
-    loading="lazy"
   />,
     title: 'MagicSeaweed / Surfline',
     subTitle: 'Senior Frontend Developer',
@@ -111,13 +105,11 @@ export const WORK = [
   }, {
     key: 'tc',
     image:
-  <StaticImage
-    quality={100}
+  <Image
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/work/toucan_graphic_design.png"
+    src="/images/work/toucan_graphic_design.png"
     alt="Toucan Design Ltd"
-    placeholder={PLACEHOLDER}
   />,
     title: 'Toucan Graphic Design Ltd',
     subTitle: 'Digital Developer',
@@ -162,13 +154,11 @@ export const WORK = [
     title: 'Craftwood Interiors',
     subTitle: 'Student/Placement Furniture Designer',
     image:
-  <StaticImage
-    quality={100}
+  <Image
     width={AVATAR_WIDTH}
     height={AVATAR_WIDTH}
-    src="../images/work/craftwood_interiors.png"
-    alt="MagicSeaweed"
-    placeholder={PLACEHOLDER}
+    src="/images/work/craftwood_interiors.png"
+    alt="Craftwood Interiors"
   />,
     meta: {
       date: 'Sep 2007 - Aug 2008 | 12 Months',
