@@ -156,6 +156,7 @@ export default function BeyondBeachProposal() {
                 <li>Cookie consent and GDPR compliance</li>
                 <li>Core Web Vitals baseline measurement</li>
                 <li>First-year hosting and AI tooling included (renews at &pound;100/year)</li>
+                <li>Automatic image optimisation on upload &mdash; images are resized, compressed, and converted to modern formats (WebP/AVIF) with responsive variants generated for every device. Staff drag and drop, the system does the rest</li>
               </ul>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>My BB MVP (basic customer portal)</h4>
               <ul>
@@ -168,6 +169,14 @@ export default function BeyondBeachProposal() {
                 <li>Download invoices and booking documents</li>
                 <li>PCI compliant throughout</li>
               </ul>
+
+              <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Hosting &amp; Infrastructure</h4>
+              <div className={s.archGrid}>
+                <div className={s.archItem}><strong>API Layer</strong>NestJS hosted on Railway &mdash; scalable, containerised backend infrastructure</div>
+                <div className={s.archItem}><strong>Website &amp; Portals</strong>Next.js deployed on Vercel &mdash; edge-optimised frontend with instant global delivery</div>
+                <div className={s.archItem}><strong>Database</strong>Neon Postgres &mdash; serverless, auto-scaling relational database with zero cold starts</div>
+              </div>
+              <p className={s.note}>All infrastructure costs are covered under the monthly retainer. No separate hosting bills. The retainer amount may be reviewed periodically based on website traffic, infrastructure usage, and AI costs as the platform scales.</p>
             </div>
           </div>
         </section>
@@ -455,15 +464,6 @@ export default function BeyondBeachProposal() {
               <p>All code, designs, and assets produced as part of this project are fully owned by Beyond Beach upon final payment of each phase.</p>
             </div>
 
-            <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Hosting &amp; Infrastructure</h3>
-              <div className={s.archGrid}>
-                <div className={s.archItem}><strong>API Layer</strong>NestJS hosted on Railway &mdash; scalable, containerised backend infrastructure</div>
-                <div className={s.archItem}><strong>Website &amp; Portals</strong>Next.js deployed on Vercel &mdash; edge-optimised frontend with instant global delivery</div>
-                <div className={s.archItem}><strong>Database</strong>Neon Postgres &mdash; serverless, auto-scaling relational database with zero cold starts</div>
-              </div>
-              <p className={s.note}>All infrastructure costs are covered under the monthly retainer. No separate hosting bills. The retainer amount may be reviewed periodically based on website traffic, infrastructure usage, and AI costs as the platform scales.</p>
-            </div>
           </div>
         </section>
 
