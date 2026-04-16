@@ -275,6 +275,15 @@
   }
 }
 
+.pricingRow {
+  cursor: pointer;
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
 .price { font-weight: bold; white-space: nowrap; }
 .category {
   font-size: 1.2rem;

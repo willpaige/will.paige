@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import s from './proposal.module.scss';
 
@@ -12,20 +12,21 @@ async function sha256(str) {
 }
 
 export default function BeyondBeachProposal() {
-  const [authenticated, setAuthenticated] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('bb-auth') === 'true';
-    }
-    return false;
-  });
+  const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState(false);
   const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (localStorage.getItem('bb-auth') === 'true') {
+      setAuthenticated(true);
+    }
+  }, []);
 
   const handleKeyDown = async (e) => {
     if (e.key === 'Enter') {
       const hash = await sha256(inputRef.current.value);
       if (hash === HASH) {
-        sessionStorage.setItem('bb-auth', 'true');
+        localStorage.setItem('bb-auth', 'true');
         setAuthenticated(true);
       } else {
         setError(true);
@@ -64,7 +65,7 @@ export default function BeyondBeachProposal() {
             <div className={s.heroLabel}>Digital Platform Proposal</div>
             <h1 className={s.heroTitle}>Beyond Beach</h1>
             <div className={s.heroSub}>A platform, not just a website.</div>
-            <div className={s.heroMeta}>Prepared by Evolve AI &middot; evolve-ai.co &middot; April 2026<br />Valid for 30 days. All prices exclusive of VAT.</div>
+            <div className={s.heroMeta}>Prepared by Paige Digital Ltd &middot; will.paige.me.uk &middot; April 2026<br />Valid for 30 days. All prices exclusive of VAT.</div>
           </div>
         </section>
 
@@ -103,20 +104,20 @@ export default function BeyondBeachProposal() {
               </thead>
               <tbody>
                 {[
-                  ['Secure API Layer', 'Included', 'Architecture'],
-                  ['Redesign, Rebuild, CMS & My BB MVP', '\u00A31,400', 'Website'],
-                  ['SEO Foundation', '\u00A3800', 'SEO & Content'],
-                  ['Content Intelligence', '\u00A3600', 'SEO & Content'],
-                  ['Booking & Checkout Optimisation', '\u00A31,500', 'Booking'],
-                  ['Kyte Flight Integration', '\u00A3800', 'Booking'],
-                  ['AI Chat Widget (Intercom replacement)', '\u00A3450', 'Enquiries'],
-                  ['Customer Portal MVP', '\u00A31,200', 'Portals'],
-                  ['Customer Portal Full (incl. BB AI)', '\u00A31,800', 'Portals'],
-                  ['Admin Portal MVP', '\u00A31,400', 'Portals'],
-                  ['Admin Portal Full', '\u00A31,000', 'Portals'],
-                  ['Marketing Automation', '\u00A31,000', 'Automation'],
-                ].map(([service, price, cat]) => (
-                  <tr key={service}>
+                  ['Secure API Layer', 'Included', 'Architecture', 'architecture'],
+                  ['Redesign, Rebuild, CMS & My BB MVP', '\u00A31,800', 'Website', 'website'],
+                  ['SEO Acceleration', '\u00A3900', 'SEO & Content', 'seo'],
+                  ['Content Intelligence and Automation', '\u00A3750', 'SEO & Content', 'seo'],
+                  ['Booking & Checkout Optimisation', '\u00A31,400', 'Booking', 'booking'],
+                  ['Kyte Flight Integration', '\u00A31,000', 'Booking', 'kyte'],
+                  ['AI Chat Widget (Intercom replacement)', '\u00A3600', 'Enquiries', 'enquiries'],
+                  ['Customer Portal Phase 2', '\u00A31,600', 'Portals', 'customer-portal'],
+                  ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,400', 'Portals', 'customer-portal'],
+                  ['Admin Portal Phase 2', '\u00A31,800', 'Portals', 'admin-portal'],
+                  ['Admin Portal Phase 3', '\u00A3750', 'Portals', 'admin-portal'],
+                  ['Marketing Automation', '\u00A31,100', 'Automation', 'marketing'],
+                ].map(([service, price, cat, anchor]) => (
+                  <tr key={service} className={s.pricingRow} onClick={() => document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })}>
                     <td>{service}</td>
                     <td className={s.price}>{price}</td>
                     <td className={s.category}>{cat}</td>
@@ -126,14 +127,15 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;12,950</span>
+              <span className={s.totalPrice}>~&pound;13,100</span>
             </div>
-            <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; MVP first, Full builds on top.</p>
+            <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
+            <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
           </div>
         </section>
 
         {/* Website */}
-        <section className={s.section}>
+        <section id="website" className={s.section}>
           <div className={s.container}>
             <div className={s.serviceHeader}>
               <h2 className={s.sectionTitle}>Website</h2>
@@ -141,7 +143,7 @@ export default function BeyondBeachProposal() {
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Redesign, Rebuild, Bespoke CMS &amp; My BB MVP</h3>
-              <span className={s.servicePrice}>&pound;1,400</span>
+              <span className={s.servicePrice}>&pound;1,800</span>
               <p style={{ marginTop: '1.5rem' }}>The website and admin portal are built together in this phase &mdash; staff log into one place to manage both content and operations, rather than a separate CMS login.</p>
               <p>The existing My BB page is a static dump of generic links. The My BB MVP replaces it with a proper authenticated experience tied to Checkfront, so guests only see what&apos;s relevant to their booking.</p>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Website &amp; CMS</h4>
@@ -171,12 +173,12 @@ export default function BeyondBeachProposal() {
         </section>
 
         {/* SEO & Content */}
-        <section className={classnames(s.section, s.bgGrey)}>
+        <section id="seo" className={classnames(s.section, s.bgGrey)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>SEO &amp; Content</h2>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>SEO Foundation</h3>
-              <span className={s.servicePrice}>&pound;800</span>
+              <h3 className={s.sectionSubtitle}>SEO Acceleration</h3>
+              <span className={s.servicePrice}>&pound;900</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>On-page SEO optimisations across all key pages</li>
                 <li>Schema markup (LocalBusiness, Activity, Review, FAQ)</li>
@@ -187,8 +189,8 @@ export default function BeyondBeachProposal() {
               </ul>
             </div>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Content Intelligence</h3>
-              <span className={s.servicePrice}>&pound;600</span>
+              <h3 className={s.sectionSubtitle}>Content Intelligence and Automation</h3>
+              <span className={s.servicePrice}>&pound;750</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>Automated blog content pipeline</li>
                 <li>Competitor keyword gap analysis and pillar content improvements</li>
@@ -196,13 +198,13 @@ export default function BeyondBeachProposal() {
                 <li>Activity guide content targeting long-tail search</li>
                 <li>Quarterly content calendar aligned to Beyond Beach seasons</li>
               </ul>
-              <p className={s.note}>Works best after SEO Foundation is in place.</p>
+              <p className={s.note}>Works best after SEO Acceleration is in place.</p>
             </div>
           </div>
         </section>
 
         {/* Platform Architecture */}
-        <section className={classnames(s.section, s.bgTeal)}>
+        <section id="architecture" className={classnames(s.section, s.bgTeal)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Platform Architecture</h2>
             <div className={s.subsection}>
@@ -213,13 +215,17 @@ export default function BeyondBeachProposal() {
                 <div className={s.archItem}><strong>Centralised Credentials</strong>Checkfront &amp; Kyte keys never exposed to the client</div>
                 <div className={s.archItem}><strong>Rate Limiting</strong>Request validation and error handling at one point</div>
                 <div className={s.archItem}><strong>PCI Compliance</strong>Data security enforced at the API layer across all portals</div>
+                <div className={s.archItem}><strong>API Response Caching</strong>Availability, pricing, and booking data cached with short TTLs &mdash; reduces Checkfront API calls during high-traffic periods and speeds up checkout</div>
+                <div className={s.archItem}><strong>Kyte Fare Caching</strong>Flight prices cached for 15&ndash;30 minutes &mdash; reduces API costs while keeping fares accurate</div>
+                <div className={s.archItem}><strong>Webhook-Driven Updates</strong>Checkfront webhooks push booking status changes to portals in real time &mdash; no polling, instant updates, lower API quota usage</div>
+                <div className={s.archItem}><strong>Circuit Breakers &amp; Retry Logic</strong>If Checkfront or Kyte goes down, the rest of the platform doesn&apos;t cascade-fail &mdash; graceful degradation across all surfaces</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Booking & Checkout */}
-        <section className={s.section}>
+        <section id="booking" className={s.section}>
           <div className={s.container}>
             <div className={s.serviceHeader}>
               <h2 className={s.sectionTitle}>Booking &amp; Checkout</h2>
@@ -228,7 +234,7 @@ export default function BeyondBeachProposal() {
             <p>The current checkout has identifiable drop-off at every step. This fixes all of it, powered by the Checkfront API throughout.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <h3 className={s.sectionSubtitle}>Booking &amp; Checkout Optimisation</h3>
-              <span className={s.servicePrice}>&pound;1,500</span>
+              <span className={s.servicePrice}>&pound;1,400</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>Availability-aware date picker with live availability from Checkfront</li>
                 <li>Real-time validation before the user hits Continue</li>
@@ -236,18 +242,20 @@ export default function BeyondBeachProposal() {
                 <li>Early email capture for abandoned checkout recovery</li>
                 <li>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
                 <li>Contextual pricing: per-person and per-night breakdown alongside total</li>
-                <li>Returning customer saved details via Checkfront &mdash; one-click populate</li>
+                <li>Returning customers can log in at the start of checkout &mdash; personal details, address, and payment preferences pre-filled from their My BB account via Checkfront</li>
                 <li>Streamlined checkout form with address autocomplete</li>
                 <li>Visual extras cards with live running total</li>
                 <li>Prominent deposit CTA with Hold as secondary</li>
-                <li>Apple Pay and Google Pay via Stripe</li>
+                <li>Stripe Checkout integration &mdash; replaces the existing payment form with Stripe&apos;s hosted checkout, giving customers Apple Pay, Google Pay, bank transfers, Klarna, and all major card networks out of the box</li>
+                <li>Flexible payment options at checkout &mdash; pay in full, deposit with scheduled balance payment, or monthly instalments. Customer chooses, Stripe handles the collection automatically</li>
+                <li>Every payment event synced back to Checkfront automatically via webhook &mdash; booking status, balance due, and payment schedule all updated without manual intervention. No chasing, no waiting for the customer to pay &mdash; all automated</li>
                 <li>GA4 event tracking wired to every checkout step &mdash; full funnel visualisation</li>
               </ul>
-              <p className={s.note}>Requires Checkfront plan tier confirmation before build.</p>
+              <p className={s.note}>Requires Checkfront plan tier confirmation before build &mdash; some API endpoints (availability, customer data, payments) are tier-locked and may require a plan upgrade. We&apos;ll confirm exactly what&apos;s needed before work begins.</p>
             </div>
-            <div className={s.subsection}>
+            <div id="kyte" className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Kyte Flight Integration</h3>
-              <span className={s.servicePrice}>&pound;800</span>
+              <span className={s.servicePrice}>&pound;1,000</span>
               <p style={{ marginTop: '1.5rem' }}>Kyte is an airline distribution API connecting to EasyJet, Ryanair, British Airways, and other major carriers &mdash; meaning customers can search, compare and book flights directly within the Beyond Beach checkout and customer portal.</p>
               <ul>
                 <li>Flight search embedded in checkout, pre-filtered by destination and date</li>
@@ -257,6 +265,8 @@ export default function BeyondBeachProposal() {
                 <li>Customer portal: guests add or manage flights post-booking</li>
                 <li>Admin portal: staff see flight status alongside the booking</li>
                 <li>Removes the need to send customers away &mdash; keeps revenue in-house</li>
+                <li>Flights presented as an optional add-on within the checkout extras step &mdash; no extra pages, less friction, higher conversion</li>
+                <li>Graceful fallback if Kyte API is unavailable &mdash; degrades to a &quot;we&apos;ll find flights for you&quot; email capture rather than breaking the checkout flow</li>
               </ul>
               <p className={s.note}>Kyte integration requires a Kyte API account. We can assist with onboarding.</p>
             </div>
@@ -264,7 +274,7 @@ export default function BeyondBeachProposal() {
         </section>
 
         {/* Enquiries & Chat */}
-        <section className={classnames(s.section, s.bgGrey)}>
+        <section id="enquiries" className={classnames(s.section, s.bgGrey)}>
           <div className={s.container}>
             <div className={s.serviceHeader}>
               <h2 className={s.sectionTitle}>Enquiries &amp; Chat</h2>
@@ -272,7 +282,7 @@ export default function BeyondBeachProposal() {
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>AI Chat Widget (Intercom replacement)</h3>
-              <span className={s.servicePrice}>&pound;450</span>
+              <span className={s.servicePrice}>&pound;600</span>
               <p style={{ marginTop: '1.5rem' }}>A bespoke AI chat widget powered by a RAG system trained on Beyond Beach&apos;s own content &mdash; destination guides, activity info, FAQs, booking conditions, T&amp;Cs, and local knowledge. When a guest asks &quot;do I need to bring a wetsuit?&quot; it answers accurately from your own content.</p>
               <p>The knowledge base is maintainable without retraining &mdash; update a doc, add a destination, and the widget picks it up automatically.</p>
               <ul>
@@ -288,53 +298,57 @@ export default function BeyondBeachProposal() {
         </section>
 
         {/* Customer Portal */}
-        <section className={classnames(s.section, s.bgCoral)}>
+        <section id="customer-portal" className={classnames(s.section, s.bgCoral)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Customer Portal</h2>
             <p>Checkfront as the operational backbone. Connected portal for guests, reading from and writing to Checkfront in real time.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
-              <div className={s.serviceHeader}>
-                <h3 className={s.sectionSubtitle}>Customer Portal MVP</h3>
-                <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
-              </div>
-              <span className={s.servicePrice}>&pound;1,200</span>
+              <h3 className={s.sectionSubtitle}>Customer Portal Phase 2</h3>
+              <span className={s.servicePrice}>&pound;1,600</span>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Secure login with return client recognition</li>
                 <li>Live booking status and payment schedule from Checkfront</li>
-                <li>Pay outstanding balance online</li>
+                <li>Pay outstanding balance online via Stripe</li>
                 <li>Download invoices and booking documents</li>
                 <li>Trip notes and pre-arrival information</li>
                 <li>View and manage flights via Kyte integration</li>
                 <li>Return booking flow with loyalty discount auto-applied</li>
-                <li>PCI compliant payment handling</li>
+                <li>Group and party management &mdash; lead guest can share portal access or invite others to view the itinerary, upload documents, and see trip notes</li>
+                <li>Booking modification requests &mdash; date changes, room upgrades, guest count changes submitted through the portal rather than calling or emailing</li>
+                <li>Push and email notifications &mdash; automated alerts for payment reminders, balance due dates, trip countdown, and booking changes</li>
+                <li>Emergency contacts and medical info collection per guest</li>
+                <li>Self-service data deletion &mdash; customers can request and action removal of all their personal data</li>
               </ul>
             </div>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Customer Portal Full</h3>
-              <span className={s.servicePrice}>&pound;1,800</span>
-              <p style={{ marginTop: '1rem' }}>Everything in MVP, plus:</p>
-              <ul>
+              <h3 className={s.sectionSubtitle}>Customer Portal Phase 3</h3>
+              <span className={s.servicePrice}>&pound;1,400</span>
+              <ul style={{ marginTop: '1.5rem' }}>
                 <li>BB AI: assistant aware of the guest&apos;s specific booking</li>
                 <li>Document upload for travel docs, waivers, and paperwork</li>
                 <li>Post-booking upsell: add flights, experiences, extras from within the portal</li>
                 <li>Automated post-stay loyalty flow and rebooking prompts</li>
                 <li>Full GDPR and data compliance</li>
+                <li>Live weather and conditions widget &mdash; real-time weather at their destination in the lead-up to the trip</li>
+                <li>Dynamic packing list &mdash; generated based on destination, activities booked, and time of year</li>
+                <li>Post-trip photo and memory sharing &mdash; guests upload holiday photos, leave a review, and get a shareable trip summary</li>
+                <li>Multi-booking dashboard &mdash; full history of all trips with Beyond Beach for repeat customers, not just the current booking</li>
+                <li>Travel insurance integration &mdash; surface an insurance option within the portal rather than sending guests elsewhere</li>
               </ul>
             </div>
           </div>
         </section>
 
         {/* Admin Portal */}
-        <section className={classnames(s.section, s.bgPurple)}>
+        <section id="admin-portal" className={classnames(s.section, s.bgPurple)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Admin Portal</h2>
             <p>Replaces the Google Folders CRM workflow. Staff portal reading from and writing to Checkfront in real time.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <div className={s.serviceHeader}>
-                <h3 className={s.sectionSubtitle}>Admin Portal MVP</h3>
+                <h3 className={s.sectionSubtitle}>Admin Portal Phase 2</h3>
                 <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
               </div>
-              <span className={s.servicePrice}>&pound;1,400</span>
+              <span className={s.servicePrice}>&pound;1,800</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>Visual booking pipeline &mdash; every booking and its stage at a glance</li>
                 <li>Guest details, payment status, flight status, documents per booking</li>
@@ -345,9 +359,9 @@ export default function BeyondBeachProposal() {
               </ul>
             </div>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Admin Portal Full</h3>
-              <span className={s.servicePrice}>&pound;1,000</span>
-              <p style={{ marginTop: '1rem' }}>Everything in MVP, plus:</p>
+              <h3 className={s.sectionSubtitle}>Admin Portal Phase 3</h3>
+              <span className={s.servicePrice}>&pound;750</span>
+              <p style={{ marginTop: '1rem' }}>Everything in Phase 2, plus:</p>
               <ul>
                 <li>Automated guest comms triggered by pipeline stage changes</li>
                 <li>Revenue and occupancy reporting dashboard</li>
@@ -360,10 +374,10 @@ export default function BeyondBeachProposal() {
         </section>
 
         {/* Marketing Automation */}
-        <section className={s.section}>
+        <section id="marketing" className={s.section}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Marketing Automation</h2>
-            <span className={s.servicePrice}>&pound;1,000</span>
+            <span className={s.servicePrice}>&pound;1,100</span>
             <ul style={{ marginTop: '1.5rem' }}>
               <li>Abandoned checkout sequence triggered by early email capture</li>
               <li>Weather-triggered email campaigns via Mailchimp</li>
@@ -379,15 +393,12 @@ export default function BeyondBeachProposal() {
         <section className={classnames(s.section, s.bgGreen)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Monthly Retainer</h2>
-            <span style={{ fontSize: '1.4rem', opacity: 0.7 }}>Optional</span>
-            <div className={s.retainerPrice}>&pound;300<span style={{ fontSize: '1.6rem', fontWeight: 400 }}>/month</span></div>
-            <div className={s.retainerBreakdown}>&pound;3,600/year &middot; Rolling monthly</div>
+            <div className={s.retainerPrice}>&pound;200<span style={{ fontSize: '1.6rem', fontWeight: 400 }}>/month</span></div>
+            <div className={s.retainerBreakdown}>&pound;2,400/year &middot; Rolling monthly</div>
             <ul>
-              <li>Rank tracking and monthly SEO performance report</li>
-              <li>Seasonal content publishing and scheduling</li>
-              <li>Weather-triggered campaign scheduling</li>
-              <li>Checkfront and Kyte integration health monitoring</li>
-              <li>Annual hosting renewal management</li>
+              <li>Monthly hosting and infrastructure costs</li>
+              <li>Checkfront, Kyte, and Stripe webhook health monitoring</li>
+              <li>AI usage costs</li>
             </ul>
           </div>
         </section>
@@ -412,7 +423,7 @@ export default function BeyondBeachProposal() {
         {/* Footer */}
         <footer className={s.proposalFooter}>
           <div className={s.container}>
-            Evolve AI &middot; evolve-ai.co<br />
+            Paige Digital Ltd &middot; will.paige.me.uk<br />
             Valid for 30 days from date of issue. All prices exclusive of VAT.
           </div>
         </footer>
