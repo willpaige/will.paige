@@ -113,7 +113,7 @@ export default function BeyondBeachProposal() {
                   ['AI Chat Widget (Intercom replacement)', '\u00A3600', 'Enquiries', 'enquiries'],
                   ['Customer Portal Phase 2', '\u00A31,600', 'Portals', 'customer-portal'],
                   ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,400', 'Portals', 'customer-portal'],
-                  ['Admin Portal Phase 2', '\u00A31,800', 'Portals', 'admin-portal'],
+                  ['Admin Portal Phase 2', '\u00A32,000', 'Portals', 'admin-portal'],
                   ['Admin Portal Phase 3', '\u00A3750', 'Portals', 'admin-portal'],
                   ['Marketing Automation', '\u00A31,100', 'Automation', 'marketing'],
                 ].map(([service, price, cat, anchor]) => (
@@ -127,7 +127,7 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;13,100 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
+              <span className={s.totalPrice}>~&pound;13,300 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -228,6 +228,7 @@ export default function BeyondBeachProposal() {
                 <div className={s.archItem}><strong>Kyte Fare Caching</strong>Flight prices cached for 15&ndash;30 minutes &mdash; reduces API costs while keeping fares accurate</div>
                 <div className={s.archItem}><strong>Webhook-Driven Updates</strong>Checkfront webhooks push booking status changes to portals in real time &mdash; no polling, instant updates, lower API quota usage</div>
                 <div className={s.archItem}><strong>Circuit Breakers &amp; Retry Logic</strong>If Checkfront or Kyte goes down, the rest of the platform doesn&apos;t cascade-fail &mdash; graceful degradation across all surfaces</div>
+                <div className={s.archItem}><strong>PMS-Agnostic</strong>The API layer abstracts the booking system from the rest of the platform. If you move away from Checkfront in future, only the API layer needs updating &mdash; the website, portals, and checkout remain untouched</div>
               </div>
             </div>
           </div>
@@ -357,7 +358,7 @@ export default function BeyondBeachProposal() {
                 <h3 className={s.sectionSubtitle}>Admin Portal Phase 2</h3>
                 <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
               </div>
-              <span className={s.servicePrice}>&pound;1,800</span>
+              <span className={s.servicePrice}>&pound;2,000</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>Visual booking pipeline &mdash; every booking and its stage at a glance</li>
                 <li>Guest details, payment status, flight status, documents per booking</li>
@@ -365,6 +366,7 @@ export default function BeyondBeachProposal() {
                 <li>Document management: upload and attach files per booking</li>
                 <li>Basic automated nudges as bookings progress</li>
                 <li>Role-based access control</li>
+                <li>Automated arrival manifests &mdash; transfer partners, hotel owners, and activity staff receive up-to-date arrival details generated directly from booking data. No more manual spreadsheets, saving an estimated 5+ hours per week</li>
               </ul>
             </div>
             <div className={s.subsection}>
