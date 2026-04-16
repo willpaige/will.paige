@@ -127,7 +127,7 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;13,100</span>
+              <span className={s.totalPrice}>~&pound;13,100 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -400,6 +400,70 @@ export default function BeyondBeachProposal() {
               <li>Checkfront, Kyte, and Stripe webhook health monitoring</li>
               <li>AI usage costs</li>
             </ul>
+          </div>
+        </section>
+
+        {/* Timeline */}
+        <section className={classnames(s.section, s.bgGrey)}>
+          <div className={s.container}>
+            <h2 className={s.sectionTitle}>Estimated Timeline</h2>
+            <table className={s.pricingTable}>
+              <thead>
+                <tr>
+                  <th>Phase</th>
+                  <th>Estimated Delivery</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Redesign, Rebuild, CMS &amp; My BB MVP</td><td>September 2026 &mdash; ready for testing during the quiet period</td></tr>
+                <tr><td>SEO Acceleration</td><td>2&ndash;3 weeks after website launch</td></tr>
+                <tr><td>Content Intelligence and Automation</td><td>2&ndash;3 weeks after SEO Acceleration</td></tr>
+                <tr><td>Booking &amp; Checkout Optimisation</td><td>3&ndash;4 weeks</td></tr>
+                <tr><td>Kyte Flight Integration</td><td>2&ndash;3 weeks</td></tr>
+                <tr><td>AI Chat Widget</td><td>1&ndash;2 weeks</td></tr>
+                <tr><td>Customer Portal Phase 2</td><td>4&ndash;6 weeks</td></tr>
+                <tr><td>Customer Portal Phase 3</td><td>3&ndash;4 weeks after Phase 2</td></tr>
+                <tr><td>Admin Portal Phase 2</td><td>4&ndash;6 weeks</td></tr>
+                <tr><td>Admin Portal Phase 3</td><td>2&ndash;3 weeks after Phase 2</td></tr>
+                <tr><td>Marketing Automation</td><td>2&ndash;3 weeks</td></tr>
+              </tbody>
+            </table>
+            <p className={s.note}>Timelines are estimates and depend on timely access to Checkfront, Kyte, and Stripe accounts, content and brand assets, and feedback turnaround. Services can run in parallel where dependencies allow.</p>
+          </div>
+        </section>
+
+        {/* Terms */}
+        <section className={s.section}>
+          <div className={s.container}>
+            <h2 className={s.sectionTitle}>Terms</h2>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Payment</h3>
+              <ul style={{ marginTop: '1.5rem' }}>
+                <li>50% due before each phase begins</li>
+                <li>50% due on completion and sign-off of each phase</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Warranty &amp; Support</h3>
+              <p>60-day warranty period included after delivery of each phase. Bug fixes and issues arising from the delivered work are covered at no additional cost during this period.</p>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>IP Ownership</h3>
+              <p>All code, designs, and assets produced as part of this project are fully owned by Beyond Beach upon final payment of each phase.</p>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Hosting &amp; Infrastructure</h3>
+              <div className={s.archGrid}>
+                <div className={s.archItem}><strong>API Layer</strong>NestJS hosted on Railway &mdash; scalable, containerised backend infrastructure</div>
+                <div className={s.archItem}><strong>Website &amp; Portals</strong>Next.js deployed on Vercel &mdash; edge-optimised frontend with instant global delivery</div>
+                <div className={s.archItem}><strong>Database</strong>Neon Postgres &mdash; serverless, auto-scaling relational database with zero cold starts</div>
+              </div>
+              <p className={s.note}>All infrastructure costs are covered under the monthly retainer. No separate hosting bills. The retainer amount may be reviewed periodically based on website traffic, infrastructure usage, and AI costs as the platform scales.</p>
+            </div>
           </div>
         </section>
 
