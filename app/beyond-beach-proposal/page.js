@@ -155,7 +155,6 @@ export default function BeyondBeachProposal() {
                 <li>GA4 and Google Search Console setup</li>
                 <li>Cookie consent and GDPR compliance</li>
                 <li>Core Web Vitals baseline measurement</li>
-                <li>First-year hosting and AI tooling included (renews at &pound;100/year)</li>
                 <li>Automatic image optimisation on upload &mdash; images are resized, compressed, and converted to modern formats (WebP/AVIF) with responsive variants generated for every device. Staff drag and drop, the system does the rest</li>
               </ul>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>My BB MVP (basic customer portal)</h4>
