@@ -194,6 +194,7 @@ export default function BeyondBeachProposal() {
                 <li>Internal linking architecture</li>
                 <li>Dynamic long-tail keyword content pages</li>
                 <li>Core Web Vitals and page speed improvements</li>
+                <li>Migrate existing images, update file names and use AI to generate SEO-optimised alt and title tags</li>
               </ul>
             </div>
             <div className={s.subsection}>
