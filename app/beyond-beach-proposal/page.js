@@ -69,6 +69,14 @@ export default function BeyondBeachProposal() {
           </div>
         </section>
 
+        {/* Updated proposal banner */}
+        <section className={s.versionBanner}>
+          <div className={s.container}>
+            <strong>An updated proposal (v2) is available</strong> &mdash; the strategic platform play: a bespoke booking system that replaces Checkfront, plus yacht charter.
+            <a href="/beyond-beach-proposal-v2">Read v2 &rarr;</a>
+          </div>
+        </section>
+
         {/* What We're Building */}
         <section className={classnames(s.section, s.introSection)}>
           <div className={s.container}>
@@ -148,14 +156,14 @@ export default function BeyondBeachProposal() {
               <p>The existing My BB page is a static dump of generic links. The My BB MVP replaces it with a proper authenticated experience tied to Checkfront, so guests only see what&apos;s relevant to their booking.</p>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Website &amp; CMS</h4>
               <ul>
-                <li>Full redesign and rebuild with like-for-like functionality</li>
-                <li>Bespoke CMS built into the admin portal &mdash; one login for staff</li>
-                <li>Full content migration from existing site</li>
+                <li className={s.done}>Full redesign and rebuild with like-for-like functionality</li>
+                <li className={s.done}>Bespoke CMS built into the admin portal &mdash; one login for staff</li>
+                <li className={s.done}>Full content migration from existing site</li>
                 <li>301 redirect mapping to protect existing SEO equity</li>
                 <li>GA4 and Google Search Console setup</li>
                 <li>Cookie consent and GDPR compliance</li>
                 <li>Core Web Vitals baseline measurement</li>
-                <li>Automatic image optimisation on upload &mdash; images are resized, compressed, and converted to modern formats (WebP/AVIF) with responsive variants generated for every device. Staff drag and drop, the system does the rest</li>
+                <li className={s.done}>Automatic image optimisation on upload &mdash; images are resized, compressed, and converted to modern formats (WebP/AVIF) with responsive variants generated for every device. Staff drag and drop, the system does the rest</li>
               </ul>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>My BB MVP (basic customer portal)</h4>
               <ul>
@@ -169,7 +177,7 @@ export default function BeyondBeachProposal() {
                 <li>PCI compliant throughout</li>
               </ul>
 
-              <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Hosting &amp; Infrastructure</h4>
+              <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Hosting &amp; Infrastructure<span className={s.doneTag}>&#10003; Live</span></h4>
               <div className={s.archGrid}>
                 <div className={s.archItem}><strong>API Layer</strong>NestJS hosted on Railway &mdash; scalable, containerised backend infrastructure</div>
                 <div className={s.archItem}><strong>Website &amp; Portals</strong>Next.js deployed on Vercel &mdash; edge-optimised frontend with instant global delivery</div>
@@ -188,13 +196,13 @@ export default function BeyondBeachProposal() {
               <h3 className={s.sectionSubtitle}>SEO Acceleration</h3>
               <span className={s.servicePrice}>&pound;900</span>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>On-page SEO optimisations across all key pages</li>
-                <li>Schema markup (LocalBusiness, Activity, Review, FAQ)</li>
-                <li>Local SEO</li>
-                <li>Internal linking architecture</li>
+                <li className={s.done}>On-page SEO optimisations across all key pages</li>
+                <li className={s.done}>Schema markup (LocalBusiness, Activity, Review, FAQ)</li>
+                <li className={s.done}>Local SEO</li>
+                <li className={s.done}>Internal linking architecture</li>
                 <li>Dynamic long-tail keyword content pages</li>
                 <li>Core Web Vitals and page speed improvements</li>
-                <li>Migrate existing images, update file names and use AI to generate SEO-optimised alt and title tags</li>
+                <li className={s.done}>Migrate existing images, update file names and use AI to generate SEO-optimised alt and title tags</li>
               </ul>
             </div>
             <div className={s.subsection}>
@@ -206,6 +214,7 @@ export default function BeyondBeachProposal() {
                 <li>Dynamic seasonal content (conditions, weather hooks, best time to visit)</li>
                 <li>Activity guide content targeting long-tail search</li>
                 <li>Quarterly content calendar aligned to Beyond Beach seasons</li>
+                <li>AI auto-populates alt and title tags whenever a new image is uploaded to a gallery or page</li>
               </ul>
               <p className={s.note}>Works best after SEO Acceleration is in place.</p>
             </div>
@@ -246,19 +255,19 @@ export default function BeyondBeachProposal() {
               <h3 className={s.sectionSubtitle}>Booking &amp; Checkout Optimisation</h3>
               <span className={s.servicePrice}>&pound;1,400</span>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Availability-aware date picker with live availability from Checkfront</li>
-                <li>Real-time validation before the user hits Continue</li>
-                <li>Smart no-availability state: surface next available date automatically</li>
-                <li>Early email capture for abandoned checkout recovery</li>
-                <li>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
-                <li>Contextual pricing: per-person and per-night breakdown alongside total</li>
+                <li className={s.done}>Availability-aware date picker with live availability from Checkfront</li>
+                <li className={s.done}>Real-time validation before the user hits Continue</li>
+                <li className={s.done}>Smart no-availability state: surface next available date automatically</li>
+                <li className={s.done}>Early email capture for abandoned checkout recovery</li>
+                <li className={s.done}>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
+                <li className={s.done}>Contextual pricing: per-person and per-night breakdown alongside total</li>
                 <li>Returning customers can log in at the start of checkout &mdash; personal details, address, and payment preferences pre-filled from their My BB account via Checkfront</li>
                 <li>Streamlined checkout form with address autocomplete</li>
-                <li>Visual extras cards with live running total</li>
-                <li>Prominent deposit CTA with Hold as secondary</li>
-                <li>Stripe Checkout integration &mdash; replaces the existing payment form with Stripe&apos;s hosted checkout, giving customers Apple Pay, Google Pay, bank transfers, Klarna, and all major card networks out of the box</li>
-                <li>Flexible payment options at checkout &mdash; pay in full, deposit with scheduled balance payment, or monthly instalments. Customer chooses, Stripe handles the collection automatically</li>
-                <li>Every payment event synced back to Checkfront automatically via webhook &mdash; booking status, balance due, and payment schedule all updated without manual intervention. No chasing, no waiting for the customer to pay &mdash; all automated</li>
+                <li className={s.done}>Visual extras cards with live running total</li>
+                <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Prominent deposit CTA with Hold as secondary</s></li>
+                <li className={s.done}>Stripe Checkout integration &mdash; replaces the existing payment form with Stripe&apos;s hosted checkout, giving customers Apple Pay, Google Pay, bank transfers, Klarna, and all major card networks out of the box</li>
+                <li className={s.done}>Flexible payment options at checkout &mdash; pay in full, deposit with scheduled balance payment, or monthly instalments. Customer chooses, Stripe handles the collection automatically</li>
+                <li className={s.done}>Every payment event synced back to Checkfront automatically via webhook &mdash; booking status, balance due, and payment schedule all updated without manual intervention. No chasing, no waiting for the customer to pay &mdash; all automated</li>
                 <li>GA4 event tracking wired to every checkout step &mdash; full funnel visualisation</li>
               </ul>
               <p className={s.note}>Requires Checkfront plan tier confirmation before build &mdash; some API endpoints (availability, customer data, payments) are tier-locked and may require a plan upgrade. We&apos;ll confirm exactly what&apos;s needed before work begins.</p>
@@ -481,6 +490,7 @@ export default function BeyondBeachProposal() {
                 <li>Agree which services to start with and in what order</li>
                 <li>Checkout optimisation discovery call to walk through the full funnel together</li>
                 <li>Portal scoping call to map the guest and staff journey in detail</li>
+                <li>Review the <a className={s.backLink} href="/beyond-beach-proposal-v2">v2 proposal</a> &mdash; the bespoke booking system that replaces Checkfront, plus yacht accommodation</li>
               </ol>
             </div>
           </div>
