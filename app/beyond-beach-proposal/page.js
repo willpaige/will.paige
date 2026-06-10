@@ -451,11 +451,11 @@ export default function BeyondBeachProposal() {
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Holiday Extras</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Extras attached to an accommodation type or a specific room</li>
-                <li>Per-night, per-stay, and per-person pricing models</li>
-                <li>Quantity limits per extra</li>
-                <li>Availability windows (e.g. transfers bookable up to X hours before arrival)</li>
-                <li>Post-booking add-ons via the customer portal</li>
+                <li className={s.done}>Extras attached to an accommodation type or a specific room</li>
+                <li className={s.done}>Per-night, per-stay, and per-person pricing models</li>
+                <li className={s.done}>Quantity limits per extra</li>
+                <li className={s.done}>Availability windows (e.g. transfers bookable up to X hours before arrival)</li>
+                <li className={s.done}>Post-booking add-ons via the customer portal</li>
               </ul>
             </div>
 
