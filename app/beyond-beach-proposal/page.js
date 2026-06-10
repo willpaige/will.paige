@@ -111,10 +111,10 @@ export default function BeyondBeachProposal() {
                   ['Booking & Checkout Optimisation', '\u00A31,400', 'Booking', 'booking'],
                   ['Kyte Flight Integration', '\u00A31,000', 'Booking', 'kyte'],
                   ['AI Chat Widget (Intercom replacement)', '\u00A3600', 'Enquiries', 'enquiries'],
-                  ['Customer Portal Phase 2', '\u00A31,600', 'Portals', 'customer-portal'],
-                  ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,400', 'Portals', 'customer-portal'],
-                  ['Admin Portal Phase 2', '\u00A32,000', 'Portals', 'admin-portal'],
-                  ['Admin Portal Phase 3', '\u00A3750', 'Portals', 'admin-portal'],
+                  ['Customer Portal Phase 2', '\u00A31,000', 'Portals', 'customer-portal'],
+                  ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,100', 'Portals', 'customer-portal'],
+                  ['Admin Portal Phase 2', '\u00A31,400', 'Portals', 'admin-portal'],
+                  ['Admin Portal Phase 3', '\u00A3650', 'Portals', 'admin-portal'],
                   ['Marketing Automation', '\u00A31,100', 'Automation', 'marketing'],
                   ['Bespoke Booking System (Checkfront replacement)', '\u00A33,200', 'Platform', 'booking-system'],
                 ].map(([service, price, cat, anchor]) => (
@@ -128,7 +128,7 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;16,500 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
+              <span className={s.totalPrice}>~&pound;14,900 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -160,14 +160,14 @@ export default function BeyondBeachProposal() {
               </ul>
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>My BB MVP (basic customer portal)</h4>
               <ul>
-                <li>Proper authenticated login replacing the current booking reference/postcode lookup</li>
-                <li>Personalised dashboard &mdash; guest sees their specific booking, destination and dates</li>
-                <li>Live booking status and payment schedule from Checkfront</li>
-                <li>Pay outstanding balance online</li>
-                <li>Trip notes served dynamically for their destination only</li>
-                <li>Flights, transfers and extras in one place</li>
-                <li>Download invoices and booking documents</li>
-                <li>PCI compliant throughout</li>
+                <li className={s.done}>Proper authenticated login replacing the current booking reference/postcode lookup</li>
+                <li className={s.done}>Personalised dashboard &mdash; guest sees their specific booking, destination and dates</li>
+                <li className={s.done}>Live booking status and payment schedule from Checkfront</li>
+                <li className={s.done}>Pay outstanding balance online</li>
+                <li className={s.done}>Trip notes served dynamically for their destination only</li>
+                <li className={s.done}>Flights, transfers and extras in one place</li>
+                <li className={s.done}>Download invoices and booking documents</li>
+                <li className={s.done}>PCI compliant throughout</li>
               </ul>
 
               <h4 className={s.sectionSubtitle} style={{ marginTop: '3rem' }}>Hosting &amp; Infrastructure<span className={s.doneTag}>&#10003; Live</span></h4>
@@ -254,7 +254,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Early email capture for abandoned checkout recovery</li>
                 <li className={s.done}>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
                 <li className={s.done}>Contextual pricing: per-person and per-night breakdown alongside total</li>
-                <li>Returning customers can log in at the start of checkout &mdash; personal details, address, and payment preferences pre-filled from their My BB account via Checkfront</li>
+                <li className={s.done}>Returning customers can log in at the start of checkout &mdash; personal details, address, and payment preferences pre-filled from their My BB account via Checkfront</li>
                 <li>Streamlined checkout form with address autocomplete</li>
                 <li className={s.done}>Visual extras cards with live running total</li>
                 <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Prominent deposit CTA with Hold as secondary</s></li>
@@ -316,34 +316,38 @@ export default function BeyondBeachProposal() {
             <p>Checkfront as the operational backbone. Connected portal for guests, reading from and writing to Checkfront in real time.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <h3 className={s.sectionSubtitle}>Customer Portal Phase 2</h3>
-              <span className={s.servicePrice}>&pound;1,600</span>
+              <span className={s.servicePrice}>&pound;1,000</span>
+              <span className={s.priceWas}>was &pound;1,600</span>
+              <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Live booking status and payment schedule from Checkfront</li>
-                <li>Pay outstanding balance online via Stripe</li>
-                <li>Download invoices and booking documents</li>
-                <li>Trip notes and pre-arrival information</li>
+                <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Live booking status and payment schedule from Checkfront</s></li>
+                <li className={s.done}>Pay outstanding balance online via Stripe <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.done}>Download invoices and booking documents <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.done}>Trip notes and pre-arrival information</li>
                 <li>View and manage flights via Kyte integration</li>
-                <li>Return booking flow with loyalty discount auto-applied</li>
-                <li>Group and party management &mdash; lead guest can share portal access or invite others to view the itinerary, upload documents, and see trip notes</li>
+                <li className={s.done}>Return booking flow with loyalty discount auto-applied</li>
+                <li className={s.done}>Group and party management &mdash; lead guest can share portal access or invite others to view the itinerary, upload documents, and see trip notes</li>
                 <li>Booking modification requests &mdash; date changes, room upgrades, guest count changes submitted through the portal rather than calling or emailing</li>
-                <li>Push and email notifications &mdash; automated alerts for payment reminders, balance due dates, trip countdown, and booking changes</li>
-                <li>Emergency contacts and medical info collection per guest</li>
-                <li>Self-service data deletion &mdash; customers can request and action removal of all their personal data</li>
+                <li className={s.done}>Push and email notifications &mdash; automated alerts for payment reminders, balance due dates, trip countdown, and booking changes <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.done}>Emergency contacts and medical info collection per guest <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.done}>Self-service data deletion &mdash; customers can request and action removal of all their personal data</li>
               </ul>
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Customer Portal Phase 3</h3>
-              <span className={s.servicePrice}>&pound;1,400</span>
+              <span className={s.servicePrice}>&pound;1,100</span>
+              <span className={s.priceWas}>was &pound;1,400</span>
+              <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>BB AI: assistant aware of the guest&apos;s specific booking</li>
-                <li>Document upload for travel docs, waivers, and paperwork</li>
-                <li>Post-booking upsell: add flights, experiences, extras from within the portal</li>
+                <li className={s.done}>Document upload for travel docs, waivers, and paperwork <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.done}>Post-booking upsell: add flights, experiences, extras from within the portal</li>
                 <li>Automated post-stay loyalty flow and rebooking prompts</li>
                 <li>Full GDPR and data compliance</li>
                 <li>Live weather and conditions widget &mdash; real-time weather at their destination in the lead-up to the trip</li>
                 <li>Dynamic packing list &mdash; generated based on destination, activities booked, and time of year</li>
                 <li>Post-trip photo and memory sharing &mdash; guests upload holiday photos, leave a review, and get a shareable trip summary</li>
-                <li>Multi-booking dashboard &mdash; full history of all trips with Beyond Beach for repeat customers, not just the current booking</li>
+                <li className={s.done}>Multi-booking dashboard &mdash; full history of all trips with Beyond Beach for repeat customers, not just the current booking</li>
                 <li>Travel insurance integration &mdash; surface an insurance option within the portal rather than sending guests elsewhere</li>
               </ul>
             </div>
@@ -360,24 +364,28 @@ export default function BeyondBeachProposal() {
                 <h3 className={s.sectionSubtitle}>Admin Portal Phase 2</h3>
                 <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
               </div>
-              <span className={s.servicePrice}>&pound;2,000</span>
+              <span className={s.servicePrice}>&pound;1,400</span>
+              <span className={s.priceWas}>was &pound;2,000</span>
+              <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li>Visual booking pipeline &mdash; every booking and its stage at a glance</li>
-                <li>Guest details, payment status, flight status, documents per booking</li>
-                <li>Staff can manage bookings without needing Checkfront directly</li>
-                <li>Document management: upload and attach files per booking</li>
+                <li className={s.done}>Guest details, payment status, flight status, documents per booking <strong>(completed as part of the booking system build)</strong></li>
+                <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Staff can manage bookings without needing Checkfront directly</s></li>
+                <li className={s.done}>Document management: upload and attach files per booking <strong>(completed as part of the booking system build)</strong></li>
                 <li>Basic automated nudges as bookings progress</li>
                 <li>Role-based access control</li>
-                <li>Automated arrival manifests &mdash; transfer partners, hotel owners, and activity staff receive up-to-date arrival details generated directly from booking data. No more manual spreadsheets, saving an estimated 5+ hours per week</li>
+                <li className={s.done}>Automated arrival manifests &mdash; transfer partners, hotel owners, and activity staff receive up-to-date arrival details generated directly from booking data. No more manual spreadsheets, saving an estimated 5+ hours per week</li>
               </ul>
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Admin Portal Phase 3</h3>
-              <span className={s.servicePrice}>&pound;750</span>
+              <span className={s.servicePrice}>&pound;650</span>
+              <span className={s.priceWas}>was &pound;750</span>
+              <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <p style={{ marginTop: '1rem' }}>Everything in Phase 2, plus:</p>
               <ul>
                 <li>Automated guest comms triggered by pipeline stage changes</li>
-                <li>Revenue and occupancy reporting dashboard</li>
+                <li className={s.done}>Revenue and occupancy reporting dashboard <strong>(completed as part of the booking system build)</strong></li>
                 <li>Full staff permissions and access level management</li>
                 <li>Integration hooks for future third-party tools</li>
                 <li>Audit log of all actions and changes</li>
@@ -416,27 +424,27 @@ export default function BeyondBeachProposal() {
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <h3 className={s.sectionSubtitle}>Inventory &amp; Availability</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Accommodation types modelled as first-class entities: hotels, villas, chalets, and yachts</li>
-                <li>Room types within hotels (single, double, sea view, etc.) with room-by-room booking</li>
-                <li>Whole-property booking for villas and chalets</li>
-                <li>Booking rules engine: minimum and maximum stay, changeover days, advance booking windows</li>
-                <li>Calendar view of availability across every property</li>
-                <li>Booking freeze/lock with a TTL during checkout &mdash; no double-bookings while a guest pays</li>
-                <li>Manual availability blocks for maintenance and owner use</li>
-                <li>Inventory held as a first-class relational entity, fully separate from CMS content</li>
+                <li className={s.done}>Accommodation types modelled as first-class entities: hotels, villas, chalets, and yachts</li>
+                <li className={s.done}>Room types within hotels (single, double, sea view, etc.) with room-by-room booking</li>
+                <li className={s.done}>Whole-property booking for villas and chalets</li>
+                <li className={s.done}>Booking rules engine: minimum and maximum stay, changeover days, advance booking windows</li>
+                <li className={s.done}>Calendar view of availability across every property</li>
+                <li className={s.done}>Booking freeze/lock with a TTL during checkout &mdash; no double-bookings while a guest pays</li>
+                <li className={s.done}>Manual availability blocks for maintenance and owner use</li>
+                <li className={s.done}>Inventory held as a first-class relational entity, fully separate from CMS content</li>
               </ul>
             </div>
 
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Pricing &amp; Rates</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Seasonal rate calendars per property</li>
-                <li>Day-of-week pricing</li>
-                <li>Minimum-night stays that vary by season</li>
-                <li>Changeover day rules (e.g. Saturday-to-Saturday)</li>
-                <li>Length-of-stay discounts</li>
-                <li>Group-size pricing for whole-property bookings</li>
-                <li>Promo codes and voucher codes</li>
+                <li className={s.done}>Seasonal rate calendars per property</li>
+                <li className={s.done}>Day-of-week pricing</li>
+                <li className={s.done}>Minimum-night stays that vary by season</li>
+                <li className={s.done}>Changeover day rules (e.g. Saturday-to-Saturday)</li>
+                <li className={s.done}>Length-of-stay discounts</li>
+                <li className={s.done}>Group-size pricing for whole-property bookings</li>
+                <li className={s.done}>Promo codes and voucher codes</li>
               </ul>
             </div>
 
@@ -454,10 +462,10 @@ export default function BeyondBeachProposal() {
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Booking Lifecycle</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Booking creation flow, wired to the existing rebuilt checkout</li>
-                <li>Modifications: date changes, guest count changes, partial cancellations</li>
-                <li>Cancellation flow with a policy engine configurable per property</li>
-                <li>Continuous reconciliation between booking state and Stripe payment state</li>
+                <li className={s.done}>Booking creation flow, wired to the existing rebuilt checkout</li>
+                <li className={s.done}>Modifications: date changes, guest count changes, partial cancellations</li>
+                <li className={s.done}>Cancellation flow with a policy engine configurable per property</li>
+                <li className={s.done}>Continuous reconciliation between booking state and Stripe payment state</li>
               </ul>
             </div>
 
@@ -465,11 +473,11 @@ export default function BeyondBeachProposal() {
               <h3 className={s.sectionSubtitle}>Payments</h3>
               <p style={{ marginTop: '1.5rem' }}>Stripe becomes the system of record. Nothing here is rebuilt &mdash; the new booking system reads from and reconciles against the existing Stripe integration.</p>
               <ul>
-                <li>Stripe as system of record for all payments</li>
-                <li>Existing webhook integration carried over unchanged</li>
-                <li>Deposit and balance schedules continue to live in Stripe</li>
-                <li>Refund and partial-refund handling (current logic location to be audited as part of discovery)</li>
-                <li>Stripe&ndash;Xero connector handles the cash side &mdash; payments, Stripe fees, payouts, refunds and chargebacks flow into Xero against a Stripe clearing account, so the bank feed reconciles to money that actually moved. No manual export step</li>
+                <li className={s.done}>Stripe as system of record for all payments</li>
+                <li className={s.done}>Existing webhook integration carried over unchanged</li>
+                <li className={s.done}>Deposit and balance schedules continue to live in Stripe</li>
+                <li className={s.done}>Refund and partial-refund handling (current logic location to be audited as part of discovery)</li>
+                <li className={s.done}>Stripe&ndash;Xero connector handles the cash side &mdash; payments, Stripe fees, payouts, refunds and chargebacks flow into Xero against a Stripe clearing account, so the bank feed reconciles to money that actually moved. No manual export step</li>
               </ul>
               <p className={s.note}>Already in place &mdash; kept as-is.</p>
             </div>
@@ -479,48 +487,48 @@ export default function BeyondBeachProposal() {
               <p style={{ marginTop: '1.5rem' }}>The new system becomes the source of truth for customer data, replacing Checkfront and the Google Folders workflow.</p>
               <ul>
                 <li>Migration of full customer history from Checkfront</li>
-                <li>Customer profiles with complete booking history</li>
-                <li>Notes, flags, and marketing consent per customer</li>
-                <li>Repeat-guest identification</li>
-                <li>Pre-arrival info collection: arrival time, dietary needs, special occasions, transfer needs</li>
-                <li>The existing customer portal repointed to the new system &mdash; no guest-facing disruption</li>
+                <li className={s.done}>Customer profiles with complete booking history</li>
+                <li className={s.done}>Notes, flags, and marketing consent per customer</li>
+                <li className={s.done}>Repeat-guest identification</li>
+                <li className={s.done}>Pre-arrival info collection: arrival time, dietary needs, special occasions, transfer needs</li>
+                <li className={s.done}>The existing customer portal repointed to the new system &mdash; no guest-facing disruption</li>
               </ul>
             </div>
 
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Communications</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Booking confirmation with full property details</li>
-                <li>Deposit and balance receipts, coordinated with Stripe</li>
-                <li>Balance-due reminders</li>
-                <li>Pre-arrival sequence: check-in info and local information</li>
-                <li>Day-before-arrival message</li>
-                <li>In-stay check-in</li>
-                <li>Post-stay review request</li>
-                <li>Templated, but customisable per property</li>
+                <li className={s.done}>Booking confirmation with full property details</li>
+                <li className={s.done}>Deposit and balance receipts, coordinated with Stripe</li>
+                <li className={s.done}>Balance-due reminders</li>
+                <li className={s.done}>Pre-arrival sequence: check-in info and local information</li>
+                <li className={s.done}>Day-before-arrival message</li>
+                <li className={s.done}>In-stay check-in</li>
+                <li className={s.done}>Post-stay review request</li>
+                <li className={s.done}>Templated, but customisable per property</li>
               </ul>
             </div>
 
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Admin &amp; Operations</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Admin panel extended from the existing one (currently managing Checkfront SKU linking)</li>
-                <li>Manual booking entry for phone bookings</li>
-                <li>Internal booking notes and flags</li>
-                <li>Housekeeping changeover reports</li>
-                <li>Maintenance blocks</li>
-                <li>Occupancy and revenue reporting per property</li>
-                <li>Audit log of all booking changes</li>
-                <li>Booking system posts invoices to Xero &mdash; per-property line items, customer contact, deposit vs balance, and VAT/TOMS classification, allocated against the Stripe clearing account so revenue and cash reconcile without double-counting</li>
+                <li className={s.done}>Admin panel extended from the existing one (currently managing Checkfront SKU linking)</li>
+                <li className={s.done}>Manual booking entry for phone bookings</li>
+                <li className={s.done}>Internal booking notes and flags</li>
+                <li className={s.done}>Housekeeping changeover reports</li>
+                <li className={s.done}>Maintenance blocks</li>
+                <li className={s.done}>Occupancy and revenue reporting per property</li>
+                <li className={s.done}>Audit log of all booking changes</li>
+                <li className={s.done}>Booking system posts invoices to Xero &mdash; per-property line items, customer contact, deposit vs balance, and VAT/TOMS classification, allocated against the Stripe clearing account so revenue and cash reconcile without double-counting</li>
               </ul>
             </div>
 
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Search &amp; Booking Flow</h3>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Multi-property search by date and guest count</li>
-                <li>Availability and booking flow on the site</li>
-                <li>Alternative date and property suggestions when the first choice is unavailable</li>
+                <li className={s.done}>Multi-property search by date and guest count</li>
+                <li className={s.done}>Availability and booking flow on the site</li>
+                <li className={s.done}>Alternative date and property suggestions when the first choice is unavailable</li>
               </ul>
               <p className={s.note}>Already built and live &mdash; repointed from Checkfront to the new booking system.</p>
             </div>
@@ -557,13 +565,14 @@ export default function BeyondBeachProposal() {
         <section className={classnames(s.section, s.bgGreen)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>Monthly Retainer</h2>
-            <div className={s.retainerPrice}>&pound;200<span style={{ fontSize: '1.6rem', fontWeight: 400 }}>/month</span></div>
-            <div className={s.retainerBreakdown}>&pound;2,400/year &middot; Rolling monthly</div>
+            <div className={s.retainerPrice}>&pound;250<span style={{ fontSize: '1.6rem', fontWeight: 400 }}>/month</span></div>
+            <div className={s.retainerBreakdown}>&pound;3,000/year &middot; Rolling monthly</div>
             <ul>
               <li>Monthly hosting and infrastructure costs</li>
               <li>Checkfront, Kyte, and Stripe webhook health monitoring</li>
               <li>AI usage costs</li>
             </ul>
+            <p className={s.note}>Increased from &pound;200/month to cover ongoing maintenance and monitoring of the new bespoke booking system.</p>
           </div>
         </section>
 
