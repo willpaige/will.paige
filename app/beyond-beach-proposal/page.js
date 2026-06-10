@@ -73,7 +73,7 @@ export default function BeyondBeachProposal() {
         <section className={classnames(s.section, s.introSection)}>
           <div className={s.container}>
             <h2 className={s.sectionTitle}>What We&apos;re Building</h2>
-            <p>Beyond Beach has outgrown a collection of tools. Checkfront handles bookings, Google Folders tracks sales progress, Intercom fields enquiries, and the team manually bridges the gaps between all of them. As volume grows, that overhead grows with it.</p>
+            <p>Beyond Beach has outgrown a collection of tools. Checkfront handles bookings, Google Folders tracks sales progress, Tawk fields live chat enquiries, and the team manually bridges the gaps between all of them. As volume grows, that overhead grows with it.</p>
             <p>This proposal sets out a modular digital platform with Checkfront as the single source of truth &mdash; feeding a public-facing website, a bespoke checkout experience, a customer portal for guests, and an admin portal for staff. Every service is independently deliverable. Pick what makes sense now and build on it over time.</p>
             <div className={s.introDiagram}>
               <span className={s.diagramSource}>Checkfront = Single Source of Truth</span>
@@ -110,12 +110,13 @@ export default function BeyondBeachProposal() {
                   ['Content Intelligence and Automation', '\u00A3750', 'SEO & Content', 'seo'],
                   ['Booking & Checkout Optimisation', '\u00A31,400', 'Booking', 'booking'],
                   ['Kyte Flight Integration', '\u00A31,000', 'Booking', 'kyte'],
-                  ['AI Chat Widget (Intercom replacement)', '\u00A3600', 'Enquiries', 'enquiries'],
+                  ['AI Chat Widget (replaces Tawk)', '\u00A3600', 'Enquiries', 'enquiries'],
                   ['Customer Portal Phase 2', '\u00A31,000', 'Portals', 'customer-portal'],
                   ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,100', 'Portals', 'customer-portal'],
                   ['Admin Portal Phase 2', '\u00A31,400', 'Portals', 'admin-portal'],
                   ['Admin Portal Phase 3', '\u00A3650', 'Portals', 'admin-portal'],
                   ['Marketing Automation', '\u00A31,100', 'Automation', 'marketing'],
+                  ['Customer Communications & Workflows', '\u00A31,400', 'Comms & Workflow', 'comms'],
                   ['Bespoke Booking System (Checkfront replacement)', '\u00A33,200', 'Platform', 'booking-system'],
                 ].map(([service, price, cat, anchor]) => (
                   <tr key={service} className={s.pricingRow} onClick={() => document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })}>
@@ -128,7 +129,7 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;14,900 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
+              <span className={s.totalPrice}>~&pound;16,300 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -290,12 +291,12 @@ export default function BeyondBeachProposal() {
           <div className={s.container}>
             <div className={s.serviceHeader}>
               <h2 className={s.sectionTitle}>Enquiries &amp; Chat</h2>
-              <span className={classnames(s.tag, s.tagGreen)}>Saves &pound;300/year vs Intercom</span>
+              <span className={classnames(s.tag, s.tagGreen)}>Replaces Tawk live chat</span>
             </div>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>AI Chat Widget (Intercom replacement)</h3>
+              <h3 className={s.sectionSubtitle}>AI Chat Widget (Tawk replacement)</h3>
               <span className={s.servicePrice}>&pound;600</span>
-              <p style={{ marginTop: '1.5rem' }}>A bespoke AI chat widget powered by a RAG system trained on Beyond Beach&apos;s own content &mdash; destination guides, activity info, FAQs, booking conditions, T&amp;Cs, and local knowledge. When a guest asks &quot;do I need to bring a wetsuit?&quot; it answers accurately from your own content.</p>
+              <p style={{ marginTop: '1.5rem' }}>The current live chat runs on Tawk. This replaces it with something better: a bespoke AI chat widget powered by a RAG system trained on Beyond Beach&apos;s own content &mdash; destination guides, activity info, FAQs, booking conditions, T&amp;Cs, and local knowledge. When a guest asks &quot;do I need to bring a wetsuit?&quot; it answers accurately from your own content.</p>
               <p>The knowledge base is maintainable without retraining &mdash; update a doc, add a destination, and the widget picks it up automatically.</p>
               <ul>
                 <li>Bespoke chat widget on Beyond Beach infrastructure</li>
@@ -368,7 +369,7 @@ export default function BeyondBeachProposal() {
               <span className={s.priceWas}>was &pound;2,000</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Visual booking pipeline &mdash; every booking and its stage at a glance</li>
+                <li>Visual booking pipeline &mdash; every booking and its stage at a glance (extended into the two-swimlane workflow engine in Customer Communications &amp; Workflows)</li>
                 <li className={s.done}>Guest details, payment status, flight status, documents per booking <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Staff can manage bookings without needing Checkfront directly</s></li>
                 <li className={s.done}>Document management: upload and attach files per booking <strong>(completed as part of the booking system build)</strong></li>
@@ -561,6 +562,62 @@ export default function BeyondBeachProposal() {
           </div>
         </section>
 
+        {/* Customer Communications & Workflows */}
+        <section id="comms" className={s.section}>
+          <div className={s.container}>
+            <div className={s.serviceHeader}>
+              <h2 className={s.sectionTitle}>Customer Communications &amp; Workflows</h2>
+              <span className={classnames(s.tag, s.tagCoral)}>Replaces Gmail &amp; Folders</span>
+            </div>
+            <p>Today enquiries arrive by email, web chat and phone across three separate platforms. Replies and quotes are tracked by hand in a Gmail label pipeline (new, hot, cold, provisional, booked). Checkfront notifications are manually filed into client folders, the sales team coordinates in a side chat, and a handover email is written by hand every time someone takes over an account. This consolidates all of it.</p>
+            <p>The principle is deliberately simple. The booking system owns the workflow, and the communications tool is just the inbox. Every enquiry and every booking is a card in the booking system. The inbox is where the conversation happens, pinned to that card. The inbox never holds status, so the two can never drift apart.</p>
+            <span className={s.servicePrice}>&pound;1,400</span>
+
+            <div className={s.introDiagram}>
+              <span className={s.diagramSource}>Booking System owns the workflow</span>
+              <span className={s.diagramArrow}>&darr;</span>
+              <div className={s.diagramServices}>
+                <span className={s.serviceItem}>Enquiry Swimlane</span>
+                <span className={s.serviceItem}>Booking Swimlane</span>
+              </div>
+              <span className={s.diagramArrow}>&darr;</span>
+              <span className={s.diagramSource}>Unified inbox: email, web chat, phone, WhatsApp</span>
+            </div>
+
+            <div className={s.subsection} style={{ marginTop: '3rem' }}>
+              <h3 className={s.sectionSubtitle}>Enquiry &amp; Booking Workflow Engine</h3>
+              <p style={{ marginTop: '1.5rem' }}>Two swimlanes built into the admin portal, replacing the Gmail label pipeline. Cards move themselves as work gets done, with no manual filing.</p>
+              <ul>
+                <li>Enquiry swimlane: new, hot, cold, quote sent, awaiting payment, won or lost</li>
+                <li>Booking swimlane: confirmed, balance due, paid in full, pre-arrival, in resort, returned</li>
+                <li>Event-driven transitions. Status is a byproduct of doing the work, so the pipeline never goes stale. Sending a quote and payment link automatically creates the customer record and advances the card</li>
+                <li>A payment received via Stripe moves the card from the enquiry swimlane into the booking swimlane automatically</li>
+                <li>Lead-to-customer promotion: enquiries capture contact details as a lead, the full customer record is created when a quote goes out</li>
+                <li>Identity matching and de-duplication: returning guests link to their existing record, and follow-ups attach to the open card rather than spawning a duplicate</li>
+                <li>Every channel (email, web chat, phone, WhatsApp) creates a card, so the swimlane is the complete picture of demand, not just the email slice</li>
+              </ul>
+              <p className={s.note}>The swimlanes extend the &quot;Visual booking pipeline, every booking and its stage at a glance&quot; introduced in Admin Portal Phase 2, taking it from a single read-only board into a full two-swimlane, event-driven workflow engine.</p>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Customer Communications (Missive Unified Inbox)</h3>
+              <p style={{ marginTop: '1.5rem' }}>Missive becomes the single staff inbox for every customer conversation, piped both ways to the booking system. Customers keep using email, web chat and phone as normal and never see the tool. Staff work one inbox with full booking context beside every message.</p>
+              <ul>
+                <li>Email, web chat, phone and WhatsApp consolidated into one shared inbox, ending the fragmented multi-platform split</li>
+                <li>Outbound piping: quotes, payment links, balance reminders and automated messages post straight into the customer&apos;s thread</li>
+                <li>Inbound piping: customer replies link back to the right enquiry or booking card automatically, so nothing is filed by hand</li>
+                <li>Context sidebar: the open conversation shows the customer&apos;s live booking state (balance, payment status, pre-arrival progress, manifest status) pulled from the booking system</li>
+                <li>Internal collaboration replaces the Gmail sales chat. Notes and discussion sit on the conversation itself, attached to the booking</li>
+                <li>Handover by reassignment, not by hand. A new staff member inherits the full history and live context, so no handover email is needed</li>
+                <li>The AI chat widget pipes in as a custom channel, so AI-handled and human-handled conversations live in one place</li>
+              </ul>
+              <p className={s.note}>Missive is a per-seat subscription (roughly &pound;12 to &pound;20 per user per month), billed directly to Beyond Beach like the Checkfront and Kyte accounts. Not included in the build fee.</p>
+            </div>
+
+            <p className={s.note}>This section covers the two-way conversational inbox and the sales and booking workflow. Templated transactional messages (confirmations, receipts, reminders) are generated by the booking system itself and continue to send through a dedicated email service for deliverability, with a copy referenced into the inbox for visibility. Marketing email stays with Mailchimp.</p>
+          </div>
+        </section>
+
         {/* Monthly Retainer */}
         <section className={classnames(s.section, s.bgGreen)}>
           <div className={s.container}>
@@ -599,6 +656,7 @@ export default function BeyondBeachProposal() {
                 <tr><td>Admin Portal Phase 2</td><td>4&ndash;6 weeks</td></tr>
                 <tr><td>Admin Portal Phase 3</td><td>2&ndash;3 weeks after Phase 2</td></tr>
                 <tr><td>Marketing Automation</td><td>2&ndash;3 weeks</td></tr>
+                <tr><td>Customer Communications &amp; Workflows</td><td>3&ndash;4 weeks</td></tr>
               </tbody>
             </table>
             <p className={s.note}>Timelines are estimates and depend on timely access to Checkfront, Kyte, and Stripe accounts, content and brand assets, and feedback turnaround. Services can run in parallel where dependencies allow.</p>
