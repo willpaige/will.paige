@@ -65,7 +65,7 @@ export default function BeyondBeachProposal() {
             <div className={s.heroLabel}>Digital Platform Proposal</div>
             <h1 className={s.heroTitle}>Beyond Beach</h1>
             <div className={s.heroSub}>A platform, not just a website.</div>
-            <div className={s.heroMeta}>Prepared by Paige Digital Ltd &middot; will.paige.me.uk &middot; April 2026<br />Valid for 30 days. All prices exclusive of VAT.</div>
+            <div className={s.heroMeta}>Prepared by Paige Digital Ltd &middot; will.paige.me.uk &middot; April 2026<br />Valid for 30 days.</div>
           </div>
         </section>
 
@@ -129,7 +129,7 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;16,300 <span style={{ fontSize: '1.4rem', fontWeight: 400, opacity: 0.6 }}>ex VAT</span></span>
+              <span className={s.totalPrice}>~&pound;16,300</span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -710,7 +710,7 @@ export default function BeyondBeachProposal() {
         <footer className={s.proposalFooter}>
           <div className={s.container}>
             Paige Digital Ltd &middot; will.paige.me.uk<br />
-            Valid for 30 days from date of issue. All prices exclusive of VAT.
+            Valid for 30 days from date of issue.
           </div>
         </footer>
       </div>
