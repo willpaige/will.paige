@@ -144,7 +144,7 @@ export default function BeyondBeachProposal() {
               <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
             </div>
             <div className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Redesign, Rebuild, Bespoke CMS &amp; My BB MVP</h3>
+              <h3 className={s.sectionSubtitle}>Redesign, Rebuild, Bespoke CMS &amp; My BB MVP<span className={s.paidTag}>Paid</span></h3>
               <span className={s.servicePrice}>&pound;1,800</span>
               <p style={{ marginTop: '1.5rem' }}>The website and admin portal are built together in this phase &mdash; staff log into one place to manage both content and operations, rather than a separate CMS login.</p>
               <p>The existing My BB page is a static dump of generic links. The My BB MVP replaces it with a proper authenticated experience tied to Checkfront, so guests only see what&apos;s relevant to their booking.</p>
@@ -155,7 +155,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Full content migration from existing site</li>
                 <li>301 redirect mapping to protect existing SEO equity</li>
                 <li>GA4 and Google Search Console setup</li>
-                <li>Cookie consent and GDPR compliance</li>
+                <li className={s.done}>Cookie consent and GDPR compliance</li>
                 <li>Core Web Vitals baseline measurement</li>
                 <li className={s.done}>Automatic image optimisation on upload &mdash; images are resized, compressed, and converted to modern formats (WebP/AVIF) with responsive variants generated for every device. Staff drag and drop, the system does the rest</li>
               </ul>
@@ -246,7 +246,7 @@ export default function BeyondBeachProposal() {
             </div>
             <p>The current checkout has identifiable drop-off at every step. This fixes all of it, powered by the Checkfront API throughout.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
-              <h3 className={s.sectionSubtitle}>Booking &amp; Checkout Optimisation</h3>
+              <h3 className={s.sectionSubtitle}>Booking &amp; Checkout Optimisation<span className={s.paidTag}>Paid</span></h3>
               <span className={s.servicePrice}>&pound;1,400</span>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li className={s.done}>Availability-aware date picker with live availability from Checkfront</li>
@@ -340,7 +340,7 @@ export default function BeyondBeachProposal() {
               <span className={s.priceWas}>was &pound;1,400</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>BB AI: assistant aware of the guest&apos;s specific booking</li>
+                <li className={s.done}>BB AI: assistant aware of the guest&apos;s specific booking</li>
                 <li className={s.done}>Document upload for travel docs, waivers, and paperwork <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Post-booking upsell: add flights, experiences, extras from within the portal</li>
                 <li>Automated post-stay loyalty flow and rebooking prompts</li>
@@ -369,12 +369,12 @@ export default function BeyondBeachProposal() {
               <span className={s.priceWas}>was &pound;2,000</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
-                <li>Visual booking pipeline &mdash; every booking and its stage at a glance (extended into the two-swimlane workflow engine in Customer Communications &amp; Workflows)</li>
+                <li className={s.done}>Visual booking pipeline &mdash; every booking and its stage at a glance (extended into the two-swimlane workflow engine in Customer Communications &amp; Workflows)</li>
                 <li className={s.done}>Guest details, payment status, flight status, documents per booking <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Staff can manage bookings without needing Checkfront directly</s></li>
                 <li className={s.done}>Document management: upload and attach files per booking <strong>(completed as part of the booking system build)</strong></li>
-                <li>Basic automated nudges as bookings progress</li>
-                <li>Role-based access control</li>
+                <li className={s.done}>Basic automated nudges as bookings progress</li>
+                <li className={s.done}>Role-based access control</li>
                 <li className={s.done}>Automated arrival manifests &mdash; transfer partners, hotel owners, and activity staff receive up-to-date arrival details generated directly from booking data. No more manual spreadsheets, saving an estimated 5+ hours per week</li>
               </ul>
             </div>
@@ -385,11 +385,11 @@ export default function BeyondBeachProposal() {
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <p style={{ marginTop: '1rem' }}>Everything in Phase 2, plus:</p>
               <ul>
-                <li>Automated guest comms triggered by pipeline stage changes</li>
+                <li className={s.done}>Automated guest comms triggered by pipeline stage changes</li>
                 <li className={s.done}>Revenue and occupancy reporting dashboard <strong>(completed as part of the booking system build)</strong></li>
-                <li>Full staff permissions and access level management</li>
+                <li className={s.done}>Full staff permissions and access level management</li>
                 <li>Integration hooks for future third-party tools</li>
-                <li>Audit log of all actions and changes</li>
+                <li className={s.done}>Audit log of all actions and changes</li>
               </ul>
             </div>
           </div>
@@ -588,13 +588,13 @@ export default function BeyondBeachProposal() {
               <h3 className={s.sectionSubtitle}>Enquiry &amp; Booking Workflow Engine</h3>
               <p style={{ marginTop: '1.5rem' }}>Two swimlanes built into the admin portal, replacing the Gmail label pipeline. Cards move themselves as work gets done, with no manual filing.</p>
               <ul>
-                <li>Enquiry swimlane: new, hot, cold, quote sent, awaiting payment, won or lost</li>
-                <li>Booking swimlane: confirmed, balance due, paid in full, pre-arrival, in resort, returned</li>
-                <li>Event-driven transitions. Status is a byproduct of doing the work, so the pipeline never goes stale. Sending a quote and payment link automatically creates the customer record and advances the card</li>
-                <li>A payment received via Stripe moves the card from the enquiry swimlane into the booking swimlane automatically</li>
-                <li>Lead-to-customer promotion: enquiries capture contact details as a lead, the full customer record is created when a quote goes out</li>
-                <li>Identity matching and de-duplication: returning guests link to their existing record, and follow-ups attach to the open card rather than spawning a duplicate</li>
-                <li>Every channel (email, web chat, phone, WhatsApp) creates a card, so the swimlane is the complete picture of demand, not just the email slice</li>
+                <li className={s.done}>Enquiry swimlane: new, hot, cold, quote sent, awaiting payment, won or lost</li>
+                <li className={s.done}>Booking swimlane: confirmed, balance due, paid in full, pre-arrival, in resort, returned</li>
+                <li className={s.done}>Event-driven transitions. Status is a byproduct of doing the work, so the pipeline never goes stale. Sending a quote and payment link automatically creates the customer record and advances the card</li>
+                <li className={s.done}>A payment received via Stripe moves the card from the enquiry swimlane into the booking swimlane automatically</li>
+                <li className={s.done}>Lead-to-customer promotion: enquiries capture contact details as a lead, the full customer record is created when a quote goes out</li>
+                <li className={s.done}>Identity matching and de-duplication: returning guests link to their existing record, and follow-ups attach to the open card rather than spawning a duplicate</li>
+                <li className={s.done}>Every channel (email, web chat, phone, WhatsApp) creates a card, so the swimlane is the complete picture of demand, not just the email slice</li>
               </ul>
               <p className={s.note}>The swimlanes extend the &quot;Visual booking pipeline, every booking and its stage at a glance&quot; introduced in Admin Portal Phase 2, taking it from a single read-only board into a full two-swimlane, event-driven workflow engine.</p>
             </div>
