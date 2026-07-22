@@ -153,7 +153,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Full redesign and rebuild with like-for-like functionality</li>
                 <li className={s.done}>Bespoke CMS built into the admin portal &mdash; one login for staff</li>
                 <li className={s.done}>Full content migration from existing site</li>
-                <li>301 redirect mapping to protect existing SEO equity</li>
+                <li className={s.done}>301 redirect mapping to protect existing SEO equity</li>
                 <li>GA4 and Google Search Console setup</li>
                 <li className={s.done}>Cookie consent and GDPR compliance</li>
                 <li>Core Web Vitals baseline measurement</li>
@@ -194,7 +194,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Schema markup (LocalBusiness, Activity, Review, FAQ)</li>
                 <li className={s.done}>Local SEO</li>
                 <li className={s.done}>Internal linking architecture</li>
-                <li>Dynamic long-tail keyword content pages</li>
+                <li className={s.done}>Dynamic long-tail keyword content pages</li>
                 <li>Core Web Vitals and page speed improvements</li>
                 <li className={s.done}>Migrate existing images, update file names and use AI to generate SEO-optimised alt and title tags</li>
               </ul>
@@ -256,7 +256,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Guest count inherited across steps &mdash; accommodation and extras pre-filtered</li>
                 <li className={s.done}>Contextual pricing: per-person and per-night breakdown alongside total</li>
                 <li className={s.done}>Returning customers can log in at the start of checkout &mdash; personal details, address, and payment preferences pre-filled from their My BB account via Checkfront</li>
-                <li>Streamlined checkout form with address autocomplete</li>
+                <li className={s.done}>Streamlined checkout form with address autocomplete</li>
                 <li className={s.done}>Visual extras cards with live running total</li>
                 <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Prominent deposit CTA with Hold as secondary</s></li>
                 <li className={s.done}>Stripe Checkout integration &mdash; replaces the existing payment form with Stripe&apos;s hosted checkout, giving customers Apple Pay, Google Pay, bank transfers, Klarna, and all major card networks out of the box</li>
@@ -299,12 +299,12 @@ export default function BeyondBeachProposal() {
               <p style={{ marginTop: '1.5rem' }}>The current live chat runs on Tawk. This replaces it with something better: a bespoke AI chat widget powered by a RAG system trained on Beyond Beach&apos;s own content &mdash; destination guides, activity info, FAQs, booking conditions, T&amp;Cs, and local knowledge. When a guest asks &quot;do I need to bring a wetsuit?&quot; it answers accurately from your own content.</p>
               <p>The knowledge base is maintainable without retraining &mdash; update a doc, add a destination, and the widget picks it up automatically.</p>
               <ul>
-                <li>Bespoke chat widget on Beyond Beach infrastructure</li>
-                <li>RAG-powered responses grounded in your content</li>
-                <li>Checkfront-aware for returning visitors</li>
-                <li>Escalation to human or email capture when out of scope</li>
-                <li>No ongoing subscription fee</li>
-                <li>Knowledge base updated by editing documents, no retraining</li>
+                <li className={s.done}>Bespoke chat widget on Beyond Beach infrastructure</li>
+                <li className={s.done}>RAG-powered responses grounded in your content</li>
+                <li className={s.done}>Checkfront-aware for returning visitors</li>
+                <li className={s.done}>Escalation to human or email capture when out of scope</li>
+                <li className={s.done}>No ongoing subscription fee</li>
+                <li className={s.done}>Knowledge base updated by editing documents, no retraining</li>
               </ul>
             </div>
           </div>
@@ -325,10 +325,10 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Pay outstanding balance online via Stripe <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Download invoices and booking documents <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Trip notes and pre-arrival information</li>
-                <li>View and manage flights via Kyte integration</li>
+                <li className={s.done}>Dynamic exportable trip notes</li>
                 <li className={s.done}>Return booking flow with loyalty discount auto-applied</li>
                 <li className={s.done}>Group and party management &mdash; lead guest can share portal access or invite others to view the itinerary, upload documents, and see trip notes</li>
-                <li>Booking modification requests &mdash; date changes, room upgrades, guest count changes submitted through the portal rather than calling or emailing</li>
+                <li className={s.done}>Booking modification requests &mdash; date changes, room upgrades, guest count changes submitted through the portal rather than calling or emailing</li>
                 <li className={s.done}>Push and email notifications &mdash; automated alerts for payment reminders, balance due dates, trip countdown, and booking changes <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Emergency contacts and medical info collection per guest <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Self-service data deletion &mdash; customers can request and action removal of all their personal data</li>
@@ -343,6 +343,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>BB AI: assistant aware of the guest&apos;s specific booking</li>
                 <li className={s.done}>Document upload for travel docs, waivers, and paperwork <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Post-booking upsell: add flights, experiences, extras from within the portal</li>
+                <li>View and manage flights via Kyte integration</li>
                 <li>Automated post-stay loyalty flow and rebooking prompts</li>
                 <li>Full GDPR and data compliance</li>
                 <li>Live weather and conditions widget &mdash; real-time weather at their destination in the lead-up to the trip</li>
@@ -388,7 +389,7 @@ export default function BeyondBeachProposal() {
                 <li className={s.done}>Automated guest comms triggered by pipeline stage changes</li>
                 <li className={s.done}>Revenue and occupancy reporting dashboard <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Full staff permissions and access level management</li>
-                <li>Integration hooks for future third-party tools</li>
+                <li>Full custom managed user permissions system</li>
                 <li className={s.done}>Audit log of all actions and changes</li>
               </ul>
             </div>
@@ -603,13 +604,13 @@ export default function BeyondBeachProposal() {
               <h3 className={s.sectionSubtitle}>Customer Communications (Missive Unified Inbox)</h3>
               <p style={{ marginTop: '1.5rem' }}>Missive becomes the single staff inbox for every customer conversation, piped both ways to the booking system. Customers keep using email, web chat and phone as normal and never see the tool. Staff work one inbox with full booking context beside every message.</p>
               <ul>
-                <li>Email, web chat, phone and WhatsApp consolidated into one shared inbox, ending the fragmented multi-platform split</li>
-                <li>Outbound piping: quotes, payment links, balance reminders and automated messages post straight into the customer&apos;s thread</li>
-                <li>Inbound piping: customer replies link back to the right enquiry or booking card automatically, so nothing is filed by hand</li>
-                <li>Context sidebar: the open conversation shows the customer&apos;s live booking state (balance, payment status, pre-arrival progress, manifest status) pulled from the booking system</li>
-                <li>Internal collaboration replaces the Gmail sales chat. Notes and discussion sit on the conversation itself, attached to the booking</li>
-                <li>Handover by reassignment, not by hand. A new staff member inherits the full history and live context, so no handover email is needed</li>
-                <li>The AI chat widget pipes in as a custom channel, so AI-handled and human-handled conversations live in one place</li>
+                <li className={s.done}>Email, web chat, phone and WhatsApp consolidated into one shared inbox, ending the fragmented multi-platform split</li>
+                <li className={s.done}>Outbound piping: quotes, payment links, balance reminders and automated messages post straight into the customer&apos;s thread</li>
+                <li className={s.done}>Inbound piping: customer replies link back to the right enquiry or booking card automatically, so nothing is filed by hand</li>
+                <li className={s.done}>Context sidebar: the open conversation shows the customer&apos;s live booking state (balance, payment status, pre-arrival progress, manifest status) pulled from the booking system</li>
+                <li className={s.done}>Internal collaboration replaces the Gmail sales chat. Notes and discussion sit on the conversation itself, attached to the booking</li>
+                <li className={s.done}>Handover by reassignment, not by hand. A new staff member inherits the full history and live context, so no handover email is needed</li>
+                <li className={s.done}>The AI chat widget pipes in as a custom channel, so AI-handled and human-handled conversations live in one place</li>
               </ul>
               <p className={s.note}>Missive is a per-seat subscription (roughly &pound;12 to &pound;20 per user per month), billed directly to Beyond Beach like the Checkfront and Kyte accounts. Not included in the build fee.</p>
             </div>
