@@ -2,30 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Email signature — Will Paige</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<title>Email signature — Will Paige, Paige Digital</title>
+<style>
+  body{margin:0;padding:48px 24px;background:#F5F4F5;font-family:'Source Sans Pro',Helvetica,Arial,sans-serif;color:#000}
+  .wrap{max-width:560px;margin:0 auto}
+  .card{background:#fff;padding:32px;border-radius:12px}
+  .bar{display:flex;align-items:center;gap:16px;margin-top:20px}
+  button{font-family:'Roboto Mono',Menlo,monospace;font-size:13px;letter-spacing:.5px;text-transform:uppercase;background:#000;color:#fff;border:0;border-radius:999px;padding:12px 20px;cursor:pointer}
+  button:hover{background:#333}
+  .msg{font-size:14px;color:#555}
+  .help{font-size:14px;line-height:1.5;color:#555;margin-top:24px}
+</style>
 </head>
-<body style="margin:0;padding:40px;background:#F5F4F5;">
-<!-- Select everything inside the white box below, copy, and paste into your mail client's signature settings. -->
-<div style="background:#ffffff;padding:24px;display:inline-block;">
+<body>
+<div class="wrap">
+  <div class="card">
+<div id="signature">
 <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:'Source Sans Pro',Helvetica,Arial,sans-serif;color:#000000;">
   <tr>
-    <td style="padding:0 18px 0 0;vertical-align:middle;">
-      <a href="https://paige.me.uk" style="text-decoration:none;">
-        <img src="https://will.paige.me.uk/images/email/paige-digital-logo.png" width="102" height="36" alt="Paige Digital" style="display:block;border:0;width:102px;height:36px;">
-      </a>
+    <td style="padding:0 0 14px 0;">
+      <a href="https://paige.me.uk" style="text-decoration:none;"><img src="https://will.paige.me.uk/images/email/paige-digital-logo.png" width="102" height="36" alt="Paige Digital" style="display:block;border:0;outline:none;width:102px;height:36px;"></a>
     </td>
-    <td style="padding:0 0 0 18px;border-left:3px solid #A3E265;vertical-align:middle;">
-      <p style="margin:0 0 2px 0;font-family:'Roboto Mono',Menlo,Consolas,'Courier New',monospace;font-size:15px;line-height:20px;font-weight:bold;letter-spacing:0.5px;color:#000000;">WILL PAIGE</p>
-      <p style="margin:0 0 8px 0;font-size:14px;line-height:18px;color:#555555;">Founder, Paige Digital</p>
-      <p style="margin:0;font-family:'Roboto Mono',Menlo,Consolas,'Courier New',monospace;font-size:12px;line-height:18px;">
-        <a href="tel:+447521915809" style="color:#000000;text-decoration:none;">07521 915809</a><br>
-        <a href="mailto:will@paige.me.uk" style="color:#000000;text-decoration:none;">will@paige.me.uk</a><br>
-        <a href="https://paige.me.uk" style="color:#000000;text-decoration:none;">paige.me.uk</a>
-      </p>
+  </tr>
+  <tr>
+    <td style="padding:0 0 14px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;"><tr><td width="32" height="3" style="width:32px;height:3px;background-color:#A3E265;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 0 12px 0;">
+      <span style="font-family:'Roboto Mono',Menlo,Consolas,'Courier New',monospace;font-size:14px;line-height:20px;font-weight:bold;letter-spacing:1px;color:#000000;">WILL PAIGE</span><br>
+      <span style="font-size:14px;line-height:20px;color:#555555;">Founder, Paige Digital</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:'Roboto Mono',Menlo,Consolas,'Courier New',monospace;font-size:12px;line-height:20px;">
+        <tr>
+          <td style="padding:0 12px 0 0;color:#92B4A7;font-weight:bold;">M</td>
+          <td><a href="tel:+447521915809" style="color:#000000;text-decoration:none;">07521 915809</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 12px 0 0;color:#92B4A7;font-weight:bold;">E</td>
+          <td><a href="mailto:will@paige.me.uk" style="color:#000000;text-decoration:none;">will@paige.me.uk</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 12px 0 0;color:#92B4A7;font-weight:bold;">W</td>
+          <td><a href="https://paige.me.uk" style="color:#000000;text-decoration:none;">paige.me.uk</a></td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>
 </div>
+  </div>
+  <div class="bar">
+    <button type="button" id="copy">Copy signature</button>
+    <span class="msg" id="msg" aria-live="polite"></span>
+  </div>
+  <p class="help">Copy, then paste into your mail client: Gmail → Settings → Signature; Apple Mail → Settings → Signatures (untick “Always match my default message font”); Outlook → Settings → Signatures.</p>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async function () {
+  var el = document.getElementById('signature');
+  var msg = document.getElementById('msg');
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      'text/html': new Blob([el.innerHTML], { type: 'text/html' }),
+      'text/plain': new Blob([el.innerText], { type: 'text/plain' })
+    })]);
+    msg.textContent = 'Copied. Paste it into your signature settings.';
+  } catch (e) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    msg.textContent = 'Selected. Press Cmd+C to copy.';
+  }
+});
+</script>
 </body>
 </html>
