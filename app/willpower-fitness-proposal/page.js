@@ -318,10 +318,11 @@ export default function WillpowerFitnessProposal() {
 
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <h3 className={s.sectionSubtitle}>Google Business Profile</h3>
-              <ul style={{ marginTop: '1.5rem' }}>
+              <p style={{ marginTop: '1.5rem' }}>Google only lets the profile owner make these changes, so the Willpower team makes them. We provide a step-by-step checklist with the exact wording, categories, services and links to enter, and check everything once it&apos;s done.</p>
+              <ul>
                 <li>Primary category changed to Gym, with Personal trainer and Fitness centre as secondary</li>
                 <li>Correct hours (including weekend classes), address, services, booking link to the free-session page</li>
-                <li>Photo refresh and a posting routine for classes, events and the cafe</li>
+                <li>Photo refresh and a simple posting routine for classes, events and the cafe, with post drafts from the AI content tools</li>
                 <li>The same name, address and phone on every listing: Tripadvisor, Yelp, Hussle, southhams.com and the out-of-date directory sites</li>
               </ul>
             </div>
@@ -335,6 +336,20 @@ export default function WillpowerFitnessProposal() {
                 <li>Structured data for the gym, the cafe, events, coaches and FAQs</li>
                 <li>Core Web Vitals passing on mobile</li>
                 <li>Migrate existing images, update file names and use AI to generate SEO-optimised alt and title tags</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Training Glossary</h3>
+              <p style={{ marginTop: '1.5rem' }}>WOD, AMRAP, EMOM, metcon, RX: the jargon puts beginners off, and the current FAQ already spends half its space explaining it. A glossary explains every term where people meet it, and doubles as content Google and AI tools can quote. HYROX stations lead the way: &quot;hyrox stations&quot; is searched 4,400 times a month in the UK, &quot;sled push&quot; 3,600 and &quot;burpee broad jump&quot; 1,900.</p>
+              <ul>
+                <li>Glossary entries in the CMS: a short definition, the full explanation, beginner and scaled options, a coach demo video, related terms and the Willpower classes that use it</li>
+                <li>Automatic links: the first mention of a term on any page links to its entry, with the definition shown on hover. Never in headings or buttons, and staff can switch it off per term or page</li>
+                <li>One A&ndash;Z glossary hub for every term, with full pages only for terms people search for and that have real content: HYROX stations, AMRAP, EMOM and the main lifts</li>
+                <li>HYROX station guides as the flagship content, supporting the HYROX training page</li>
+                <li>Entries drafted with &quot;Write with AI&quot; and checked by a coach; 15-second coach demos filmed on a phone are what make them better than the generic pages already ranking</li>
+                <li>Structured data so definitions and demo videos can appear in Google and AI answers</li>
+                <li>Carried into the member app: each movement in the workout of the day links to its entry</li>
               </ul>
             </div>
 
@@ -611,7 +626,7 @@ export default function WillpowerFitnessProposal() {
               </thead>
               <tbody>
                 <tr><td>Website Redesign, Rebuild &amp; CMS</td><td>4&ndash;5 weeks, brand applied when ready</td></tr>
-                <tr><td>Local SEO &amp; Google Profile</td><td>Alongside the website; Google profile fixes in week 1</td></tr>
+                <tr><td>Local SEO &amp; Google Profile</td><td>Alongside the website; Google profile checklist in week 1</td></tr>
                 <tr><td>AI Assistant &amp; Content Tools</td><td>1&ndash;2 weeks after launch</td></tr>
                 <tr><td>Merch Shop &amp; Event Tickets</td><td>2&ndash;3 weeks</td></tr>
                 <tr><td>Booking Platform &amp; Member App</td><td>12&ndash;14 weeks, plus App Store review and a planned switchover</td></tr>
@@ -656,7 +671,8 @@ export default function WillpowerFitnessProposal() {
               <ol style={{ marginTop: '2rem' }}>
                 <li>Agree the website phase and which of SEO and the AI assistant to run alongside it</li>
                 <li>Share the new brand as soon as it&apos;s ready: logo files, colours, fonts and guidelines</li>
-                <li>Access to the current website, Google Business Profile and Wodboard admin</li>
+                <li>Access to the current website and Wodboard admin</li>
+                <li>Work through the Google Business Profile checklist: the quickest win, and it can start straight away</li>
                 <li>Gather photos of classes, coaches and the cafe, plus the cafe menu and hours</li>
                 <li>Discovery call on the booking platform: the Wodboard features used day to day, member numbers and the payment accounts behind Wodboard</li>
               </ol>
