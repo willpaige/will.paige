@@ -6,6 +6,210 @@ import s from './proposal.module.scss';
 
 const HASH = '323e0925afdc99ed5e13b2115f42506da9ac24c125dbbe81b1c303422ee34023';
 
+// Work delivered during the build that sits outside the original proposal.
+// [title, full price in £, discounted price in £, intro, [delivered items]]
+const EXTRAS = [
+  ['Balance Collection & Late Fees', 1200, 270, 'The original scope kept deposit and balance schedules in Stripe as-is. Balance collection became a full system.', [
+    'Guest chooses at checkout to have the balance taken automatically from a saved card or to pay it themselves',
+    'Scheduled automatic balance charging, with staff retry and waive',
+    'Balance reminders by email and text',
+    'Late payment fee applied automatically',
+    'Customer Ops > Balances worklist',
+    'Payment method page in the customer portal',
+  ]],
+  ['Staff-Managed Flights', 1400, 325, 'Built in place of the Kyte flight search. Staff book flights and the platform tracks, charges and reports on them.', [
+    'Flight records on each booking, with segments and passengers',
+    'ATOL tracking and certificates, ticketing deadlines',
+    'Charging the guest for flights, with a controlled price change',
+    'Flights split out in Xero, flight margin for Finance',
+    'Booking Config > Flights and a Customer Ops > Flights worklist',
+    'Your flights in the customer portal: guests add and edit their own flights until a cut-off',
+    'Flight details email',
+  ]],
+  ['Sailing & Yacht Operations', 1500, 345, 'The original scope made yachts an accommodation type. Sailing became its own operation.', [
+    'Yachts as model and hull, sold by the cabin or as a whole boat',
+    'Fleet matrix, hull deployment and yacht allocation per holiday',
+    'Pricing a yacht per holiday, "Also sold on" across holidays',
+    'Sailing departures with skipper or instructor assignment per week',
+    'Sailing manifests and linen sheets',
+    'Transfer vehicles tied to ferries, rosters, departure dispatch and readiness checks',
+    'Housekeeping changeover reports',
+  ]],
+  ['Room Allocation & Trading Windows', 900, 210, 'Tour-operator allotment rules for stock shared between holidays.', [
+    'Holiday allocation: which holiday may sell a shared property, room or yacht, and when',
+    'Committed and on-request rooms per period, with room-level overrides',
+    'Dates on sale set by priced seasons (trading window), with a closed state staff can override',
+    'Chalets sold whole, by the room, or both, per holiday',
+  ]],
+  ['Advanced Pricing Models', 900, 210, 'The original scope covered seasonal, day-of-week, length-of-stay and group-size pricing.', [
+    'Occupancy-based room pricing and a per-person ladder against a room’s real beds',
+    'Age-specific and child pricing',
+    'Reduced rates per guest count, fixed extra-bed and stay deductions',
+    'Percentage seasons and a global Seasons catalogue with a calendar view',
+    'Seasons that change booking rules, and holiday-scoped rate overrides',
+  ]],
+  ['Family Offers', 450, 105, 'Staff asked how to run the ongoing family offers (children 4 and under stay free, discounts for children on an extra bed).', [
+    'A "Family pricing" switch on an offer: its badge ("Under 5s free") and a "How family pricing works" table come from the live child prices, so the page always states what the booking form charges',
+    'Holidays with their own child prices show their own badge on the offer page',
+    'A child in a free age band no longer raises the room price: two adults and a baby pay the two-guest price',
+  ]],
+  ['Special Weeks', 500, 115, '', [
+    'Staff-chosen special weeks shown on holiday, category and club pages',
+    'Each special week has its own prices per property and room type',
+    'Guests book a run in one click; a place is held and the office allocates the room later',
+  ]],
+  ['Quotes, Bundles & Combined Trips', 1200, 270, 'The original scope covered sending a quote and payment link.', [
+    'Public quote and offer checkouts from a token link: review, extras that re-price, then pay',
+    '"Build a holiday": several options on one link, the guest picks one',
+    'Combined multi-leg trips (for example a hotel week then a yacht week) paid together, with one itinerary',
+    'Quotes held against stock, with an automatic follow-up email sequence',
+    'The quote, multi-option quote and follow-up emails editable in Email templates, linked from the quote settings',
+  ]],
+  ['On-Request Bookings & Requests Worklist', 1000, 230, '', [
+    'Holidays and rooms marked on request: staff confirm or decline before the guest pays',
+    'Office-only holidays with a "Check availability" form',
+    'Extras that need a quote, with a request form defined by staff',
+    'One Requests worklist for confirmations, quote requests, booking changes, extra nights and availability, with a sidebar badge',
+  ]],
+  ['Extra Nights', 450, 105, '', [
+    'Guests request nights before or after their stay from the portal',
+    'Staff approve, change the price, send a pay link or decline',
+  ]],
+  ['Waiting List', 250, 60, '', [
+    'Sold-out holidays turn the booking panel into a waiting list sign-up',
+    'Sign-ups grouped by holiday in Customer Ops',
+  ]],
+  ['Live Chat', 1100, 255, 'The original scope was the AI widget with escalation to a person or email capture. This is a full staff chat.', [
+    'Real-time chat between guests and staff on the website and in the customer portal',
+    'Honest staff availability, with B.B answering when the office is closed',
+    'Guests choose which holiday a portal chat is about',
+    'Transcripts saved to the customer record',
+    'Contact page redesign, contact options pop-up and a WhatsApp card',
+  ]],
+  ['SMS', 600, 140, 'Listed under Phase 2 / Later in the original booking system scope.', [
+    'Staff text composer',
+    'Quotes and pay links texted to mobile-only leads',
+    'Automated pre-arrival and balance texts',
+    'Inbound texts matched to the customer by phone number',
+  ]],
+  ['AI Content Tools', 750, 175, 'Beyond the AI chat widget.', [
+    '"Write with AI" copywriter in the blog, destination and holiday editors',
+    'Twelve months of customer email mined for questions the FAQs don’t answer',
+    'FAQ suggestions queue for staff to approve',
+    'Ask B.B suggestions as you type, from FAQs and the most-asked questions',
+    'Answers that link to the right page, and a search mode on the contact page',
+  ]],
+  ['Pre-Arrival Wizard & Traveller Profiles', 900, 210, 'The original scope was emergency contacts and medical info per guest.', [
+    'Step-by-step wizard per guest with autosave: trip details, passport, health and dietary, consents, extras',
+    'Passport photo reader that fills in the passport details on the device',
+    'Custom fields per holiday, including document upload fields',
+    'Passport expiry warning and travel insurance details',
+    'Reminders and a warning when guest details are missing',
+    'Saved traveller profiles reused across bookings',
+  ]],
+  ['Customer Self-Service', 600, 140, '', [
+    'Cancel a booking online with a refund quote under the cancellation policy, refunded through Stripe',
+    'Contact details page: name, phones, address, marketing opt-in',
+    'Scroll-to-accept booking conditions, with acceptance recorded',
+    'Set a password after checkout, with reminder emails for guests who haven’t',
+    'FAQs in the portal and friendly handling of wrong-account links',
+    'Booking page redesign: holiday switcher, "What you need to do" checklist, "Your holiday at a glance"',
+  ]],
+  ['Staff Payments, Room Moves & Charges', 700, 160, 'The original scope kept payments as-is, with refund handling.', [
+    'Staff take payments and issue refunds, with a reason and a full transaction ledger',
+    'Move a booking to another room type and send a link for the difference',
+    'Pay pages for upgrades, extra nights, flights, price changes and staff-added extras',
+    'Automatic charges and reusable groups of extras',
+    'Staff discounts, adjustable group deposits, last-minute pay in full',
+    'Party rooms kept together, reservation tape chart with drag moves',
+  ]],
+  ['Xero, Extended', 600, 140, 'The original scope posted invoices to Xero and connected Stripe.', [
+    'Account codes and tracking categories per item and per unit, including yacht tracking',
+    'Reconciliation queue with retry, Sync pending and a sync pause',
+    'Credit notes and supplementary invoices',
+    'Invoice backfill that repairs itself, and Xero tabs on properties and yachts',
+  ]],
+  ['Pace & Customer Reports', 450, 105, 'Listed under Phase 2 / Later ("Advanced reporting and BI") in the original scope.', [
+    'Forward booking pace against last year',
+    'New versus returning customers, lead time and repeat-rate retention',
+    'Period comparison and revenue over time',
+    'Redesigned business dashboard and Customer Ops overview',
+  ]],
+  ['Setup Health & Price Preview', 450, 105, '', [
+    'Checks every holiday for anything that would stop it selling or price it wrongly, linked to the fix',
+    'Setup check card on every holiday and property',
+    'Price test inside the editors that follows the holiday’s date rules',
+    'Read-only price and availability calendar for sales staff',
+  ]],
+  ['Missive & Operations Tools', 350, 80, '', [
+    'Inbox button with a waiting count, bundled alerts and Sales / Not sales triage',
+    '"Send a quote" from the Missive sidebar',
+    'Do not contact flag',
+    'Manifest dispatch log, Port Police manifest and legal entity per property',
+  ]],
+  ['Customer Ops Home & Navigation', 1200, 270, 'Staff feedback asked for one place to start the day. The Customer Ops home and menu were rebuilt around it over three rounds of feedback.', [
+    'A "Check your inbox" block at the top linking to Missive, with how many conversations are waiting',
+    'Needs Attention as colour-coded blocks: After Sales Enquiries (listing the ones nobody has picked up), Bookings & Updates and Flights, with smaller jobs on one "Also waiting" line',
+    'Items drop off as soon as they are dealt with, and the header bell shows the same list',
+    'New prompts for guest details overdue, hotels that haven’t replied and quotes about to expire',
+    'Flights guests add themselves go on a "To verify" list with a Mark verified button, and back on it if the guest changes them',
+    'Recent activity shows whether each item has been dealt with and by whom, with its history and Not actioned, Mine and Team views',
+    'Staff actions on enquiries and manual bookings now record who made them',
+    'Arrivals this week, departures today and the reservations calendar on the home page, the calendar opening on the property each person last viewed',
+    'Every block with a shaded, colour-coded header',
+    'Menu regrouped into dropdowns that remember what each person had open, with Needs action pinned at the top',
+    'Search across bookings, customers and enquiries from any page (Cmd/Ctrl+K) and a New menu for quotes, bookings, payments and refunds',
+    'Board and List views of bookings and of the sales pipeline, remembering the one used last',
+  ]],
+  ['Vouchers', 250, 60, '', [
+    'Vouchers issued to a customer, redeemed or voided',
+    'Bulk voucher batches from a CSV for partner campaigns',
+  ]],
+  ['Website Content Expansion', 1200, 270, 'Beyond the like-for-like rebuild.', [
+    'Guide hubs with linked articles: turtles, sailing, Kefalonia, family, windsurfing and more',
+    'Audience hubs, Kids Clubs page and pop-up, activity category hubs',
+    'Holiday-type hub rebuilds and the Villa Club hub',
+    'Equipment library linked to activities and holidays',
+    'Weather and wind history on holiday pages',
+    'Flexible-date search and nearby open weeks when a holiday is fully booked',
+    'Private holidays by link, llms.txt for AI search, Mailchimp sign-ups',
+  ]],
+  ['Price Display Rework', 500, 115, '', [
+    'Whole-stay and per-person prices reworked across the site',
+    'Every advertised price states its terms; guests priced by place ("3rd guest £820")',
+    'One holiday card and price block used sitewide',
+  ]],
+  ['Gallery & Video', 350, 80, '', [
+    'Lead video autoplay, switchable per holiday, carried on into the lightbox with sound',
+    'Intro, destination, accommodation and activity galleries, touch carousels',
+  ]],
+  ['CMS Drafts & Preview', 450, 105, '', [
+    'Draft revisions, preview banner and pending-changes markers',
+    'Published edits on the site in seconds',
+    'Content audit, three rounds',
+  ]],
+  ['Brand & Typography Revisions', 300, 70, '', [
+    'Several rounds of typeface and logo changes',
+    'Brand style guide page',
+  ]],
+  ['Security', 500, 115, '', [
+    'Mandatory two-factor login for staff, email login codes for customers',
+    'Passports encrypted, photo location data removed before upload',
+    'Private document uploads and automatic deletion of old documents',
+  ]],
+  ['Design System, Testing & Release Checks', 900, 210, '', [
+    'Component library with Storybook',
+    'Automated test suite across the API and booking engine',
+    'Releases go live only when every check passes, with a database schema check',
+  ]],
+];
+
+// Offers & Promotions (£900 → £210), Change Prices (£500 → £115) and the
+// Tripadvisor connector (£600 → £140) are written out in the Extras section.
+// The Google Reviews connector there is a quote, not in the total until approved.
+const EXTRAS_FULL = 900 + 500 + 600 + EXTRAS.reduce((sum, [, full]) => sum + full, 0);
+const EXTRAS_TOTAL = 210 + 115 + 140 + EXTRAS.reduce((sum, [, , price]) => sum + price, 0);
+
 async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
@@ -109,15 +313,17 @@ export default function BeyondBeachProposal() {
                   ['SEO Acceleration', '\u00A3900', 'SEO & Content', 'seo'],
                   ['Content Intelligence and Automation', '\u00A3750', 'SEO & Content', 'seo'],
                   ['Booking & Checkout Optimisation', '\u00A31,400', 'Booking', 'booking'],
-                  ['Kyte Flight Integration', '\u00A31,000', 'Booking', 'kyte'],
+                  ['Kyte Flight Integration & ATOL Certificates', '\u00A31,600', 'Booking', 'kyte'],
                   ['AI Chat Widget (replaces Tawk)', '\u00A3600', 'Enquiries', 'enquiries'],
-                  ['Customer Portal Phase 2', '\u00A31,000', 'Portals', 'customer-portal'],
-                  ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,100', 'Portals', 'customer-portal'],
-                  ['Admin Portal Phase 2', '\u00A31,400', 'Portals', 'admin-portal'],
-                  ['Admin Portal Phase 3', '\u00A3650', 'Portals', 'admin-portal'],
+                  ['Customer Portal Phase 2', '\u00A31,600', 'Portals', 'customer-portal'],
+                  ['Customer Portal Phase 3 (incl. BB AI)', '\u00A31,400', 'Portals', 'customer-portal'],
+                  ['Customer Portal Phase 4', 'TBC', 'Portals', 'customer-portal'],
+                  ['Admin Portal Phase 2', '\u00A32,000', 'Portals', 'admin-portal'],
+                  ['Admin Portal Phase 3', '\u00A3750', 'Portals', 'admin-portal'],
                   ['Marketing Automation', '\u00A31,100', 'Automation', 'marketing'],
                   ['Customer Communications & Workflows', '\u00A31,400', 'Comms & Workflow', 'comms'],
                   ['Bespoke Booking System (Checkfront replacement)', '\u00A33,200', 'Platform', 'booking-system'],
+                  ['HR & Recruitment', '\u00A32,900', 'HR', 'hr'],
                 ].map(([service, price, cat, anchor]) => (
                   <tr key={service} className={s.pricingRow} onClick={() => document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })}>
                     <td>{service}</td>
@@ -129,7 +335,11 @@ export default function BeyondBeachProposal() {
             </table>
             <div className={s.pricingTotal}>
               <span className={s.totalLabel}>Full Platform (all services)</span>
-              <span className={s.totalPrice}>~&pound;16,300</span>
+              <span className={s.totalPrice}>~&pound;21,400</span>
+            </div>
+            <div className={s.pricingTotal} style={{ marginTop: 0 }}>
+              <span className={s.totalLabel}><a href="#extras">Extras (added scope)</a></span>
+              <span><span className={s.totalPrice}>&pound;{EXTRAS_TOTAL.toLocaleString('en-GB')}</span><span className={s.priceWas}>was &pound;{EXTRAS_FULL.toLocaleString('en-GB')}</span></span>
             </div>
             <p className={s.pricingNote}>Mix and match. Each service is independently deliverable.<br />Customer Portal and Admin Portal are sequenced &mdash; Phase 2 builds on the MVP, Phase 3 builds on Phase 2.</p>
             <p className={s.pricingNote}>For context, comparable scope from a regional digital agency would typically be quoted at &pound;50,000&ndash;&pound;80,000+, excluding ongoing retainer costs. This proposal delivers the same platform at a fraction of that cost by leveraging modern AI-assisted development tooling and removing traditional agency overhead. As researched by Claude.</p>
@@ -267,8 +477,8 @@ export default function BeyondBeachProposal() {
               <p className={s.note}>Requires Checkfront plan tier confirmation before build &mdash; some API endpoints (availability, customer data, payments) are tier-locked and may require a plan upgrade. We&apos;ll confirm exactly what&apos;s needed before work begins.</p>
             </div>
             <div id="kyte" className={s.subsection}>
-              <h3 className={s.sectionSubtitle}>Kyte Flight Integration</h3>
-              <span className={s.servicePrice}>&pound;1,000</span>
+              <h3 className={s.sectionSubtitle}>Kyte Flight Integration &amp; ATOL Certificates</h3>
+              <span className={s.servicePrice}>&pound;1,600</span>
               <p style={{ marginTop: '1.5rem' }}>Kyte is an airline distribution API connecting to EasyJet, Ryanair, British Airways, and other major carriers &mdash; meaning customers can search, compare and book flights directly within the Beyond Beach checkout and customer portal.</p>
               <ul>
                 <li>Flight search embedded in checkout, pre-filtered by destination and date</li>
@@ -280,6 +490,14 @@ export default function BeyondBeachProposal() {
                 <li>Removes the need to send customers away &mdash; keeps revenue in-house</li>
                 <li>Flights presented as an optional add-on within the checkout extras step &mdash; no extra pages, less friction, higher conversion</li>
                 <li>Graceful fallback if Kyte API is unavailable &mdash; degrades to a &quot;we&apos;ll find flights for you&quot; email capture rather than breaking the checkout flow</li>
+              </ul>
+              <p style={{ marginTop: '1.5rem' }}><strong>ATOL certificates.</strong> Beyond Beach holds its own ATOL, so the platform issues the certificates itself in place of the separate certificate tool.</p>
+              <ul>
+                <li className={s.done}>CAA Package (Single-contract) certificate issued automatically once the flights are paid, emailed to the guest and kept on the booking</li>
+                <li className={s.done}>A new version only when the names, flights or dates on it change (never for a price change), and withdrawn if the flights or booking are cancelled</li>
+                <li className={s.done}>Certificate card on each booking: view, preview before sending, reissue, and every earlier version</li>
+                <li className={s.done}>A register of every certificate issued, by month, with a CSV export for the CAA</li>
+                <li className={s.done}>Guests download their current certificate from the customer portal</li>
               </ul>
               <p className={s.note}>Kyte integration requires a Kyte API account. We can assist with onboarding.</p>
             </div>
@@ -317,8 +535,7 @@ export default function BeyondBeachProposal() {
             <p>Checkfront as the operational backbone. Connected portal for guests, reading from and writing to Checkfront in real time.</p>
             <div className={s.subsection} style={{ marginTop: '3rem' }}>
               <h3 className={s.sectionSubtitle}>Customer Portal Phase 2</h3>
-              <span className={s.servicePrice}>&pound;1,000</span>
-              <span className={s.priceWas}>was &pound;1,600</span>
+              <span className={s.servicePrice}>&pound;1,600</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li className={s.wontDo}><s style={{ opacity: 0.55 }}>Live booking status and payment schedule from Checkfront</s></li>
@@ -336,20 +553,25 @@ export default function BeyondBeachProposal() {
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Customer Portal Phase 3</h3>
-              <span className={s.servicePrice}>&pound;1,100</span>
-              <span className={s.priceWas}>was &pound;1,400</span>
+              <span className={s.servicePrice}>&pound;1,400</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li className={s.done}>BB AI: assistant aware of the guest&apos;s specific booking</li>
                 <li className={s.done}>Document upload for travel docs, waivers, and paperwork <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Post-booking upsell: add flights, experiences, extras from within the portal</li>
                 <li>View and manage flights via Kyte integration</li>
+                <li className={s.done}>Full GDPR and data compliance</li>
+                <li className={s.done}>Multi-booking dashboard &mdash; full history of all trips with Beyond Beach for repeat customers, not just the current booking</li>
+              </ul>
+            </div>
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Customer Portal Phase 4</h3>
+              <span className={s.servicePrice}>Price TBC</span>
+              <ul style={{ marginTop: '1.5rem' }}>
                 <li>Automated post-stay loyalty flow and rebooking prompts</li>
-                <li>Full GDPR and data compliance</li>
                 <li>Live weather and conditions widget &mdash; real-time weather at their destination in the lead-up to the trip</li>
                 <li>Dynamic packing list &mdash; generated based on destination, activities booked, and time of year</li>
                 <li>Post-trip photo and memory sharing &mdash; guests upload holiday photos, leave a review, and get a shareable trip summary</li>
-                <li className={s.done}>Multi-booking dashboard &mdash; full history of all trips with Beyond Beach for repeat customers, not just the current booking</li>
                 <li>Travel insurance integration &mdash; surface an insurance option within the portal rather than sending guests elsewhere</li>
               </ul>
             </div>
@@ -366,8 +588,7 @@ export default function BeyondBeachProposal() {
                 <h3 className={s.sectionSubtitle}>Admin Portal Phase 2</h3>
                 <span className={classnames(s.tag, s.tagGreen)}>Start Here</span>
               </div>
-              <span className={s.servicePrice}>&pound;1,400</span>
-              <span className={s.priceWas}>was &pound;2,000</span>
+              <span className={s.servicePrice}>&pound;2,000</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <ul style={{ marginTop: '1.5rem' }}>
                 <li className={s.done}>Visual booking pipeline &mdash; every booking and its stage at a glance (extended into the two-swimlane workflow engine in Customer Communications &amp; Workflows)</li>
@@ -381,15 +602,14 @@ export default function BeyondBeachProposal() {
             </div>
             <div className={s.subsection}>
               <h3 className={s.sectionSubtitle}>Admin Portal Phase 3</h3>
-              <span className={s.servicePrice}>&pound;650</span>
-              <span className={s.priceWas}>was &pound;750</span>
+              <span className={s.servicePrice}>&pound;750</span>
               <p className={s.note}>Price reduced as some work was completed as part of the booking system build.</p>
               <p style={{ marginTop: '1rem' }}>Everything in Phase 2, plus:</p>
               <ul>
                 <li className={s.done}>Automated guest comms triggered by pipeline stage changes</li>
                 <li className={s.done}>Revenue and occupancy reporting dashboard <strong>(completed as part of the booking system build)</strong></li>
                 <li className={s.done}>Full staff permissions and access level management</li>
-                <li>Full custom managed user permissions system</li>
+                <li className={s.done}>Full custom managed user permissions system</li>
                 <li className={s.done}>Audit log of all actions and changes</li>
               </ul>
             </div>
@@ -402,12 +622,11 @@ export default function BeyondBeachProposal() {
             <h2 className={s.sectionTitle}>Marketing Automation</h2>
             <span className={s.servicePrice}>&pound;1,100</span>
             <ul style={{ marginTop: '1.5rem' }}>
-              <li>Abandoned checkout sequence triggered by early email capture</li>
-              <li>Weather-triggered email campaigns via Mailchimp</li>
-              <li>Seasonal remarketing to past customers using Checkfront booking history</li>
-              <li>Post-booking confirmation with waiver link, directions and what to bring</li>
-              <li>Automated post-stay review request sequence</li>
-              <li>OTA and Google Calendar sync via Checkfront native integrations</li>
+              <li className={s.done}>Abandoned checkout sequence triggered by early email capture</li>
+              <li className={s.done}>Newsletter builder: pick blog posts and live offers, sent to Mailchimp as a ready-to-send campaign</li>
+              <li className={s.done}>Post-booking confirmation with waiver link, directions and what to bring</li>
+              <li className={s.done}>Automated post-stay review request sequence</li>
+              <li className={s.done}>One-click AI blog writing</li>
             </ul>
           </div>
         </section>
@@ -619,6 +838,226 @@ export default function BeyondBeachProposal() {
           </div>
         </section>
 
+        {/* HR & Recruitment */}
+        <section id="hr" className={classnames(s.section, s.bgCream)}>
+          <div className={s.container}>
+            <div className={s.serviceHeader}>
+              <h2 className={s.sectionTitle}>HR &amp; Recruitment</h2>
+              <span className={classnames(s.tag, s.tagGreen)}>New Module</span>
+            </div>
+            <p>Every season Beyond Beach recruits, vets and onboards a resort team across Greece, Portugal and France: watersports and sailing instructors, yacht crew, childcare, hospitality, alpine and ski staff. Today that runs on job boards, email threads, spreadsheets and paper forms. This adds an HR module to the admin portal, a public jobs site, and a staff portal, so the whole journey from advert to arrival in resort lives in the platform Beyond Beach already owns.</p>
+            <p>The same building blocks that run the customer side are reused: the private document store and encryption already holding guest passports, the magic-link and to-do patterns from My BB, the event-driven swimlanes from the sales pipeline, and the AI layer behind B.B. What is new is the recruitment data model, a form builder, and the two staff-facing front doors.</p>
+            <span className={s.servicePrice}>&pound;2,900</span>
+
+            <div className={s.introDiagram}>
+              <span className={s.diagramSource}>jobs.beyondbeach.com: adverts and applications</span>
+              <span className={s.diagramArrow}>&darr;</span>
+              <div className={s.diagramServices}>
+                <span className={s.serviceItem}>HR module in admin</span>
+                <span className={s.serviceItem}>Recruitment swimlanes</span>
+              </div>
+              <span className={s.diagramArrow}>&darr;</span>
+              <span className={s.diagramSource}>staff.beyondbeach.com: to-dos, documents, contract</span>
+            </div>
+
+            <div className={s.subsection} style={{ marginTop: '3rem' }}>
+              <h3 className={s.sectionSubtitle}>Jobs Site (jobs.beyondbeach.com)</h3>
+              <p style={{ marginTop: '1.5rem' }}>A public careers site built on the marketing design system, so it looks and feels like the rest of Beyond Beach.</p>
+              <ul>
+                <li>Job postings managed from the admin portal: role, resort, season, dates, pay and benefits, requirements, closing date</li>
+                <li>Role pages themed by holiday type (Beach Clubs, Sailing, Alpine, Ski) with resort and season filters</li>
+                <li>Google for Jobs structured data and an aggregator feed (Indeed and similar), so adverts are syndicated rather than posted by hand</li>
+                <li>Application form per role: CV upload, short screening questions, eligibility questions, optional video introduction link</li>
+                <li>&quot;Working for Beyond Beach&quot; content: life in resort, training, accommodation, FAQs on visas, pay and travel</li>
+                <li>Talent pool sign-up for candidates when no role is open, with explicit consent to be kept on file</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Applications &amp; AI Screening</h3>
+              <p style={{ marginTop: '1.5rem' }}>Applications land as cards in the HR module. The AI reads each one and does the first sort, so staff spend their time on the shortlist rather than the pile.</p>
+              <ul>
+                <li>AI fit score against the role&apos;s stated criteria, with a written rationale staff can read and challenge</li>
+                <li>Automatic flags for missing eligibility, missing qualifications, and incomplete applications</li>
+                <li>AI-drafted acknowledgement, interview invite and regret emails, sent through the existing comms channels</li>
+                <li>Assistive by design: the AI ranks and summarises, a person makes every decision. Candidates are told AI is used and can ask for human review, in line with the ICO&apos;s 2026 guidance on automation in recruitment</li>
+                <li>Protected characteristics are excluded from what the AI sees, and every AI output is written to the audit log</li>
+                <li>Duplicate and returner detection: a returning staff member is matched to their previous record, not treated as a stranger</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Recruitment Swimlanes &amp; Staff Tags</h3>
+              <p style={{ marginTop: '1.5rem' }}>The same event-driven board as the sales pipeline, applied to people. Cards move as work is done.</p>
+              <ul>
+                <li>Lanes: applied, shortlisted, interview, offer, accepted, onboarding, ready for resort, in resort, season complete, plus rejected, withdrawn and talent pool</li>
+                <li>Board per season and per role, with resort and holiday-type filters</li>
+                <li>Automatic transitions: a signed contract moves the card to onboarding, completed to-dos move it to ready for resort</li>
+                <li>Tags by staff type: holiday type, role family (childcare, watersports, yacht crew, hospitality, instructors, management), resort, season, returner, languages, driver</li>
+                <li>Interview scheduling with notes and scorecards attached to the card</li>
+                <li>Staff directory: every current and past staff member, their seasons, roles, resorts and documents in one place</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Custom Forms &amp; Onboarding</h3>
+              <p style={{ marginTop: '1.5rem' }}>A form builder in the admin portal, so HR can create and change forms without a developer.</p>
+              <ul>
+                <li>Field types: text, choice, date with expiry, file upload, photo capture, signature, conditional sections</li>
+                <li>Forms assigned by role or tag, so a childcare hire and a yacht skipper get different onboarding packs automatically</li>
+                <li>Standard packs to start from: personal details, next of kin, medical and dietary, bank details, uniform sizes, driving licence, passport, qualifications</li>
+                <li>Forms are versioned, so a change to a form never alters what a previous hire signed</li>
+                <li>Offer letter and contract as a form with a typed signature, timestamp and audit hash, the same approach used for guest waivers</li>
+                <li>Each assigned form becomes a to-do for the staff member, with reminders by email and SMS until it is done</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Staff Portal (staff.beyondbeach.com)</h3>
+              <p style={{ marginTop: '1.5rem' }}>Built on the My BB portal patterns, mobile first, because resort staff live on their phones.</p>
+              <ul>
+                <li>Own login realm for staff, fully separate from guest and admin logins; magic link plus password, with optional two-factor</li>
+                <li>&quot;What you need to do&quot; list: outstanding forms, documents, contract, expiring certificates, with progress shown</li>
+                <li>Document upload from the phone camera, including passport capture with on-device reading, straight into the private document store</li>
+                <li>My details, my documents, my contract and my season: role, resort, dates and arrival information</li>
+                <li>Returner fast-track: a previous staff member re-applies with last season&apos;s record pre-filled and only expired items to redo</li>
+                <li>Self-serve data rights: download my data and request deletion, matching the guest portal</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Right to Work &amp; Qualifications</h3>
+              <p style={{ marginTop: '1.5rem' }}>The part no off-the-shelf recruitment tool does, and the part that matters most for a UK operator staffing EU resorts.</p>
+              <ul>
+                <li>Work eligibility captured at application: passport nationality, EU or UK, settled status, existing permit, so ineligible applications are flagged before anyone spends time on them</li>
+                <li>Per-country status on each person: eligible, permit required, permit in progress, permit held, with the document attached</li>
+                <li>Schengen 90-in-180 day tracking for UK-passport staff across their season dates</li>
+                <li>Qualification register with expiry dates: RYA, lifeguard, first aid, BASI, PADI, STCW, food hygiene, safeguarding, and any others HR adds</li>
+                <li>Rules per role: which qualifications and checks are required, and that they stay valid through the end of the season, not just at hire</li>
+                <li>DBS and reference tracking per person, with status and documents, so nobody starts in childcare without the checks recorded</li>
+                <li>Expiry alerts to HR and to the staff member&apos;s to-do list ahead of the season</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Sensitive Data &amp; Permissions</h3>
+              <ul style={{ marginTop: '1.5rem' }}>
+                <li>New HR permission grants alongside the existing Customer Operations, Management, Financial and Admin grants: HR, and HR Sensitive for bank, medical, DBS and passport data</li>
+                <li>Bank details, medical answers, passport numbers and DBS outcomes encrypted at field level, as guest passports are today</li>
+                <li>Documents held in the private store and served only through authenticated links, never a public URL</li>
+                <li>Separate retention clocks: unsuccessful applicants purged after a set period, staff documents after the season plus a set period, both configurable in settings</li>
+                <li>Full audit trail of who viewed or changed sensitive records</li>
+                <li>Employing entity recorded per person (UK or local), so the right contract and documents apply</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Phase 2 / Later</h3>
+              <span className={s.servicePrice}>Price TBC</span>
+              <p style={{ marginTop: '1.5rem' }}>Deliberately out of scope for the first release. Sequenced once recruitment is running through the platform:</p>
+              <ul>
+                <li>Headcount planning: required staff per resort per week against hires and returners, with gaps highlighted</li>
+                <li>Automated referencing: referees emailed a form link and responses attached to the card</li>
+                <li>Travel and logistics: flights out, transfers into the existing manifests, staff accommodation, uniform and kit orders</li>
+                <li>Training records and in-resort induction checklists</li>
+                <li>End-of-season review, rehire flag and offboarding (kit return, access revoked, retention clock started)</li>
+                <li>Resort-manager views scoped to their own resort and team</li>
+                <li>Payroll and leave are not planned; payroll stays in Xero</li>
+              </ul>
+            </div>
+
+            <p className={s.note}>A short discovery session confirms the role families, the onboarding packs and checks per role, which entity employs staff in each country, and who in the team handles recruitment today, before build starts.</p>
+          </div>
+        </section>
+
+        {/* Extras */}
+        <section id="extras" className={s.section}>
+          <div className={s.container}>
+            <div className={s.serviceHeader}>
+              <h2 className={s.sectionTitle}>Extras</h2>
+              <span className={classnames(s.tag, s.tagPurple)}>Added Scope</span>
+            </div>
+            <p>Work requested and delivered during the build that sits outside the services above. The original prices stay fixed; this is everything added on top, priced item by item.</p>
+            <p>Valued at full rate, the extras come to &pound;{EXTRAS_FULL.toLocaleString('en-GB')}. They&apos;re being charged at &pound;{EXTRAS_TOTAL.toLocaleString('en-GB')}, a discount of &pound;{(EXTRAS_FULL - EXTRAS_TOTAL).toLocaleString('en-GB')} ({Math.round((1 - EXTRAS_TOTAL / EXTRAS_FULL) * 100)}% off), as a thank you for working together on the build.</p>
+
+            <div className={s.subsection} style={{ marginTop: '3rem' }}>
+              <h3 className={s.sectionSubtitle}>Offers &amp; Promotions</h3>
+              <span className={s.servicePrice}>&pound;210</span>
+              <span className={s.priceWas}>was &pound;900</span>
+              <p style={{ marginTop: '1.5rem' }}>The original scope covered promo codes and loyalty discounts at checkout. Offers grew into a full promotions tool: staff run offers from the admin portal and the website sells them everywhere a price is shown.</p>
+              <ul>
+                <li className={s.done}>Offers managed in the admin portal: automatic discounts or discount codes, percentage or fixed amount, with start and end dates</li>
+                <li className={s.done}>Offers scoped to chosen holidays, properties or room types, enforced at checkout</li>
+                <li className={s.done}>Save badges and was/now prices on every holiday card, holiday page and booking step</li>
+                <li className={s.done}>Offers page, offers band on key pages and offers in the main menu</li>
+                <li className={s.done}>Optional hero banner and pop-up per offer, each switched on separately</li>
+                <li className={s.done}>Offer bar above the menu on every page; on phones it rides under the menu as one slim line and leads the open menu as a card</li>
+                <li className={s.done}>Promotion-only offers: run a campaign such as &quot;Early bird 2027&quot; with no discount or code, live until staff take it down</li>
+                <li className={s.done}>A page for each offer listing every holiday it applies to, with its own headline, image and copy, ready to link from emails and social</li>
+              </ul>
+            </div>
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Change Prices &amp; Next Year&apos;s Pricing</h3>
+              <span className={s.servicePrice}>&pound;115</span>
+              <span className={s.priceWas}>was &pound;500</span>
+              <p style={{ marginTop: '1.5rem' }}>Setting up a new year&apos;s prices used to mean retyping every rate. This tool changes prices in bulk, with a preview of every old and new price before anything is saved. Existing bookings never move.</p>
+              <ul>
+                <li className={s.done}>Copy a period&apos;s prices forward 52 weeks, so Saturday changeovers stay on Saturdays</li>
+                <li className={s.done}>Up or down by a percentage, rounded to the nearest &pound;1 or &pound;5</li>
+                <li className={s.done}>Next year lands on its own price list, so this year&apos;s prices and live bookings never change</li>
+                <li className={s.done}>Covers room rates, single and extra-person rates, reduced and group rates, extra nights and property extras</li>
+                <li className={s.done}>Run for one property or all of them, from Booking Config or a property&apos;s Pricing tab</li>
+                <li className={s.done}>&quot;Change prices by %&quot;: raise or lower the prices already entered, in place, without copying to another year</li>
+                <li>Extend to holiday-wide and destination-wide extras, group-size priced extras and special-week prices</li>
+                <li>A history of every price change with one-click undo</li>
+                <li>Plainer wording throughout (&quot;Change prices&quot; rather than &quot;Next year&apos;s pricing&quot;)</li>
+              </ul>
+            </div>
+
+            {EXTRAS.map(([title, full, price, intro, items]) => (
+              <div key={title} className={s.subsection}>
+                <h3 className={s.sectionSubtitle}>{title}</h3>
+                <span className={s.servicePrice}>&pound;{price.toLocaleString('en-GB')}</span>
+                <span className={s.priceWas}>was &pound;{full.toLocaleString('en-GB')}</span>
+                {intro && <p style={{ marginTop: '1.5rem' }}>{intro}</p>}
+                <ul style={intro ? undefined : { marginTop: '1.5rem' }}>
+                  {items.map((item) => <li key={item} className={s.done}>{item}</li>)}
+                </ul>
+              </div>
+            ))}
+
+            <div className={s.subsection}>
+              <h3 className={s.sectionSubtitle}>Review Connectors: Tripadvisor &amp; Google</h3>
+              <span className={s.servicePrice}>&pound;140</span>
+              <span className={s.priceWas}>was &pound;600</span>
+              <p style={{ marginTop: '1.5rem' }}>Reviews.io stays as the platform for our own post-stay reviews. Connectors bring in what guests say elsewhere, shown in the same reviews block on the holiday page.</p>
+              <p><strong>Tripadvisor</strong></p>
+              <ul>
+                <li className={s.done}>Tripadvisor page link per holiday in the admin portal</li>
+                <li className={s.done}>Live Tripadvisor rating and latest reviews, fetched daily through Tripadvisor&apos;s API</li>
+                <li className={s.done}>Rating and bubbles in the holiday page header</li>
+                <li className={s.done}>Reviews alongside Reviews.io in the holiday page&apos;s reviews block, with a link to read them all on Tripadvisor</li>
+              </ul>
+              <p style={{ marginTop: '2rem' }}><strong>Google Reviews</strong> <span className={s.servicePrice}>&pound;210</span> <span className={s.priceWas}>was &pound;900</span></p>
+              <p>Quote, not yet approved and not in the total below. Google reviews on the property pages you choose, through Google&apos;s Business Profile API (the connector we already run for another client, reused here).</p>
+              <ul>
+                <li>Connect BeyondBeach&apos;s Google account once in the admin portal, then pick the Google listing for each property that should show reviews; properties without one show none</li>
+                <li>Every review for the listing, synced automatically a few times a day and kept up to date when guests edit theirs</li>
+                <li>A reviews section on the property pages, the same design as the holiday reviews (score, stars, review cards and &quot;Read all reviews on Google&quot;)</li>
+                <li>Only for listings BeyondBeach&apos;s Google account owns or manages; a hotel&apos;s own listing needs its owner to add BeyondBeach as a manager first</li>
+                <li>Needs Google to approve API access for BeyondBeach&apos;s Google Cloud project (a one-off request, usually a couple of weeks)</li>
+                <li>No running cost: Google doesn&apos;t charge for the Business Profile API</li>
+              </ul>
+            </div>
+
+            <div className={s.pricingTotal}>
+              <span className={s.totalLabel}>Extras total</span>
+              <span><span className={s.totalPrice}>&pound;{EXTRAS_TOTAL.toLocaleString('en-GB')}</span><span className={s.priceWas}>was &pound;{EXTRAS_FULL.toLocaleString('en-GB')}</span></span>
+            </div>
+          </div>
+        </section>
+
         {/* Monthly Retainer */}
         <section className={classnames(s.section, s.bgGreen)}>
           <div className={s.container}>
@@ -658,6 +1097,7 @@ export default function BeyondBeachProposal() {
                 <tr><td>Admin Portal Phase 3</td><td>2&ndash;3 weeks after Phase 2</td></tr>
                 <tr><td>Marketing Automation</td><td>2&ndash;3 weeks</td></tr>
                 <tr><td>Customer Communications &amp; Workflows</td><td>3&ndash;4 weeks</td></tr>
+                <tr><td>HR &amp; Recruitment</td><td>8&ndash;10 weeks</td></tr>
               </tbody>
             </table>
             <p className={s.note}>Timelines are estimates and depend on timely access to Checkfront, Kyte, and Stripe accounts, content and brand assets, and feedback turnaround. Services can run in parallel where dependencies allow.</p>
